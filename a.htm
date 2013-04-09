@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<title>Художник Давид Куперфильд</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+	<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+	
+	<meta name="Keywords" content="" />
+	<meta name="Description" content="" />
+
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<style type="text/css">	ul#nav li {width:19.7%;}</style>
+</head>
+<body>
+
+
+<div style="position:absolute;left:10%;top:50%; width:10px;height:10px;border:1px solid red">
+
+<div id="d" style="background:#000;position:absolute;left:-100px; width:1000px;height:10px;">&nbsp;</div>
+&nbsp;</div>
+
+
+<script>
+var TINY={};function $(i){return document.getElementById(i)}function $$(e,p){p=p||document;return p.getElementsByTagName(e)}
+
+		ie=false;
+TINY.scroll=function(){return{init:function(e,d,s){
+		e=typeof e=='object'?e:$(e);
+		e.s111=-parseInt(e.style.left||TINY.style.val(e,'left'));
+		var l=d>0?e.offsetWidth-e.parentNode.offsetWidth:0;clearInterval(e.si);
+		e.si=setInterval(function(){TINY.scroll.mv(e,l,d,s)},20)},
+	
+		mv:function(e,l,d,s){
+			var c=e.s111, i=(d>0)?l-c:c;
+				i=i<s?i:s;e.s111=c=c+i*d;
+				e.style.left=-c+'px';
+			if(c==l){this.cl(e)}
+		},
+		cl:function(e){e=typeof e=='object'?e:$(e);clearInterval(e.si)}}
+}();
+	
+	
+TINY.scrollTo=function(){return{init:function(e,l,s){
+
+		if(e.stopScrollTo)return;
+		var p=e.st111=-parseInt(e.style.left||TINY.style.val(e,'left'));
+		var d=(p<l)?1:-1;clearInterval(e.siTo);
+		e.siTo=setInterval(function(){TINY.scrollTo.mv(e,l,d,s)},20)},
+		
+		mv:function(e,l,d,s){
+			var c=e.st111, i=Math.abs(l-c);
+				i=(i==0)?0:i/s+1;
+				e.st111=c=c+i*d;//alert(c)
+				e.style.left=-c+'px';
+			if((d==-1 && c<=l)||(d==1 && c>=l)){this.cl(e)}
+		},
+		cl:function(e){e=typeof e=='object'?e:$(e);clearInterval(e.siTo)}}
+}();
+
+TINY.width=function(){return{
+		set:function(e,h,s){e=typeof e=='object'?e:$(e);
+			e.w111=e.offsetWidth;
+			clearInterval(e.si1); e.si1=setInterval(function(){TINY.width.tw(e,h,s)},20);
+		},
+		tw:function(e,h,s){
+			var oh=e.w111,x;//alert(e.w111+' '+tin((h-oh)/s))
+			e.w111=x=oh+tin((h-oh)/s);e.style.width=x+'px';alert(x+' '+h);if(x==h){clearInterval(e.si1)}
+		}
+	}
+}();
+		
+TINY.height=function(){return{
+		set:function(e,h,s){e=typeof e=='object'?e:$(e);
+			e.h111=e.offsetHeight;
+			clearInterval(e.si);e.si=setInterval(function(){TINY.height.tw(e,h,s)},20)
+		},
+		tw:function(e,h,s){alert(e.h111)
+			e.h111=e.h111+tin((h-e.h111)/s);e.style.height=e.h111+'px';if(e.h111==h){clearInterval(e.si)}
+		}
+	}
+}();//local var vs offsetHeight vs style.height = 1000000$
+//туду уничтожить math.abs | tin | d . сделать функц которая -0ю1=>-1, 0.1 => 1 stackoverflow
+
+TINY.alpha=function(){return{
+		set:function(e,a,s,k){e=typeof e=='object'?e:$(e);k=typeof k=='undefined'?0:k;
+			e.o111=(e.style.opacity||TINY.style.val(e,'opacity'))*100;
+			clearInterval(e.ai);e.ai=setInterval(function(){TINY.alpha.tw(e,a,s,k)},20)
+		},
+		tw:function(e,a,s,k){
+			var o=e.o111; e.o111=o+tin((a-o)/s);e.style.opacity=e.o111/100;alert(o+' '+tin((a-o)/s)+' '+a)
+			if(ie)e.style.filter='alpha(opacity='+e.o111+')';
+			if(e.o111==a){clearInterval(e.ai);if(k)e.style.visibility='hidden';alert(e.o111)}
+		}
+	}
+}();
+		
+TINY.shadow=function(){return{
+		set:function(e,start,h,s){
+			e.sha = start; h = (h-start)/s; if(!h)return;
+			clearInterval(e.shi);e.shi=setInterval(function(){TINY.shadow.tw(e,h)},70)
+		},
+		tw:function(e,h){
+			e.sha=e.sha+h; fuck(e, e.sha);if(e.sha<0 || e.sha>1){clearInterval(e.shi)};
+		}
+	}
+}();
+
+function fuck(el, s){
+			el.style.boxShadow = shadowSettings + s + ')';
+			el.style.webkitBoxShadow = shadowSettings + s + ')';
+			el.style.MozBoxShadow = shadowSettings + s + ')';	
+}
+
+TINY.style=function(){return{val:function(e,p){e=typeof e=='object'?e:$(e);return e.currentStyle?e.currentStyle[p]:document.defaultView.getComputedStyle(e,null).getPropertyValue(p)}}}();
+
+function tin(x){
+	
+	return (x>0)?Math.ceil(x):Math.floor(x);
+}
+	var shadowSettings = '0px 0px 40px rgba(0, 0, 0, ';//corners//todo ???
+
+
+	TINY.alpha.set($('d'), 100, 10);
+</script>
+
+
+
+</body>
+</html>

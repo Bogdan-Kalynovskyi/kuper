@@ -1,0 +1,177 @@
+<?php
+	if(!defined('IN_BMC')) 
+		die("Access Denied!");
+	
+		
+		$POOO = $db->query("SELECT * FROM `".PRF."posts` WHERE id=".a(@$_GET['id']), false);
+		if(!$POOO)	echo 'этой записи уже не существует';
+
+
+?>
+
+
+
+
+
+<style>
+	form{
+		font-size:120% !important;
+		padding:15px;
+	}
+
+
+	label{
+		display:block;
+		height:42px;
+		position:relative;
+	}
+	input, select, textarea, #_icon{
+		position:absolute;
+		left:160px;
+		width:506px;
+	}
+	#_icon{
+		width:24px;
+		height:24px;
+		border:1px solid black;
+	}
+	#icon{
+		left:230px;
+		width:80px;
+	}
+	#__icon{
+		left:400px;
+	}
+	#_1_icon,#_2_icon,#_3_icon{
+		top:2px;
+		font-size:13px;
+		position:absolute;
+	}
+	#_1_icon{
+		left:200px;
+	}
+	#_2_icon{
+		left:330px;
+	}
+	#_3_icon{
+		left:617px;
+	}
+
+	input[type=submit], input[type=button]{
+		position:static;
+		font-size:105%;
+		width:auto;
+	}
+	input[type=submit]{
+		background-color:#d0d0d0;
+	}
+	input[type=submit]:hover{
+		background-color:#dfdfdf
+	}
+	input[type=checkbox]{
+		width:auto;
+	}
+
+	
+	
+	#clickable{
+		cursor:pointer;
+		text-decoration:underline;
+		color:#77f;
+		float:right;
+		font-size:small;
+	}
+	#gallery_button{
+		left:570px;top:-17px;display:block;position:absolute;z-index:10
+	}
+	
+</style>
+
+
+
+
+<h2> Правим пост / Галерею... </h2>
+
+
+<form method="post" action="user.php"  accept-charset="<?php echo $CHRST ?>"  enctype="multipart/form-data" onsubmit="return verify_form()">
+<fieldset>
+	<input type="hidden" name="id" value="<?php echo @$_GET['id']; ?>" />
+	<input type="hidden" name="blog" value="<?php echo @$POOO['blog']; ?>" />
+	<input type="hidden" name="<?php echo FORM_HASH; ?>" value="1" />
+	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+
+
+
+	<label>Сделать галереей
+		<input type="checkbox" name="gallery"<?php if(@$POOO['gallery']) echo ' checked="checked"'; ?> style="margin-top:5px" onchange="changer()" value="1" />
+		<input type="submit" name="nesegalavodu" value="К галерее"  id="gallery_button" />
+	</label>
+
+		
+
+	<label>Заголовок
+		<input type="text" name="title" value="<?php echo @$POOO['title']; ?>" />
+	</label>
+
+
+	<label>Иконка
+		<img src="<?php echo @$POOO['icon']; ?>" alt="нет" id="_icon" onmouseover="prev_over()" onmouseout="prev_out()" /> &nbsp;&nbsp;&nbsp; 
+
+		<span id="_1_icon">URL</span><input type="text" id="icon" name="icon" value="<?php echo htmlspecialchars(rawurldecode(@$POOO['icon'])); ?>" /> &nbsp; &nbsp; &nbsp;
+
+		<span id="_2_icon">или файл</span><input type="file" name="icon" id="__icon" /> &nbsp;
+		
+		<a href="#" title="убрать изображение из поста" id="_3_icon" onclick="clrnpt('icon');return false">Убрать</a>
+	</label>
+	
+
+	<label style="height:85px">Текст (HTML)<span id="clickable" onclick="editoronoff()">Включить редактор</span><br/>
+		<textarea name="summary" cols="80" rows="3" id="msg"><?php echo htmlspecialchars(@$POOO['summary']); ?></textarea>
+	</label>
+
+
+<!--	<label style="opacity:0.7">Спрятать в черновик<br/>
+		<input type="checkbox" name="draft"<?php if(@$POOO['draft']) echo ' checked="checked"'; ?> value="1" />
+	</label>-->
+
+	<br/><br/>
+	<input type="submit" value="      Сохранить      " /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="button" value="      Отмена      " onclick="document.history(-1)'" />
+
+		
+</fieldset>
+</form>
+
+
+
+<script type="text/javascript" src="js/jslib.js"></script>
+<script type="text/javascript" src="scripts/wysiwyg.js"></script>
+<script type="text/javascript">
+
+	changer();
+	
+	function editoronoff(){
+		WYSIWYG.onoff('msg', full1);
+		$('clickable').style.visibility = 'hidden';
+    }
+
+	function prev_over(){
+		$('one_prev').src=$('_icon').src;
+		$('one_prev').style.display = "block";
+	}
+	function prev_out(){
+		$('one_prev').src='';
+		$('one_prev').style.display = "none";
+	}
+
+		
+	function changer(){
+		if(document.getElementsByName('gallery')[0].checked){
+			$('gallery_button').style.visibility = 'visible';
+			//innerhtml
+		}else{
+			$('gallery_button').style.visibility = 'hidden';
+			//innerhtml
+		}
+	}
+</script>

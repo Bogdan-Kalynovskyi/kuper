@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+    <title>jQuery tooltip</title>
+    <script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script>
+    <script type="text/javascript">
+
+   $(document).ready(function() {
+      $("h1").tooltip({
+        events:{def:'click, click'},
+        effect: "slide",
+        tip: '.tooltip' ,
+        position: "bottom center",
+        delay: 60000
+      });
+
+    });
+
+    </script> 
+
+  <style>
+    .tooltip {
+      display: none;
+      background:transparent url(http://flowplayer.org/tools/img/tooltip/black_arrow_bottom.png);
+      font-size:14px;
+      height:70px;
+      width:160px;
+      padding:25px;
+      color:#fff;   
+    }
+    h1 {
+      width: 400px;
+      text-align: center;
+      background-color: yellow;
+    }
+
+  </style>
+</head>
+<body>
+
+    <h1 id="_1">John</h1>
+    <h1 id="_2">Mary</h1>
+    <h1 id="_3">Dan</h1>
+    <h1 id="_4">Paul</h1>
+    <h1 id="_5">Kim</h1>
+
+    <div class="tooltip">There should be only one tooltip on a page!</div>
+
+</body></html>

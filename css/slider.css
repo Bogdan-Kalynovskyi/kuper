@@ -1,0 +1,39 @@
+.ui-slider {
+	position: relative;
+	text-align: left;
+	background: transparent url(../img/slider-bar.png) no-repeat center top;
+	width:185px;
+	height: 2.8em;
+	margin-left:30px;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.2em;
+	height: 3.2em;
+	cursor: default;
+	background: transparent url(../img/slider.png) no-repeat center;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+}
+.ui-slider-horizontal {
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.3em;
+	margin-left: -.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}

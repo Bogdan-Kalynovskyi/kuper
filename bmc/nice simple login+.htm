@@ -1,0 +1,109 @@
+<?php
+if(!defined('IN_BMC'))
+		die("Access Denied!");
+
+if(isset($_GET['action']) && $_GET['action']=='restore_pass'){	
+
+	if($_GET['restore_success'])
+		echo '<h1><br/>Password regenerated and sent on your email</h1>';
+	else
+		echo '<h3><br/>Email not sent due to an error. Most likely the cause is no write permissions to config.php. Please set CHMOD to 666</h3>';
+
+}
+		header("Cache-Control: no-cache");
+		header("Expires: -1");
+		header('Cache-Control: post-check=0, pre-check=0', FALSE); 
+		header('Pragma: no-cache');
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"  lang="en">
+<head>
+    <title>Administration Login</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+    <link rel="stylesheet" href="img/global00.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="img/master00.css" type="text/css" media="screen" />
+	<link rel="icon" type="image/gif" href="img/favicon.gif" />
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.gif" />    
+	<script type="text/javascript" src="js/jscapslock.js"></script>
+</head>
+
+<body class="login">
+    <!--[if lt IE 7]>
+    <link rel="stylesheet" href="css/ie6.css" type="text/css" media="screen" />    
+    <![endif]-->	
+    <form id="Form1" name="Form1" accept-charset="<?php echo $lang['ENCODING'] ?>"  method="post"  action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" onsubmit="return validate();">
+
+    <div id="panelErrorMsg">
+	
+        
+    
+</div>
+        
+    <div id="login">
+	    <div id="cap-top"></div>
+	    <div id="cap-body">
+	    <div id="branding"><?php if(isset($user_message)) echo '<span class="bold_red">'.$user_message.'</span>'; ?></div>		
+            <div id="panelLogin">
+	
+			    <div>
+				    <label>
+                        Email Address</label>
+                        <input type="text" class="textbox340" name="user_login" id="txtLogin" value="" />
+			    </div>
+			    <div>
+				    <label>
+                        Password</label>
+                        <input type="password" class="textbox340" name="password" id="txtPassword" value="" />
+			    </div>
+			    <div>
+				    <label>
+                        Remember me</label>
+                        <input type="checkbox" name="remember" value="1" />
+			    </div>
+
+                					
+			    <div class="submit clearfix">
+			        <input type="image" src="img/button-l.png" alt="Login" name="btnLogin" id="btnLogin" />
+			    </div>
+                <p class="lostpassword">
+                    <a href="account.php?action=restore_pass">Lost your password?</a>
+                    or
+                    <a href="mailto: mybodya@gmail.com" target="_blank"">Need help? -  Oldo</a>
+                </p>
+		    
+</div>	
+            			
+            									
+		    
+	    </div>
+	    <div id="cap-bottom"><img src="img/cap-bott.png" alt="" /></div>
+    </div><!-- END #login -->
+
+    </form>
+
+    <script language="javascript" type="text/javascript">
+            if (document.getElementById('txtLogin'))
+			    document.getElementById('txtLogin').focus();
+
+
+
+	function validate() {
+
+		if(document.getElementById('txtLogin').value.length < 3) {
+			document.getElementById('txtLogin').focus();alert("Short login, 3 chars minimum");
+			 return false;
+		}
+		if(document.getElementById('txtPassword').value.length < 3) {
+			document.getElementById('txtPassword').focus();alert("Short password, 3 chars minimum");
+			return false;
+		}
+		return true;
+	}
+			    
+    </script>
+
+</body>
+</html>

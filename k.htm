@@ -1,0 +1,43 @@
+<style>
+    #xyz_main {
+        width: 140px;
+        height: 240px;
+        border: 1px solid #666666;
+        text-align: left;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        margin-top: -70px;
+        top: 50%;
+        margin-left: -70px;
+    }
+</style>
+
+    <div id="xyz_main">
+        <div id="xyz_header"> Header </div>
+        <div id="xyz_body"> Body </div>
+
+        <div id="xyz_footer"> Footer </div>
+    </div>
+
+
+
+
+
+<script>
+
+findPos(document.getElementById('xyz_main'))
+
+function findPos(obj) {
+	var curleft = curtop = 0;
+
+	if (obj.offsetParent) {
+
+	do {
+			curtop += obj.offsetTop;alert(obj.offsetTop)
+		} while (obj = obj.offsetParent);
+
+	 alert(curtop);
+}
+}
+</script>

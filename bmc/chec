@@ -1,0 +1,119 @@
+<?php
+
+//-----------------------------------------------//
+	function NonCachePlusEncoding(){
+		global $CHRST;
+		
+		header("Content-Type: text/html; charset=$CHRST");
+		header("Cache-Control: no-cache");
+		header("Expires: -1");header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT"); 
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0', FALSE); 
+		header("Cache-Control: no-cache", FALSE);
+		header('Pragma: no-cache');
+		
+		//project: ADD DOCTYPE AND BASIC META TAGS HERE =)
+	}
+
+	
+//------------------------------------------------//
+	function backButton(){echo<<<EOF
+		<input type="button" id="error_button" value="  Go Back  " onclick="history.back()" style="background:ECE;float:none; padding:5px"/>
+EOF;
+	}
+
+
+//------------------------------------------------//
+/////////////////////////////// заборонены нейм з пыдкресленням
+function addUserToProjectLink($u, $p){
+		$x=completeGetRequest();
+		echo<<<EOF
+			 <a name="_$u" 
+			 href="?action=add_user_to_project&user=$u&proj=$p{$x}#_$u" 
+			 class="kitten" 
+			 onclick="return confirm('Add user to project?')" />Add user to project</a>
+EOF;
+	}
+
+	function addProjectToUserLink($p, $u){
+		$x=completeGetRequest();
+		echo<<<EOF
+			 <a name="_$p" 
+			 href="?action=add_project_to_user&user=$u&proj=$p{$x}#_$p" 
+			 class="kitten" 
+			 onclick="return confirm('Add project to user?')" />Add project to user</a>
+EOF;
+	}
+	function removeUserFromProjectLink($u, $p){
+		$x=completeGetRequest();
+		echo<<<EOF
+			 <a name="_$u" 
+			 href="?action=remove_project_from_user&user=$u&proj=$p{$x}#_$u" 
+			 class="kitten" 
+			 onclick="return confirm('Remove user from project?')" />Remove user from project</a>
+EOF;
+	}
+	function removeProjectFromUserLink($p, $u){
+		$x=completeGetRequest();
+		echo<<<EOF
+			 <a name="_$p" 
+			 href="?action=remove_project_from_user&user=$u&proj=$p{$x}#_$p" 
+			 class="kitten" 
+			 onclick="return confirm('Remove project from user?')" />Remove project from user</a>
+EOF;
+	}
+	
+	function completeGetRequest(){
+		/*$str='';
+		foreach($_GET as $key=>$value)
+			$str.="&$key=$value";
+		return $str;*/
+		return '&id='.$_GET['id'];
+	}
+	function completePostRequest(){/*for autometic login/delogin redirection*//*so you shouldfollow this function with automatical javascriot that fill in the form fith all the fields have been selected!*/}
+//////////////////////////////	
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------//
+function bulk_message($msg){
+	if(!$msg) $msg = print_r($_REQUEST, true);
+	echo ";font-family:Tahoma;margin-top:150px\">$msg</h3><br/><br/>";
+	backButton();
+	echo"
+		<script>
+			document.getElementById('error_button').focus();
+		</script>";
+}
+
+function error_page($msg){
+ 	include A_VIEW."header.php";
+	echo "<h3 style=\"color:red";
+		bulk_message($msg);
+ 	include A_VIEW."footer.php";
+ 	exit;
+}
+
+function info_page($msg){
+ 	include A_VIEW."header.php";
+	echo "<h3 style=\"color:#999";
+			bulk_message($msg);
+ 	include A_VIEW."footer.php";
+ 	exit;
+}
+function error_msg($msg){
+	echo "<h3 style=\"color:red";
+			bulk_message($msg);		
+ 	include A_VIEW."footer.php";
+ 	exit;
+}
+
+function info_msg($msg){
+	echo "<h3 style=\"color:#999";
+			bulk_message($msg);
+ 	include A_VIEW."footer.php";
+ 	exit;
+}
+
+?>

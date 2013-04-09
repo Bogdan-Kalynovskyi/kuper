@@ -1,0 +1,150 @@
+#contest{
+	position:relative;
+	z-index:30;
+	padding:4px 10px;
+	width:800px;
+	margin:40px auto;
+	border:1px solid #dfdfff;
+	background:#F0FDF0;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+	
+}
+
+
+
+
+
+/* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 *//* 0 */
+.c_item {
+	display:block;
+	position:relative;
+	margin:40px;
+	font-size:16px;
+	
+	background:#FFFFC0;
+	padding:21px 35px;
+	border:2px solid #FFF0D0;
+	min-height:65px;
+
+	-moz-border-radius:4px;
+	border-radius: 4px;
+}
+.clr{
+	clear:both;
+}
+
+
+
+.icon {
+
+	-moz-border-radius:4px;
+	border-radius: 4px;	
+	
+	border:3px solid #e2e2e2;
+	display:block;
+	width:66px;/*120px*/	height:65px;/*120px*/
+	float:left;
+	position:absolute;
+	left:20px;
+	top:18px;
+}
+
+
+.date {
+	font-size:11px;
+	display:block;
+	float:left;
+	position:relative;
+
+	margin:0px 30px 0 -12px;
+	padding:3px 6px;
+	color:#FFF;
+	background:#6c1100;
+}
+
+
+.c_item var, .c_item dfn, .c_item a.clickable, div.fullsize{
+	margin-left:76px;
+	float:left;
+	display:block;
+	line-height:1.1;
+	width:100%;
+}
+
+.c_item var{
+	color:#300;
+	font-size:17px;
+	font-weight:bold;
+	font-style:normal;
+	margin-bottom:6px;
+	margin-top:-2px;
+}
+.c_item dfn{
+	color:#444;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+}
+
+
+
+	a.clickable{
+		margin-top:6px;
+		text-decoration:underline;
+		color:#21779B;
+		position:relative;
+		font-size:13px;
+	}
+	a.clickable:hover{
+		color:#d00;
+	}
+	a.clickable:active{
+		color:#f00;
+	}
+	a.clickable:focus{
+		color:#ccf;
+	}
+
+div.fullsize{
+display:none	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page_num {
+	padding:12px 0 14px 0;
+	margin:0 0 50px 0;
+	border-top:1px dashed;
+	border-bottom:1px dashed;
+	text-align:left;
+	line-height:220%;
+	font-family:Tahoma, Verdana;
+}
+.page_num strong, .page_num a{
+	padding:0 4px 0 14px;
+	margin:0;
+}
+.page_num a:hover{
+	background:#eee;
+}
+.page_num strong:hover{
+	background:#ccc;
+}
+.page_num span{
+	margin:0 0 0 42px;
+	padding:0;
+}
+var,dfn{width:500px !important;display:inline-block}
