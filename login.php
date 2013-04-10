@@ -1,5 +1,7 @@
 <?php
-	require_once dirname(__FILE__)."/bmc/main.php";
+  define('HOME_DIR', dirname(__FILE__));
+
+	require_once HOME_DIR."/bmc/main.php";
 
 {
 	

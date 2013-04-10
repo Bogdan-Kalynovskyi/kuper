@@ -8,9 +8,6 @@
 	
 	session_start();
 
-//check vresions
-//следует выносить часто обновляемые поля в отдельную таблицу.** TODO: DO NOT CONNECT TO DATABASE USING SUPERUSER WHEN JUST WORKING
-
 
 		header("Cache-Control: no-cache");
 		header("Expires: -1");
@@ -30,8 +27,6 @@ if(file_exists(HOME_DIR."/config.php"))
 <head>
 <meta charset=windows-1251>
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Cache-Control" content="no-cache">
-<link rel="shortcut icon" href="favicon.ico">
 <link rel=stylesheet href="css/bstyle.css">
 
 	<title> Oldo Tools - Easy Installation </title>
