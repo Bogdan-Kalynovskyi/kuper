@@ -3,6 +3,7 @@
 
 	define('IN_INSTALL', true);
 	define('IN_BMC', true);
+  define('HOME_DIR', dirname(__FILE__));
 	$CHRST='windows-1251';$dbchrst=$_POST['db_chrst']='cp1251';
 	
 	session_start();
@@ -138,7 +139,7 @@ if(empty($_POST['data_sent']) ) {
 
 
 		$db = false;
-		if(isset($my_db) && isset($my_host) && isset($my_user) && isset($my_pass) && isset($root)) {
+		if(isset($my_db) && isset($my_host) && isset($my_user) && isset($my_pass)) {
 			$conn = @mysql_connect($my_host, $my_user, $my_pass);
 			$db=@mysql_select_db($my_db, $conn);
 			@mysql_close();
@@ -362,17 +363,6 @@ echo "Verifying if project uploaded correctly...";
 	 }
 echo "Done <br>";
 
-	
-
-/******************************* determine root directory (auto) *************************************/
-echo "Determining path on server...";
-
-	$root = str_replace('\\', '/', HOME_DIR);	//fix for win. is that enough?
-	if( !is_dir($root) )
-		footer( "<h1>Error!</h1>Unable to determine the absolute path to current directory on server");
-
-echo "Done <br>";
-
 
 
 /**************************************************************************************************/
@@ -509,10 +499,6 @@ error_reporting(E_ALL);
 	// MySQL tables prefix
 \$my_charset='$dbchrst';
 
-
-//absolute path to root directory
-\$root='$root';
-
 //correct url to the root;
 \$MY_URL='$pageURL';
 
@@ -528,7 +514,7 @@ EOF;
 		  	footer("<big style=\"color:#900\">Can't write config file <b>".HOME_DIR."/config.php</b>!</big> permission not 666?");
 	fclose($w);
 	
-	@chmod($root."/vars/config.php", 0400);
+	@chmod(HOME_DIR."/vars/config.php", 0400);
 
 
 echo "Done <br><br><hr><br>";

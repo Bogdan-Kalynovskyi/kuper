@@ -20,9 +20,6 @@ $my_prefix='1';
 $my_charset='cp1251';
 
 
-//absolute path to root directory
-$root='/home/kuperfil/domains/kuperfild.ru/public_html/';
-
 //correct url to the root;
 $MY_URL='http://kuperfild.ru';
 

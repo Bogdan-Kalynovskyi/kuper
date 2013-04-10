@@ -5,7 +5,7 @@ require  HOME_DIR."/config.php";
 
 //==============================================================================
 if(empty($my_db)) die('Site is not properly installed! <a href="install.php">Click here to install</a>');
-/*if( file_exists("$root/install.php")) {OK � ����� ����1 1��1 ����� ��������1 �����1���.
+/*if( file_exists("HOME_DIR/install.php")) {OK � ����� ����1 1��1 ����� ��������1 �����1���.
 	����� ������������ ������ �1� ������������ ������
 	die("Please delete the file <strong>install.php</strong> from your root directory after installation. <br />
 	If you haven't installed the site yet, please proceed to the <a href=\"install.php\">installation process</a>.");
@@ -19,10 +19,9 @@ if(empty($my_db)) die('Site is not properly installed! <a href="install.php">Cli
 	session_start();
 
 
-	define("A_ROOT", $root.'/');
-	define("A_VIEW", $root.'/view/');
-	define("A_ADMIN", $root."/backend/");
-	define("A_HOME", $root."/bmc/");
+	define("A_VIEW", HOME_DIR.'/view/');
+	define("A_ADMIN", HOME_DIR."/backend/");
+	define("A_HOME", HOME_DIR."/bmc/");
 	define("PRF", 	 $my_prefix);//unset all config.php???
 	$MY_URL = $MY_URL;	//$CHRST
 
