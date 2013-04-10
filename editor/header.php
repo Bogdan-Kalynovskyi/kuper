@@ -4,17 +4,17 @@
 
 	//NonCachePlusEncoding();
 	
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $CHRST ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
 <title>���������� ������</title>
 
-<link rel="stylesheet" href="./editor/a.css" media="all" />
-<link rel="stylesheet" id="colors-css"  href="./editor/b.css" media="all" />
+<link rel=stylesheet href="./editor/a.css" media="all" />
+<link rel=stylesheet id="colors-css"  href="./editor/b.css" media="all" />
 <!--[if lte IE 7]>
-<link rel="stylesheet" id="ie-css"  href="editor/c.css" media="all" />
+<link rel=stylesheet id="ie-css"  href="editor/c.css" media="all" />
 <![endif]-->
 
 <script src="js/jslib.js"></script>

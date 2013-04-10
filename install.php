@@ -31,7 +31,7 @@ if(file_exists(HOME_DIR."/config.php"))
 <meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Cache-Control" content="no-cache">
 <link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" href="css/bstyle.css">
+<link rel=stylesheet href="css/bstyle.css">
 
 	<title> Oldo Tools - Easy Installation </title>
 

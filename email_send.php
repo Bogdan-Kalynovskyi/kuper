@@ -68,8 +68,8 @@ try{
 
 ?>
 
-<link rel="stylesheet" href="guestbook.css" />
-<link rel="stylesheet" href="email_send.css" />
+<link rel=stylesheet href="guestbook.css" />
+<link rel=stylesheet href="email_send.css" />
 
 
 <div id="xyz">

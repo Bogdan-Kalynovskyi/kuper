@@ -3,7 +3,7 @@
 		die("Access Denied!");	
 ?>
 
-<link rel="stylesheet" href="css/style.css" />
+<link rel=stylesheet href="css/style.css" />
 
 
 <div id="contest">

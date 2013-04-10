@@ -77,7 +77,7 @@
 ?>
 
 
-<link rel="stylesheet" href="guestbook.css" />
+<link rel=stylesheet href="guestbook.css" />
 
 
 <div id="overall">
