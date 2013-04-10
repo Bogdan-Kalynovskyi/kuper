@@ -3,17 +3,17 @@
 		die("Access Denied!");
 	
 	$name =  array('site_title','site_keywords','site_desc','email','phone','vk','lj',  'contacts', 'def_fon', 'inline');
-	$title = array('Заголовок сайта','Слова для поисковиков','Описание сайта','Email', 'Телефон', 'ВКонтакте', 'LiveJournal', 'Eще контакты &nbsp;<small><small>(Необязательно. &nbsp;Разрешен код HTML)</small></small> ', 'Фон по умолчанию &nbsp;<small><small>(Пусто для "матового стекла". &nbsp;Пробел - вообще без фона)</small></small>', 'Возможность редактирования при просмотре страницы &nbsp;<small><small>(Только если залогировался)</small></small> ');
+	$title = array('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ','пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ','пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ','Email', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'LiveJournal', 'EпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ &nbsp;<small><small>(пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. &nbsp;пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ HTML)</small></small> ', 'пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ &nbsp;<small><small>(пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ". &nbsp;пїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ)</small></small>', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ &nbsp;<small><small>(пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)</small></small> ');
 	$type = array(0,0,0,0,0,0,0,1,2,3);
 
 ?>
-<style type="text/css">
+<style>
 label{font-weight:bold}
 label a{font-weight:normal}
 small{font-weight:normal}
 </style>
 
-<h2> Дополнительная информация... </h2>
+<h2> пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ... </h2>
 	
 <form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
 <fieldset>
@@ -57,7 +57,7 @@ EOF;
 			<label>{$title[$i]}<br /> 
 				<img src="$x" width="50" height="50" id="_$n" alt="" />&nbsp; &nbsp;
 				URL <input type="text" id="$n" name="$n" value="$x" /> &nbsp;&nbsp;
-				или файл <input type="file" name="$n" id="__$n" /> &nbsp; <a href="#" onclick="clrnpt('$n');return false"><small>Убрать</small></a>
+				пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ <input type="file" name="$n" id="__$n" /> &nbsp; <a href="#" onclick="clrnpt('$n');return false"><small>пїЅпїЅпїЅпїЅпїЅпїЅ</small></a>
 			</label><br/><br/>
 EOF;
 			break;
@@ -67,15 +67,15 @@ EOF;
 	
 ?>
 <br/>
-	<input type="submit" value="      Сохранить      " style="color:#222" />&nbsp; &nbsp; &nbsp;
-	<input type="button" value="       Отмена       " onclick="document.location='user.php'" />
+	<input type="submit" value="      пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ      " style="color:#222" />&nbsp; &nbsp; &nbsp;
+	<input type="button" value="       пїЅпїЅпїЅпїЅпїЅпїЅ       " onclick="document.location='user.php'" />
 
 
 </fieldset>
 </form>
 
 
-<script type="text/javascript">
+<script>
 
 	lightbox();
 	

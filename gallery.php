@@ -20,9 +20,9 @@
 
 	<div id="wrapper">
 		<div id="fullsize">
-			<div id="imgprev" class="imgnav" title="Предыдущая"></div>
-			<div id="imglink" title="Во весь экран"></div>
-			<div id="imgnext" class="imgnav" title="Следующая"></div>
+			<div id="imgprev" class="imgnav" title="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"></div>
+			<div id="imglink" title="пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ"></div>
+			<div id="imgnext" class="imgnav" title="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"></div>
 			<div id="image"></div>
 			<div id="information"><h3></h3><p></p></div>
 		</div>
@@ -32,7 +32,7 @@
 				foreach($PHOTO as $ph){
 					$th = basename($ph['icon']);
 					echo "<img src=\"thumb/$th\" alt=\"\" title=\"{$ph['title']}\" />";
-				}//чи чекаэ онлоад вс1х й/негатив - приторможуэ onload/ але - 
+				}//пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ1пїЅ пїЅ/пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ onload/ пїЅпїЅпїЅ - 
 ?></div>
 			</div>
 		</div>
@@ -55,11 +55,11 @@
 
 
 
-<script type="text/javascript" src="comp.js"></script>
-<script src="FancyZoom.js" type="text/javascript"></script>
+<script src="comp.js"></script>
+<script src="FancyZoom.js"></script>
 
 
-<script type="text/javascript">
+<script>
 
 	var _7a = new Array(<?php echo count($PHOTO) ?>);
 		

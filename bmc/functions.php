@@ -221,7 +221,7 @@ if(!@header($str)) {
 //encoding
 $goto=htmlspecialchars($goto);//addslashes?
 echo <<<EOF
-<HTML><HEAD><meta name=”robots” content=”noindex”><script type="text/javascript">
+<HTML><HEAD><meta name=”robots” content=”noindex”><script>
 <!--
 document.location="$goto";
 //-->

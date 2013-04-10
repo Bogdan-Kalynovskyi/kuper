@@ -4,7 +4,7 @@
 	function NonCachePlusEncoding(){
 		global $CHRST;
 		
-		header("Content-Type: text/html; charset=$CHRST");	//н1яких лапок 1 н1яких проб1л1в?
+		header("Content-Type: text/html; charset=$CHRST");	//пїЅ1пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 1 пїЅ1пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ1пїЅ1пїЅ?
 
 		header('Expires: -1');//header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); 
@@ -22,7 +22,7 @@
 		echo '<div style="padding:3px;text-align:center">none</div>';
 	}
 	function backButton(){/*id = back_button??? title="back"*/echo<<<EOF
-		<input type="button" id="error_button" value="        O K        " onclick="document.location='./'" title="Назад" style="
+		<input type="button" id="error_button" value="        O K        " onclick="document.location='./'" title="пїЅпїЅпїЅпїЅпїЅ" style="
 		display:block;
 		margin:0 auto;
 		font-size:15px;
@@ -39,7 +39,7 @@
 		box-shadow:4px 3px 4px #ddf;
 		" />
 		
-		<script type="text/javascript">
+		<script>
 			//document.getElementById('error_button').focus();
 		</script>
 EOF;
@@ -58,7 +58,7 @@ EOF;
 
 
 //------------------------------------------------//
-/////////////////////////////// заборонены нейм з пыдкресленням
+/////////////////////////////// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 function addUserToProjectLink($u, $p){
 		$x=completeGetRequest();
 		echo<<<EOF
@@ -132,7 +132,7 @@ EOF;
 	backButton();
 }
 
-//error logging це круто
+//error logging пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
 function error_page($msg){
  	include A_VIEW."header_1.php";

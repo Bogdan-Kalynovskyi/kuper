@@ -1,4 +1,4 @@
-<style type="text/css" media="screen">
+<style media="screen">
 
 			#item{
 
@@ -48,10 +48,10 @@ border:3px solid #333
 		</div>
 		
 		
-<!--	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>-->
+<!--	<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>-->
 
-	<script src="js/jquery-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/3DEngine.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-1.2.1.min.js" charset="utf-8"></script>
+	<script src="js/3DEngine.js" charset="utf-8"></script>
 
-	<script src="js/Cube.js" type="text/javascript" charset="utf-8"></script>
-	<script src="data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/Cube.js" charset="utf-8"></script>
+	<script src="data.js" charset="utf-8"></script>

@@ -24,7 +24,7 @@
 	
 ?>
 
-<style type="text/css">
+<style>
 
 
 	#gal{
@@ -52,9 +52,9 @@
 <?php
 /*
 	if($om){
-		echo 'Список галерей ';
+		echo 'пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ';
 	}else{
-		echo 'Содржание галереи '.$one['title'];
+		echo 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ '.$one['title'];
 	}
 	*/
 ?>
@@ -67,7 +67,7 @@
 	
 ?>
 
-<style type="text/css">
+<style>
 
 <?php
 	if($om){
@@ -186,9 +186,9 @@ EOF;
 
 
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 
-<script type="text/javascript">
+<script>
 
     jQuery.noConflict();
 	var mol = $('molbert');

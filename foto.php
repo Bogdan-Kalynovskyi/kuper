@@ -28,7 +28,7 @@
 		$om = false;
 		$one = $db->query("SELECT * FROM `".PRF."posts` WHERE id=".a($_GET['id']), false);
 		$data = $db->query("SELECT * FROM `".PRF."photo` WHERE post=".a($_GET['id'])." ORDER BY por ASC", true, true);
-		if(!$data)die('<h1><br/><br/><br/>Галерея пуста</h1>'.backbutton());
+		if(!$data)die('<h1><br/><br/><br/>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ</h1>'.backbutton());
 		if($one['blog']==5)$sex=true;
 	}
 
@@ -38,7 +38,7 @@
 	
 ?>
 
-<style type="text/css">
+<style>
 
 	#fon{ opacity:0.5}	
 
@@ -316,9 +316,9 @@ EOF;
 <?php
 
 	if($om){
-		echo '<small><br/></small><h1>Список галерей</h1>';
+		echo '<small><br/></small><h1>пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</h1>';
 	}elseif(isset($one['title']) && $one['title']){
-		echo '<h1 onclick="window.location.href=\'<?php back_link_func() ?>\'"><small>Галерея </small><strong><big> &nbsp; "'.$one['title'].'"</big></strong></h1>';
+		echo '<h1 onclick="window.location.href=\'<?php back_link_func() ?>\'"><small>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ </small><strong><big> &nbsp; "'.$one['title'].'"</big></strong></h1>';
 	}
 	
 
@@ -390,11 +390,11 @@ EOF;
 
 <?php if(!$om){ ?>
 	<?php if(count($data)>7){ ?>
-	<a href="#nav" class="to_bottom" onclick="window.scroll(0,0);return false">В начало</a><br/><br/><br/>
+	<a href="#nav" class="to_bottom" onclick="window.scroll(0,0);return false">пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</a><br/><br/><br/>
 	<?php } ?>
-	<a href="<?php back_link_func() ?>" class="to_bottom">К списку галерей</a><br/><br/><br/>
+	<a href="<?php back_link_func() ?>" class="to_bottom">пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</a><br/><br/><br/>
 	
-<script type="text/javascript" src="reflection.js"></script>
+<script src="reflection.js"></script>
 	
 <?php } ?>
 
@@ -405,8 +405,8 @@ EOF;
 <?php if(!$om && $sex){ ?>
 			
 
-<script src="FancyZoom.js" type="text/javascript"></script>
-<script type="text/javascript">
+<script src="FancyZoom.js"></script>
+<script>
 	addLoadEvent(setupZoom);
 	includeFade = true;
 </script>
@@ -419,7 +419,7 @@ EOF;
 	include A_ROOT."gallery.php"; ?>
 
 
-<script type="text/javascript">	
+<script>
 
 addLoadEvent(function(){
  
@@ -460,7 +460,7 @@ addLoadEvent(function(){
 
 <?php }elseif($om){ ?>
 	
-<script type="text/javascript">	
+<script>
 	addLoadEvent(function(){
     	var imgs=$$('img'),not1=$('zyx'),not2=$('fon'), i=0, l=imgs.length,w,x;
     	for(i; i<l; i++){

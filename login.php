@@ -1,5 +1,5 @@
 <?php
-	require_once dirname(__FILE__)."/bmc/main.php";// ARE YOU READY FOR SUCH SHIT?
+	require_once dirname(__FILE__)."/bmc/main.php";
 
 {
 	

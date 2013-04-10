@@ -1,8 +1,12 @@
-<?php header("Content-Type: text/html; charset=Windows-1251");
+<?php
+
+  header("Content-Type: text/html; charset=Windows-1251");
+
+  define('HOME_DIR', dirname(__FILE__));
 
 
 
-	require_once   dirname(__FILE__).'/bmc/main.php';
+	require_once   HOME_DIR.'/bmc/main.php';
 
 	if(IS_ADMIN) include_once A_HOME."fun_admin.php";
 	
@@ -44,7 +48,7 @@
 	
 	
 	if(!defined("BLOG")){
-			error_msg( 'Такой страниы не существует' );//bmc_go(-1);
+			error_msg( 'пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ' );//bmc_go(-1);
 	}
 
 
@@ -89,7 +93,7 @@
 					$POOO = $db->query("SELECT * FROM `".PRF."posts` WHERE id=".a(@$_GET['id']), false);
 				}		
 				if(!$POOO){/*error*/}
-				echo '<img src="'.imgsrc($bmc_vars['zastavka']).'" id="loading" alt="Галерея художника" />';
+				echo '<img src="'.imgsrc($bmc_vars['zastavka']).'" id="loading" alt="пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" />';
 				include A_ROOT."gallery.php";
 			break;
 				

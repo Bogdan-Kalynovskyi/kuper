@@ -1,5 +1,5 @@
 <?php
-	include dirname(__FILE__).'/bmc/main.php';
+	include HOME_DIR.'/bmc/main.php';
 //	if(!defined('IN_BMC')) 
 //		die("Access Denied!");
 
@@ -75,13 +75,13 @@
 	//время показывается только мск
 
 ?>
-<style type="text/css">
+<style>
 #fon{
 	position:fixed;
 }
 </style>
 
-<style type="text/css">
+<style>
 
 	#overall{
 		margin:20px auto;
@@ -449,8 +449,8 @@ EOF;
 
 
 
-<script type="text/javascript" src="js/jslib.js"></script>
-<script type="text/javascript">
+<script src="js/jslib.js"></script>
+<script>
 	
 	function clrnpt1(id){
 		$('aaa').style.visibility = 'hidden';

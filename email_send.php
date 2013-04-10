@@ -4,16 +4,16 @@
 
 	include_once A_HOME."fun_login.php";
 //todo preview
-//todo ipban(очень потом)
+//todo ipban(пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ)
 	$message = '';
 	
 	if(isset($_POST[USER_HASH]) && $_POST[USER_HASH]=='2'){
 		if(bad_cap(true)){
-			$message = "Введите правильно код на картинке";
+			$message = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			$ok = false;
 			
 		}elseif(!trim(@$_POST['text'])){
-			$message = "Вы вероятно забыли ввести сообщение";
+			$message = "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			$ok = false;
 						
 		}else{
@@ -30,27 +30,27 @@ try{
 			$mail->IsHTML(true); 
 			$Reply = isemail($_POST['email'])?"<a href=\"mailto:{$_POST['email']}\">{$_POST['email']}</a>":$_POST['email'];
 			
-			//..$mail->SetFrom($Reply, 'Письмо с kuperfild.ru');
+			//..$mail->SetFrom($Reply, 'пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ kuperfild.ru');
 			$mail->AddAddress($bmc_vars['email']);
-			$mail->Subject    = "Письмо с kuperfild.ru! Пишет  {$_POST['name']}";
+			$mail->Subject    = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ kuperfild.ru! пїЅпїЅпїЅпїЅпїЅ  {$_POST['name']}";
 			$mail->FromName = 'kuperfild.ru';
 			$mail->From = 'noreply@kuperfild.ru';
 						
 			$msg = "
-			Человек представился как <big><b style=\"margin-left:8px;color:#755\">{$_POST['name']}</b></big>.
-			<br/>Оставил свои координаты: <big style=\"margin-left:8px\">$Reply</big> 
+			пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ <big><b style=\"margin-left:8px;color:#755\">{$_POST['name']}</b></big>.
+			<br/>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: <big style=\"margin-left:8px\">$Reply</big> 
 			<br/>
-			<br/>---------------------- Написал: ----------------------- <br/> <pre style=\"white-space:pre-wrap;	font-size:14px\">"; // optional, comment out and test
+			<br/>---------------------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: ----------------------- <br/> <pre style=\"white-space:pre-wrap;	font-size:14px\">"; // optional, comment out and test
 			
 			$mail->AltBody    = strip_tags($msg).$_POST['text'];
 			$mail->MsgHTML($msg.$_POST['text']);
 			
 			if($mail->Send()) {
-					$message = "Письмо успешно отправлено!";
+					$message = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!";
 					$ok = true;
 					unset($_POST);
 			} else {
-					$message = "Какая-то бага =(. Попробуйте еще раз!";
+					$message = "пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅ =(. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ!";
 					$ok = false;
 			}
 } catch (phpmailerException $e) {
@@ -68,13 +68,13 @@ try{
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="guestbook.css" />
-<link rel="stylesheet" type="text/css" href="email_send.css" />
+<link rel="stylesheet" href="guestbook.css" />
+<link rel="stylesheet" href="email_send.css" />
 
 
 <div id="xyz">
 	
-<h1>Контакты</h1>
+<h1>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</h1>
 
 <div id="sex">
 	<?php
@@ -86,10 +86,10 @@ try{
 		return $s;
 	}
 	
-        echo '<a target="_blank" href="'.$bmc_vars['vk'].'"><img src="images/vk.png" alt="ВКонтакте" />'.email_pr($bmc_vars['vk']).'</a>';
-		echo '<a target="_blank" href="'.$bmc_vars['lj'].'"><img src="images/lj.png" alt="Уютная ЖЖ" />'.email_pr($bmc_vars['lj']).'</a>';
-		echo '<a target="_blank" href="mailto:'.$bmc_vars['email'].'"><img src="images/email.png" alt="Е-мейл" />'.email_pr($bmc_vars['email']).'</a>';
-		echo '<a target="_blank" href="callto:'.$bmc_vars['phone'].'"><img src="images/phone.png" alt="Телефон" />'.email_pr($bmc_vars['phone']).'</a>';
+        echo '<a target="_blank" href="'.$bmc_vars['vk'].'"><img src="images/vk.png" alt="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" />'.email_pr($bmc_vars['vk']).'</a>';
+		echo '<a target="_blank" href="'.$bmc_vars['lj'].'"><img src="images/lj.png" alt="пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ" />'.email_pr($bmc_vars['lj']).'</a>';
+		echo '<a target="_blank" href="mailto:'.$bmc_vars['email'].'"><img src="images/email.png" alt="пїЅ-пїЅпїЅпїЅпїЅ" />'.email_pr($bmc_vars['email']).'</a>';
+		echo '<a target="_blank" href="callto:'.$bmc_vars['phone'].'"><img src="images/phone.png" alt="пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" />'.email_pr($bmc_vars['phone']).'</a>';
     ?>
 </div>
 
@@ -117,7 +117,7 @@ try{
 
 
 <h3 style="padding:17px 0 6px 0;color:#222">
-	Написать мне письмо</h3><br/>
+	пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</h3><br/>
 
 
 <br/>
@@ -133,15 +133,15 @@ try{
 	<input type="hidden" name="<?php echo USER_HASH; ?>" value="2" />
 
 	
-	<label>Представтесь пожалуста
+	<label>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		<input type="text" name="name" value="<?php echo htmlspecialchars(@$_POST['name']) ?>" tabindex="10" />
 	</label>
 
-	<label>Как Вас найти?&nbsp; <span>(email, блог&#133;)</span>
+	<label>пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ?&nbsp; <span>(email, пїЅпїЅпїЅпїЅ&#133;)</span>
 		<input type="text" name="email" value="<?php echo htmlspecialchars(@$_POST['email']) ?>" tabindex="20" />
 	</label>
 
-	<label style="height:120px">Текст сообщения <span style="color:red">*</span>
+	<label style="height:120px">пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <span style="color:red">*</span>
 		<textarea name="text" cols="80" rows="4" tabindex="30"><?php echo htmlspecialchars(@$_POST['text']) ?></textarea>
 	</label>
 	
@@ -150,7 +150,7 @@ try{
 
 	<br/>
 	<label>
-		<input type="submit"  style="letter-spacing:1px" value="         Отправить         " tabindex="100" />
+		<input type="submit"  style="letter-spacing:1px" value="         пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ         " tabindex="100" />
 	</label><br/><br/>
 		
 </fieldset>
@@ -160,12 +160,12 @@ try{
 
 
 
-<script type="text/javascript" src="js/jslib.js"></script>
-<script type="text/javascript">
+<script src="js/jslib.js"></script>
+<script>
 
    function verify_form(){
    		if(! document.getElementsByName('text')[0].value ){
-   			alert('Напишите хоть что нибудь в тексте сообщеиня');
+   			alert('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ');
    			return false;
    		}
    		return true;

@@ -1,5 +1,5 @@
 <?php
-	require dirname(__FILE__)."/main.php";
+	require HOME_DIR."/main.php";
 // for unlogged user or user having nothing spetial to do
 
 

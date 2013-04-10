@@ -23,16 +23,16 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
     <title>Administration Login</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8;charset=utf-8" />
 	<meta http-equiv="Cache-Control" content="no-cache" />
-    <link rel="stylesheet" href="img/global00.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="img/master00.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="img/global00.css" media="screen" />
+    <link rel="stylesheet" href="img/master00.css" media="screen" />
 	<link rel="icon" type="image/gif" href="img/favicon.gif" />
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.gif" />    
-	<script type="text/javascript" src="js/jscapslock.js"></script>
+	<script src="js/jscapslock.js"></script>
 </head>
 
 <body class="login">
     <!--[if lt IE 7]>
-    <link rel="stylesheet" href="css/ie6.css" type="text/css" media="screen" />    
+    <link rel="stylesheet" href="css/ie6.css" media="screen" />
     <![endif]-->	
     <form id="Form1" name="Form1" accept-charset="<?php echo $lang['ENCODING'] ?>"  method="post"  action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" onsubmit="return validate();">
 
@@ -84,7 +84,7 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
 
     </form>
 
-    <script language="javascript" type="text/javascript">
+    <script language="javascript">
             if (document.getElementById('txtLogin'))
 			    document.getElementById('txtLogin').focus();
 

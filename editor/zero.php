@@ -7,7 +7,7 @@
 ?>
 
 
-<style type="text/css">
+<style>
 
 .baba{
 	display:inline-block;padding-right:36px;padding-left:4px;
@@ -63,7 +63,7 @@ foreach($BLOGS as $key => $b){
 		continue;		
  	}
  	
-	echo "<big style=\"display:inline-block;padding:6px 0;line-height:1.7em\"><a style=\"color:black;text-decoration:none;font-weight:bold\" href=\"./?blog=$key\" title=\"К странице\">$b</a></big><br/>\n";
+	echo "<big style=\"display:inline-block;padding:6px 0;line-height:1.7em\"><a style=\"color:black;text-decoration:none;font-weight:bold\" href=\"./?blog=$key\" title=\"пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\">$b</a></big><br/>\n";
 
 	$r = $db->query("SELECT * FROM `".PRF."posts` WHERE blog=$key ORDER BY por ASC");
 
@@ -76,24 +76,24 @@ foreach($BLOGS as $key => $b){
 			$i['title']=substr($i['title'],0,50).'&#133;';
 
 		$gala = ($i['gallery'])?
-			"<a href=\"?gallery={$i['id']}\" class=\"_eye_\" title=\"к галерее\"><img src=\"img/gallery.gif\" alt=\"&rarr;\" /></a>&nbsp;"	
+			"<a href=\"?gallery={$i['id']}\" class=\"_eye_\" title=\"пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\"><img src=\"img/gallery.gif\" alt=\"&rarr;\" /></a>&nbsp;"	
 			:'<span style="display:inline-block;width:30px"></span>';
 
 		echo "
 		<div class=\"baba\"$floyd>
 		
-			 &nbsp; &nbsp; <a href=\"./?id={$i['id']}\" class=\"_eye_\" title=\"просмотреть\"><img src=\"img/eye_small.gif\" alt=\"&bull;\" /></a>
+			 &nbsp; &nbsp; <a href=\"./?id={$i['id']}\" class=\"_eye_\" title=\"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\"><img src=\"img/eye_small.gif\" alt=\"&bull;\" /></a>
 		
 			 $gala
 			 
 			<a href=\"?id={$i['id']}\" class=\"list_a\" ".
-				(($i['draft'])?'style="opacity:0.3" title="это черновик!"':'title="редактировать"').">".
+				(($i['draft'])?'style="opacity:0.3" title="пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!"':'title="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"').">".
 		
-			(($i['title'])?$i['title']:'( без заголовка )')."</a>
+			(($i['title'])?$i['title']:'( пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ )')."</a>
 
-				 <a href=\"?up={$i['id']}\" title=\"вверх\"><img src=\"img/up.png\" alt=\"вверх\" /></a> 
-				 <a href=\"?down={$i['id']}\" title=\"вниз\"><img src=\"img/down.png\" alt=\"вниз\" /></a>
-				 <a href=\"?del={$i['id']}\" title=\"стереть\" onclick=\"if( confirm('  !!! Внимание !!! \\n\\n Уничтожить эту статтю?\\n\\n  &ldquo;".(($i['title'])?tojs($i['title']):'(пустая)')."&rdquo;')) document.location='?del={$i['id']}'; return false\"><img src=\"img/del.png\" alt=\"стереть\" /></a>
+				 <a href=\"?up={$i['id']}\" title=\"пїЅпїЅпїЅпїЅпїЅ\"><img src=\"img/up.png\" alt=\"пїЅпїЅпїЅпїЅпїЅ\" /></a> 
+				 <a href=\"?down={$i['id']}\" title=\"пїЅпїЅпїЅпїЅ\"><img src=\"img/down.png\" alt=\"пїЅпїЅпїЅпїЅ\" /></a>
+				 <a href=\"?del={$i['id']}\" title=\"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\" onclick=\"if( confirm('  !!! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ !!! \\n\\n пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ?\\n\\n  &ldquo;".(($i['title'])?tojs($i['title']):'(пїЅпїЅпїЅпїЅпїЅпїЅ)')."&rdquo;')) document.location='?del={$i['id']}'; return false\"><img src=\"img/del.png\" alt=\"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\" /></a>
 		</div>
 	";
 	}
@@ -107,5 +107,5 @@ foreach($BLOGS as $key => $b){
 ?>
 
 <script>
-try{$('pink_floyd').focus()}catch(e){}//todo випадайка//scroll to
+try{$('pink_floyd').focus()}catch(e){}//todo пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ//scroll to
 </script>

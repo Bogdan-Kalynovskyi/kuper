@@ -127,7 +127,7 @@ if(isset($_GET['_account_'])){
 		
 		
  	
-		<script type="text/javascript">//make it nicer, change username, email....
+		<script>//make it nicer, change username, email....
 			function isEmail(str){
 				str = str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
   				return (/^([a-z0-9_\-]+\.)*[a-z0-9_\-]+@([a-z0-9][a-z0-9_\-]*\.)+[a-z]{2,4}$/i).test(str);
@@ -236,7 +236,7 @@ function yobtvoyumat($inside, $usr){
 ?>
 
  	
-<script type="text/javascript">//make it nicer
+<script>//make it nicer
 		function check_form(){
 			<?php if($inside){ ?>
 			if(document.install.old_pass.value.length <3){
@@ -246,12 +246,12 @@ function yobtvoyumat($inside, $usr){
             }
             <?php } ?>
 			if(document.install.new_pass1.value.length < 6 ){
-				alert("Пароль слишком короткий. Минимум 6 символов!");
+				alert("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 6 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
                 document.install.new_pass1.focus();
    				return false;
             }
 			if(document.install.new_pass.value != document.install.new_pass1.value ){
-				alert("Пароли не совпадают!");
+				alert("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
                 document.install.new_pass1.focus();
    				return false;
             }
@@ -263,19 +263,19 @@ function yobtvoyumat($inside, $usr){
 <form accept-charset="<?php echo $CHRST ?>"  method="post" action="<?php if($inside){ ?>?_account_=change_pass<?php }else{ echo str_replace('&whattodo=get&', '&whattodo=set&', $_SERVER['REQUEST_URI']); } ?>" name="install" onsubmit="return check_form()">	
 <fieldset id="__key">
 	
-	<strong>Сменить пароль</strong><br/><br/>
+	<strong>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</strong><br/><br/>
 	
-	<u>Логин</u> <?php echo $usr['login']; ?><br/><br/>
+	<u>пїЅпїЅпїЅпїЅпїЅ</u> <?php echo $usr['login']; ?><br/><br/>
 			<?php if($inside){ ?>
- 	<u>Старый пароль</u> <input type="password" name="old_pass" id="autofoc" value="" /><br/>
+ 	<u>пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</u> <input type="password" name="old_pass" id="autofoc" value="" /><br/>
              <?php } ?>
-	<u>Новый пароль</u> <input type="password" name="new_pass" /><br/>
- 	<u>Новый пароль еще раз</u> <input type="password" name="new_pass1" /><br/><br/><br/>
+	<u>пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</u> <input type="password" name="new_pass" /><br/>
+ 	<u>пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ</u> <input type="password" name="new_pass1" /><br/><br/><br/>
 
- 	<u><input type="submit"  value="     Сменить     "/></u> <input type="button" name="back" onclick="history.go(-1)" value="  Отмена  " /><br/>
+ 	<u><input type="submit"  value="     пїЅпїЅпїЅпїЅпїЅпїЅпїЅ     "/></u> <input type="button" name="back" onclick="history.go(-1)" value="  пїЅпїЅпїЅпїЅпїЅпїЅ  " /><br/>
 
 			<?php if($inside){ ?>
-<script type="text/javascript">try{$('autofoc').value='';$('autofoc').focus();}catch(e){}</script> 
+<script>try{$('autofoc').value='';$('autofoc').focus();}catch(e){}</script>
              <?php } ?>
 
 
@@ -297,16 +297,16 @@ function yopernujteatr($inside, $usr){
 global $db;
 	
 	
-	if($inside && ($usr['pass'] != bmc_hash($_POST['old_pass'])))error_page('Неверно указан старый пароль');
-	if(strlen($_POST['new_pass']) <6)error_page('Слишком короткий новый пароль. Минимум - 6 символов');
-	if($_POST['new_pass'] != $_POST['new_pass1'])error_page('Новые пароли не совпадают');
+	if($inside && ($usr['pass'] != bmc_hash($_POST['old_pass'])))error_page('пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ');
+	if(strlen($_POST['new_pass']) <6)error_page('пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - 6 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ');
+	if($_POST['new_pass'] != $_POST['new_pass1'])error_page('пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ');
 	{
 
 		$succ=$db->query("UPDATE `".PRF."users` SET pass=".a(bmc_hash($_POST['new_pass'], $usr['algo'], $usr['salt'])).", additional_security_feature=0 WHERE id=".a($usr['id']));
 		if($succ)$db->query("DELETE FROM `".PRF."login` WHERE user=".a($usr['id']));
 
 		if($succ)
-			good_page("Пароль успешно изменен!");
+			good_page("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
 		else
 			error_page("Pasword change failed!");
 		

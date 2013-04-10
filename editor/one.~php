@@ -144,9 +144,9 @@
 
 
 
-<script type="text/javascript" src="js/jslib.js"></script>
-<script type="text/javascript" src="scripts/wysiwyg.js"></script>
-<script type="text/javascript">
+<script src="js/jslib.js"></script>
+<script src="scripts/wysiwyg.js"></script>
+<script>
 
 	changer();
 	

@@ -2,7 +2,7 @@
 	if(!defined('IN_BMC')) 
 		die("Access Denied!");
 ?>
-<style type="text/css">
+<style>
 #fon{
 	position:fixed;
 }
@@ -11,7 +11,7 @@
 <br><br>
 <br>
 
-<h1>Контакты</h1>
+<h1>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</h1>
 <br>
 <br>
 <br>
@@ -20,7 +20,7 @@
 					
 		
 				echo "
-				<big>Телефон <a href=\"callto:{$bmc_vars['phone']}\">{$bmc_vars['phone']}</a><br/><br/>
+				<big>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ <a href=\"callto:{$bmc_vars['phone']}\">{$bmc_vars['phone']}</a><br/><br/>
 				<big>Email <a href=\"email:{$bmc_vars['email']}\">{$bmc_vars['email']}</a><br/><br/>
 				{$bmc_vars['contacts']}</big>";
 				

@@ -19,27 +19,23 @@
 		header('Content-Type: text/html; charset=windows-1251');
 
 
-if(file_exists(dirname(__FILE__)."/vars/config.php"))
-	include dirname(__FILE__)."/vars/config.php"; 	// EXISTS AND EMPTY IN INSTALL !!
+if(file_exists(HOME_DIR."/config.php"))
+	include HOME_DIR."/config.php"; 	// EXISTS AND EMPTY IN INSTALL !!
 
 
 //bulletproof header
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+?><!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<meta name="robots" content="noindex,nofollow" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<meta http-equiv="Cache-Control" content="no-cache"/>
-<meta http-equiv="Content-Language" value="en" />
-	<link rel="icon" type="image/gif" href="img/favicon.gif" />
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="apple-touch-icon.png" type="image/png" />
-<link rel="stylesheet" href="css/bstyle.css" type="text/css" media="all" />
+<meta charset=windows-1251>
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="css/bstyle.css">
 
 	<title> Oldo Tools - Easy Installation </title>
 
-	<script type="text/javascript">//make it nicer
+	<script>//make it nicer
 	<!--
 		function db_checker(){//todo
 				var width = 400;
@@ -125,7 +121,7 @@ if(file_exists(dirname(__FILE__)."/vars/config.php"))
 
 <?php   
 
-//<br/><h1>You do not have PHP running on your webserver!</h1><h2>Sorry this site requires PHP5, MySQL5 and preferably Apache running on your hosting</h2> <!--
+//<br><h1>You do not have PHP running on your webserver!</h1><h2>Sorry this site requires PHP5, MySQL5 and preferably Apache running on your hosting</h2> <!--
 
 
 //test for Apache MySql, other tests...
@@ -161,25 +157,25 @@ if(empty($_POST['data_sent']) ) {
 
 
 <form accept-charset="<?php echo $CHRST ?>" method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" name="install" onsubmit="return check_form()">
-<input type="hidden" name="data_sent" value="true" />
-<input type="hidden" name="c_url" />
-MySQL server : <input type="text" name="db_host" class="low" value="<?php if(isset($my_host)) echo $my_host; else echo 'localhost';?>" /><br />
-MySQL database : <input type="text" name="db_name" class="low" value="<?php if(isset($my_db)) echo $my_db; else echo 'demo'; ?>"/><br />
-MySQL tables prefix : <input type="text" class="low" name="db_prefix" value="<?php if(isset($my_prefix)) echo $my_prefix; else echo '<auto>';?>" onblur="if(this.value==' ')this.value='<auto>';"onfocus="if(this.value=='<auto>')this.value=' ';" /><br /><br />
+<input type="hidden" name="data_sent" value="true">
+<input type="hidden" name="c_url">
+MySQL server : <input type="text" name="db_host" class="low" value="<?php if(isset($my_host)) echo $my_host; else echo 'localhost';?>"><br>
+MySQL database : <input type="text" name="db_name" class="low" value="<?php if(isset($my_db)) echo $my_db; else echo 'demo'; ?>"><br>
+MySQL tables prefix : <input type="text" class="low" name="db_prefix" value="<?php if(isset($my_prefix)) echo $my_prefix; else echo '<auto>';?>" onblur="if(this.value==' ')this.value='<auto>';"onfocus="if(this.value=='<auto>')this.value=' ';"><br><br>
 
 
-MySQL user : <input type="text" name="db_user" value="<?php if(isset($my_user)) echo $my_user; ?>"/><br />
-MySQL password : <input type="password" name="db_pass" value="<?php if(isset($my_pass)) echo $my_pass; ?>" /><br />
-<input type="button" onclick="db_checker()" value=" Check MySQL settings " id="bt1" /><br /><br />
+MySQL user : <input type="text" name="db_user" value="<?php if(isset($my_user)) echo $my_user; ?>"><br>
+MySQL password : <input type="password" name="db_pass" value="<?php if(isset($my_pass)) echo $my_pass; ?>"><br>
+<input type="button" onclick="db_checker()" value=" Check MySQL settings " id="bt1"><br><br>
 
 
-Create a new database? &nbsp; <input type="checkbox" name="new_db" <?php if(!$db)echo 'checked="checked"'; ?> /><br />
-Overwrite tables if exist? &nbsp; <input type="checkbox" name="ow" <?php if(isset($my_db))echo 'checked="checked"'; ?> /><br /><br />
+Create a new database? &nbsp; <input type="checkbox" name="new_db" <?php if(!$db)echo 'checked="checked"'; ?>><br>
+Overwrite tables if exist? &nbsp; <input type="checkbox" name="ow" <?php if(isset($my_db))echo 'checked="checked"'; ?>><br><br>
 
 
-Admin Username : <input type="text" name="admin_id"/><br />
-Create password : <input type="password" name="admin_pass"/><br />
-Retype password : <input type="password" name="admin_pass2"/><br /><br />
+Admin Username : <input type="text" name="admin_id"><br>
+Create password : <input type="password" name="admin_pass"><br>
+Retype password : <input type="password" name="admin_pass2"><br><br>
 
 
 <?php
@@ -188,7 +184,7 @@ Retype password : <input type="password" name="admin_pass2"/><br /><br />
 	if($db) {
 
 		echo '
-		<span style="color:#490000">Warning! Site seems to be already installed. <b>Proceeding can destroy current data!</b></span><br/>
+		<span style="color:#490000">Warning! Site seems to be already installed. <b>Proceeding can destroy current data!</b></span><br>
 		<a href="index.php" target="_blank" style="text-decoration:underline;font-size:109%;padding-right:1px;">&nbsp;View existing installation&nbsp;</a>';
 
 	}else{
@@ -197,14 +193,14 @@ Retype password : <input type="password" name="admin_pass2"/><br /><br />
 	
 	// MICROSOFT IIS FUCKS AWAY
 ?>
-<br/><br/>
+<br><br>
 <input type="submit" value= "  <<<  Continue  >>>  " id="bt2">
 </form>
 
-<br /><a href="mailto:mybodya@gmail.com">&copy; Oldo Production, 2009</a>
+<br><a href="mailto:mybodya@gmail.com">&copy; Oldo Production, 2009</a>
 
 
-<script type="text/javascript">
+<script>
 	try{document.install.c_url.value=document.location;}catch(e){}
 	<?php if($db) echo'try{document.install.admin_id.focus();}catch(e){}'; ?>
 </script>
@@ -214,7 +210,7 @@ Retype password : <input type="password" name="admin_pass2"/><br /><br />
 
 <?php
 footer(); 
-		echo "<br/><i style=\"color:#838\">You have: PHP".phpversion().phpinfo().print_r($_SERVER)."</i>";// mysql_get_server_info() //GD
+		echo "<br><i style=\"color:#838\">You have: PHP".phpversion().phpinfo().print_r($_SERVER)."</i>";// mysql_get_server_info() //GD
 exit();
 }
 ?>
@@ -300,7 +296,7 @@ echo "Checking form data...  ";
 		$err[] = ( "<h1>Ooops!</h1>\nPlease enter your MySQL database name");
 	if(empty($_POST['db_user'])) 
 		$err[] = ( "<h1>Ooops!</h1>\nPlease enter your MySQL user name");
-	if(!isset($_POST['db_pass']) || strlen($_POST['db_pass']) < 5)echo '<b><br/><small style="color:#900">Using DB pasword shorter than 5 symbols is security risk!</small></b><br/>...';
+	if(!isset($_POST['db_pass']) || strlen($_POST['db_pass']) < 5)echo '<b><br><small style="color:#900">Using DB pasword shorter than 5 symbols is security risk!</small></b><br>...';
 //<auto...>
 	if(empty($_POST['admin_id']) || strlen($_POST['admin_id']) < 3 || strlen($_POST['admin_id']) > 20) 
 		$err[] = ( "<h1>Ooops!</h1>\nAdmin username must have from 3 to 20 symbols");
@@ -310,7 +306,7 @@ echo "Checking form data...  ";
 		$err[] = ( "<h1>Ooops!</h1>\nAdmin passwords do not match!");
 		
 
-	if($err)footer(implode('<br/>', $err));
+	if($err)footer(implode('<br>', $err));
 	 
 
 // finish verifying form, get clean variables
@@ -318,7 +314,7 @@ echo "Checking form data...  ";
 	$my_db= $_POST['db_name'];	$my_prefix 	= $_POST['db_prefix']; //$my_extra connection
 
 
-echo "Done <br />";
+echo "Done <br>";
 
 
 
@@ -338,14 +334,14 @@ echo "Verifying if project uploaded correctly...";
 
 	if(!is_writable("upload/") || !is_writable("thumbs/") || !is_writable("pics/"))
 	{		
-		echo "<br/>Ooops. Not writable <b>upload/</b>, <b>pics/</b> and <b>thumbs/</b> folders. Fixing...";
+		echo "<br>Ooops. Not writable <b>upload/</b>, <b>pics/</b> and <b>thumbs/</b> folders. Fixing...";
 		@chmod("upload/", 0644); @chmod("thumbs/", 0644); @chmod("pics/", 0644);
 		if(!is_writable("upload/") || !is_writable("thumbs/") || !is_writable("pics/"))
 			{@chmod("upload/", 0666); @chmod("thumbs/", 0666); @chmod("pics/", 0666);}
 		if(!is_writable("upload/") || !is_writable("thumbs/") || !is_writable("pics/"))
 			footer("Failed! Please go to Cpanel or FTP client and make folders <b>upload/</b>, <b>pics/</b> and <b>thumbs/</b> writable, permission 644 (or 666 if this doesn't help)");
 
-		echo "Fixed!<br/>";
+		echo "Fixed!<br>";
 		
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////	
@@ -353,7 +349,7 @@ echo "Verifying if project uploaded correctly...";
 	 
 	  if(!is_writable("vars/config.php")/* || !is_writable("vars/session.php")*/)
 	  {
-			echo "<br/>Ooops. Files inside <b>vars/</b> <br/>directory are not writable. Fixing... <br/>" ;
+			echo "<br>Ooops. Files inside <b>vars/</b> <br>directory are not writable. Fixing... <br>" ;
 			@chmod("vars/", 0600); @chmod("vars/config.php", 0600);/*!@chmod("vars/session.php", 0600)*/
 			if(!is_writable("vars/config.php"))
 				{@chmod("vars/", 0600); @chmod("vars/config.php", 0600);}
@@ -361,21 +357,21 @@ echo "Verifying if project uploaded correctly...";
 		/* phpbb chmod */	
 				footer("Failed! Please go to your Cpanel or FTP client and make all files inside <b>vars/</b> directory writable, permission 600 (or 666 if this doesn't help)");
 			
-		echo "Fixed!<br/>";//if nothing helps give them file by ftp, let them write it and skip thias step
+		echo "Fixed!<br>";//if nothing helps give them file by ftp, let them write it and skip thias step
 	
 	 }
-echo "Done <br />";
+echo "Done <br>";
 
 	
 
 /******************************* determine root directory (auto) *************************************/
 echo "Determining path on server...";
 
-	$root = str_replace('\\', '/', dirname(__FILE__));	//fix for win. is that enough?
+	$root = str_replace('\\', '/', HOME_DIR);	//fix for win. is that enough?
 	if( !is_dir($root) )
 		footer( "<h1>Error!</h1>Unable to determine the absolute path to current directory on server");
 
-echo "Done <br />";
+echo "Done <br>";
 
 
 
@@ -386,7 +382,7 @@ echo "Scan server settings...  ";
 	if( !$differ )
 		footer( "<h1>Error!</h1>Pizdets");
 
-echo "Done <br />";
+echo "Done <br>";
 
 
 
@@ -401,7 +397,7 @@ echo "Getting site URL...  ";
 	if( empty($pageURL) ||  !urlexists($pageURL))
 		footer( "<h1>Error!</h1>Unable to determine the absolute path to current directory on server");
 
-echo "Done <br />";
+echo "Done <br>";
 
 
 /**************************************************************************************************/
@@ -419,29 +415,29 @@ echo "Done <br />";
 
 	echo "Connecting to Mysql...  ";
 	$conn = @mysql_connect($my_host, $my_user, $my_pass) or footer('Could not connect: ' .mysql_error());
-	echo "Done <br />";	//
+	echo "Done <br>";	//
 	
 	
 	if(isset($_POST['new_db'])) {//TODO
 
 		echo "Creating new database... ";//--DROP DATABASE if exists `$my_db`;
 		@mysql_query("CREATE DATABASE IF NOT EXISTS `$my_db` DEFAULT CHARACTER SET {$_POST['db_chrst']} COLLATE {$_POST['db_chrst']}_general_ci ") or footer(mysql_error());
-		echo "Done <br />";//dochutatu //what about not creating collate? what about rewriting ratabase?		or creating database if not exists?
+		echo "Done <br>";//dochutatu //what about not creating collate? what about rewriting ratabase?		or creating database if not exists?
 	}/*else{
 		echo "Altering database...";
 		@mysql_query("ALTER DATABASE `$my_db` DEFAULT CHARACTER SET {$_POST['db_chrst']} COLLATE {$_POST['db_chrst']}_general_ci ") or footer(mysql_error());
-		echo "Done <br />";
+		echo "Done <br>";
 	}*/
 
 	echo "Selecting database...  ";
 	@mysql_select_db($my_db, $conn) or footer('Could not connect: ' .mysql_error());
-	echo "Done <br />";
+	echo "Done <br>";
 	
 	@mysql_query("SET NAMES $dbchrst") or footer('SET NAMES error: ' .mysql_error());; ///!!!
 
 
 
-	include dirname(__FILE__).'/install_database.php';
+	include HOME_DIR.'/install_database.php';
 
 
 
@@ -528,28 +524,28 @@ error_reporting(E_ALL);
 EOF;
 
 
-	if( !($w=fopen(dirname(__FILE__)."/vars/config.php", "w")) || (! fputs($w,$conf_dat)))
-		  	footer("<big style=\"color:#900\">Can't write config file <b>".dirname(__FILE__)."/vars/config.php</b>!</big> permission not 666?");
+	if( !($w=fopen(HOME_DIR."/config.php", "w")) || (! fputs($w,$conf_dat)))
+		  	footer("<big style=\"color:#900\">Can't write config file <b>".HOME_DIR."/config.php</b>!</big> permission not 666?");
 	fclose($w);
 	
 	@chmod($root."/vars/config.php", 0400);
 
 
-echo "Done <br /><br /><hr /><br />";
+echo "Done <br><br><hr><br>";
 
 ?>
 
-<h1 style="font-family:verdana">Congratulations!</h1><br/>
+<h1 style="font-family:verdana">Congratulations!</h1><br>
 <b style="color:#070">
-&bull; Site successfully installed on your webserver!<br/>
-&bull; All the configuration is stored in this file:<br/></b><big><i><?php echo dirname(__FILE__);?>/vars/config.php</i></big>
+&bull; Site successfully installed on your webserver!<br>
+&bull; All the configuration is stored in this file:<br></b><big><i><?php echo HOME_DIR;?>/config.php</i></big>
 
 
 
 <?php /*
-<br/><br/>
+<br><br>
 	<big style="color:#090">
-U s e r n a m e : &nbsp;&nbsp; <strong><?php echo $_POST['admin_id']; ?></strong><br/>
+U s e r n a m e : &nbsp;&nbsp; <strong><?php echo $_POST['admin_id']; ?></strong><br>
 P a s s w o r d : &nbsp;&nbsp; <strong><?php echo $_POST['admin_pass']; ?> todo show password !!!! </strong>
 	
 	your usrname and password can now be sent on your email
@@ -563,12 +559,12 @@ P a s s w o r d : &nbsp;&nbsp; <strong><?php echo $_POST['admin_pass']; ?> todo 
 
 ?>
 
-<br /><br />
+<br><br>
 <div style="border:2px solid #c66;color:#000;padding:6px;text-align:left">
- <u>Note:</u><br/> File <strong>install.php</strong> <?php if($ren){?>renamed to <strong>_install.php**** </strong><?php } ?>. It's a security risk to leave it on your webserer. It's recommended to <a style="text-decoration:underline" href="install_delete.php?id=<?php echo $fname; ?>&amp;sid=<?php echo md5(sha1(session_id())); ?>" target="_blank">delete it by clicking this link</a>. If you ever need to reinstall the site, get install.php out of the installation archive and upload it to the site's root directory
+ <u>Note:</u><br> File <strong>install.php</strong> <?php if($ren){?>renamed to <strong>_install.php**** </strong><?php } ?>. It's a security risk to leave it on your webserer. It's recommended to <a style="text-decoration:underline" href="install_delete.php?id=<?php echo $fname; ?>&amp;sid=<?php echo md5(sha1(session_id())); ?>" target="_blank">delete it by clicking this link</a>. If you ever need to reinstall the site, get install.php out of the installation archive and upload it to the site's root directory
 </div>
-<br/><br/>
-<input type="button" id="bt3" value="    <<<  Log In  >>>     " onclick="document.location = '<?php echo $pageURL; ?>'" /><br />
+<br><br>
+<input type="button" id="bt3" value="    <<<  Log In  >>>     " onclick="document.location = '<?php echo $pageURL; ?>'"><br>
 <script>
 try{document.getElementById('bt3').focus();}catch(e){}
 </script>
@@ -602,9 +598,9 @@ try{document.getElementById('bt3').focus();}catch(e){}
 
 
 function footer($fail=null) {
-	if($fail){ echo "<strong style=\"color:#d00;\">Failed!</strong> <br /><br /><strong style=\"color:#a00;\">Error message :</strong> $fail";
+	if($fail){ echo "<strong style=\"color:#d00;\">Failed!</strong> <br><br><strong style=\"color:#a00;\">Error message :</strong> $fail";
 	?>
-<br/><br/><input style="border-color:#333" type="button" onclick="history.go(-1)" value="  <-- Back  " />
+<br><br><input style="border-color:#333" type="button" onclick="history.go(-1)" value="  <-- Back  ">
 <?php } ?>
 </div></div>
 </body></html>

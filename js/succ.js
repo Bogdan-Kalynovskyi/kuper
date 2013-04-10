@@ -12,7 +12,7 @@
 	   </div>
 	 </div>
 	
-	<style type="text/css">
+	<style>
 		#ZoomClose:hover{margin-top:2px;}
 	</style>
 	

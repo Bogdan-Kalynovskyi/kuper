@@ -3,7 +3,7 @@
 		die("Access Denied!");
 ?>
 
-<style type="text/css">
+<style>
 
 	#gal{
 		position:absolute;
@@ -48,7 +48,7 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #44
 
 <div id="gal">
 	
-	<a href="?page=<?php echo BLOG ?>&go=0">Фотографии&nbsp;с&nbsp;выставок</a><span style="font-weight:1;font-size:47px;color:#ddd">|</span>
-	<a href="?page=<?php echo BLOG ?>&go=1">Разное</a>
+	<a href="?page=<?php echo BLOG ?>&go=0">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ&nbsp;пїЅ&nbsp;пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</a><span style="font-weight:1;font-size:47px;color:#ddd">|</span>
+	<a href="?page=<?php echo BLOG ?>&go=1">пїЅпїЅпїЅпїЅпїЅпїЅ</a>
 
 </div>

@@ -12,11 +12,11 @@
 	
 	if(isset($_POST[USER_HASH]) && $_POST[USER_HASH]=='1'){
 		if(!IS_ADMIN && bad_cap(true)){
-			$message = "Введите правильно код на картинке";
+			$message = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			$ok = false;
 			
 		}elseif(!trim(@$_POST['text'])){
-			$message = "Вы вероятно забыли ввести сообщение";
+			$message = "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			$ok = false;
 						
 		}else{
@@ -24,10 +24,10 @@
 				include_once A_HOME."upload_pic.php";
 			
 				if(IS_ADMIN && isnumeric($_POST['edit'])){
-					$message = "Отзыв успешно изменен";
+					$message = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 					$id = $_POST['edit'];
 				}else{
-					$message = "Отзыв успешно добавлен !";
+					$message = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ !";
 					$_POST['date'] = time();
 					$id = '0';
 				}
@@ -58,26 +58,26 @@
 
 	if(IS_ADMIN && isnumeric($_GET['del'])){
 		$db->query("DELETE FROM `".PRF."guestbook` WHERE id = ".a($_GET['del']));
-		$message = 'Отзыв успешно удален';
+		$message = 'пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ';
 		$ok = true;
 		//confirmatin todo
 	}
 
 
 	if(IS_ADMIN && isnumeric($_GET['edit'])){
-		$_POST=$db->query("SELECT * FROM `".PRF."guestbook` WHERE id= ".a($_GET['edit']), false);//пост уже ен не нужен?..
-		$message = 'Сейчас вы можете отредактировать отзыв. Смотрите низ страницы';
+		$_POST=$db->query("SELECT * FROM `".PRF."guestbook` WHERE id= ".a($_GET['edit']), false);//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ?..
+		$message = 'пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ';
 		$ok = true;
 	}
 
 
 	$G = $db->query("SELECT * FROM `".PRF."guestbook` ORDER BY date DESC");
-	//время показывается только мск??
+	//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ??
 
 ?>
 
 
-<link rel="stylesheet" type="text/css" href="guestbook.css" />
+<link rel="stylesheet" href="guestbook.css" />
 
 
 <div id="overall">
@@ -89,13 +89,13 @@
 
 
 	
-	<h1>Гостевая книга</h1>
+	<h1>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ</h1>
 	<h2><b style="font-family:georgia"><?php echo count($G) ?></b>
-		<small><?php echo number_ending(count($G), 'отзывов', 'отзыв', 'отзыва') ?></small>
+		<small><?php echo number_ending(count($G), 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅ', 'пїЅпїЅпїЅпїЅпїЅпїЅ') ?></small>
 
 	</h2>
 
-	<input id="write" type="submit"  value="      Оставить новый       " tabindex="4" onclick="document.location='#new_post';document.getElementsByName('name')[0].focus();" />
+	<input id="write" type="submit"  value="      пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ       " tabindex="4" onclick="document.location='#new_post';document.getElementsByName('name')[0].focus();" />
 	
 	<br/>
 	<br/>
@@ -117,7 +117,7 @@
 	foreach($G as $i => $a)
 {
 				if(!$a['name'])
-					$a['name']='Аноним';
+					$a['name']='пїЅпїЅпїЅпїЅпїЅпїЅ';
 				else	
 					$a['name'] = ucfirst($a['name']);
 					
@@ -135,17 +135,17 @@
 				$contacts = $contacts1 = '';
 			if(IS_ADMIN || $a['public']){
 			/*	if($a['email'])
-				 	$contacts = '<a href="mailto: "'.$a['email'].'" title="электроная почта">@</a>&nbsp;'; 
+				 	$contacts = '<a href="mailto: "'.$a['email'].'" title="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ">@</a>&nbsp;'; 
 				if($a['site']){
-				 	$contacts .= '<a rel="nofollow" href="'.$a['site'].'" title="персональная страничка">'; 
+				 	$contacts .= '<a rel="nofollow" href="'.$a['site'].'" title="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ">'; 
 				 	$contacts1='</a>';
 				}*/
 				if($a['site']){
 					if(strpos($a['site'],'@')){
 					 	$a['site'] = "mailto:".$a['site'];
-					 	$comment = "электроная почта";
+					 	$comment = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ";
 				 	}else
-					 	$comment = "персональная страничка";
+					 	$comment = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 					//telefon&?? 	
 				 	
 					$contacts = '<a rel="nofollow" href="'.$a['site'].'" title="'.$comment.'">'; 
@@ -154,8 +154,8 @@
 			}
 			
 				if(IS_ADMIN)
-					$adm = '<br/><a href="'.$base.'&del='.$a['id'].'">Удалить</a>
-						&nbsp; 	<a href="'.$base.'&edit='.$a['id'].'">Редактировать</a>';
+					$adm = '<br/><a href="'.$base.'&del='.$a['id'].'">пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</a>
+						&nbsp; 	<a href="'.$base.'&edit='.$a['id'].'">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</a>';
 				else 
 					$adm ='';
 
@@ -183,7 +183,7 @@ EOF;
 
 
 <br/><br/><br/><br/><br/><br/>
-<h3>Оставить отзыв</h3><br/>
+<h3>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ</h3><br/>
 
 
 
@@ -210,24 +210,24 @@ EOF;
 ?>
 
 	
-	<label style="letter-spacing:1px">Имя
+	<label style="letter-spacing:1px">пїЅпїЅпїЅ
 		<input type="text" name="name" value="<?php echo htmlspecialchars(@$_POST['name']) ?>" tabindex="10" />
 	</label>
 
-	<label>Email &nbsp;<span>или</span>&nbsp; cтраничка
+	<label>Email &nbsp;<span>пїЅпїЅпїЅ</span>&nbsp; cпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		<input type="text" name="site" value="<?php echo htmlspecialchars(@$_POST['site']?$_POST['site']:'http://') ?>" tabindex="20" />
 	</label>
 
-	<label>Фото &nbsp;<span>(URL или файл)</span> <a href="#" id="aaa" title="убрать фотку" onclick="clrnpt1('icon');return false">Убрать</a>
+	<label>пїЅпїЅпїЅпїЅ &nbsp;<span>(URL пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ)</span> <a href="#" id="aaa" title="пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ" onclick="clrnpt1('icon');return false">пїЅпїЅпїЅпїЅпїЅпїЅ</a>
 		<input type="file" name="icon" id="__icon" onkeydown="omch()" onchange="omch()" tabindex="22" />
 	</label>
 	
-	<label>Показывать контакты
+	<label>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		<input type="checkbox" name="public" value="1" <?php if(@$POOO['site']) echo ' checked="checked"'; ?> tabindex="30" />
 	</label>
 
 
-	<label style="height:122px">Текст сообщения <span style="color:red">*</span>
+	<label style="height:122px">пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <span style="color:red">*</span>
 		<textarea name="text" cols="80" rows="4" tabindex="40"><?php echo htmlspecialchars(@$_POST['text']) ?></textarea>
 	</label>
 	
@@ -236,7 +236,7 @@ EOF;
 
 	<br/>
 	<label>
-		<input type="submit" style="letter-spacing:1px;padding-left:1px" value="      <?php echo (!isset($_GET['edit'])?'Оставить':'Изменить'); ?> отзыв      " tabindex="100" />
+		<input type="submit" style="letter-spacing:1px;padding-left:1px" value="      <?php echo (!isset($_GET['edit'])?'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ':'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'); ?> пїЅпїЅпїЅпїЅпїЅ      " tabindex="100" />
 	</label>
 	<br/>
 		
@@ -247,8 +247,8 @@ EOF;
 
 
 
-<script type="text/javascript" src="js/jslib.js"></script>
-<script type="text/javascript">
+<script src="js/jslib.js"></script>
+<script>
 	
 	function clrnpt1(id){
 		$('aaa').style.visibility = 'hidden';
@@ -257,7 +257,7 @@ EOF;
 
    function verify_form(){
    		if(! document.getElementsByName['text'].value ){
-   			alert('Напишите хоть что нибудь в тексте сообщеиня');
+   			alert('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ');
    			return false;
    		}
    		return true;

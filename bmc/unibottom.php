@@ -26,7 +26,7 @@
 
 
 
-<script type="text/javascript" src="js/all.js"></script>
+<script src="js/all.js"></script>
 
 <?php
 	include A_ROOT."js/all.js.php";

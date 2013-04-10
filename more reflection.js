@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 document.getElementsByClassName = function(className) {
 	var children = document.getElementsByTagName('*') || document.all;
 	var elements = new Array();

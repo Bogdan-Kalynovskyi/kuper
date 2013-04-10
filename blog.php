@@ -3,7 +3,7 @@
 		die("Access Denied!");	
 ?>
 
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css" />
 
 
 <div id="contest">
@@ -53,7 +53,7 @@ function post_echo($post){
 				echo '<div style="clear:both">&nbsp;</div>';
 
 				if($post['data']){
-						echo '<a href="#" class="clickable" onclick="sh(\'z'.$id.'\');return false">Читать дальше...</a>
+						echo '<a href="#" class="clickable" onclick="sh(\'z'.$id.'\');return false">пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ...</a>
 						<div id="z'.$id.'" class = "fullsize">'.$post['data'].'</div>';
 				}
 

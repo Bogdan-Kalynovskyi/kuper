@@ -4,7 +4,7 @@
 
 ?>
 
-<script type="text/javascript">
+<script>
 
 function bmc_go_page(value){
 	cookie = 'page' + "=" + escape(value);

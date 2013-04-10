@@ -89,5 +89,5 @@ EOF;
 	</ul>
 
 
-<script type="text/javascript" src="compressed.js"></script>
+<script src="compressed.js"></script>
 
