@@ -42,9 +42,9 @@ echo <<<EOF
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<title>{$lang['admin_file_no']}</title>
-	<meta charset=utf-8" />
+	<meta charset=utf-8>
 
-<style type="text/css">
+<style>
 <!--
 body, html {
 	font-family: Verdana;
@@ -129,9 +129,9 @@ if(isset($_GET['form_id']) && $_GET['form_id']=="edit") {
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<title><?php echo $lang['file_title']; ?></title>
-	<meta charset=utf-8" />
+	<meta charset=utf-8>
 
-<style type="text/css">
+<style>
 <!--
 body, html {
 	font-family: Verdana;

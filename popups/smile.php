@@ -4,10 +4,10 @@ header("Content-type: text/html; charset={$lang['ENCODING']}");?><!DOCTYPE html 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $lang['lang']; ?>" lang="<?php echo $lang['lang']; ?>">
 <head>
 	<title>Smilies</title>
-	<meta charset=utf-8" />
+	<meta charset=utf-8>
 	<base href="<?php echo $MY_URL; ?>/" />
 	
-	<style type="text/css">
+	<style>
 	<!--
 <style>
 *{

@@ -20,11 +20,11 @@ header("Content-Type: text/html; charset=$CHRST");
 <head>
     <title>Login Page</title>
 	<meta <?php echo $CHRST; ?>" />
-    <link rel=stylesheet href="img/global00.css" type="text/css" />
-    <link rel=stylesheet href="img/master00.css" type="text/css" />
+    <link rel=stylesheet href="img/global00.css" />
+    <link rel=stylesheet href="img/master00.css" />
 
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
-	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 	<script src="js/jscapslock.js"></script>
 	<script src="js/hash.js"></script>
 
@@ -32,7 +32,7 @@ header("Content-Type: text/html; charset=$CHRST");
 
 <body class="login" style="background:#FFDDFF">
     <!--[if lt IE 7]>
-    <link rel=stylesheet href="css/ie6.css" type="text/css">
+    <link rel=stylesheet href="css/ie6.css">
     <![endif]-->	
     <form id="Form1" name="Form1" accept-charset="<?php echo $CHRST ?>" method="post"  action="<?php echo $MY_URL.'/login.php';?>" onsubmit="return validate();">
 

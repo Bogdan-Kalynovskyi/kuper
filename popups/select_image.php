@@ -73,7 +73,7 @@ $dirs = @array_values($dirs); $files = @array_values($files);
 <html>
 <head>
 <title>Галерея:</title>
-<style type="text/css">
+<style>
 *{
 	margin: 0px;
 	padding:0px;

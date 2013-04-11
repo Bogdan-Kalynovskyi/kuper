@@ -322,7 +322,7 @@ EOF;
 }
 </script>
 
-<link rel=stylesheet href="slideshow.css" type="text/css">
+<link rel=stylesheet href="slideshow.css">
 </head>
 
 

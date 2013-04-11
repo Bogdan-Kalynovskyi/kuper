@@ -4,7 +4,7 @@
 	<head>
 		<title> Create or Modify Table </title>
 
-		<style type="text/css">
+		<style>
 			body, td {
 				font-family: arial, verdana, helvetica; 
 				font-size: 11px;
@@ -29,7 +29,7 @@
 	var n = WYSIWYG_Popup.getParam('wysiwyg');
 		
 	// add stylesheet file
-	if(n) document.write('<link rel=stylesheet type="text/css" href="../' + WYSIWYG.config[n].CSSFile +'">\n');
+	if(n) document.write('<link rel=stylesheet href="../' + WYSIWYG.config[n].CSSFile +'">\n');
 	
 	/* ---------------------------------------------------------------------- *\
 	  Function    : buildTable()

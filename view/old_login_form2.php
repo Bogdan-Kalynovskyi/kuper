@@ -19,14 +19,14 @@
 
 
 
-<meta name="webmaster" content="mybodya@gmail.com" />
+<meta name="webmaster" content="mybodya@gmail.com">
 <!-- rss -->
 
 		<link rel=stylesheet href='wp-login.php_files/login.css'>
 		<link rel=stylesheet href='wp-login.php_files/colors-fresh.css'>
 
 
-	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 	
 	<script src="js/jscapslock.js"></script>
 	<script src="js/hash.js"></script>

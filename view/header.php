@@ -17,7 +17,7 @@
 
 
 
-<meta name="webmaster" content="mybodya@gmail.com" />
+<meta name="webmaster" content="mybodya@gmail.com">
 <!-- rss -->
 
 
@@ -41,7 +41,7 @@
 			<link rel=stylesheet href="css/specific.css">
 
 
-	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 </head>
 
 
