@@ -18,29 +18,20 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
 
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"  lang="en">
+<html>
 <head>
     <title>Administration Login</title>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8;charset=utf-8" />
-	<meta http-equiv="Cache-Control" content="no-cache" />
-    <link rel=stylesheet href="img/global00.css" media="screen" />
-    <link rel=stylesheet href="img/master00.css" media="screen" />
-	<link rel="icon" type="image/gif" href="img/favicon.gif" />
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.gif" />    
+	<meta charset=utf-8>
+    <link rel=stylesheet href="img/global00.css">
+    <link rel=stylesheet href="img/master00.css">
+	<link rel="shortcut icon" href="img/favicon.gif">
 	<script src="js/jscapslock.js"></script>
 </head>
 
 <body class="login">
-    <!--[if lt IE 7]>
-    <link rel=stylesheet href="css/ie6.css" media="screen" />
-    <![endif]-->	
-    <form id="Form1" name="Form1" accept-charset="<?php echo $lang['ENCODING'] ?>"  method="post"  action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" onsubmit="return validate();">
+  <form name="form1" accept-charset="<?php echo $lang['ENCODING'] ?>" method=post action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
-    <div id="panelErrorMsg">
-	
-        
-    
-</div>
+    <div id="panelErrorMsg"></div>
         
     <div id="login">
 	    <div id="cap-top"></div>
@@ -48,61 +39,47 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
 	    <div id="branding"><?php if(isset($user_message)) echo '<span class="bold_red">'.$user_message.'</span>'; ?></div>		
             <div id="panelLogin">
 	
-			    <div>
-				    <label>
-                        Email Address</label>
-                        <input type="text" class="textbox340" name="user_login" id="txtLogin" value="" />
-			    </div>
-			    <div>
-				    <label>
-                        Password</label>
-                        <input type="password" class="textbox340" name="password" id="txtPassword" value="" />
-			    </div>
-			    <div>
-				    <label>
-                        Remember me</label>
-                        <input type="checkbox" name="remember" value="1" />
+                <label>Email Address</label>
+                <input class="textbox340" name="user_login" value="">
+
+                <label>Password</label>
+                <input type="password" class="textbox340" name="password" value="">
+
+                <label>Remember me</label>
+                <input type="checkbox" name="remember" value="1">
+
+			    <div class="submit clearfix">
+			        <input type="image" src="img/button-l.png" alt="Log In">
 			    </div>
 
-                					
-			    <div class="submit clearfix">
-			        <input type="image" src="img/button-l.png" alt="Login" name="btnLogin" id="btnLogin" />
-			    </div>
                 <p class="lostpassword">
-                    <a href="account.php?action=restore_pass">Lost your password?</a>
+                    <a href="account.php?action=restore_pass" target=_blank>Lost your password?</a>
                     or
-                    <a href="mailto: mybodya@gmail.com" target="_blank"">Need help? -  Oldo</a>
+                    <a href="mailto: mybodya@gmail.com">Need help? -  Oldo</a>
                 </p>
 		    
-</div>	
-            			
-            									
-		    
+            </div>
 	    </div>
-	    <div id="cap-bottom"><img src="img/cap-bott.png" alt="" /></div>
-    </div><!-- END #login -->
+	    <div id="cap-bottom"><img src="img/cap-bott.png"></div>
+    </div>
 
-    </form>
+  </form>
 
-    <script language="javascript">
-            if (document.getElementById('txtLogin'))
-			    document.getElementById('txtLogin').focus();
+    <script>
+        document.form1.user_login.focus();
 
+        document.form1.onsubmit = function () {
 
-
-	function validate() {
-
-		if(document.getElementById('txtLogin').value.length < 3) {
-			document.getElementById('txtLogin').focus();alert("Short login, 3 chars minimum");
-			 return false;
-		}
-		if(document.getElementById('txtPassword').value.length < 3) {
-			document.getElementById('txtPassword').focus();alert("Short password, 3 chars minimum");
-			return false;
-		}
-		return true;
-	}
-			    
+            if(document.form1.user_login.value.length < 3) {
+                document.form1.user_login.focus();alert("Short login, 3 chars minimum");
+                return false;
+            }
+            if(document.form1.password.value.length < 3) {
+                document.form1.password.focus();alert("Short password, 3 chars minimum");
+                return false;
+            }
+            return true;
+        }
     </script>
 
 </body>
