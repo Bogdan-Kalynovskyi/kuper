@@ -181,7 +181,7 @@ Retype password : <input type="password" name="admin_pass2"><br><br>
 
 		echo '
 		<span style="color:#490000">Warning! Site seems to be already installed. <b>Proceeding can destroy current data!</b></span><br>
-		<a href="index.php" target="_blank" style="text-decoration:underline;font-size:109%;padding-right:1px;">&nbsp;View existing installation&nbsp;</a>';
+		<a href="index.php" target=_blank style="text-decoration:underline;font-size:109%;padding-right:1px;">&nbsp;View existing installation&nbsp;</a>';
 
 	}else{
 		echo "<i style=\"color:#838\">System requirements: MySQL5, PHP5, Apache, FTP</i>";
@@ -542,7 +542,7 @@ P a s s w o r d : &nbsp;&nbsp; <strong><?php echo $_POST['admin_pass']; ?> todo 
 
 <br><br>
 <div style="border:2px solid #c66;color:#000;padding:6px;text-align:left">
- <u>Note:</u><br> File <strong>install.php</strong> <?php if($ren){?>renamed to <strong>_install.php**** </strong><?php } ?>. It's a security risk to leave it on your webserer. It's recommended to <a style="text-decoration:underline" href="install_delete.php?id=<?php echo $fname; ?>&amp;sid=<?php echo md5(sha1(session_id())); ?>" target="_blank">delete it by clicking this link</a>. If you ever need to reinstall the site, get install.php out of the installation archive and upload it to the site's root directory
+ <u>Note:</u><br> File <strong>install.php</strong> <?php if($ren){?>renamed to <strong>_install.php**** </strong><?php } ?>. It's a security risk to leave it on your webserer. It's recommended to <a style="text-decoration:underline" href="install_delete.php?id=<?php echo $fname; ?>&amp;sid=<?php echo md5(sha1(session_id())); ?>" target=_blank>delete it by clicking this link</a>. If you ever need to reinstall the site, get install.php out of the installation archive and upload it to the site's root directory
 </div>
 <br><br>
 <input type="button" id="bt3" value="    <<<  Log In  >>>     " onclick="document.location = '<?php echo $pageURL; ?>'"><br>

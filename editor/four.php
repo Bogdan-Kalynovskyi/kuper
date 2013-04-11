@@ -52,7 +52,7 @@ foreach($PHOTO as $ph){
 		
 			<label><span>
 			
-				<a href="./?id=$s" target="_blank" class="_eye_" title="�����������"><img src="img/eye_small.gif" alt="&bull;"/></a>���������</span> 
+				<a href="./?id=$s" target=_blank class="_eye_" title="�����������"><img src="img/eye_small.gif" alt="&bull;"/></a>���������</span>
 				<input type="text" name="v[$key]" value="$val" id="v$k" class="title" />
 	
 			<b>

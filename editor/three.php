@@ -26,7 +26,7 @@ foreach($BLOGS as $key=>$val){
 		echo <<<EOF
 		<div class="baba" id="_$k">
 		
-			<a href="index.php?page=$key" target="_blank" class="_eye_" title="�����������"><img src="img/eye_small.gif" alt="&bull;"/></a> &nbsp;
+			<a href="index.php?page=$key" target=_blank class="_eye_" title="�����������"><img src="img/eye_small.gif" alt="&bull;"/></a> &nbsp;
 			
 			<input type="text" name="v[$key]" value="$val" id="v$k" style="width:301px" /> &nbsp;&nbsp;
 			

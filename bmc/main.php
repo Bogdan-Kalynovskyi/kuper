@@ -20,14 +20,12 @@ if(empty($my_db)) die('Site is not properly installed! <a href="install.php">Cli
 
 
 	define("A_VIEW", HOME_DIR.'/view/');
-	define("A_ADMIN", HOME_DIR."/backend/");
 	define("A_HOME", HOME_DIR."/bmc/");
-	define("PRF", 	 $my_prefix);//unset all config.php???
-	$MY_URL = $MY_URL;	//$CHRST
+	define("PRF", 	 $my_prefix);
 
 	include_once A_HOME."db_mysql.php";
 	include_once A_HOME."functions.php";
-	include_once A_HOME."output_functions.php";//classes and 
+	include_once A_HOME."output_functions.php";
 
 	$db = new bDb;
 
@@ -37,12 +35,12 @@ if(empty($my_db)) die('Site is not properly installed! <a href="install.php">Cli
 //forms
 	define("LOGIN_HASH", 'Aewf2s20dGfs3d7'); 	define("LOGIN_HASH_VALUE", mt_rand(0,100000));
 	define("SEARCH_HASH", 'Aewf2s2dGfs3d7');  	define("SEARCH_HASH_VALUE", mt_rand(0,100000));
-	define("FORM_HASH",   'B323fd3fFs3471'); 	define("ADMIN_HASH", 'mt_rand(0,100000)');
+	define("FORM_HASH",   'B323fd3fFs3471'); 	define("ADMIN_HASH", mt_rand(0,100000));
 	define("USER_HASH",   'B323fd3fFs3471'); 	define("BOT_HASH", 'sfdsfvsd|#$$#^#%^#%4634');
 //logout-hash!? actions!?
 
 //security	
-	define('LOGIN_TIME_LIMIT', 60*60*24*7);		define('SECURITY2_LIMIT', 60*60*24*7);
+	define('LOGIN_TIME_LIMIT', 60*60*24*7);
 	
 
 //////////////////////////      secific part       ///////////////////////////////

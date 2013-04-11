@@ -43,7 +43,7 @@ foreach($PHOTO as $ph){
 		
 			<label><span>
 			
-				<a href="index.php?id=$key" target="_blank" class="_eye_" title="�����������"><img src="img/eye_small.gif" alt="&bull;"/></a>���������</span> 
+				<a href="index.php?id=$key" target=_blank class="_eye_" title="�����������"><img src="img/eye_small.gif" alt="&bull;"/></a>���������</span>
 				<input type="text" name="v[$key]" value="$val" id="v$k" class="title" />
 	
 			<b>
@@ -97,7 +97,7 @@ $k++;
 </form>
 
 
-<script src="js/jslib.js"></script>
+<script src=js/jslib.js></script>
 <script>
 
 		var n = <?php echo (string)(int)$k ?>;

@@ -55,8 +55,8 @@
 
 
 
-<script src="comp.js"></script>
-<script src="FancyZoom.js"></script>
+<script src=comp.js></script>
+<script src=FancyZoom.js></script>
 
 
 <script>

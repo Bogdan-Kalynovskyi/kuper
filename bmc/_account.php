@@ -275,7 +275,7 @@ function yobtvoyumat($inside, $usr){
  	<u><input type="submit"  value="     �������     "/></u> <input type="button" name="back" onclick="history.go(-1)" value="  ������  " /><br/>
 
 			<?php if($inside){ ?>
-<script>try{$('autofoc').value='';$('autofoc').focus();}catch(e){}</script>
+<script>$('autofoc').value='';$('autofoc').focus()</script>
              <?php } ?>
 
 

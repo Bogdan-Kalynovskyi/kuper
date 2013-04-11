@@ -1,6 +1,6 @@
 <?php
 	require HOME_DIR."/main.php";
-// for unlogged user or user having nothing spetial to do
+// for unlogged user or user having nothing special to do
 
 
 	include_once A_HOME."/fun_viewer.php";

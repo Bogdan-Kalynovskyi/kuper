@@ -68,8 +68,8 @@ try{
 
 ?>
 
-<link rel=stylesheet href="guestbook.css" />
-<link rel=stylesheet href="email_send.css" />
+<link rel=stylesheet href="guestbook.css">
+<link rel=stylesheet href="email_send.css">
 
 
 <div id="xyz">
@@ -86,10 +86,10 @@ try{
 		return $s;
 	}
 	
-        echo '<a target="_blank" href="'.$bmc_vars['vk'].'"><img src="images/vk.png" alt="���������" />'.email_pr($bmc_vars['vk']).'</a>';
-		echo '<a target="_blank" href="'.$bmc_vars['lj'].'"><img src="images/lj.png" alt="������ ��" />'.email_pr($bmc_vars['lj']).'</a>';
-		echo '<a target="_blank" href="mailto:'.$bmc_vars['email'].'"><img src="images/email.png" alt="�-����" />'.email_pr($bmc_vars['email']).'</a>';
-		echo '<a target="_blank" href="callto:'.$bmc_vars['phone'].'"><img src="images/phone.png" alt="�������" />'.email_pr($bmc_vars['phone']).'</a>';
+        echo '<a target=_blank href="'.$bmc_vars['vk'].'"><img src="images/vk.png" alt="���������" />'.email_pr($bmc_vars['vk']).'</a>';
+		echo '<a target=_blank href="'.$bmc_vars['lj'].'"><img src="images/lj.png" alt="������ ��" />'.email_pr($bmc_vars['lj']).'</a>';
+		echo '<a target=_blank href="mailto:'.$bmc_vars['email'].'"><img src="images/email.png" alt="�-����" />'.email_pr($bmc_vars['email']).'</a>';
+		echo '<a target=_blank href="callto:'.$bmc_vars['phone'].'"><img src="images/phone.png" alt="�������" />'.email_pr($bmc_vars['phone']).'</a>';
     ?>
 </div>
 
@@ -160,7 +160,7 @@ try{
 
 
 
-<script src="js/jslib.js"></script>
+<script src=js/jslib.js></script>
 <script>
 
    function verify_form(){

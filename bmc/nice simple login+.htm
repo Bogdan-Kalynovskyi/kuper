@@ -10,12 +10,6 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
 		echo '<h3><br/>Email not sent due to an error. Most likely the cause is no write permissions to config.php. Please set CHMOD to 666</h3>';
 
 }
-		header("Cache-Control: no-cache");
-		header("Expires: -1");
-		header('Cache-Control: post-check=0, pre-check=0', FALSE); 
-		header('Pragma: no-cache');
-///////////////////////////////////////////////////////////////////////////////////////////////
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +23,7 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
 </head>
 
 <body class="login">
-  <form name="form1" accept-charset="<?php echo $lang['ENCODING'] ?>" method=post action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
+  <form name="form1" accept-charset="<?php echo $lang['ENCODING'] ?>" method=post action="">
 
     <div id="panelErrorMsg"></div>
         
@@ -39,14 +33,14 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
 	    <div id="branding"><?php if(isset($user_message)) echo '<span class="bold_red">'.$user_message.'</span>'; ?></div>		
             <div id="panelLogin">
 	
-                <label>Email Address</label>
-                <input class="textbox340" name="user_login" value="">
+                <label>Email Address
+                <input class="textbox340" name="user_login" value=""></label>
 
-                <label>Password</label>
-                <input type="password" class="textbox340" name="password" value="">
+                <label>Password
+                <input type="password" class="textbox340" name="password" value=""></label>
 
-                <label>Remember me</label>
-                <input type="checkbox" name="remember" value="1">
+                <label>Remember me
+                <input type="checkbox" name="remember" value="1"></label>
 
 			    <div class="submit clearfix">
 			        <input type="image" src="img/button-l.png" alt="Log In">

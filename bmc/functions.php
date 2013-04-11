@@ -221,11 +221,9 @@ if(!@header($str)) {
 //encoding
 $goto=htmlspecialchars($goto);//addslashes?
 echo <<<EOF
-<HTML><HEAD><meta name=”robots” content=”noindex”><script>
-<!--
+<HTML><HEAD><meta name=”robots” content=”noindex,nofollow”><script>
 document.location="$goto";
-//-->
-</script><meta http-equiv="Content-Type" content="text/html; charset=$CHRST"/><meta http-equiv="Refresh" content="0; $goto"></HEAD>
+</script><meta charset=$CHRST"/><meta http-equiv="Refresh" content="0; $goto"></HEAD>
 <BODY><noscript>Redirection<br/><a href="$goto">Follow this link to get proceed</a></noscript> <a href="$goto"> &rarr; </a></BODY></HTML>
 EOF;
 

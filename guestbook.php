@@ -77,7 +77,7 @@
 ?>
 
 
-<link rel=stylesheet href="guestbook.css" />
+<link rel=stylesheet href=guestbook.css>
 
 
 <div id="overall">
@@ -247,7 +247,7 @@ EOF;
 
 
 
-<script src="js/jslib.js"></script>
+<script src=js/jslib.js></script>
 <script>
 	
 	function clrnpt1(id){

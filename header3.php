@@ -1,11 +1,10 @@
-<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=<?php echo $CHRST; ?>" /><title><?php echo $bmc_vars['site_title'];?></title><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /><meta name="Keywords" content="<?echo $bmc_vars['site_keywords'];?>" /><meta name="Description" content="<?echo $bmc_vars['site_desc'];?>" />
-<link rel=stylesheet href="styles.css" /><!--[if gte IE 7]>
-<link rel=stylesheet href="ie.css" /><![endif]--><?php echo
+<!DOCTYPE html><html><head><meta charset=<?php echo $CHRST; ?>" /><title><?php echo $bmc_vars['site_title'];?></title><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="Keywords" content="<?echo $bmc_vars['site_keywords'];?>" /><meta name="Description" content="<?echo $bmc_vars['site_desc'];?>" />
+<link rel=stylesheet href="styles.css" /><?php echo
 '<style>
 #nav h1{width:'.(100/count($BLOGS)).'%}
 </style>';
-?><!--[if IE 6]><link rel=stylesheet href="ie6.css" /><![endif]-->
+?>
 <script>
 function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
 var _gaq = [ ['_setAccount', 'UA-20334486-1'], ['_trackPageview'] ];

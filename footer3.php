@@ -2,7 +2,7 @@
 
 <noscript><h1>�������, ��������, ���������. ����������� �������� ������ ���������. �������� �������� �� JavaScript</h1></noscript>	
 
-<script src="footer.js"></script>
+<script src=footer.js></script>
 	
 <?php
 

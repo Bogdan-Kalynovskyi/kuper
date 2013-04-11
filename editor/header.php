@@ -5,17 +5,13 @@
 	//NonCachePlusEncoding();
 	
 ?><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en-US">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $CHRST ?>" />
-<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta charset=<?php echo $CHRST ?>>
 <title>���������� ������</title>
 
-<link rel=stylesheet href="./editor/a.css" media="all" />
-<link rel=stylesheet id="colors-css"  href="./editor/b.css" media="all" />
-<!--[if lte IE 7]>
-<link rel=stylesheet id="ie-css"  href="editor/c.css" media="all" />
-<![endif]-->
+<link rel=stylesheet href="./editor/a.css">
+<link rel=stylesheet href="./editor/b.css">
 
 <script src="js/jslib.js"></script>
 </head>
