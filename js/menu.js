@@ -15,4 +15,4 @@ function initMenu() {
       }
     );
   }
-$(document).ready(function() {initMenu();});
+$(function() {initMenu();});

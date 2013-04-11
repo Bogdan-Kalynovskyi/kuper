@@ -167,7 +167,7 @@
 					//&nbsp; <i>( $j. )</i> 
 echo<<<EOF
 		<div class="gb$stl">
-			<img src="{$a['icon']}" alt="" />
+			<img src="{$a['icon']}">
 			<span>&nbsp; $contacts<b>{$a['name']}</b>$contacts1 <u>{$a['date']}</u>&nbsp;</span>
 			<pre>{$a['text']}</pre>
 			$adm

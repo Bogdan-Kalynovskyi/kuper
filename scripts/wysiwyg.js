@@ -771,7 +771,7 @@ var WYSIWYG = {
 				
 				// Generate WYSIWYG toolbar one
 			    editor += '<table border="0" cellpadding="0" cellspacing="0" class="toolbar1" style="width:100%;" id="toolbar' + j + '_' + n + '">';
-	    		editor += '<tr><td style="width:6px;"><img src="' + this.config[n].ImagesDir + 'seperator2.gif" alt="" hspace="3"/></td>';
+	    		editor += '<tr><td style="width:6px;"><img src="' + this.config[n].ImagesDir + 'seperator2.gif" hspace="3"/></td>';
 				
 				// Interate over the toolbar element
 				for (var i = 0; i < toolbar.length;i++) { 

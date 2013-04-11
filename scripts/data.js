@@ -24,7 +24,7 @@ try{
 
 		
 
-		$(document).ready(function() {
+		$(function() {
 
 			alertSize();
 

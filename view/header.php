@@ -3,23 +3,16 @@
 		die("Access Denied!");
 	global $FILE, $CHRST, $table, $USER;//...
 
-
 		NonCachePlusEncoding();
 
 
 ?><!DOCTYPE html>
 <html>
 <head>
-<meta charset=<?php echo $CHRST; ?>"/>
+<meta charset=<?php echo $CHRST; ?>>
 <meta http-equiv="Cache-Control" content="no-cache"/>
-
 <meta name="robots" content="noindex, nofollow"/>
-
-
-
 <meta name="webmaster" content="mybodya@gmail.com">
-<!-- rss -->
-
 
 <?php
 

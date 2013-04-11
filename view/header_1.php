@@ -18,13 +18,8 @@
 
 <meta name="webmaster" content="mybodya@gmail.com">
 
-		<link rel=stylesheet href='wp-login.php_files/login.css'>
-		<link rel=stylesheet href='wp-login.php_files/colors-fresh.css'>
-
-
-
-
-
+<link rel=stylesheet href='wp-login.php_files/login.css'>
+<link rel=stylesheet href='wp-login.php_files/colors-fresh.css'>
 
 </head>
 

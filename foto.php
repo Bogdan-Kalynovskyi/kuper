@@ -359,7 +359,7 @@ EOF;
 		
 
 		if($om)
-			$zek_img = '<div class="outer"><div class="inner"><img src="'.imgsrc($d['icon']).'" alt="" /></div></div>';
+			$zek_img = '<div class="outer"><div class="inner"><img src="'.imgsrc($d['icon']).'"></div></div>';
 		else
 			$zek_img = '<div class="zek"><img src="'.imgsrc($d['icon']).'" rel="reflect" /></div>';
 		 

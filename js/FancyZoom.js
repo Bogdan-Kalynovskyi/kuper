@@ -624,11 +624,11 @@ function insertZoomHTML() {
 
 	var box = document.createElement("div");
 
-	var sssuka = (includeCaption)?'<table id="ZoomCapDiv" cellspacing="0" cellpadding="0"><tr><td><img src="'+zoomURI+'zoom-caption-l.png'+'" alt="" /></td><td id="ZoomCaption" valign="middle"></td><td><img src="'+zoomURI+'zoom-caption-r.png'+'" alt="" /></td></tr></table>':'';
+	var sssuka = (includeCaption)?'<table id="ZoomCapDiv" cellspacing="0" cellpadding="0"><tr><td><img src="'+zoomURI+'zoom-caption-l.png'+'"></td><td id="ZoomCaption" valign="middle"></td><td><img src="'+zoomURI+'zoom-caption-r.png'+'"></td></tr></table>':'';
 
 	box.innerHTML = '<div id="ZoomSpin"><img id="SpinImage" src="ajax-loader.gif" alt="loading..." onclick="preloadingStop" /></div>\
 	<div id="dim2"></div>\
-	<div id="ZoomBox"><img src="'+zoomURI+'closebox.gif" id="ZoomImage" onclick="zoomOut" /><div id="ZoomClose"><img src="'+zoomURI+'closebox.png" alt="" onclick="zoomOut" /></div>' + sssuka + '</div>'
+	<div id="ZoomBox"><img src="'+zoomURI+'closebox.gif" id="ZoomImage" onclick="zoomOut" /><div id="ZoomClose"><img src="'+zoomURI+'closebox.png" onclick="zoomOut" /></div>' + sssuka + '</div>'
 	inBody.appendChild(box);
 	
 //vbar _ = document

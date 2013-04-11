@@ -8,21 +8,21 @@
 
 	<table id="molbert" cellpadding="0" cellspacing="0">
 		<tr id="top1">
-			<td id="left-top"></td>
-			<td id="top"></td>
-			<td id="right-top"></td>
+			<td id="left-top">
+			<td id="top">
+			<td id="right-top">
 		</tr>
 		<tr>
-			<td id="left"></td>
+			<td id="left">
 			<td id="center">
 
 
 
 	<div id="wrapper">
 		<div id="fullsize">
-			<div id="imgprev" class="imgnav" title="����������"></div>
-			<div id="imglink" title="�� ���� �����"></div>
-			<div id="imgnext" class="imgnav" title="���������"></div>
+			<div id="imgprev" class="imgnav"></div>
+			<div id="imglink"></div>
+			<div id="imgnext" class="imgnav"></div>
 			<div id="image"></div>
 			<div id="information"><h3></h3><p></p></div>
 		</div>
@@ -31,7 +31,7 @@
 				<div id="slider"><?php					
 				foreach($PHOTO as $ph){
 					$th = basename($ph['icon']);
-					echo "<img src=\"thumb/$th\" alt=\"\" title=\"{$ph['title']}\" />";
+					echo "<img src=\"thumb/$th\" title=\"{$ph['title']}\">";
 				}//�� ����� ������ ��1� �/������� - ����������� onload/ ��� - 
 ?></div>
 			</div>
@@ -40,13 +40,13 @@
 
 
 
-			</td>						
-			<td id="right"></td>
+									
+			<td id="right">
 		</tr>
 		<tr id="bottom1">
-			<td id="left-bottom"></td>
-			<td id="bottom"></td>
-			<td id="right-bottom"></td>
+			<td id="left-bottom">
+			<td id="bottom">
+			<td id="right-bottom">
 		</tr>
 	</table>
 
@@ -61,7 +61,7 @@
 
 <script>
 
-	var _7a = new Array(<?php echo count($PHOTO) ?>);
+	_7a = new Array(<?php echo count($PHOTO) ?>);
 		
 <?php
 foreach($PHOTO as $i => $ph){

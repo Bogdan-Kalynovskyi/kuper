@@ -55,7 +55,7 @@ EOF;
 			if(!trim($x))$x='blank.gif';
 			echo <<<EOF
 			<label>{$title[$i]}<br /> 
-				<img src="$x" width="50" height="50" id="_$n" alt="" />&nbsp; &nbsp;
+				<img src="$x" width="50" height="50" id="_$n">&nbsp; &nbsp;
 				URL <input type="text" id="$n" name="$n" value="$x" /> &nbsp;&nbsp;
 				��� ���� <input type="file" name="$n" id="__$n" /> &nbsp; <a href="#" onclick="clrnpt('$n');return false"><small>������</small></a>
 			</label><br/><br/>

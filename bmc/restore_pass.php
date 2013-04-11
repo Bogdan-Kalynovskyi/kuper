@@ -1,9 +1,9 @@
 	
 if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
 	
-	$admin_id = htmlspecialchars($db->evaluate("SELECT login FROM ".PRF."users WHERE id = 1"));
+	$admin_id = $db->evaluate("SELECT login FROM ".PRF."users WHERE id = 1");
 //to disable injections
-	$admin_pass = mt_rand(0,10000000);
+	$admin_pass = base64(mt_rand(0,10000000));
 //if email and andmin_id are not checked properly, the script is vulnerable to various injections!!!
 //all the vares should be checked properly...
 

@@ -51,7 +51,7 @@ EOF;
 //------------------------------------------------//
 	function echoicon($src){
 					if(noempty($src))
-						return '<img class="icon" src="'.$src.'" alt="" />';
+						return '<img class="icon" src="'.$src.'">';
 					else
 						return '<div class="icon">&nbsp;</div>';
 	}

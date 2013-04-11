@@ -41,7 +41,7 @@ border:3px solid #333
 						$posts = $db->query("SELECT * FROM `".PRF."posts` WHERE blog=".BLOG);
 
 					foreach($posts as $p){
-						echo '<li><a href="?id='.$p['id'].'"><img src="'.$p['icon'].'" alt="" title="'.$p['title'].'" /><b>'.$p['title'].'</b></a></li>';
+						echo '<li><a href="?id='.$p['id'].'"><img src="'.$p['icon'].'" title="'.$p['title'].'" /><b>'.$p['title'].'</b></a></li>';
 				}
 				?>
 			</ul>

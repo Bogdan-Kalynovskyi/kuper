@@ -16,7 +16,7 @@
 
 <h1>Manage user <b><?php echo $usr['name']; ?></b></h1>
 <br/>
-<img src="<?php echo $usr['pic']; ?>" alt="" />
+<img src="<?php echo $usr['pic']; ?>">
 <br/>
 Login:<?php echo $usr['login']; ?><br/>
 Admin description:

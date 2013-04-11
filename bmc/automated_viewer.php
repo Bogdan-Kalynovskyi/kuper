@@ -87,7 +87,7 @@ EOF;
 			
 						<div class="ramka">';
 								if(noempty($p['pic'])){
-									echo '<img src="thumbs/'.basename($p['pic']).'" width="'.$bmc_vars['th_x'].'" height="'.$bmc_vars['th_y'].'" alt=""/>';
+									echo '<img src="thumbs/'.basename($p['pic']).'" width="'.$bmc_vars['th_x'].'" height="'.$bmc_vars['th_y'].'">';
 									unset($p['pic']);
 								}
 								else{

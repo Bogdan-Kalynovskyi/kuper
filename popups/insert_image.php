@@ -402,7 +402,7 @@ function loadForm(){
 <td style="vertical-align: top;width: 250px; padding-left: 5px;">
 	<span style="font-family: arial, verdana, helvetica; font-size: 12px; font-weight: bold;">Виберіть з галереї:</span>
 	<iframe id="chooser" frameborder="0" style="height:255px;width: 270px;border: 2px solid #FFFFFF; padding:0; z-index:20;position:relative;" src="select_image.php?dir=<?php echo $leadon; ?>"></iframe>
-	<img id="img_" src="<?php echo @$_POST['src'];?>" alt="" style="height:255px;width: 270px;border: 2px solid #FFFFFF; padding:0; position:absolute;top:25px;left:420px;opacity:0.2;z-index:10;">
+	<img id="img_" src="<?php echo @$_POST['src'];?>" style="height:255px;width: 270px;border: 2px solid #FFFFFF; padding:0; position:absolute;top:25px;left:420px;opacity:0.2;z-index:10;">
 </td>
 </tr>
 <tr>

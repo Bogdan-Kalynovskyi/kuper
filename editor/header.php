@@ -72,5 +72,5 @@
 
 	<div id="the_main_bar">
 
-		<img src="blank.gif" id="one_prev" alt="" />
+		<img src="blank.gif" id="one_prev">
 		

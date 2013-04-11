@@ -7,14 +7,14 @@ var screenFactor = myWidth/myHeight;
 
 		
 
-		$(document).ready(function() {
+		$(function() {
 
 			var camera = new Camera3D();
 
-			camera.init(0,0,0,478);/*critical!!! я вже вийшов287*/
+			camera.init(0,0,0,478);/*critical!!! пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ287*/
 			
 
-			var container = $("#item")
+			var container = $("#item");
 			var item = new Object3D(container);
 
 			
@@ -39,9 +39,9 @@ axisRotation.z=-0.143;
 
 			var mouseX, mouseY = 0;
 
-			var offsetX = $("#item").offset().left;
+			var offsetX = container.offset().left;
 
-			var offsetY = $("#item").offset().top;
+			var offsetY = container.offset().top;
 
 			var speed = 100000;
 
@@ -60,13 +60,13 @@ axisRotation.z=-0.143;
 
 			var animateIt = function(){
 
-				if (mouseX != undefined){
+				if (mouseX !== undefined){
 
 					axisRotation.y += mouseX / speed
 
 				}
 
-				if (mouseY != undefined){
+				if (mouseY !== undefined){
 
 					axisRotation.x -= mouseY / speed;
 

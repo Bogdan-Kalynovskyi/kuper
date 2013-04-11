@@ -86,7 +86,7 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
             									
 		    
 	    </div>
-	    <div id="cap-bottom"><img src="img/cap-bott.png" alt="" /></div>
+	    <div id="cap-bottom"><img src="img/cap-bott.png"></div>
     </div><!-- END #login -->
 
     </form>

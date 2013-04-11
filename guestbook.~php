@@ -16,7 +16,7 @@
 			$ok = false;
 			
 		}elseif(!trim(@$_POST['text'])){
-			$message = "Вы вероятно забыли ввести сообщение";
+			$message = "Вы, вероятно, забыли ввести сообщение";
 			$ok = false;
 						
 		}else{
@@ -368,7 +368,7 @@
 					//&nbsp; <i>( $j. )</i> 
 echo<<<EOF
 		<div class="gb$stl">
-			<img src="{$a['icon']}" alt="" />
+			<img src="{$a['icon']}">
 			<span>&nbsp; $contacts<b>{$a['name']}</b>$contacts1 <u>{$a['date']}</u>&nbsp;</span>
 			<pre>{$a['text']}</pre>
 			$adm
@@ -419,7 +419,7 @@ EOF;
 	</label>
 
 <!--	<label>Фото &nbsp;<span>(URL или файл)</span> <a href="#" id="aaa" title="убрать фотку" onclick="clrnpt1('icon');return false">Убрать</a>
-		<img src="<?php echo @$icon ?>" alt="" width="<?php echo $bmc_vars['ava_x']; ?>" height="<?php echo $bmc_vars['ava_y']; ?>" id="_icon" /> &nbsp; 
+		<img src="<?php echo @$icon ?>" width="<?php echo $bmc_vars['ava_x']; ?>" height="<?php echo $bmc_vars['ava_y']; ?>" id="_icon" /> &nbsp;
 		<input type="text" id="icon" name="icon" value="<?php echo @$icon ?>" onkeydown="omch()" onchange="omch()" />
 		<input type="file" name="icon" id="__icon" onkeydown="omch()" onchange="omch()" />
 	</label>-->

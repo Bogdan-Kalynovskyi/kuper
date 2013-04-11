@@ -160,7 +160,7 @@ EOF;
 		echo <<<EOF
 			<li>
 			<a $longtext>
-				<img src="{$d['icon']}" alt="" />
+				<img src="{$d['icon']}">
 				<h3>{$d['title']}</h3>
 				<h4>{$d['summary']}</h4>
 			</a>

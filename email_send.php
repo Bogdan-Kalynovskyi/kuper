@@ -113,7 +113,7 @@ try{
 
 
 
-<img src="images/ida_env2.jpg" alt="" id="envelope" />
+<img src="images/ida_env2.jpg" id="envelope" />
 
 
 <h3 style="padding:17px 0 6px 0;color:#222">

@@ -347,7 +347,7 @@ EOF;
 <tr>
 <td><a onclick="do_('del_pic', $i)" title="Del" href="#"><img src="{$MY_URL}images/cross-red.png"  alt="��������"></a></td>
 <td><a onclick="do_('move_up',$i)" title="�����"><img src="{$MY_URL}images/arrow-up.png" alt="�����"></a><br><a onclick="do_('move_down',$i)" title="����"><img src="{$MY_URL}images/arrow-down.png" alt="����"></a></td>
-<td><a href="#" onclick="popwin('{$f2}'); return false;"><img src="{$MY_URL}{$f3}" alt=""></a></td>
+<td><a href="#" onclick="popwin('{$f2}'); return false;"><img src="{$MY_URL}{$f3}"></a></td>
 <td><span id="aaa$i">URL:&nbsp; <input type="text" name="the_url[$i]" size = 34 value="$f2"/></span></td>
 <td><nobr>����:&nbsp;<input type="text" name="new_desc[$i]" value="$desc"></nobr></td>
 <td><input type="button" value=" ��������������� " onclick="clear_f1(this, $i)"></td>

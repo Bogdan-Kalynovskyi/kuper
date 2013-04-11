@@ -8,7 +8,7 @@
 	<div id="ZoomBox">
 	   <img src="'+zoomImagesURI+'spacer.gif" id="ZoomImage" onclick="zoomOut()" />
 	   <div id="ZoomClose">
-	    	<img src="'+zoomImagesURI+'closebox.png" alt="" onclick="zoomOut()"/>
+	    	<img src="'+zoomImagesURI+'closebox.png" onclick="zoomOut()"/>
 	   </div>
 	 </div>
 	

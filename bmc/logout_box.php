@@ -7,7 +7,7 @@
 	$unr = 	$db->evaluate("SELECT count(*) FROM `".PRF."mail` 
 							WHERE user='{$USER['id']}' AND NOT (`read` LIKE '% {$USER['id']}%')");
 							
-	$tmp = '<b>'.(int)$unr.'</b> <img src="img/e1.png" alt=""/>';
+	$tmp = '<b>'.(int)$unr.'</b> <img src="img/e1.png">';
 
 ?>
 

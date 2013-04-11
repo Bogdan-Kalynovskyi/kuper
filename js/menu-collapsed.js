@@ -11,4 +11,4 @@ function() {
 }
  );
   }
-$(document).ready(function() {initMenu();});
+$(function() {initMenu();});
