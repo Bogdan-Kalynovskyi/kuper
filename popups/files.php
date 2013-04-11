@@ -38,14 +38,14 @@ $user=bmc_isLogged();
 // Its not a valid user, so close the window
 if(!$user || !$bmc_vars['user_files']) {
 echo <<<EOF
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 	<title>{$lang['admin_file_no']}</title>
 	<meta charset=utf-8>
 
 <style>
-<!--
+
 body, html {
 	font-family: Verdana;
 	font-size: 10px;
@@ -57,8 +57,6 @@ input,select {
 	font-size: 10px;
 	background: #F6F6F6;
 }
-
-//-->
 </style>
 
 </head>
@@ -125,8 +123,8 @@ if(isset($_GET['form_id']) && $_GET['form_id']=="edit") {
 }
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 	<title><?php echo $lang['file_title']; ?></title>
 	<meta charset=utf-8>

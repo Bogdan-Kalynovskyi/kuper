@@ -1,14 +1,11 @@
 <?php
 include "../bmc/main.php"; //bodya
-header("Content-type: text/html; charset={$lang['ENCODING']}");?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $lang['lang']; ?>" lang="<?php echo $lang['lang']; ?>">
+header("Content-type: text/html; charset={$lang['ENCODING']}");?><!DOCTYPE html>
+<html>
 <head>
 	<title>Smilies</title>
-	<meta charset=utf-8>
-	<base href="<?php echo $MY_URL; ?>/" />
+	<base href="<?php echo $MY_URL; ?>">
 	
-	<style>
-	<!--
 <style>
 *{
 	margin:0;
