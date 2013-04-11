@@ -158,7 +158,8 @@ echo '<a href="'.$_SERVER['SCRIPT_NAME'].'?dir='.myurlencode($imagebasedir).'" s
 							$fileurl = $leadon . $files[$i];
 							$filedir = str_replace($imagebasedir, "", $leadon);
 					?>
-					<a href="javascript:void(0)" onclick="selectImage('<?php echo $filedir.$filename; ?>');"><img src="images/<?php echo $icon; ?>" alt="<?php echo $files[$i]; ?>" border="0" /> <strong><?php echo $filename; ?></strong></a><br>
+					<a href="#" onclick="selectImage('<?php echo $filedir.$filename; ?>');return false"><img src="images/<?php echo $icon; ?>" alt="<?php echo $files[$i]; ?>" border="0" />
+					<strong><?php echo $filename; ?></strong></a><br>
 					<?php
 							if($class=='b') $class='w';
 							else $class = 'b';	

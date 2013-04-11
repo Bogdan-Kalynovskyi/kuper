@@ -132,7 +132,6 @@ if(isset($_GET['form_id']) && $_GET['form_id']=="edit") {
 	<meta charset=utf-8>
 
 <style>
-<!--
 body, html {
 	font-family: Verdana;
 	font-size: 10px;
@@ -150,9 +149,6 @@ input,select {
 	background: #EBEBEB;
 	padding: 10px;
 }
-
-
-//-->
 </style>
 
 </head>
@@ -179,7 +175,7 @@ input,select {
 <form name="attach" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" ENCTYPE="multipart/form-data">
 <input type="hidden" name="action" value="attach_files" />
 <input type="hidden" name="form_id" value="<?php echo $form; ?>" />
-<select name="files[]" size="10" multiple="true" onChange="javascript:goChkImg(this);">
+<select name="files[]" size="10" multiple="true" onChange="goChkImg(this);">
 <?php
 
 // Read the file upload list from the file storage
@@ -206,19 +202,17 @@ while($filename = readdir($handle))
 <?php echo $lang['post_smr']; ?><input type="radio" name="target_box" value="smr" checked />  
 <?php echo $lang['file_img_insert_body']; ?><input type="radio" name="target_box" value="msg" /><br />
 <input type="checkbox" name="img_resize" value="1" checked /> <?php echo $lang['file_img_resize']; ?><br />
-<input type="button" onclick="javascript:goImgAttach();" value="<?php echo $lang['file_img_insert']; ?>" />  
+<input type="button" onclick="goImgAttach();" value="<?php echo $lang['file_img_insert']; ?>" />
 </div>
 
 <br /><br />
-<input type="button" onclick="javascript:goAttach();" value="<?php echo $lang['file_add_but']; ?>" />  
-<input type="button" onclick="javascript:goDel();" value="<?php echo $lang['file_but_del']; ?>" /></form>
+<input type="button" onclick="goAttach();" value="<?php echo $lang['file_add_but']; ?>" />
+<input type="button" onclick="goDel();" value="<?php echo $lang['file_but_del']; ?>" /></form>
 
 <br /><br />
-<a href="javascript:window.close();"><?php echo $lang['close']; ?></a>
+<a href="#" onclick="window.close()"><?php echo $lang['close']; ?></a>
 
 <script>
-<!--
-
 	// Delete files
 	function goDel() {
 		var msg=confirm("<?php echo $lang['file_del_msg']; ?>");
@@ -259,9 +253,6 @@ while($filename = readdir($handle))
 		document.attach.action.value="attach_images";
 		document.attach.submit();
 	}
-
-
-//-->
 </script>
 
 </div>

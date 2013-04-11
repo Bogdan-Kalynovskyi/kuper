@@ -70,5 +70,5 @@ function clear_f1(the, n) {
 function popwin(src){
 	
 	var wnd = window.open(src,'','toolbar=No,menubar=No,left=200,top=200,width=900,resizable=yes,scrollbars=yes,status=No,location=No,height=700');
-	wnd.document.onclick = 'javascript:window.close()';
+	wnd.document.onclick = 'window.close()';
 }

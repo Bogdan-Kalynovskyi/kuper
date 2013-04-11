@@ -33,7 +33,7 @@ function check() {
   if(!ext )return false;
 	ext =  (ext!="undefined") ? ext.substring(ext.lastIndexOf(".")+1, ext.length).toLowerCase() : false;
   if(ext != 'jpg' && ext != 'jpeg' && ext != 'gif' && ext != 'png' && ext != 'bmp') {
-    alert('Ваш файл має неправильне розширення --> '+ext);
+    alert('пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ --> '+ext);
     return false; }
   return true; 
 }
@@ -78,7 +78,7 @@ function loadImage() {
 	
 	// if no image is defined then return
 	if(img == null || img == undefined) return;
-	document.getElementById('ccc').innerHTML = "Змінити малюнок";
+	document.getElementById('ccc').innerHTML = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 	// assign the values to the form elements
 	for(var i = 0;i < img.attributes.length;i++) {
 		var attr = img.attributes[i].name.toLowerCase();
@@ -165,6 +165,6 @@ function popwin(){
 	var lnk = myrep(document.getElementById('src').value);
 	
 	var wnd = window.open('../'+ibu+lnk,'','toolbar=No,menubar=No,left=200,top=200,width=900,resizable=yes,scrollbars=yes,status=No,location=No,height=700');
-	wnd.document.onclick = 'javascript:window.close()';
+	wnd.document.onclick = 'window.close()';
 }
 /*  deletiopn of php imagebaseurl can be deleted!!!! ins no longer here*/

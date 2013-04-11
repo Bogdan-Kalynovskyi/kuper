@@ -29,7 +29,7 @@ var WYSIWYG = {
 		this.PreviewHeight = 400;
 		
 		// Confirmation message if you strip any HTML added by word
-		this.RemoveFormatConfMessage = "Очистити HTML вставлений з MS Word ?";
+		this.RemoveFormatConfMessage = "Clear HTML embedded from MS Word?";
 		
 		// Anchor path to strip, leave it blank to ignore
 		// or define auto to strip the path where the editor is placed 
@@ -1071,7 +1071,7 @@ var WYSIWYG = {
 		var max = nodeTree.length - 1;
 		for(var i=max;i>=0;i--) {
 			if(nodeTree[i].nodeName != "HTML" && nodeTree[i].nodeName != "BODY") {
-				outputTree += '<a class="wysiwyg-statusbar" href="javascript:WYSIWYG.selectNode(\'' + n + '\',' + i + ');">' + nodeTree[i].nodeName + '</a>';	
+				outputTree += '<a class="wysiwyg-statusbar" href="#" onclick="WYSIWYG.selectNode(\'' + n + '\',' + i + ');return false">' + nodeTree[i].nodeName + '</a>';
 			}
 			else {
 				outputTree += nodeTree[i].nodeName;
@@ -2566,8 +2566,8 @@ var WYSIWYG_ContextMenu = {
 		
 		if(disabled) {
 			item += '<tr>';
-			item += '<td class="icon"><a href="javascript:WYSIWYG.execCommand(\'' + n + '\',\'' + cmd + '\', null);"><img src="' + icon.enabled + '" border="0"/></a></td>';
-			item += '<td onmouseover="this.className=\'mouseover\'" onmouseout="this.className=\'\'" onclick="WYSIWYG.execCommand(\'' + n + '\', \'' + cmd + '\', null);WYSIWYG_ContextMenu.close();"><a href="javascript:void(0);">' + title + '</a></td>';
+			item += '<td class="icon"><a href="#" onclick="WYSIWYG.execCommand(\'' + n + '\',\'' + cmd + '\', null);return false"><img src="' + icon.enabled + '" border="0"/></a></td>';
+			item += '<td onmouseover="this.className=\'mouseover\'" onmouseout="this.className=\'\'" onclick="WYSIWYG.execCommand(\'' + n + '\', \'' + cmd + '\', null);WYSIWYG_ContextMenu.close();"><a href="#" onclick="return false">' + title + '</a></td>';
 			item += '</tr>';
 		}
 		else {
