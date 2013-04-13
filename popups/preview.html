@@ -2,25 +2,25 @@
 
 <html>
 <head>
-<title> Preview </title>
+    <title> Preview </title>
 </head>
 <script src="../scripts/wysiwyg-popup.js"></script>
 <script>
 
-function preview() {	
-	// get params
-	var n = WYSIWYG_Popup.getParam('wysiwyg');
-	// set default styles
-	WYSIWYG_Core.setAttribute(document.body, "style", WYSIWYG.config[n].DefaultStyle);
-	// get content
-	WYSIWYG_Table.disableHighlighting(n);
-	var content = WYSIWYG.getEditorWindow(n).document.body.innerHTML;
-	WYSIWYG_Table.refreshHighlighting(n);
-	content = content.replace(/src="([^/|^http|^https])/gi, "src=\"../$1"); // correct relative image path
-	content = content.replace(/href="([^/|^http|^https|^ftp])/gi, "href=\"../$1"); // correct relative anchor path
-	// set content
-	document.body.innerHTML = content;
-}
+    function preview() {
+        // get params
+        var n = WYSIWYG_Popup.getParam('wysiwyg');
+        // set default styles
+        WYSIWYG_Core.setAttribute(document.body, "style", WYSIWYG.config[n].DefaultStyle);
+        // get content
+        WYSIWYG_Table.disableHighlighting(n);
+        var content = WYSIWYG.getEditorWindow(n).document.body.innerHTML;
+        WYSIWYG_Table.refreshHighlighting(n);
+        content = content.replace(/src="([^/|^http|^https])/gi, "src=\"../$1"); // correct relative image path
+        content = content.replace(/href="([^/|^http|^https|^ftp])/gi, "href=\"../$1"); // correct relative anchor path
+        // set content
+        document.body.innerHTML = content;
+    }
 </script>
 <body onLoad="preview();">
 </body>

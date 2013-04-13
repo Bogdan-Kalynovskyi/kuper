@@ -1,67 +1,147 @@
-#container {height:100%;}
-
-
-#nav h1{width:auto;padding-left:24px}
-#nav{top:0;background:#222;width:100%}#bg{width:100%}
-
-#molbert{
-	top:300px;
+#container {
+    height: 100%;
 }
-#imglink{display:none;}#thumbnails,#fullseze,#slidearea,#slider,#wrapper{margin-bottom:0px;padding:0;margin-top:0;margin-top:0px}
-#wrapper, #center{height:250px} 
-table tr,table tr td{height:0;padding:0;margin:0;/*zoom:0;*/
-} 
-/* add transparancy */
-div#bg {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75);}
-#fon {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);}
-#dim,#dim2 {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);}
-#information {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=24);}
-#wrapper:hover #information {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=72);}
-#information:active {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);}
-.imgnav:active,#imglink:active,#slider img:active {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);}
-#imglink {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);}
-#slider img {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);}
-#ZoomSpin {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=79);}
-#ZoomClose {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);}
-#ZoomCapDiv {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);}
 
+#nav h1 {
+    width: auto;
+    padding-left: 24px
+}
+
+#nav {
+    top: 0;
+    background: #222;
+    width: 100%
+}
+
+#bg {
+    width: 100%
+}
+
+#molbert {
+    top: 300px;
+}
+
+#imglink {
+    display: none;
+}
+
+#thumbnails, #fullseze, #slidearea, #slider, #wrapper {
+    margin-bottom: 0px;
+    padding: 0;
+    margin-top: 0;
+    margin-top: 0px
+}
+
+#wrapper, #center {
+    height: 250px
+}
+
+table tr, table tr td {
+    height: 0;
+    padding: 0;
+    margin: 0; /*zoom:0;*/
+}
+
+/* add transparancy */
+div#bg {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=75);
+}
+
+#fon {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+
+#dim, #dim2 {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+#information {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=24);
+}
+
+#wrapper:hover #information {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=72);
+}
+
+#information:active {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+.imgnav:active, #imglink:active, #slider img:active {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+}
+
+#imglink {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+#slider img {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+
+#ZoomSpin {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=79);
+}
+
+#ZoomClose {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+#ZoomCapDiv {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
 
 /* add overflow:visible to (submit) buttons */
- input, button {overflow:visible;}
- 
- 
- 
- 
- 
- 
- 
+input, button {
+    overflow: visible;
+}
 
-	ul#gal{
-		top:0;
-		position:relative;
-		z-index:30;	
-	}
-	.to_bottom, #dim, #dim2, #bg, #razv, #fon, #container, noscript, #ZoomSpin, #ZoomBox, #ZoomCapDiv, #nav, #molbert{
-		position:absolute;
-	}
-	#fon, #container {
-		top:0;height:100%;
-	}
-	#molbert{
-		position:relative;
-		z-index:1000;
-		height:1000px;
-		margin-bottom:500px;
-	}
-	div#gal{
-		position:relative;
-		z-index:1000;
-		background:#ddf;
-		top:200px;
-		width:600px;
-		height:150px;
-		margin-bottom:800px;
-	}
-#molbert #wrapper #fullsize #image{top:0; right:0; z-index:100}
-#molbert #wrapper #image img{position:static;left:0;z-index:110}	
-#overall div.gb pre{width:800px;display:block;white-space:normal;}
+ul#gal {
+    top: 0;
+    position: relative;
+    z-index: 30;
+}
+
+.to_bottom, #dim, #dim2, #bg, #razv, #fon, #container, noscript, #ZoomSpin, #ZoomBox, #ZoomCapDiv, #nav, #molbert {
+    position: absolute;
+}
+
+#fon, #container {
+    top: 0;
+    height: 100%;
+}
+
+#molbert {
+    position: relative;
+    z-index: 1000;
+    height: 1000px;
+    margin-bottom: 500px;
+}
+
+div#gal {
+    position: relative;
+    z-index: 1000;
+    background: #ddf;
+    top: 200px;
+    width: 600px;
+    height: 150px;
+    margin-bottom: 800px;
+}
+
+#molbert #wrapper #fullsize #image {
+    top: 0;
+    right: 0;
+    z-index: 100
+}
+
+#molbert #wrapper #image img {
+    position: static;
+    left: 0;
+    z-index: 110
+}
+
+#overall div.gb pre {
+    width: 800px;
+    display: block;
+    white-space: normal;
+}

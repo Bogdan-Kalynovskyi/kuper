@@ -2,179 +2,193 @@
 
 <html>
 <head>
-	<title> �������� ��� ������ ���������� </title>
-	
-<script src="../scripts/wysiwyg-popup.js"></script>
-<script>
-<!--
+    <title> �������� ��� ������ ���������� </title>
 
-function insertHyperLink() {
-	var n = WYSIWYG_Popup.getParam('wysiwyg');
-	
-	// get values from form fields
-	var href = document.getElementById('linkUrl').value;
-	var target = document.getElementById('linkTarget').value;
-	var style = document.getElementById('linkStyle').value;
-	var styleClass = document.getElementById('linkClass').value;
-	var name = document.getElementById('linkName').value;
-	var title = document.getElementById('title').value;////////////
+    <script src="../scripts/wysiwyg-popup.js"></script>
+    <script>
+        <
+        !--
 
-	WYSIWYG.insertLink(href, target, style, styleClass, name, n, title);
-	window.close();
-}
+            function insertHyperLink() {
+                var n = WYSIWYG_Popup.getParam('wysiwyg');
 
-/* ---------------------------------------------------------------------- *\
-  Function    : loadLink() (new)
-  Description : Load the link attributes to the form
-\* ---------------------------------------------------------------------- */
-function loadLink() {
-	// get params
-	var n = WYSIWYG_Popup.getParam('wysiwyg');
-		// get selection and range
-	var sel = WYSIWYG.getSelection(n);	
-	var range = WYSIWYG.getRange(sel);
-	if(WYSIWYG.emptySelection(range)){
-		alert("�������� ������ �����, ���� ���� ����������� � ���������� ! ");	
-	}
-	var lin = null;
-	if(WYSIWYG_Core.isMSIE) {
-		if(sel.type == "Control" && range.length == 1) {	
-			range = WYSIWYG.getTextRange(range(0));
-			range.select();
-		}
-		if (sel.type == 'Text' || sel.type == 'None') {
-			sel = WYSIWYG.getSelection(n);
-			range = WYSIWYG.getRange(sel);
-			// find a as parent element
-			lin = WYSIWYG.findParent("a", range);
-		}
-	}
-	else {
-		// find a as parent element
-		lin = WYSIWYG.findParent("a", range);
-	}
-	
-	// if no link as parent found exit here
-	if(lin == null  || lin == undefined) return;
-		document.getElementById('ccc').innerHTML = "������ ���������";
+                // get values from form fields
+                var href = document.getElementById('linkUrl').value;
+                var target = document.getElementById('linkTarget').value;
+                var style = document.getElementById('linkStyle').value;
+                var styleClass = document.getElementById('linkClass').value;
+                var name = document.getElementById('linkName').value;
+                var title = document.getElementById('title').value;////////////
+
+                WYSIWYG.insertLink(href, target, style, styleClass, name, n, title);
+                window.close();
+            }
+
+        /* ---------------------------------------------------------------------- *\
+         Function    : loadLink() (new)
+         Description : Load the link attributes to the form
+         \* ---------------------------------------------------------------------- */
+        function loadLink() {
+            // get params
+            var n = WYSIWYG_Popup.getParam('wysiwyg');
+            // get selection and range
+            var sel = WYSIWYG.getSelection(n);
+            var range = WYSIWYG.getRange(sel);
+            if (WYSIWYG.emptySelection(range)) {
+                alert("�������� ������ �����, ���� ���� ����������� � ���������� ! ");
+            }
+            var lin = null;
+            if (WYSIWYG_Core.isMSIE) {
+                if (sel.type == "Control" && range.length == 1) {
+                    range = WYSIWYG.getTextRange(range(0));
+                    range.select();
+                }
+                if (sel.type == 'Text' || sel.type == 'None') {
+                    sel = WYSIWYG.getSelection(n);
+                    range = WYSIWYG.getRange(sel);
+                    // find a as parent element
+                    lin = WYSIWYG.findParent("a", range);
+                }
+            } else {
+                // find a as parent element
+                lin = WYSIWYG.findParent("a", range);
+            }
+
+            // if no link as parent found exit here
+            if (lin == null || lin == undefined) {
+                return;
+            }
+            document.getElementById('ccc').innerHTML = "������ ���������";
 // set form elements with attribute values
-	for(var i=0; i<lin.attributes.length; i++) {
-		var attr = lin.attributes[i].name.toLowerCase();
-		var value = lin.attributes[i].value;
-		if(attr && value && value != "null" && value != undefined) {
-			switch (attr) {
-				case "href":
-					// strip off urls on IE
-					if(WYSIWYG_Core.isMSIE) value = WYSIWYG.stripURLPath(n, value, false);
-					document.getElementById('linkUrl').value = value;
-				break;
-				case "target":
-					document.getElementById('linkTarget').value = value;
-					selectItemByValue(document.getElementById('linkTargetChooser'), value);
-				break;
-				case "title":
-					document.getElementById('title').value = value;		
-				break;
-				case "name":
-					document.getElementById('linkName').value = value;
-				break;
-				case "class":
-					document.getElementById('linkClass').value = value;
-				break;
-				case "classname":
-					document.getElementById('linkClass').value = value;
-				break;
-				
-			}
-		}
-	}
-	
-	// Getting style attribute of the link separately, because IE interprets the 
-	// style attribute is an complex object, and do not return a text stylesheet like Mozilla.
-	document.getElementById('linkStyle').value = WYSIWYG_Core.replaceRGBWithHexColor(WYSIWYG_Core.getAttribute(lin, "style"));	
-}
+            for (var i = 0; i < lin.attributes.length; i++) {
+                var attr = lin.attributes[i].name.toLowerCase();
+                var value = lin.attributes[i].value;
+                if (attr && value && value != "null" && value != undefined) {
+                    switch (attr) {
+                        case "href":
+                            // strip off urls on IE
+                            if (WYSIWYG_Core.isMSIE) {
+                                value = WYSIWYG.stripURLPath(n, value, false);
+                            }
+                            document.getElementById('linkUrl').value = value;
+                            break;
+                        case "target":
+                            document.getElementById('linkTarget').value = value;
+                            selectItemByValue(document.getElementById('linkTargetChooser'), value);
+                            break;
+                        case "title":
+                            document.getElementById('title').value = value;
+                            break;
+                        case "name":
+                            document.getElementById('linkName').value = value;
+                            break;
+                        case "class":
+                            document.getElementById('linkClass').value = value;
+                            break;
+                        case "classname":
+                            document.getElementById('linkClass').value = value;
+                            break;
 
-/* ---------------------------------------------------------------------- *\
-  Function    : updateTarget() (new)
-  Description : Updates the target text field
-  Arguments   : value - Value to be set
-\* ---------------------------------------------------------------------- */
-function updateTarget(value) {
-	document.getElementById('linkTarget').value = value;
-}
+                    }
+                }
+            }
 
-/* ---------------------------------------------------------------------- *\
-  Function    : selectItem()
-  Description : Select an item of an select box element by value.
-\* ---------------------------------------------------------------------- */
-function selectItemByValue(element, value) {
-	if(element.options.length) {
-		for(var i=0;i<element.options.length;i++) {
-			if(element.options[i].value == value) {
-				element.options[i].selected = true;
-				return;
-			}
-		}
-		element.options[(element.options.length-1)].selected = true;
-	}
-}
+            // Getting style attribute of the link separately, because IE interprets the
+            // style attribute is an complex object, and do not return a text stylesheet like Mozilla.
+            document.getElementById('linkStyle').value = WYSIWYG_Core.replaceRGBWithHexColor(WYSIWYG_Core.getAttribute(lin, "style"));
+        }
 
-</script>
+        /* ---------------------------------------------------------------------- *\
+         Function    : updateTarget() (new)
+         Description : Updates the target text field
+         Arguments   : value - Value to be set
+         \* ---------------------------------------------------------------------- */
+        function updateTarget(value) {
+            document.getElementById('linkTarget').value = value;
+        }
+
+        /* ---------------------------------------------------------------------- *\
+         Function    : selectItem()
+         Description : Select an item of an select box element by value.
+         \* ---------------------------------------------------------------------- */
+        function selectItemByValue(element, value) {
+            if (element.options.length) {
+                for (var i = 0; i < element.options.length; i++) {
+                    if (element.options[i].value == value) {
+                        element.options[i].selected = true;
+                        return;
+                    }
+                }
+                element.options[(element.options.length - 1)].selected = true;
+            }
+        }
+
+    </script>
 </head>
 <body style="margin: 0;	padding: 0;	width: 100%;height: 100%;background: #EEEEEE;font-size:100.01%;"
-onLoad="loadLink();">
+      onLoad="loadLink();">
 
-<table border="0" cellpadding="0" cellspacing="0" style="padding: 10px;"><tr><td>
+<table border="0" cellpadding="0" cellspacing="0" style="padding: 10px;">
+    <tr>
+        <td>
 
-<span style="font-family: arial, verdana, helvetica; font-size: 11px; font-weight: bold;" id="ccc">�������� ���������:</span>
-	<table width="330" border="0" cellpadding="1" cellspacing="0" style="background-color: #F7F7F7; border: 2px solid #FFFFFF; padding: 5px;">
-	<tr>
-		<td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 11px;">URL:</td>
-		<td style="padding-bottom: 2px; padding-top: 0px;" colspan="3">
-			<input type="text" name="linkUrl" id="linkUrl" value="http://" style="font-size: 10px; width: 100%;">
-		</td>
-	</tr>
-	<tr>
-		<td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Anchor Name:</td>
-		<td style="padding-bottom: 2px;" colspan="3">
-			<input type="text" name="linkName" id="linkName" value="" style="font-size: 10px; width: 100%;">
-		</td>	
-	</tr>
-
-
-	<tr>
-		<td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">ϳ������:</td>
-		<td style="padding-bottom: 2px;" colspan="3">
-			<input type="text" name="title" id="title" value="" style="font-size: 10px; width: 100%; color:#777777; background-color: #eeeeee;">
-		</td>	
-	</tr>
-	<tr>
-		<td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Target:</td>
-		<td style="padding-bottom: 2px;" colspan="3">
-			<input type="text" name="linkTarget" id="linkTarget" value="_blank" style="font-size: 10px; width: 65%;  color:#777777; background-color: #eeeeee;">
-			&nbsp;
-			<select name="linkTargetChooser" id="linkTargetChooser" style="font-size: 10px; width: 30%; color:#777777; background-color: #eeeeee;" onchange="updateTarget(this.value);">
-				<option value="" selected>no target</option>
-				<option value="_blank">_blank</option>
-				<option value="_self">_self</option>
-				<option value="_parent">_parent</option>
-				<option value="_top">_top</option>
-				<option value="">custom</option>
-			</select>
-		</td>	
-	</tr>
-		<tr>
-			<td></td><td colspan="3"></td>
-		</tr>
-	
-</table>	
-			<input type="hidden" name="linkStyle" id="linkStyle">
-			<input type="hidden" name="linkClass" id="linkClass">
+            <span style="font-family: arial, verdana, helvetica; font-size: 11px; font-weight: bold;" id="ccc">�������� ���������:</span>
+            <table width="330" border="0" cellpadding="1" cellspacing="0" style="background-color: #F7F7F7; border: 2px solid #FFFFFF; padding: 5px;">
+                <tr>
+                    <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 11px;">URL:</td>
+                    <td style="padding-bottom: 2px; padding-top: 0px;" colspan="3">
+                        <input type="text" name="linkUrl" id="linkUrl" value="http://" style="font-size: 10px; width: 100%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Anchor Name:</td>
+                    <td style="padding-bottom: 2px;" colspan="3">
+                        <input type="text" name="linkName" id="linkName" value="" style="font-size: 10px; width: 100%;">
+                    </td>
+                </tr>
 
 
-<div align="right" style="padding-top: 5px;"><input type="submit" value="  Submit  " onClick="insertHyperLink();" style="font-size: 12px;" >&nbsp;<input type="button" value="  Cancel  " onClick="window.close();" style="font-size: 12px;" ></div>
+                <tr>
+                    <td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">ϳ������:</td>
+                    <td style="padding-bottom: 2px;" colspan="3">
+                        <input type="text" name="title" id="title" value="" style="font-size: 10px; width: 100%; color:#777777; background-color: #eeeeee;">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Target:</td>
+                    <td style="padding-bottom: 2px;" colspan="3">
+                        <input type="text" name="linkTarget" id="linkTarget" value="_blank" style="font-size: 10px; width: 65%;  color:#777777; background-color: #eeeeee;">
+                        &nbsp;
+                        <select name="linkTargetChooser" id="linkTargetChooser" style="font-size: 10px; width: 30%; color:#777777; background-color: #eeeeee;"
+                                onchange="updateTarget(this.value);">
+                            <option value="" selected>no target</option>
+                            <option value="_blank">_blank</option>
+                            <option value="_self">_self</option>
+                            <option value="_parent">_parent</option>
+                            <option value="_top">_top</option>
+                            <option value="">custom</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="3"></td>
+                </tr>
 
-</td></tr></table>
+            </table>
+            <input type="hidden" name="linkStyle" id="linkStyle">
+            <input type="hidden" name="linkClass" id="linkClass">
+
+
+            <div align="right" style="padding-top: 5px;"><input type="submit" value="  Submit  " onClick="insertHyperLink();" style="font-size: 12px;">&nbsp;<input type="button"
+                                                                                                                                                                    value="  Cancel  "
+                                                                                                                                                                    onClick="window.close();"
+                                                                                                                                                                    style="font-size: 12px;">
+            </div>
+
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>

@@ -8,239 +8,246 @@
 
 class Zubrag_image {
 
-  var $save_to_file = true;
-  var $image_type = -1;
-  var $quality = 40;
-  var $max_x = 100;
-  var $max_y = 100;
-  var $cut_x = 0;
-  var $cut_y = 0;
- 
-  function SaveImage($im, $filename) {
- 
-    $res = null;
- 
-    // ImageGIF is not included into some GD2 releases, so it might not work
-    // output png if gifs are not supported
-    if(($this->image_type == 1)  && !function_exists('imagegif')) $this->image_type = 3;
+    var $save_to_file = true;
+    var $image_type = -1;
+    var $quality = 40;
+    var $max_x = 100;
+    var $max_y = 100;
+    var $cut_x = 0;
+    var $cut_y = 0;
 
-    switch ($this->image_type) {
-      case 1:
-        if ($this->save_to_file) {
-          $res = ImageGIF($im,$filename);
-        }
-        else {
-          header("Content-Type: image/gif");
-          $res = ImageGIF($im);
-        }
-        break;
-      case 2:
-        if ($this->save_to_file) {
-          $res = ImageJPEG($im,$filename,$this->quality);
-        }
-        else {
-          header("Content-Type: image/jpeg");
-          $res = ImageJPEG($im, NULL, $this->quality);
-        }
-        break;
-      case 3:
-        if (PHP_VERSION >= '5.1.2') {
-          // Convert to PNG quality.
-          // PNG quality: 0 (best quality, bigger file) to 9 (worst quality, smaller file)
-          $quality = 9 - min( round($this->quality / 10), 9 );
-          if ($this->save_to_file) {
-            $res = ImagePNG($im, $filename, $quality);
-          }
-          else {
-            header("Content-Type: image/png");
-            $res = ImagePNG($im, NULL, $quality);
-          }
-        }
-        else {
-          if ($this->save_to_file) {
-            $res = ImagePNG($im, $filename);
-          }
-          else {
-            header("Content-Type: image/png");
-            $res = ImagePNG($im);
-          }
-        }
-        break;
-    }
- 
-    return $res;
- 
-  }
- 
-  function ImageCreateFromType($type,$filename) {
-   $im = null;
-   switch ($type) {
-     case 1:
-       $im = ImageCreateFromGif($filename);
-       break;
-     case 2:
-       $im = ImageCreateFromJpeg($filename);
-       break;
-     case 3:
-       $im = ImageCreateFromPNG($filename);
-       break;
-    }
-    return $im;
-  }
- 
-  // generate thumb from image and save it
-  function GenerateThumbFile($from_name, $to_name) {
- 
-    // if src is URL then download file first
-    $temp = false;
-    if ((substr($from_name,0,7) == 'http://') || (substr($from_name,0,8) == 'https://') || (substr($from_name,0,6) == 'ftp://')) {
-      $tmpfname = tempnam("tmp/", "TmP-");
-      $temp = fopen($tmpfname, "w");
-      if ($temp) {
-        fwrite($temp, file_get_contents($from_name)) or die("Cannot download image $from_name");
-        fclose($temp);
-        $from_name = $tmpfname;
-      }
-      else {
-        die("Cannot create temp file");
-      }
-    }
+    function SaveImage ($im, $filename) {
 
-    // check if file exists
-    if (!file_exists($from_name)) die("Source image does not exist $from_name");
-    
-    // get source image size (width/height/type)
-    // orig_img_type 1 = GIF, 2 = JPG, 3 = PNG
-    list($orig_x, $orig_y, $orig_img_type, $img_sizes) = @GetImageSize($from_name);
+        $res = null;
 
-    // cut image if specified by user
-    if ($this->cut_x > 0) $orig_x = min($this->cut_x, $orig_x);
-    if ($this->cut_y > 0) $orig_y = min($this->cut_y, $orig_y);
- 
-    // should we override thumb image type?
-    $this->image_type = ($this->image_type != -1 ? $this->image_type : $orig_img_type);
- 
-    // check for allowed image types
- //   if ($orig_img_type < 1 or $orig_img_type > 3) die("Image type not supported $orig_img_type");
- 
-    if ($orig_x > $this->max_x or $orig_y > $this->max_y) {
- 
-      // resize
-      $per_x = $orig_x / $this->max_x;
-      $per_y = $orig_y / $this->max_y;
-      if ($per_y > $per_x) {
-        $this->max_x = $orig_x / $per_y;
-      }
-      else {
-        $this->max_y = $orig_y / $per_x;
-      }
- 
-    }
-    else {
-      // keep original sizes, i.e. just copy
-       $this->max_x = $orig_x;
-       $this->max_y = $orig_y;
-      if ($this->save_to_file) {
-        copy($from_name, $to_name);
-      }
-      else {
+        // ImageGIF is not included into some GD2 releases, so it might not work
+        // output png if gifs are not supported
+        if (($this->image_type == 1) && !function_exists('imagegif')) {
+            $this->image_type = 3;
+        }
+
         switch ($this->image_type) {
-          case 1:
-              header("Content-Type: image/gif");
-              readfile($from_name);
-            break;
-          case 2:
-              header("Content-Type: image/jpeg");
-              readfile($from_name);
-            break;
-          case 3:
-              header("Content-Type: image/png");
-              readfile($from_name);
-            break;
+            case 1:
+                if ($this->save_to_file) {
+                    $res = ImageGIF($im, $filename);
+                }
+                else {
+                    header("Content-Type: image/gif");
+                    $res = ImageGIF($im);
+                }
+                break;
+            case 2:
+                if ($this->save_to_file) {
+                    $res = ImageJPEG($im, $filename, $this->quality);
+                }
+                else {
+                    header("Content-Type: image/jpeg");
+                    $res = ImageJPEG($im, NULL, $this->quality);
+                }
+                break;
+            case 3:
+                if (PHP_VERSION >= '5.1.2') {
+                    // Convert to PNG quality.
+                    // PNG quality: 0 (best quality, bigger file) to 9 (worst quality, smaller file)
+                    $quality = 9 - min(round($this->quality / 10), 9);
+                    if ($this->save_to_file) {
+                        $res = ImagePNG($im, $filename, $quality);
+                    }
+                    else {
+                        header("Content-Type: image/png");
+                        $res = ImagePNG($im, NULL, $quality);
+                    }
+                }
+                else {
+                    if ($this->save_to_file) {
+                        $res = ImagePNG($im, $filename);
+                    }
+                    else {
+                        header("Content-Type: image/png");
+                        $res = ImagePNG($im);
+                    }
+                }
+                break;
         }
-      }
-      return;
-    }
- 
-    if ($this->image_type == 1) {
-      // should use this function for gifs (gifs are palette images)
-      $ni = imagecreate($this->max_x, $this->max_y);
-    }
-    else {
-      // Create a new true color image
-      $ni = ImageCreateTrueColor($this->max_x,$this->max_y);
+
+        return $res;
+
     }
 
-  		  
-    // Create a new image from source file
-    $im = $this->ImageCreateFromType($orig_img_type,$from_name);
-	
+    function ImageCreateFromType ($type, $filename) {
+        $im = null;
+        switch ($type) {
+            case 1:
+                $im = ImageCreateFromGif($filename);
+                break;
+            case 2:
+                $im = ImageCreateFromJpeg($filename);
+                break;
+            case 3:
+                $im = ImageCreateFromPNG($filename);
+                break;
+        }
+        return $im;
+    }
+
+    // generate thumb from image and save it
+    function GenerateThumbFile ($from_name, $to_name) {
+
+        // if src is URL then download file first
+        $temp = false;
+        if ((substr($from_name, 0, 7) == 'http://') || (substr($from_name, 0, 8) == 'https://') || (substr($from_name, 0, 6) == 'ftp://')) {
+            $tmpfname = tempnam("tmp/", "TmP-");
+            $temp = fopen($tmpfname, "w");
+            if ($temp) {
+                fwrite($temp, file_get_contents($from_name)) or die("Cannot download image $from_name");
+                fclose($temp);
+                $from_name = $tmpfname;
+            }
+            else {
+                die("Cannot create temp file");
+            }
+        }
+
+        // check if file exists
+        if (!file_exists($from_name)) {
+            die("Source image does not exist $from_name");
+        }
+
+        // get source image size (width/height/type)
+        // orig_img_type 1 = GIF, 2 = JPG, 3 = PNG
+        list($orig_x, $orig_y, $orig_img_type, $img_sizes) = @GetImageSize($from_name);
+
+        // cut image if specified by user
+        if ($this->cut_x > 0) {
+            $orig_x = min($this->cut_x, $orig_x);
+        }
+        if ($this->cut_y > 0) {
+            $orig_y = min($this->cut_y, $orig_y);
+        }
+
+        // should we override thumb image type?
+        $this->image_type = ($this->image_type != -1 ? $this->image_type : $orig_img_type);
+
+        // check for allowed image types
+        //   if ($orig_img_type < 1 or $orig_img_type > 3) die("Image type not supported $orig_img_type");
+
+        if ($orig_x > $this->max_x or $orig_y > $this->max_y) {
+
+            // resize
+            $per_x = $orig_x / $this->max_x;
+            $per_y = $orig_y / $this->max_y;
+            if ($per_y > $per_x) {
+                $this->max_x = $orig_x / $per_y;
+            }
+            else {
+                $this->max_y = $orig_y / $per_x;
+            }
+
+        }
+        else {
+            // keep original sizes, i.e. just copy
+            $this->max_x = $orig_x;
+            $this->max_y = $orig_y;
+            if ($this->save_to_file) {
+                copy($from_name, $to_name);
+            }
+            else {
+                switch ($this->image_type) {
+                    case 1:
+                        header("Content-Type: image/gif");
+                        readfile($from_name);
+                        break;
+                    case 2:
+                        header("Content-Type: image/jpeg");
+                        readfile($from_name);
+                        break;
+                    case 3:
+                        header("Content-Type: image/png");
+                        readfile($from_name);
+                        break;
+                }
+            }
+            return;
+        }
+
+        if ($this->image_type == 1) {
+            // should use this function for gifs (gifs are palette images)
+            $ni = imagecreate($this->max_x, $this->max_y);
+        }
+        else {
+            // Create a new true color image
+            $ni = ImageCreateTrueColor($this->max_x, $this->max_y);
+        }
+
+
+        // Create a new image from source file
+        $im = $this->ImageCreateFromType($orig_img_type, $from_name);
+
 /////////////////////////////////////////////////////////////////////////////////////////
-    	
-		
-		    if ( ($this->image_type == 1) || ($this->image_type == 3) ) {
-		      $trnprt_indx = imagecolortransparent($im);
-		   
-		      // If we have a specific transparent color
-		      if ($trnprt_indx >= 0) {
-		   
-		        // Get the original image's transparent color's RGB values
-		        $trnprt_color    = imagecolorsforindex($im, $trnprt_indx);/*)HERE)*/
-		   
-		        // Allocate the same color in the new image resource
-		        $trnprt_indx    = imagecolorallocate($ni, $trnprt_color['red'], $trnprt_color['green'], $trnprt_color['blue']);
-		   
-		        // Completely fill the background of the new image with allocated color.
-		        imagefilledrectangle( $ni, 0, 0, $this->max_x, $this->max_y, $trnprt_indx);
-		   
-		        // Set the background color for new image to transparent
-		        imagecolortransparent($ni, $trnprt_indx);
-		   
-		     
-		      }
-		      // Always make a transparent background color for PNGs that don't have one allocated already
-		      elseif ($this->image_type == 3) {
-		   
-		        // Turn off transparency blending (temporarily)
-		        imagealphablending($ni, false);
-		   
-		        // Create a new transparent color for image
-		        $color = imagecolorallocatealpha($ni, 0, 0, 0, 127);
-		   
-		        // Completely fill the background of the new image with allocated color.
-		        imagefilledrectangle( $ni, 0, 0, $this->max_x, $this->max_y, $color);
-		   
-		        // Restore transparency blending
-		        imagesavealpha($ni, true);
-		      }
-		    }
-    		else{
-     
-		 	   	// Fill image with white background (255,255,255)
-		 		  $white = imagecolorallocate($ni, 255, 255, 255);
-  				  imagefilledrectangle( $ni, 0, 0, $this->max_x, $this->max_y, $white);
-  		  }
-  		
-  		  
+
+
+        if (($this->image_type == 1) || ($this->image_type == 3)) {
+            $trnprt_indx = imagecolortransparent($im);
+
+            // If we have a specific transparent color
+            if ($trnprt_indx >= 0) {
+
+                // Get the original image's transparent color's RGB values
+                $trnprt_color = imagecolorsforindex($im, $trnprt_indx); /*)HERE)*/
+
+                // Allocate the same color in the new image resource
+                $trnprt_indx = imagecolorallocate($ni, $trnprt_color['red'], $trnprt_color['green'], $trnprt_color['blue']);
+
+                // Completely fill the background of the new image with allocated color.
+                imagefilledrectangle($ni, 0, 0, $this->max_x, $this->max_y, $trnprt_indx);
+
+                // Set the background color for new image to transparent
+                imagecolortransparent($ni, $trnprt_indx);
+
+
+            }
+            // Always make a transparent background color for PNGs that don't have one allocated already
+            elseif ($this->image_type == 3) {
+
+                // Turn off transparency blending (temporarily)
+                imagealphablending($ni, false);
+
+                // Create a new transparent color for image
+                $color = imagecolorallocatealpha($ni, 0, 0, 0, 127);
+
+                // Completely fill the background of the new image with allocated color.
+                imagefilledrectangle($ni, 0, 0, $this->max_x, $this->max_y, $color);
+
+                // Restore transparency blending
+                imagesavealpha($ni, true);
+            }
+        }
+        else {
+
+            // Fill image with white background (255,255,255)
+            $white = imagecolorallocate($ni, 255, 255, 255);
+            imagefilledrectangle($ni, 0, 0, $this->max_x, $this->max_y, $white);
+        }
+
+
 ///////////////////////////////////////////////////////////////////////////////////  		    
 
-    // Copy the palette from one image to another
-    imagepalettecopy($ni,$im);
-    // Copy and resize part of an image with resampling
-    imagecopyresampled(
-      $ni, $im,             // destination, source
-      0, 0, 0, 0,           // dstX, dstY, srcX, srcY
-      $this->max_x, $this->max_y,       // dstW, dstH
-      $orig_x, $orig_y);    // srcW, srcH
- 
-    // save thumb file
-    $this->SaveImage($ni, $to_name);
+        // Copy the palette from one image to another
+        imagepalettecopy($ni, $im);
+        // Copy and resize part of an image with resampling
+        imagecopyresampled($ni, $im, // destination, source
+            0, 0, 0, 0, // dstX, dstY, srcX, srcY
+            $this->max_x, $this->max_y, // dstW, dstH
+            $orig_x, $orig_y); // srcW, srcH
 
-    if($temp) {
-      unlink($tmpfname); // this removes the file
+        // save thumb file
+        $this->SaveImage($ni, $to_name);
+
+        if ($temp) {
+            unlink($tmpfname); // this removes the file
+        }
+
     }
-
-  }
 
 }
 

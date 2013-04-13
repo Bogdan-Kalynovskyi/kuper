@@ -1,27 +1,29 @@
 <?php
 
 //-----------------------------------------------//
-	function NonCachePlusEncoding(){
-		global $CHRST;
-		
-		header("Content-Type: text/html; charset=$CHRST");	//í1ÿêèõ ëàïîê 1 í1ÿêèõ ïðîá1ë1â?
+function NonCachePlusEncoding () {
+    global $CHRST;
 
-		header('Expires: -1');//header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-		header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); 
-		header('Cache-Control: no-store, no-cache, must-revalidate', false); 
-		header('Cache-Control: post-check=0, pre-check=0', false);
-		header('Pragma: no-cache');
-		//+1 ???? see current situation and older posts 98%
-		
-		//todo: does this really work?
-	}
+    header("Content-Type: text/html; charset=$CHRST"); //í1ÿêèõ ëàïîê 1 í1ÿêèõ ïðîá1ë1â?
 
-	
+    header('Expires: -1'); //header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+    header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+    header('Cache-Control: no-store, no-cache, must-revalidate', false);
+    header('Cache-Control: post-check=0, pre-check=0', false);
+    header('Pragma: no-cache');
+    //+1 ???? see current situation and older posts 98%
+
+    //todo: does this really work?
+}
+
+
 //------------------------------------------------//
-	function echonone(){//todo more and more sexy
-		echo '<div style="padding:3px;text-align:center">none</div>';
-	}
-	function backButton(){/*id = back_button??? title="back"*/echo<<<EOF
+function echonone () { //todo more and more sexy
+    echo '<div style="padding:3px;text-align:center">none</div>';
+}
+
+function backButton () { /*id = back_button??? title="back"*/
+    echo <<<EOF
 		<input type="button" id="error_button" value="        O K        " onclick="document.location='./'" title="Íàçàä" style="
 		display:block;
 		margin:0 auto;
@@ -43,81 +45,87 @@
 			//document.getElementById('error_button').focus();
 		</script>
 EOF;
-	}
+}
 
-	
+
 //todo function draw_grey_button(){}
-	
+
 //------------------------------------------------//
-	function echoicon($src){
-					if(noempty($src))
-						return '<img class="icon" src="'.$src.'">';
-					else
-						return '<div class="icon">&nbsp;</div>';
-	}
+function echoicon ($src) {
+    if (noempty($src)) {
+        return '<img class="icon" src="' . $src . '">';
+    }
+    else {
+        return '<div class="icon">&nbsp;</div>';
+    }
+}
 
 
 //------------------------------------------------//
 /////////////////////////////// çàáîðîíåíû íåéì ç ïûäêðåñëåííÿì
-function addUserToProjectLink($u, $p){
-		$x=completeGetRequest();
-		echo<<<EOF
+function addUserToProjectLink ($u, $p) {
+    $x = completeGetRequest();
+    echo <<<EOF
 			 <a name="_$u" 
 			 href="?action=add_user_to_project&user=$u&proj=$p{$x}#_$u" 
 			 class="kitten" 
 			 onclick="return confirm('Add user to project?')" />Add user to project</a>
 EOF;
-	}
+}
 
-	function addProjectToUserLink($p, $u){
-		$x=completeGetRequest();
-		echo<<<EOF
+function addProjectToUserLink ($p, $u) {
+    $x = completeGetRequest();
+    echo <<<EOF
 			 <a name="_$p" 
 			 href="?action=add_project_to_user&user=$u&proj=$p{$x}#_$p" 
 			 class="kitten" 
 			 onclick="return confirm('Add project to user?')" />Add project to user</a>
 EOF;
-	}
-	function removeUserFromProjectLink($u, $p){
-		$x=completeGetRequest();
-		echo<<<EOF
+}
+
+function removeUserFromProjectLink ($u, $p) {
+    $x = completeGetRequest();
+    echo <<<EOF
 			 <a name="_$u" 
 			 href="?action=remove_project_from_user&user=$u&proj=$p{$x}#_$u" 
 			 class="kitten" 
 			 onclick="return confirm('Remove user from project?')" />Remove user from project</a>
 EOF;
-	}
-	function removeProjectFromUserLink($p, $u){
-		$x=completeGetRequest();
-		echo<<<EOF
+}
+
+function removeProjectFromUserLink ($p, $u) {
+    $x = completeGetRequest();
+    echo <<<EOF
 			 <a name="_$p" 
 			 href="?action=remove_project_from_user&user=$u&proj=$p{$x}#_$p" 
 			 class="kitten" 
 			 onclick="return confirm('Remove project from user?')" />Remove project from user</a>
 EOF;
-	}
-	
-	function completeGetRequest(){
-		/*$str='';
-		foreach($_GET as $key=>$value)
-			$str .= "&$key=".myurlencode($value);
-		return $str;*/
-		if(isset($_GET['id']))
-		return '&id='.rawurlencode($_GET['id']);
-	}
-	function completePostRequest(){/*for autometic login/delogin redirection*//*so you shouldfollow this function with automatical javascriot that fill in the form fith all the fields have been selected!*/}
-//////////////////////////////	
+}
 
+function completeGetRequest () {
+    /*$str='';
+    foreach($_GET as $key=>$value)
+        $str .= "&$key=".myurlencode($value);
+    return $str;*/
+    if (isset($_GET['id'])) {
+        return '&id=' . rawurlencode($_GET['id']);
+    }
+}
 
+function completePostRequest () { /*for autometic login/delogin redirection*/ /*so you shouldfollow this function with automatical javascriot that fill in the form fith all the fields have been selected!*/
+}
 
+//////////////////////////////
 
 
 //-----------------------------------------------------------------------------------------------------//
-function bulk_message($msg, $color){
-	if(is_array($msg))
-		$msg = implode('<br/>', $msg);
-		
-	echo <<<EOF
+function bulk_message ($msg, $color) {
+    if (is_array($msg)) {
+        $msg = implode('<br/>', $msg);
+    }
+
+    echo <<<EOF
 		<h2 style="
 			color:$color;
 			margin:140px auto 25px auto;
@@ -129,53 +137,55 @@ function bulk_message($msg, $color){
 		</h2>
 EOF;
 //font-size
-	backButton();
+    backButton();
 }
 
 //error logging öå êðóòî
 
-function error_page($msg){
- 	include A_VIEW."header_1.php";
-	bulk_message($msg, 'red');
- 	include A_VIEW."footer.php";
- 	exit;
+function error_page ($msg) {
+    include A_VIEW . "header_1.php";
+    bulk_message($msg, 'red');
+    include A_VIEW . "footer.php";
+    exit;
 }
 
-function info_page($msg){
- 	include A_VIEW."header_1.php";
-	bulk_message($msg, '#999');
- 	include A_VIEW."footer.php";
- 	exit;
-}
-function error_msg($msg){
-	bulk_message($msg, 'red');
- 	include A_VIEW."footer.php";
- 	exit;
+function info_page ($msg) {
+    include A_VIEW . "header_1.php";
+    bulk_message($msg, '#999');
+    include A_VIEW . "footer.php";
+    exit;
 }
 
-function info_msg($msg){
-	bulk_message($msg, '#999');
- 	include A_VIEW."footer.php";
- 	exit;
+function error_msg ($msg) {
+    bulk_message($msg, 'red');
+    include A_VIEW . "footer.php";
+    exit;
 }
 
-function good_page($msg){
- 	include A_VIEW."header_1.php";
-	bulk_message($msg, '#0b0');
- 	include A_VIEW."footer.php";
- 	exit;
+function info_msg ($msg) {
+    bulk_message($msg, '#999');
+    include A_VIEW . "footer.php";
+    exit;
 }
 
-function good_msg($msg){
-	bulk_message($msg, '#0b0');
- 	include A_VIEW."footer.php";
- 	exit;
+function good_page ($msg) {
+    include A_VIEW . "header_1.php";
+    bulk_message($msg, '#0b0');
+    include A_VIEW . "footer.php";
+    exit;
 }
 
-function plus_minus($plus){
-	$str='';
-	
-	if($plus)$str=<<<EOF
+function good_msg ($msg) {
+    bulk_message($msg, '#0b0');
+    include A_VIEW . "footer.php";
+    exit;
+}
+
+function plus_minus ($plus) {
+    $str = '';
+
+    if ($plus) {
+        $str = <<<EOF
 	<script>
 		function plus_minus(plus, name){
 			var z = prompt('Amount, $: ');
@@ -186,19 +196,22 @@ function plus_minus($plus){
 		}
 	</script>
 EOF;
+    }
 
-	$str .= '<input type="button" class="btn" value=" '.($plus?'+':'-').' " onclick="plus_minus('.$plus.', \'\')" />';
-	
-	return $str;
+    $str .= '<input type="button" class="btn" value=" ' . ($plus ? '+' : '-') . ' " onclick="plus_minus(' . $plus . ', \'\')" />';
+
+    return $str;
 }
-function inline_plus($u, $p, $n){
-	return<<<EOF
+
+function inline_plus ($u, $p, $n) {
+    return <<<EOF
 			var z = prompt('Place amount, $: ');
 			if(!/*isNumeric*/(z) ) return;
 			
 			document.location.href = '?action=add_money&ammount=' + z
 			+ '&user=$u&proj=$p#___$n';
 EOF;
-	
+
 }
+
 ?>

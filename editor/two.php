@@ -1,82 +1,93 @@
 <?php
-	if(!defined('IN_BMC')) 
-		die("Access Denied!");
-	
-	$name =  array('site_title','site_keywords','site_desc','email','phone','vk','lj',  'contacts', 'def_fon', 'inline');
-	$title = array('Г‡Г ГЈГ®Г«Г®ГўГ®ГЄ Г±Г Г©ГІГ ','Г‘Г«Г®ГўГ  Г¤Г«Гї ГЇГ®ГЁГ±ГЄГ®ГўГЁГЄГ®Гў','ГЋГЇГЁГ±Г Г­ГЁГҐ Г±Г Г©ГІГ ','Email', 'Г’ГҐГ«ГҐГґГ®Г­', 'Г‚ГЉГ®Г­ГІГ ГЄГІГҐ', 'LiveJournal', 'EГ№ГҐ ГЄГ®Г­ГІГ ГЄГІГ» &nbsp;<small><small>(ГЌГҐГ®ГЎГїГ§Г ГІГҐГ«ГјГ­Г®. &nbsp;ГђГ Г§Г°ГҐГёГҐГ­ ГЄГ®Г¤ HTML)</small></small> ', 'Г”Г®Г­ ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ &nbsp;<small><small>(ГЏГіГ±ГІГ® Г¤Г«Гї "Г¬Г ГІГ®ГўГ®ГЈГ® Г±ГІГҐГЄГ«Г ". &nbsp;ГЏГ°Г®ГЎГҐГ« - ГўГ®Г®ГЎГ№ГҐ ГЎГҐГ§ ГґГ®Г­Г )</small></small>', 'Г‚Г®Г§Г¬Г®Г¦Г­Г®Г±ГІГј Г°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГї ГЇГ°ГЁ ГЇГ°Г®Г±Г¬Г®ГІГ°ГҐ Г±ГІГ°Г Г­ГЁГ¶Г» &nbsp;<small><small>(Г’Г®Г«ГјГЄГ® ГҐГ±Г«ГЁ Г§Г Г«Г®ГЈГЁГ°Г®ГўГ Г«Г±Гї)</small></small> ');
-	$type = array(0,0,0,0,0,0,0,1,2,3);
+if (!defined('IN_BMC')) {
+    die('Access Denied!');
+}
+
+$name = array('site_title', 'site_keywords', 'site_desc', 'email', 'phone', 'vk', 'lj', 'contacts', 'def_fon', 'inline');
+$title = array('Заголовок сайта', 'Слова для поисковиков', 'Описание сайта', 'Email', 'Телефон', 'ВКонтакте', 'LiveJournal', 'Eще контакты &nbsp;<small><small>(Необязательно. &nbsp;Разрешен код HTML)</small></small> ', 'Фон по умолчанию &nbsp;<small><small>(Пусто для "матового стекла". &nbsp;Пробел - вообще без фона)</small></small>', 'Возможность редактирования при просмотре страницы &nbsp;<small><small>(Только если залогировался)</small></small> ');
+$type = array(0, 0, 0, 0, 0, 0, 0, 1, 2, 3);
 
 ?>
 <style>
-label{font-weight:bold}
-label a{font-weight:normal}
-small{font-weight:normal}
+    label {
+        font-weight: bold
+    }
+
+    label a {
+        font-weight: normal
+    }
+
+    small {
+        font-weight: normal
+    }
 </style>
 
-<h2> Г„Г®ГЇГ®Г«Г­ГЁГІГҐГ«ГјГ­Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї... </h2>
-	
-<form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
-<fieldset>
-	<input type="hidden" name="<?php echo FORM_HASH; ?>" value="2">
+<h2> Дополнительная информация... </h2>
 
-<?php
-	
-	foreach($name as $i=>$n){
-		
-		$x = htmlspecialchars(@$bmc_vars[$n]);
-	
-		switch($type[$i]){
-			case 0:
-			echo <<<EOF
+<form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
+    <fieldset>
+        <input type="hidden" name="<?php echo FORM_HASH; ?>" value="2">
+
+        <?php
+
+        foreach ($name as $i => $n) {
+
+            $x = htmlspecialchars(@$bmc_vars[$n]);
+
+            switch ($type[$i]) {
+                case 0:
+                    echo <<<EOF
 			<label>{$title[$i]}<br>
 				<input type="text" name="$n" value="$x" size="94">
 			</label><br/><br/>
 EOF;
-			break;
-			
-			case 3:
-			$ch = ($x)?'checked="checked" ':'';
-			echo <<<EOF
+                    break;
+
+                case 3:
+                    $ch = ($x) ? 'checked="checked" ' : '';
+                    echo <<<EOF
 			<label>{$title[$i]}<br>
 				<input type="checkbox" name="$n" value="1" $ch/>
 			</label><br/><br/>
 EOF;
-			break;
+                    break;
 
-			case 1:
-			echo <<<EOF
+                case 1:
+                    echo <<<EOF
 			<label>{$title[$i]}<br>
 				<textarea name="$n"  cols="78" rows="4">$x</textarea>
 			</label><br/><br/>
 EOF;
-			break;
+                    break;
 
-			case 2:
-			if(!trim($x))$x='blank.gif';
-			echo <<<EOF
+                case 2:
+                    if (!trim($x)) {
+                        $x = 'blank.gif';
+                    }
+                    echo <<<EOF
 			<label>{$title[$i]}<br> 
 				<img src="$x" width="50" height="50" id="_$n">&nbsp; &nbsp;
 				URL <input type="text" id="$n" name="$n" value="$x"> &nbsp;&nbsp;
-				ГЁГ«ГЁ ГґГ Г©Г« <input type="file" name="$n" id="__$n"> &nbsp; <a href="#" onclick="clrnpt('$n');return false"><small>Г“ГЎГ°Г ГІГј</small></a>
+				или файл <input type="file" name="$n" id="__$n"> &nbsp; <a href="#" onclick="clrnpt('$n');return false"><small>Убрать</small></a>
 			</label><br/><br/>
 EOF;
-			break;
-		}
+                    break;
+            }
 
-	}
-	
-?>
-<br/>
-	<input type="submit" value="      Г‘Г®ГµГ°Г Г­ГЁГІГј      " style="color:#222">&nbsp; &nbsp; &nbsp;
-	<input type="button" value="       ГЋГІГ¬ГҐГ­Г        " onclick="document.location='user.php'">
+        }
+
+        ?>
+        <br/>
+        <input type="submit" value="      Сохранить      " style="color:#222">&nbsp; &nbsp; &nbsp;
+        <input type="button" value="       Отмена       " onclick="document.location='user.php'">
 
 
-</fieldset>
+    </fieldset>
 </form>
 
 
 <script>
 
-	lightbox();
-	
+    lightbox();
+
 </script>

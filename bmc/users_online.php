@@ -1,39 +1,35 @@
 <?php
-	if(!defined('IN_BMC')) 
-		die("Access Denied!");
-
+if (!defined('IN_BMC')) {
+    die('Access Denied!');
+}
 
 
 //=========================== End user config =======================
-$user_online_timeout=250; // Time in minutes when the 'online users' list is to be reset// TODO INTO GLOBAL VARS
+$user_online_timeout = 250; // Time in minutes when the 'online users' list is to be reset// TODO INTO GLOBAL VARS
 //=========================== End user config =======================
 
 
+if (!@$bmc_vars['users_online']) {
+    return;
+}
+if (isset($users_online)) { //?????????????????????
 
-
-if(!@$bmc_vars['users_online']) return;
-if(isset($users_online)) {//?????????????????????
-
-/*	$db->query("DELETE FROM ".MY_PRF."users_online WHERE time_stamp < ".(time()-$user_online_timeout));
-	$users_online=$db->query("SELECT * FROM ".MY_PRF."users_online ");
-*/
+    /*	$db->query("DELETE FROM ".MY_PRF."users_online WHERE time_stamp < ".(time()-$user_online_timeout));
+        $users_online=$db->query("SELECT * FROM ".MY_PRF."users_online ");
+    */
 //але створення інтуксу по тайм і апдейт його при кожному вході користувача це просто жопа тому відмовляємось. розділення таблиць блять! ось вихід!!!!
 //подумати
 
 
-	$users_online=$db->query("SELECT id, ip, user_name, user_login, user_showid FROM ".MY_PRF."users WHERE time > ".(time()-$user_online_timeout)." AND user_show_pic = 1 ");
+    $users_online = $db->query("SELECT id, ip, user_name, user_login, user_showid FROM " . MY_PRF . "users WHERE time > " . (time() - $user_online_timeout) . " AND user_show_pic = 1 ");
 
-	foreach($users_online as $user) {
-		//if(IS_ADMIN) 
-		echo echoip( long2ip($user['ip']) );
+    foreach ($users_online as $user) {
+        //if(IS_ADMIN)
+        echo echoip(long2ip($user['ip']));
 
-		echo " <a href= \"profile.php?user={$user['id']}\">".simplewrap(bmc_dispuser1($user))."</a> <br />";
+        echo " <a href= \"profile.php?user={$user['id']}\">" . simplewrap(bmc_dispuser1($user)) . "</a> <br />";
 
-		}
-
-
-
-
+    }
 
 
 }//else{

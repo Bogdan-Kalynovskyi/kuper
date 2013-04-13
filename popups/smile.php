@@ -3,26 +3,26 @@ include "../bmc/main.php"; //bodya
 header("Content-type: text/html; charset={$lang['ENCODING']}");?><!DOCTYPE html>
 <html>
 <head>
-	<title>Smilies</title>
-	<base href="<?php echo $MY_URL; ?>">
-	
-<style>
-*{
-	margin:0;
-	padding:0;
-	border:0;
-		font-family: verdana;
-		font-size: 10px;
-		background: #F7F7F7;
- }
-</style>
+    <title>Smilies</title>
+    <base href="<?php echo $MY_URL; ?>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: verdana;
+            font-size: 10px;
+            background: #F7F7F7;
+        }
+    </style>
 </head>
 
 <body>
 
 <?php
 include "../bmc/users/smile.php"; //bodya
-bmc_getSmiles('a','a',2);
+bmc_getSmiles('a', 'a', 2);
 
 // Print out all the smilies in the directory
 /*$ar=bmc_getSmileFiles();

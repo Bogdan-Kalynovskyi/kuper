@@ -1,112 +1,106 @@
 <?php
-	if(!defined('IN_INSTALL')) 
-		die("File Access Denied!");
+if (!defined('IN_INSTALL')) {
+    die("File Access Denied!");
+}
 //date means birth date
 //time means latest activity		
 //TODO AUTO PREFIX
 
 
-
-
 $table = array();
 
 
-
-
-
 //////////////////////////////////////////////////////////////
-$table['users']=<<<EOF
+$table['users'] = <<<EOF
    id 	 	  INT NOT NULL AUTO_INCREMENT,
 
-  `level`	  TINYINT NOT NULL default 1,
+  level	  TINYINT NOT NULL default 1,
 
-  `login` 	  VARCHAR(64) NOT NULL default '',
-  `pass` 	  VARCHAR(64) NOT NULL default '',
-  `algo`	  VARCHAR(64)  NOT NULL default 'md2',
-  `salt`	  VARCHAR(64)  NOT NULL default 'mzsfzxvd3',
+  login 	  VARCHAR(64) NOT NULL default '',
+  pass 	  VARCHAR(64) NOT NULL default '',
+  algo	  VARCHAR(64)  NOT NULL default 'md2',
+  salt	  VARCHAR(64)  NOT NULL default 'mzsfzxvd3',
   
-  `additional_security_feature` VARCHAR(255),
-  `restore`	  VARCHAR(255),
+  additional_security_feature VARCHAR(255),
+  restore	  VARCHAR(255),
 
-  `name`  	  VARCHAR(255) NOT NULL default '',
-  `desc`  	  TEXT NOT NULL default '',
-  `pic`  	  TEXT NOT NULL default '',
-  `email` 	  VARCHAR(255) NOT NULL default '',
+  name  	  VARCHAR(255) NOT NULL default '',
+  desc  	  TEXT NOT NULL default '',
+  pic  	  TEXT NOT NULL default '',
+  email 	  VARCHAR(255) NOT NULL default '',
   
-  `date` 	  INT UNSIGNED NOT NULL default 0,  
+  date 	  INT UNSIGNED NOT NULL default 0,
 
-  UNIQUE  (`login`),
-  UNIQUE  (`name`),
-  UNIQUE  (`email`),
+  UNIQUE  (login),
+  UNIQUE  (name),
+  UNIQUE  (email),
   PRIMARY KEY  (id)
 EOF;
 //все . тепер сконцентруватися на передач1 даих 1 алгоритм1
 
 
-
 ////ssl
 //передавать пасворд хеш
 //////////////////////////////////////////////////////////////
-$table['login']=<<<EOF
+$table['login'] = <<<EOF
    id 	 	  BIGINT NOT NULL AUTO_INCREMENT,
 	
-  `user` 	  INT NOT NULL,
-  `sid` 	  VARCHAR(185)  NOT NULL default '',
+  user 	  INT NOT NULL,
+  sid 	  VARCHAR(185)  NOT NULL default '',
 
-  `hashing`   INT UNSIGNED NOT NULL default 0,
-  `sid_time`  INT UNSIGNED NOT NULL default 0,
-  `mac` 	  VARCHAR(185)  NOT NULL default '',
-  `chain` 	  VARCHAR(185)  NOT NULL default '',
+  hashing   INT UNSIGNED NOT NULL default 0,
+  sid_time  INT UNSIGNED NOT NULL default 0,
+  mac 	  VARCHAR(185)  NOT NULL default '',
+  chain 	  VARCHAR(185)  NOT NULL default '',
 
-  `ip` 	 	  INT UNSIGNED NOT NULL default 0,
-  `time` 	  INT UNSIGNED NOT NULL default 0,
-  `user_agent`VARCHAR(185) NOT NULL default '',
+  ip 	 	  INT UNSIGNED NOT NULL default 0,
+  time 	  INT UNSIGNED NOT NULL default 0,
+  user_agentVARCHAR(185) NOT NULL default '',
 
---  INDEX(`sid`),
-  INDEX(`ip`),
+--  INDEX(sid),
+  INDEX(ip),
   PRIMARY KEY  (id)
 EOF;
 //no index sid
 
 
 /////////////////////////////////////////////////////////////////////
-$table['log']=<<<EOF
-  `ip` 		INT UNSIGNED NOT NULL,
-  `time`	INT UNSIGNED NOT NULL default 0,
-  `num` 	TINYINT NOT NULL default 0,
+$table['log'] = <<<EOF
+  ip 		INT UNSIGNED NOT NULL,
+  time	INT UNSIGNED NOT NULL default 0,
+  num 	TINYINT NOT NULL default 0,
 
   PRIMARY KEY  (ip)
 EOF;
 /////////////////////////////////////////////////////////////////////
-$table['log1']=<<<EOF
-  `login` 	VARCHAR(8) NOT NULL,
-  `time`	INT UNSIGNED NOT NULL default 0,
-  `num` 	TINYINT NOT NULL default 0,
+$table['log1'] = <<<EOF
+  login 	VARCHAR(8) NOT NULL,
+  time	INT UNSIGNED NOT NULL default 0,
+  num 	TINYINT NOT NULL default 0,
 
   PRIMARY KEY  (login)
 EOF;
-$table['form']=<<<EOF
-  `id` 		BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `hash` 	CHAR(32) NOT NULL default '',
-  `user` 	INT NOT NULL,
+$table['form'] = <<<EOF
+  id 		BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  hash 	CHAR(32) NOT NULL default '',
+  user 	INT NOT NULL,
   
   INDEX (user),
   PRIMARY KEY  (id)
 EOF;
 
 
-
 /////////////////////////////////////////////////////////////////////
-$table['vars']=<<<EOF
-  `name` 	VARCHAR(255) NOT NULL default '',
-  `val` 	TEXT NOT NULL default '',
+$table['vars'] = <<<EOF
+  name 	VARCHAR(255) NOT NULL default '',
+  val 	TEXT NOT NULL default '',
 
   PRIMARY KEY  (name)
 EOF;
 
-		
+
 //duplications, html_cache
-$table['cache']=<<<EOF
+$table['cache'] = <<<EOF
   id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 
   blog 		SMALLINT UNSIGNED NOT NULL default 0,
@@ -121,24 +115,10 @@ $table['cache']=<<<EOF
 EOF;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-$table['guestbook']=<<<EOF
+$table['guestbook'] = <<<EOF
   id 		INT UNSIGNED NOT NULL AUTO_INCREMENT,
 
   name	 	VARCHAR(255) NOT NULL default '',
@@ -157,10 +137,9 @@ $table['guestbook']=<<<EOF
 EOF;
 
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-$table['photo']=<<<EOF
+$table['photo'] = <<<EOF
   id 		INT UNSIGNED NOT NULL AUTO_INCREMENT,  
   post 		INT default NULL,
 -- parent
@@ -205,7 +184,7 @@ EOF;
 для реоевырки в майбутньому*/
 
 
-$table['posts']=<<<EOF
+$table['posts'] = <<<EOF
   id 		INT UNSIGNED NOT NULL AUTO_INCREMENT,
   blog 		SMALLINT UNSIGNED default NULL,
   
@@ -233,53 +212,38 @@ EOF;
 //fulltext
 
 
-
-
-
-
-
-
-
-
-
-
+//№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
+if (isset($_POST['ow']) && $_POST['ow']) {
+    echo "Dropping existing tables...  ";
+    foreach ($table as $key => $body) {
+        @mysql_query("DROP TABLE IF EXISTS {$my_prefix}{$key}") or footer(mysql_error());
+    }
+    echo "Done <br />";
+}
 
 
 //№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
-	if (isset($_POST['ow']) && $_POST['ow'])
-	{
-		echo "Dropping existing tables...  ";
-		foreach($table as $key=>$body){
-			@mysql_query("DROP TABLE IF EXISTS `{$my_prefix}{$key}`") or footer(mysql_error());
-		}
-		echo "Done <br />";
-	}
+foreach ($table as $key => $body) {
+    echo "Creating table '{$my_prefix}{$key}' ...  ";
 
-
-//№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
-	foreach($table as $key=>$body){
-		echo "Creating table '{$my_prefix}{$key}' ...  ";
-
-		@mysql_query("CREATE TABLE IF NOT EXISTS `{$my_prefix}{$key}` (
+    @mysql_query("CREATE TABLE IF NOT EXISTS {$my_prefix}{$key} (
 			$body
-		)ENGINE=MyISAM DEFAULT CHARSET=$dbchrst;") or  footer(mysql_error()); 
+		)ENGINE=MyISAM DEFAULT CHARSET=$dbchrst;") or  footer(mysql_error());
 
-		echo "Done <br />";
-	}
+    echo "Done <br />";
+}
 
 
 //№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
 
 
-
-
-  if(isset($_POST['ow']) && $_POST['ow']){// АНАЛОГИЧНО , ТАБЛИЦЯМИ
+if (isset($_POST['ow']) && $_POST['ow']) { // АНАЛОГ�?ЧНО , ТАБЛ�?ЦЯМ�?
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-echo "Inserting data into '{$my_prefix}vars'...  ";
+    echo "Inserting data into '{$my_prefix}vars'...  ";
 //тут можна зекономити, якщо перем1стити все це в конф1г пхп
 
-	@mysql_query("INSERT INTO `{$my_prefix}vars` (name, val) 
+    @mysql_query("INSERT INTO {$my_prefix}vars (name, val)
 	VALUES  
 	
 		('lang','ru'),
@@ -308,9 +272,9 @@ echo "Inserting data into '{$my_prefix}vars'...  ";
 		('def_userpic',''),
 		('zastavka','images/KuperFild.jpg'),
 			
-		('blogs', '".implode("\n", array('Галерея','Выставки','Фотографии','Отзывы','Контакты') )."'),
-		('blog_ids', '".implode("\n", array(1,2,3,4,5) )."'),
-		('blog_fons', '".implode("\n", array('','','','','') )."'),
+		('blogs', '" . implode("\n", array('Галерея', 'Выставки', 'Фотографии', 'Отзывы', 'Контакты')) . "'),
+		('blog_ids', '" . implode("\n", array(1, 2, 3, 4, 5)) . "'),
+		('blog_fons', '" . implode("\n", array('', '', '', '', '')) . "'),
 
 		('x', '900'),
 		('y', '300'),
@@ -322,37 +286,31 @@ echo "Inserting data into '{$my_prefix}vars'...  ";
 		('blog_y', '100')
 		
 
-	") or footer(mysql_error()); echo "Done <br />";
-
-
-
+	") or footer(mysql_error());
+    echo "Done <br />";
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-	echo "Inserting data into '{$my_prefix}users'...  "; 
-	
-	$salt=mt_rand(0,99999999990000);
-	@mysql_query("INSERT INTO `{$my_prefix}users` 
-		(`level`,`login`,`pass`,`algo`,`salt`,`name`,`email`,`date`)
+    echo "Inserting data into '{$my_prefix}users'...  ";
+
+    $salt = mt_rand(0, 99999999990000);
+    @mysql_query("INSERT INTO {$my_prefix}users
+		(level,login,pass,algo,salt,name,email,date)
 		
 	VALUES(
 		'3',
-		'".mysql_real_escape_string($_POST['admin_id'])."',	
-		'".sha1($salt.$_POST['admin_pass'])."',
+		'" . mysql_real_escape_string($_POST['admin_id']) . "',
+		'" . sha1($salt . $_POST['admin_pass']) . "',
 		'sha1',
 		'$salt',
 		'Administrator',
 		'',
-		'".time()."')"
-		
-	) or footer(mysql_error()); echo "Done <br />";
+		'" . time() . "')"
+
+    ) or footer(mysql_error());
+    echo "Done <br />";
 
 
-
-
-
-
-
- }
+}
 //end	 $_POST['ow'] //admin email todo
 ?>

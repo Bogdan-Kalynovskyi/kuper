@@ -1,16 +1,19 @@
 <?php
-	if(!defined('IN_BMC')) 
-		die("Access Denied!");
+if (!defined('IN_BMC')) {
+    die('Access Denied!');
+}
 
 //todo lightbox
 
-	if(!isnumeric($_GET['gallery']))bmc_go(-1);
+if (!isnumeric($_GET['gallery'])) {
+    bmc_go(-1);
+}
 
-	$PHOTO = $db->query("SELECT * FROM `".PRF."photo` WHERE post=".a($_GET['gallery'])." ORDER BY por ASC");
+$PHOTO = $db->query("SELECT * FROM " . PRF . "photo WHERE post=" . a($_GET['gallery']) . " ORDER BY por ASC");
 
-	$max =$db->evaluate("SELECT max(id) FROM `".PRF."photo`");
+$max = $db->evaluate("SELECT max(id) FROM " . PRF . "photo");
 
-	$POOO = $db->query("UPDATE `".PRF."posts`  SET	ok=1	WHERE ok <> TRUE AND id=".a($_GET['gallery']));
+$POOO = $db->query("UPDATE " . PRF . "posts  SET	ok=1	WHERE ok <> TRUE AND id=" . a($_GET['gallery']));
 
 
 ?>
@@ -20,25 +23,26 @@
 
 
 <form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
-<fieldset>
-	<input type="hidden" name="<?php echo FORM_HASH; ?>" value="4" />
-	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-	<input type="hidden" name="post" value="<?php echo @$_GET['gallery'] ?>" />
+    <fieldset>
+        <input type="hidden" name="<?php echo FORM_HASH; ?>" value="4"/>
+        <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+        <input type="hidden" name="post" value="<?php echo @$_GET['gallery'] ?>"/>
 
-<br/>
-<div id="__key">
-<?php
-$k = 0;
-foreach($PHOTO as $ph){
-	
-	$key = $ph['id'];
-	$val = $ph['title'];
-	$text = $ph['summary'];
-	$image = htmlspecialchars(rawurldecode($ph['icon']));
-	$fon = htmlspecialchars(rawurldecode($ph['fon']));
+        <br/>
+
+        <div id="__key">
+            <?php
+            $k = 0;
+            foreach ($PHOTO as $ph) {
+
+                $key = $ph['id'];
+                $val = $ph['title'];
+                $text = $ph['summary'];
+                $image = htmlspecialchars(rawurldecode($ph['icon']));
+                $fon = htmlspecialchars(rawurldecode($ph['fon']));
 
 
-		echo <<<EOF
+                echo <<<EOF
 		<div class="baba" id="_$k">
 		
 			<label><span>
@@ -81,77 +85,77 @@ foreach($PHOTO as $ph){
 		<hr/>
 
 EOF;
-$k++;
-}
+                $k++;
+            }
 
-?>
-</div>
-	<img src="images/plus.gif" title="��������" alt="��������" onclick="add()" style="margin-left:30px; cursor:pointer" />
-	<br/>
-	<br/>
-	
-	<input type="submit" value="      ���������      " style="margin-left:30px"/> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="button" value="      ������      " onclick="document.location='user.php'" />
+            ?>
+        </div>
+        <img src="images/plus.gif" title="��������" alt="��������" onclick="add()" style="margin-left:30px; cursor:pointer"/>
+        <br/>
+        <br/>
 
-</fieldset>
+        <input type="submit" value="      ���������      " style="margin-left:30px"/> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="      ������      " onclick="document.location='user.php'"/>
+
+    </fieldset>
 </form>
 
 
 <script src=js/jslib.js></script>
 <script>
 
-		var n = <?php echo (string)(int)$k ?>;
-		var nn = <?php echo (string)(int)$max ?>;
-		
-		lightbox();
-		
-		
-		function up(i){
-			var a=i;
-			do{
-				 a = (a>0)?a-1:n-1;
-			}while(isNull('_'+a));
+    var n = <?php echo (string)(int)$k ?>;
+    var nn = <?php echo (string)(int)$max ?>;
 
-			swap('v', i, a);
-			swat('i', i, a);
-			swat('f', i, a);
-			swap('t', i, a);
+    lightbox();
 
-		}
 
-		
-		function down(i){
-			var a=i;
-			do{
-				 a = (a<n-1)?a+1:0;
-			}while(isNull('_'+a));
-			
-			swap('v', i, a);
-			swat('i', i, a);
-			swat('f', i, a);
-			swap('t', i, a);
-			
-		}
+    function up(i) {
+        var a = i;
+        do {
+            a = (a > 0) ? a - 1 : n - 1;
+        } while (isNull('_' + a));
 
-		
-		function del(i){
-		//todo test ie	
-			if(confirm('���������� ��� ����������?')){
-				var element = $('_'+i);
-  				element.parentNode.removeChild(element);
-  			}
-		}
+        swap('v', i, a);
+        swat('i', i, a);
+        swat('f', i, a);
+        swap('t', i, a);
 
-		function add(){
-			nn++;
-			var link = document.createElement('div');
+    }
 
-			link.innerHTML = 
-				
-'	<div class="baba" id="_'+n+'">			<label><span><a class="_eye_" title="���� ������ ��������"><img src="img/eye_small.gif" alt="&bull;"/></a>���������</span> 		<input type="text" name="v['+nn+']" id="v'+n+'" class="title" />	<b>				 <a href="#" title="�����" onclick="up('+n+'); return false"><img src="img/up.png" alt="�����" /></a> 	 <a href="#" title="����" onclick="down('+n+'); return false"><img src="img/down.png" alt="����" /></a>				 <a href="#" title="�������" onclick="del('+n+'); return false"><img src="img/del.png" alt="�������" /></a>			</b>			</label>			<label><span>�������</span>			<img src="" alt="���" id="_i'+n+'" /> 	URL<input type="text" name="i['+nn+']" id="i'+n+'" /> ��� ����<input type="file" id="__i'+n+'" name="i'+nn+'" /> &nbsp;<a onclick="clrnpt(\'i'+n+'\');return false">������</a>		</label>			<label><span>���</span>			<img src="" alt="���" id="_f'+n+'"/> 		URL<input type="text" name="f['+nn+']" id="f'+n+'" /> ��� ����<input id="__f'+n+'" type="file" name="f'+nn+'" />	&nbsp;<a onclick="clrnpt(\'f'+n+'\');return false">������</a>	</label>			<label> 			<span style="float:left">��������</span>	 		<textarea name="t['+nn+']" id="t'+n+'"></textarea></label>		</div><hr/>';
 
-		$('__key').appendChild(link);
+    function down(i) {
+        var a = i;
+        do {
+            a = (a < n - 1) ? a + 1 : 0;
+        } while (isNull('_' + a));
 
-		n++;
-		}
+        swap('v', i, a);
+        swat('i', i, a);
+        swat('f', i, a);
+        swap('t', i, a);
+
+    }
+
+
+    function del(i) {
+        //todo test ie
+        if (confirm('���������� ��� ����������?')) {
+            var element = $('_' + i);
+            element.parentNode.removeChild(element);
+        }
+    }
+
+    function add() {
+        nn++;
+        var link = document.createElement('div');
+
+        link.innerHTML =
+
+            '	<div class="baba" id="_' + n + '">			<label><span><a class="_eye_" title="���� ������ ��������"><img src="img/eye_small.gif" alt="&bull;"/></a>���������</span> 		<input type="text" name="v[' + nn + ']" id="v' + n + '" class="title" />	<b>				 <a href="#" title="�����" onclick="up(' + n + '); return false"><img src="img/up.png" alt="�����" /></a> 	 <a href="#" title="����" onclick="down(' + n + '); return false"><img src="img/down.png" alt="����" /></a>				 <a href="#" title="�������" onclick="del(' + n + '); return false"><img src="img/del.png" alt="�������" /></a>			</b>			</label>			<label><span>�������</span>			<img src="" alt="���" id="_i' + n + '" /> 	URL<input type="text" name="i[' + nn + ']" id="i' + n + '" /> ��� ����<input type="file" id="__i' + n + '" name="i' + nn + '" /> &nbsp;<a onclick="clrnpt(\'i' + n + '\');return false">������</a>		</label>			<label><span>���</span>			<img src="" alt="���" id="_f' + n + '"/> 		URL<input type="text" name="f[' + nn + ']" id="f' + n + '" /> ��� ����<input id="__f' + n + '" type="file" name="f' + nn + '" />	&nbsp;<a onclick="clrnpt(\'f' + n + '\');return false">������</a>	</label>			<label> 			<span style="float:left">��������</span>	 		<textarea name="t[' + nn + ']" id="t' + n + '"></textarea></label>		</div><hr/>';
+
+        $('__key').appendChild(link);
+
+        n++;
+    }
 </script>

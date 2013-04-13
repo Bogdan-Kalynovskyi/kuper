@@ -13,31 +13,29 @@
     }
 </style>
 
-    <div id="_head_main">
-        <div id="_head_header"> Header </div>
-        <div id="_head_body"> Body </div>
+<div id="_head_main">
+    <div id="_head_header"> Header</div>
+    <div id="_head_body"> Body</div>
 
-        <div id="_head_footer"> Footer </div>
-    </div>
-
-
-
+    <div id="_head_footer"> Footer</div>
+</div>
 
 
 <script>
 
-findPos(document.getElementById('_head_main'))
+    findPos(document.getElementById('_head_main'))
 
-function findPos(obj) {
-	var curleft = curtop = 0;
+    function findPos(obj) {
+        var curleft = curtop = 0;
 
-	if (obj.offsetParent) {
+        if (obj.offsetParent) {
 
-	do {
-			curtop += obj.offsetTop;alert(obj.offsetTop)
-		} while (obj = obj.offsetParent);
+            do {
+                curtop += obj.offsetTop;
+                alert(obj.offsetTop)
+            } while (obj = obj.offsetParent);
 
-	 alert(curtop);
-}
-}
+            alert(curtop);
+        }
+    }
 </script>

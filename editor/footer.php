@@ -1,4 +1,4 @@
-	</div><!-- Ñ‚ÑƒÑ‚ Ð±ÑƒÐ»Ð° Ð¿Ð¾Ð¼Ð¸Ð»ÐºÐ°, Ñ Ð½Ðµ Ð·Ð°ÐºÑ€Ð¸Ð² Ñ‚ÑƒÐ³!!!!!!!!!!!!! -->
+</div><!-- òóò áóëà ïîìèëêà, ÿ íå çàêðèâ òóã!!!!!!!!!!!!! -->
 </div>
 <div class="clear"></div></div><!-- wpbody-content -->
 <div class="clear"></div></div><!-- wpbody -->
@@ -6,8 +6,14 @@
 </div><!-- wpwrap -->
 
 <div id="footer">
- 
-<p id="footer-upgrade" style="padding:0"><div style="float:right;padding:13px"><!--<small style="color:#666;letter-spacing:1px;font-size:8px">webmaster&nbsp;</small>--><!-- <a href="mailto:mybodya@gmail.com">-->mybodya @<small>gmail.com </small><!--</a>--></div></p>
+
+    <p id="footer-upgrade" style="padding:0">
+
+    <div style="float:right;padding:13px"><!--<small style="color:#666;letter-spacing:1px;font-size:8px">webmaster&nbsp;</small>--><!-- <a href="mailto:mybodya@gmail.com">-->
+        mybodya @
+        <small>gmail.com</small>
+        <!--</a>--></div>
+    </p>
 
 </div>
 </body>

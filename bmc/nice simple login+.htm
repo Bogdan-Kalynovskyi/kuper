@@ -1,13 +1,13 @@
 <?php
 if(!defined('IN_BMC'))
-		die("Access Denied!");
+		die('Access Denied!');
 
 if(isset($_GET['action']) && $_GET['action']=='restore_pass'){	
 
 	if($_GET['restore_success'])
 		echo '<h1><br/>Password regenerated and sent on your email</h1>';
-	else
-		echo '<h3><br/>Email not sent due to an error. Most likely the cause is no write permissions to config.php. Please set CHMOD to 666</h3>';
+else
+echo '<h3><br/>Email not sent due to an error. Most likely the cause is no write permissions to config.php. Please set CHMOD to 666</h3>';
 
 }
 ?>
@@ -15,66 +15,68 @@ if(isset($_GET['action']) && $_GET['action']=='restore_pass'){
 <html>
 <head>
     <title>Administration Login</title>
-	<meta charset=utf-8>
+    <meta charset=utf-8>
     <link rel=stylesheet href="img/global00.css">
     <link rel=stylesheet href="img/master00.css">
-	<link rel="shortcut icon" href="img/favicon.gif">
-	<script src="js/jscapslock.js"></script>
+    <link rel="shortcut icon" href="img/favicon.gif">
+    <script src="js/jscapslock.js"></script>
 </head>
 
 <body class="login">
-  <form name="form1" accept-charset="<?php echo $lang['ENCODING'] ?>" method=post action="">
+<form name="form1" accept-charset="<?php echo $lang['ENCODING'] ?>" method=post action="">
 
     <div id="panelErrorMsg"></div>
-        
+
     <div id="login">
-	    <div id="cap-top"></div>
-	    <div id="cap-body">
-	    <div id="branding"><?php if(isset($user_message)) echo '<span class="bold_red">'.$user_message.'</span>'; ?></div>		
+        <div id="cap-top"></div>
+        <div id="cap-body">
+            <div id="branding"><?php if(isset($user_message)) echo '<span class="bold_red">'.$user_message.'</span>'; ?></div>
             <div id="panelLogin">
-	
+
                 <label>Email Address
-                <input class="textbox340" name="user_login" value=""></label>
+                    <input class="textbox340" name="user_login" value=""></label>
 
                 <label>Password
-                <input type="password" class="textbox340" name="password" value=""></label>
+                    <input type="password" class="textbox340" name="password" value=""></label>
 
                 <label>Remember me
-                <input type="checkbox" name="remember" value="1"></label>
+                    <input type="checkbox" name="remember" value="1"></label>
 
-			    <div class="submit clearfix">
-			        <input type="image" src="img/button-l.png" alt="Log In">
-			    </div>
+                <div class="submit clearfix">
+                    <input type="image" src="img/button-l.png" alt="Log In">
+                </div>
 
                 <p class="lostpassword">
                     <a href="account.php?action=restore_pass" target=_blank>Lost your password?</a>
                     or
-                    <a href="mailto: mybodya@gmail.com">Need help? -  Oldo</a>
+                    <a href="mailto: mybodya@gmail.com">Need help? - Oldo</a>
                 </p>
-		    
+
             </div>
-	    </div>
-	    <div id="cap-bottom"><img src="img/cap-bott.png"></div>
+        </div>
+        <div id="cap-bottom"><img src="img/cap-bott.png"></div>
     </div>
 
-  </form>
+</form>
 
-    <script>
-        document.form1.user_login.focus();
+<script>
+    document.form1.user_login.focus();
 
-        document.form1.onsubmit = function () {
+    document.form1.onsubmit = function () {
 
-            if(document.form1.user_login.value.length < 3) {
-                document.form1.user_login.focus();alert("Short login, 3 chars minimum");
-                return false;
-            }
-            if(document.form1.password.value.length < 3) {
-                document.form1.password.focus();alert("Short password, 3 chars minimum");
-                return false;
-            }
-            return true;
+        if (document.form1.user_login.value.length < 3) {
+            document.form1.user_login.focus();
+            alert("Short login, 3 chars minimum");
+            return false;
         }
-    </script>
+        if (document.form1.password.value.length < 3) {
+            document.form1.password.focus();
+            alert("Short password, 3 chars minimum");
+            return false;
+        }
+        return true;
+    }
+</script>
 
 </body>
 </html>

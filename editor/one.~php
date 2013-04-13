@@ -4,7 +4,7 @@
 	
 		
 		$POOO = $db->query("SELECT * FROM `".PRF."posts` WHERE id=".a(@$_GET['id']), false);
-		if(!$POOO)	echo 'СЌС‚РѕР№ Р·Р°РїРёСЃРё СѓР¶Рµ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚';
+		if(!$POOO)	echo 'этой записи уже не существует';
 
 
 ?>
@@ -90,7 +90,7 @@
 
 
 
-<h2> РџСЂР°РІРёРј РїРѕСЃС‚ / Р“Р°Р»РµСЂРµСЋ... </h2>
+<h2> Правим пост / Галерею... </h2>
 
 
 <form method="post" action="user.php"  accept-charset="<?php echo $CHRST ?>"  enctype="multipart/form-data" onsubmit="return verify_form()">
@@ -102,41 +102,41 @@
 
 
 
-	<label>РЎРґРµР»Р°С‚СЊ РіР°Р»РµСЂРµРµР№
+	<label>Сделать галереей
 		<input type="checkbox" name="gallery"<?php if(@$POOO['gallery']) echo ' checked="checked"'; ?> style="margin-top:5px" onchange="changer()" value="1" />
-		<input type="submit" name="nesegalavodu" value="Рљ РіР°Р»РµСЂРµРµ"  id="gallery_button" />
+		<input type="submit" name="nesegalavodu" value="К галерее"  id="gallery_button" />
 	</label>
 
 		
 
-	<label>Р—Р°РіРѕР»РѕРІРѕРє
+	<label>Заголовок
 		<input type="text" name="title" value="<?php echo @$POOO['title']; ?>" />
 	</label>
 
 
-	<label>РРєРѕРЅРєР°
-		<img src="<?php echo @$POOO['icon']; ?>" alt="РЅРµС‚" id="_icon" onmouseover="prev_over()" onmouseout="prev_out()" /> &nbsp;&nbsp;&nbsp; 
+	<label>Иконка
+		<img src="<?php echo @$POOO['icon']; ?>" alt="нет" id="_icon" onmouseover="prev_over()" onmouseout="prev_out()" /> &nbsp;&nbsp;&nbsp; 
 
 		<span id="_1_icon">URL</span><input type="text" id="icon" name="icon" value="<?php echo htmlspecialchars(rawurldecode(@$POOO['icon'])); ?>" /> &nbsp; &nbsp; &nbsp;
 
-		<span id="_2_icon">РёР»Рё С„Р°Р№Р»</span><input type="file" name="icon" id="__icon" /> &nbsp;
+		<span id="_2_icon">или файл</span><input type="file" name="icon" id="__icon" /> &nbsp;
 		
-		<a href="#" title="СѓР±СЂР°С‚СЊ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РёР· РїРѕСЃС‚Р°" id="_3_icon" onclick="clrnpt('icon');return false">РЈР±СЂР°С‚СЊ</a>
+		<a href="#" title="убрать изображение из поста" id="_3_icon" onclick="clrnpt('icon');return false">Убрать</a>
 	</label>
 	
 
-	<label style="height:85px">РўРµРєСЃС‚ (HTML)<span id="clickable" onclick="editoronoff()">Р’РєР»СЋС‡РёС‚СЊ СЂРµРґР°РєС‚РѕСЂ</span><br/>
+	<label style="height:85px">Текст (HTML)<span id="clickable" onclick="editoronoff()">Включить редактор</span><br/>
 		<textarea name="summary" cols="80" rows="3" id="msg"><?php echo htmlspecialchars(@$POOO['summary']); ?></textarea>
 	</label>
 
 
-<!--	<label style="opacity:0.7">РЎРїСЂСЏС‚Р°С‚СЊ РІ С‡РµСЂРЅРѕРІРёРє<br/>
+<!--	<label style="opacity:0.7">Спрятать в черновик<br/>
 		<input type="checkbox" name="draft"<?php if(@$POOO['draft']) echo ' checked="checked"'; ?> value="1" />
 	</label>-->
 
 	<br/><br/>
-	<input type="submit" value="      РЎРѕС…СЂР°РЅРёС‚СЊ      " /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="button" value="      РћС‚РјРµРЅР°      " onclick="document.history(-1)'" />
+	<input type="submit" value="      Сохранить      " /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="button" value="      Отмена      " onclick="document.history(-1)'" />
 
 		
 </fieldset>

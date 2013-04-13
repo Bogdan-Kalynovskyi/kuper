@@ -1,77 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=UTF-8>
-<title>Dashboard &lsaquo; dan  &#8212; WordPress</title>
+    <meta charset=UTF-8>
+    <title>Dashboard &lsaquo; dan &#8212; WordPress</title>
 
-<link rel=stylesheet href='a.css'>
-<link rel=stylesheet href='b.css'>
-<link rel=stylesheet href='c.css'>
+    <link rel=stylesheet href='a.css'>
+    <link rel=stylesheet href='b.css'>
+    <link rel=stylesheet href='c.css'>
 </head>
 
 <body class="wp-admin no-js index-php">
- 
+
 <div id="wpwrap">
-<div id="wpcontent">
-<div id="wphead">
+    <div id="wpcontent">
+        <div id="wphead">
 
-<img id="header-logo" src="../wp-includes/images/blank.gif" width="32" height="32" /> <h1 id="site-heading" ><a href="http://localhost/wordpress2/" title="Visit Site"><span id="site-title">dan</span> <em id="site-visit-button">Visit Site</em></a></h1>
+            <img id="header-logo" src="../wp-includes/images/blank.gif" width="32" height="32"/>
 
-<div id="wphead-info">
-<div id="user_info">
-<p>Howdy, <a href="profile.php" title="Edit your profile">admin</a><span class="turbo-nag hidden"> | <a href="tools.php">Turbo</a></span> |
+            <h1 id="site-heading"><a href="http://localhost/wordpress2/" title="Visit Site"><span id="site-title">dan</span> <em id="site-visit-button">Visit Site</em></a></h1>
 
-<a href="http://localhost/wordpress2/wp-login.php?action=logout&amp;_wpnonce=85cae6b6c2" title="Log Out">Log Out</a></p>
+            <div id="wphead-info">
+                <div id="user_info">
+                    <p>Howdy, <a href="profile.php" title="Edit your profile">admin</a><span class="turbo-nag hidden"> | <a href="tools.php">Turbo</a></span> |
+
+                        <a href="http://localhost/wordpress2/wp-login.php?action=logout&amp;_wpnonce=85cae6b6c2" title="Log Out">Log Out</a></p>
+                </div>
+
+                <div id="favorite-actions">
+                    <div id="favorite-first"><a href="post-new.php">New Post</a></div>
+                    <div id="favorite-toggle"><br/></div>
+                    <div id="favorite-inside">
+                        <div class='favorite-action'><a href='edit.php?post_status=draft'>Drafts</a></div>
+                        <div class='favorite-action'><a href='page-new.php'>New Page</a></div>
+                        <div class='favorite-action'><a href='media-new.php'>Upload</a></div>
+                        <div class='favorite-action'><a href='edit-comments.php'>Comments</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="wpbody">
+
+            <ul id="adminmenu">
+
+
+                <li class="wp-first-item current menu-top menu-top-first menu-top-last" id="menu-dashboard">
+                    <div class='wp-menu-image'><a href='index.php'><br/></a></div>
+                    <div class="wp-menu-toggle"><br/></div>
+                    <a href='index.php' class="wp-first-item current menu-top menu-top-first menu-top-last" tabindex="1">Dashboard</a></li>
+                <li class="wp-menu-separator"><a class="separator" href="?unfoldmenu=1"><br/></a></li>
+                <li class="wp-has-submenu open-if-no-js menu-top menu-top-first" id="menu-posts">
+                    <div class='wp-menu-image'><a href='edit.php'><br/></a></div>
+                    <div class="wp-menu-toggle"><br/></div>
+                    <a href='edit.php' class="wp-has-submenu open-if-no-js menu-top menu-top-first" tabindex="1">Posts</a>
+
+                    <div class='wp-submenu'>
+                        <div class='wp-submenu-head'>Posts</div>
+                        <ul>
+                            <li class="wp-first-item"><a href='edit.php' class="wp-first-item" tabindex="1">Edit</a></li>
+                            <li><a href='post-new.php' tabindex="1">Add New</a></li>
+                            <li><a href='edit-tags.php?taxonomy=post_tag' tabindex="1">Post Tags</a></li>
+                            <li><a href='categories.php' tabindex="1">Categories</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="wp-has-submenu menu-top" id="menu-media">
+                    <div class='wp-menu-image'><a href='upload.php'><br/></a></div>
+                    <div class="wp-menu-toggle"><br/></div>
+                    <a href='upload.php' class="wp-has-submenu menu-top" tabindex="1">Media</a>
+
+                    <div class='wp-submenu'>
+                        <div class='wp-submenu-head'>Media</div>
+                        <ul>
+                            <li class="wp-first-item"><a href='upload.php' class="wp-first-item" tabindex="1">Library</a></li>
+                            <li><a href='media-new.php' tabindex="1">Add New</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="wp-has-submenu menu-top" id="menu-links">
+                    <div class='wp-menu-image'><a href='link-manager.php'><br/></a></div>
+                    <div class="wp-menu-toggle"><br/></div>
+                    <a href='link-manager.php' class="wp-has-submenu menu-top" tabindex="1">Links</a>
+
+                    <div class='wp-submenu'>
+                        <div class='wp-submenu-head'>Links</div>
+                        <ul>
+                            <li class="wp-first-item"><a href='link-manager.php' class="wp-first-item" tabindex="1">Edit</a></li>
+                            <li><a href='link-add.php' tabindex="1">Add New</a></li>
+                            <li><a href='edit-link-categories.php' tabindex="1">Link Categories</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="wp-has-submenu menu-top" id="menu-pages">
+                    <div class='wp-menu-image'><a href='edit-pages.php'><br/></a></div>
+                    <div class="wp-menu-toggle"><br/></div>
+                    <a href='edit-pages.php' class="wp-has-submenu menu-top" tabindex="1">Pages</a>
+
+                    <div class='wp-submenu'>
+                        <div class='wp-submenu-head'>Pages</div>
+                        <ul>
+                            <li class="wp-first-item"><a href='edit-pages.php' class="wp-first-item" tabindex="1">Edit</a></li>
+                            <li><a href='page-new.php' tabindex="1">Add New</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu-top menu-top-last" id="menu-comments">
+                    <div class='wp-menu-image'><a href='edit-comments.php'><br/></a></div>
+                    <div class="wp-menu-toggle"><br/></div>
+                    <a href='edit-comments.php' class="menu-top menu-top-last" tabindex="1">Comments <span id='awaiting-mod' class='count-0'><span
+                        class='pending-count'>0</span></span></a></li>
+            </ul>
+
+
+            <div class="clear"></div>
+        </div>
+        <!-- wpbody -->
+
+        <div class="clear"></div>
+    </div>
+    <!-- wpcontent -->
 </div>
-
-<div id="favorite-actions"><div id="favorite-first"><a href="post-new.php">New Post</a></div><div id="favorite-toggle"><br /></div><div id="favorite-inside"><div class='favorite-action'><a href='edit.php?post_status=draft'>Drafts</a></div>
-<div class='favorite-action'><a href='page-new.php'>New Page</a></div>
-<div class='favorite-action'><a href='media-new.php'>Upload</a></div>
-<div class='favorite-action'><a href='edit-comments.php'>Comments</a></div>
-</div></div>
-</div>
-</div>
-
-<div id="wpbody">
-
-<ul id="adminmenu">
-
-
-	<li class="wp-first-item current menu-top menu-top-first menu-top-last" id="menu-dashboard">
-	<div class='wp-menu-image'><a href='index.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='index.php' class="wp-first-item current menu-top menu-top-first menu-top-last" tabindex="1">Dashboard</a></li>
-	<li class="wp-menu-separator"><a class="separator" href="?unfoldmenu=1"><br /></a></li>
-	<li class="wp-has-submenu open-if-no-js menu-top menu-top-first" id="menu-posts">
-	<div class='wp-menu-image'><a href='edit.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='edit.php' class="wp-has-submenu open-if-no-js menu-top menu-top-first" tabindex="1">Posts</a>
-
-	<div class='wp-submenu'><div class='wp-submenu-head'>Posts</div><ul><li class="wp-first-item"><a href='edit.php' class="wp-first-item" tabindex="1">Edit</a></li><li><a href='post-new.php' tabindex="1">Add New</a></li><li><a href='edit-tags.php?taxonomy=post_tag' tabindex="1">Post Tags</a></li><li><a href='categories.php' tabindex="1">Categories</a></li></ul></div></li>
-	<li class="wp-has-submenu menu-top" id="menu-media">
-	<div class='wp-menu-image'><a href='upload.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='upload.php' class="wp-has-submenu menu-top" tabindex="1">Media</a>
-	<div class='wp-submenu'><div class='wp-submenu-head'>Media</div><ul><li class="wp-first-item"><a href='upload.php' class="wp-first-item" tabindex="1">Library</a></li><li><a href='media-new.php' tabindex="1">Add New</a></li></ul></div></li>
-
-	<li class="wp-has-submenu menu-top" id="menu-links">
-	<div class='wp-menu-image'><a href='link-manager.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='link-manager.php' class="wp-has-submenu menu-top" tabindex="1">Links</a>
-	<div class='wp-submenu'><div class='wp-submenu-head'>Links</div><ul><li class="wp-first-item"><a href='link-manager.php' class="wp-first-item" tabindex="1">Edit</a></li><li><a href='link-add.php' tabindex="1">Add New</a></li><li><a href='edit-link-categories.php' tabindex="1">Link Categories</a></li></ul></div></li>
-	<li class="wp-has-submenu menu-top" id="menu-pages">
-	<div class='wp-menu-image'><a href='edit-pages.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='edit-pages.php' class="wp-has-submenu menu-top" tabindex="1">Pages</a>
-	<div class='wp-submenu'><div class='wp-submenu-head'>Pages</div><ul><li class="wp-first-item"><a href='edit-pages.php' class="wp-first-item" tabindex="1">Edit</a></li><li><a href='page-new.php' tabindex="1">Add New</a></li></ul></div></li>
-
-	<li class="menu-top menu-top-last" id="menu-comments">
-	<div class='wp-menu-image'><a href='edit-comments.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='edit-comments.php' class="menu-top menu-top-last" tabindex="1">Comments <span id='awaiting-mod' class='count-0'><span class='pending-count'>0</span></span></a></li>
-</ul>
-
- 
- 
- 
- 
-<div class="clear"></div></div><!-- wpbody -->
-
-<div class="clear"></div></div><!-- wpcontent -->
-</div><!-- wpwrap -->
+<!-- wpwrap -->
 
 <div id="footer">
- 
-<p id="footer-upgrade" class="alignright"> &nbsp;</p>
-<div class="clear"></div>
+
+    <p id="footer-upgrade" class="alignright"> &nbsp;</p>
+
+    <div class="clear"></div>
 
 </div>
 </body>

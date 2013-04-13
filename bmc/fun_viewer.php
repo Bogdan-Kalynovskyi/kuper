@@ -1,20 +1,20 @@
 <?php
-	if(!defined('IN_BMC')) 
-		die("Access Denied!");	
-	if(!defined('IN_ADMIN')) 
-		die("Access Denied!");
+if (!defined('IN_BMC')) {
+    die('Access Denied!');
+}
+if (!defined('IN_ADMIN')) {
+    die('Access Denied!');
+}
 
 
+function admin_box ($post) {
+    global $lang;
 
-
-function admin_box($post){
-global $lang;
-
-echo <<<EOF
+    echo <<<EOF
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-( <a href="user.php?id={$post['id']}" title="Редагувати цю статтю"> 
+( <a href="user.php?id={$post['id']}" title="Редагувати цю статтю">
 	 {$lang['edit']}
 </a> )
 
@@ -28,21 +28,18 @@ EOF;
 }
 
 
+function admin_new ($msg = 'Написати нову публiкацiю в цьому роздiлi') {
+    global $lang;
 
-function admin_new($msg = 'Написати нову публiкацiю в цьому роздiлi'){
-global $lang;
+    echo <<<EOF
 
-echo <<<EOF
-
-<br /><br />
+<br><br>
 ( <a href="user.php?id=0&amp;blog={$_GET['blog']}">
-	$msg 
+	$msg
 </a> )
 
 EOF;
 }
-
-
 
 
 ?>

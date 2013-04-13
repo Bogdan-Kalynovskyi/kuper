@@ -1,6 +1,6 @@
 <?php
 
-error_reporting (0);
+error_reporting(0);
 
 /* Using:
 
@@ -28,14 +28,14 @@ error_reporting (0);
 
 include('kcaptcha.php');
 
-if(isset($_REQUEST[session_name()])){
-	session_start();
+if (isset($_REQUEST[session_name()])) {
+    session_start();
 }
 
 $captcha = new KCAPTCHA();
 
-if($_REQUEST[session_name()]){
-	$_SESSION['captcha_keystring'] = $captcha->getKeyString();
+if ($_REQUEST[session_name()]) {
+    $_SESSION['captcha_keystring'] = $captcha->getKeyString();
 }
 
 ?>

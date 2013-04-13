@@ -37,8 +37,8 @@ if(isempty($_COOKIE['BMC_redirect'])){
   	}
   	
 }		
-*/	
-	include_once A_ROOT."login.php";
-	
-	
+*/
+include_once A_ROOT . "login.php";
+
+
 ?>
