@@ -168,12 +168,12 @@ if (!isset($BLOGS[$POOO['blog']])) {
 <h2> ������ ������ � ������� <a href="./?page=<?php echo $POOO['blog'] ?>"><b>"<?php echo @$BLOGS[$POOO['blog']] ?>"</b></a></h2>
 
 
-<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
+<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype=multipart/form-data>
     <fieldset>
         <input type=hidden name="id" value="<?php echo @$_GET['id']; ?>">
         <input type=hidden name="por" value="<?php echo $POOO['por'] ?>">
         <input type=hidden name="<?php echo FORM_HASH; ?>" value="1">
-        <input type=hidden name="MAX_FILE_SIZE" value="10000000">
+        <input type=hidden name=MAX_FILE_SIZE value=10000000>
         <input type=hidden name="blog" value="<?php echo $POOO['blog'] ?>">
 
 
@@ -181,18 +181,18 @@ if (!isset($BLOGS[$POOO['blog']])) {
         <?php if ($POOO['blog'] == 1 || $POOO['blog'] == 4 || $POOO['blog'] == 5) { ?>
 
             <label><!-- ��� �������<span class="tooltip" title="� ������� ����� � ��� �� ����� ������������� ��� ����, ��� � �������. � ������ � �������� ���� ������� �� �������� � ��������">(?)</span>
-		<input type=checkbox name="gallery"<?php if(@$POOO['gallery']) {echo ' checked';
-} ?> style="margin-top:5px" onchange="changer()" value="1">--><input type=hidden name="gallery" value="1">
-                <input type=submit name="nesegalavodu" value="������" id="gallery_button"> &nbsp; &nbsp; <span class="tooltip"
-                                                                                                                 title="������ ������, ���������� � �������� � ��� ��������� �� ���� �������">(?)</span>
-
-                &nbsp;
-                <small style="color:#AAA">���� ���� �������� ������ ������<?php if ($tonia = $db->evaluate("SELECT count(*) FROM " . PRF . "photo WHERE post=" . a($POOO['id']))) {
+		<input type=checkbox name="gallery"<?php if(@$POOO['gallery']) {echo ' checked';} ?> style="margin-top:5px" onchange="changer()" value="1">-->
+                <input type=hidden name="gallery" value="1">
+                <input type=submit name="nesegalavodu" value="������" id="gallery_button">
+                &nbsp; &nbsp; <span class="tooltip" title="������ ������, ���������� � �������� � ��� ��������� �� ���� �������">(?)</span> &nbsp;
+                <small style="color:#AAA">���� ���� �������� ������ ������
+                    <?php if ($tonia = $db->evaluate("SELECT count(*) FROM " . PRF . "photo WHERE post=" . a($POOO['id']))) {
                         echo ". $tonia �����������";
                     }
                     else {
-                        echo ". ������ ����"
-} ?></small>
+                        echo ". ������ ����";
+                    } ?>
+                </small>
 
             </label><br>
         <?php } ?>
@@ -213,18 +213,20 @@ if (!isset($BLOGS[$POOO['blog']])) {
         else { ?>
 
 
-            <?php if ($POOO['blog'] == 5) { ?>
-                <div class="jobaniradio">������:<span class="tooltip" title="���������� � ��� ������� �� ��� ���������� �������">(?)</span>
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<label><input type="radio" name="switch" value="0" <?php if (!$POOO['switch']) {
-                            echo ' checked'
-} ?>> ���������� � ��������</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label><input type="radio" name="switch"
-                                                                                                                                        value="1" <?php if (@$POOO['switch']) {
-                            echo ' checked'
-} ?>> ������</label>
-                </div>
-                <?php
+        <?php if ($POOO['blog'] == 5) { ?>
+            <div class="jobaniradio">������:<span class="tooltip" title="���������� � ��� ������� �� ��� ���������� �������">(?)</span>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <label>
+                    <input type="radio" name="switch" value="0" <?php if (!$POOO['switch']) {echo ' checked';} ?>> ���������� � ��������
+                </label> 
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <label>
+                    <input type="radio" name="switch" value="1" <?php if (@$POOO['switch']) {echo ' checked';} ?>> ������
+                </label>
+            </div>
+            <?php
                 echo '<script>document.getElementsByName("switch")[' . ((@$POOO['switch']) ? '1' : '0') . '].checked=true</script>';
-            } ?>
+        } ?>
 
             <label>���������<span class="tooltip" title="��� �������� ����������� ��� ���������� ��� ��������� �����">(?)</span>
                 <input name="title" value="<?php echo @$POOO['title']; ?>">
@@ -266,15 +268,15 @@ if (!isset($BLOGS[$POOO['blog']])) {
             </label>
 
         <?php } ?>
-        <!--	<label style="opacity:0.7">�������� � ��������<br>
-		<input type=checkbox name="draft"<?php if(@$POOO['draft']) {echo ' checked';
-} ?> value="1">
-	</label>-->
+        <!--<label style="opacity:0.7">�������� � ��������<br>
+		    <input type=checkbox name="draft"<?php if(@$POOO['draft']) {echo ' checked';} ?> value="1">
+	    </label>-->
 
+        
         <br><br>
         <input type=submit value="    ���������    ">
         <input type=submit name="preview" value="��������������� ��������" style="width:auto;margin-left:93px;background:#e0e0e0">
-        <input type=button value="      ������      " onclick="location.href='user.php'">
+        <input type=button value="      ������      " onclick="location.href='user.php';return false">
 
 
     </fieldset>
@@ -290,6 +292,8 @@ if (!isset($BLOGS[$POOO['blog']])) {
     inject();
 
     changer();
+    
+    var dabostyle = $('dabo').style;
 
     function editoronoff() {
         WYSIWYG.onoff('msg', full1);
@@ -298,11 +302,10 @@ if (!isset($BLOGS[$POOO['blog']])) {
     }
 
     function dalshebolshe() {
-        t = $('dabo');
-        if (parseInt(t.style.height) < 100) {
-            t.style.height = '301px';
-            t.style.overflow = '';
-            t.style.cursor = 'default';
+        if (parseInt(dabostyle.height) < 100) {
+            dabostyle.height = '301px';
+            dabostyle.overflow = '';
+            dabostyle.cursor = 'default';
             WYSIWYG.onoff('msg1', full1);
             t.onclick = null;
         }
@@ -311,16 +314,16 @@ if (!isset($BLOGS[$POOO['blog']])) {
 
     <?php if($POOO['blog'] != 1){ ?>
 
-    function changer() {
-        if (document.getElementsByName('gallery')[0]/*.checked*/) {
-            $('dabo').style.display = 'none';
-            $('second').style.display = 'block';
-        } else {
-            $('dabo').style.display = 'block';
-            $('second').style.display = 'none';
+        function changer() {
+            if (document.getElementsByName('gallery')[0]/*.checked*/) {
+                dabostyle.display = 'none';
+                $('second').style.display = 'block';
+            } else {
+                dabostyle.display = 'block';
+                $('second').style.display = 'none';
+            }
         }
-    }
-    $('dabo').onclick = dalshebolshe;
+        $('dabo').onclick = dalshebolshe;
 
     <?php } ?>
 

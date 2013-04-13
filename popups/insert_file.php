@@ -56,7 +56,7 @@ header("Content-Type: text/html; charset=utf-8");
 </head>
 <body bgcolor="#EEEEEE" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" onLoad="loadForm();">
 <table border="0" cellpadding="0" cellspacing="0" style="padding: 11px;">
-    <form method=post action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" name="myform" enctype="multipart/form-data" onsubmit="return mySubmit();">
+    <form method=post action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" name="myform" enctype=multipart/form-data onsubmit="return mySubmit();">
         <input type=hidden id="dir" name="dir" value="">
         <tr>
             <td style="vertical-align:top;">

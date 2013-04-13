@@ -9,9 +9,9 @@ if (!defined('IN_BMC')) {
 <h2> Правим меню </h2>
 
 
-<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
+<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype=multipart/form-data>
     <fieldset>
-        <input type=hidden name="MAX_FILE_SIZE" value="10000000">
+        <input type=hidden name=MAX_FILE_SIZE value=10000000>
         <input type=hidden name="<?php echo FORM_HASH; ?>" value="3">
         <br>
 
@@ -97,8 +97,7 @@ EOF;
     }
 
     function del(i) {
-        //todo test ie
-        if (confirm('       !!! Внимание !!! \n\n Уничтожить это меню?\n\n')) {
+        if (confirm('       !!! Внимание !!! \n\n Уничтожить это меню?\n\n!!!!!!!!!!!!!!!!!\n\n')) {
             var element = $('_' + i);
             element.parentNode.removeChild(element);
             ___changer();

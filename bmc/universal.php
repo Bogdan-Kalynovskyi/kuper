@@ -95,7 +95,7 @@ if (!isnumeric($_REQUEST['selector']) && $raw) {
 <h1 style="text-transform: capitalize"><?php echo $table ?></h1>
 
 <form accept-charset="<?php echo $CHRST ?>" method=post id="frm"
-      action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" enctype="multipart/form-data" onsubmit="return verify_form()">
+      action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" enctype=multipart/form-data onsubmit="return verify_form()">
 
     <fieldset class="form_fields" style="width:760px">
 
@@ -104,7 +104,7 @@ if (!isnumeric($_REQUEST['selector']) && $raw) {
 
         <input type=hidden name="<?php echo FORM_HASH; ?>" id="to_do">
         <input type=hidden name="id" id="id">
-        <input type=hidden name="MAX_FILE_SIZE" value="10000000">
+        <input type=hidden name=MAX_FILE_SIZE value=10000000>
 
 
         <table style="border:0;  margin: 0 auto; width:720px" cellpadding="0" cellspacing="10">
@@ -134,6 +134,6 @@ if (!isnumeric($_REQUEST['selector']) && $raw) {
                     </select><br>
                     <small><?php echo "$table count = $count" ?></small>
                     <br><br><br>
-                    <span id="a_add" onclick="new1();return false" style="color:#119;cursor:poiner;text-decoration:underline;font-weight:bold"> Add New </span>
+                    <span id="a_add" onclick="new1()" style="color:#119;cursor:pointer;text-decoration:underline;font-weight:bold"> Add New </span>
 
                 </td>

@@ -24,7 +24,7 @@ $type = array(0, 0, 0, 0, 0, 0, 0, 1, 2, 3);
 
 <h2> Дополнительная информация... </h2>
 
-<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
+<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype=multipart/form-data>
     <fieldset>
         <input type=hidden name="<?php echo FORM_HASH; ?>" value="2">
 

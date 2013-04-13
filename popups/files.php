@@ -157,7 +157,7 @@ else {
 
 <body>
 <div>
-    <form name="files" method=post action="<?php echo $_SERVER['PHP_SELF']; ?>" ENCTYPE="multipart/form-data">
+    <form name="files" method=post action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype=multipart/form-data>
         <input type=hidden name="action" value="upload_files">
         <input type=hidden name="form_id" value="<?php echo $form; ?>">
         <strong><?php echo $lang['file_title']; ?></strong><br><br>
@@ -173,7 +173,7 @@ else {
 
     <strong><?php echo $lang['post_attach']; ?></strong><br><br>
 
-    <form name="attach" method=post action="<?php echo $_SERVER['PHP_SELF']; ?>" ENCTYPE="multipart/form-data">
+    <form name="attach" method=post action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype=multipart/form-data>
         <input type=hidden name="action" value="attach_files">
         <input type=hidden name="form_id" value="<?php echo $form; ?>">
         <select name="files[]" size="10" multiple="true" onChange="goChkImg(this);">

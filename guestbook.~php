@@ -397,7 +397,7 @@ EOF;
 ?>
 
 
-<form method=post action="<?php echo $_SERVER['SCRIPT_NAME'] ?>"  accept-charset="<?php echo $CHRST ?>"  enctype="multipart/form-data" onsubmit="return verify_form()">
+<form method=post action="<?php echo $_SERVER['SCRIPT_NAME'] ?>"  accept-charset="<?php echo $CHRST ?>"  enctype=multipart/form-data onsubmit="return verify_form()">
 <fieldset>
 	<input type="hidden" name="<?php echo USER_HASH; ?>" value="1" />
 	<input type="hidden" name="date" value="<?php echo @$_POST['date'] ?>" />

@@ -4,7 +4,7 @@ if (!defined('IN_BMC')) {
     die();
 }
 
-error_reporting(0);
+error_reporting(E_ALL);
 
 
 $my_host = 'localhost';

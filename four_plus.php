@@ -22,10 +22,10 @@ $POOO = $db->query("UPDATE " . PRF . "posts  SET	ok=1	WHERE ok <> TRUE AND id=" 
 <h2> ������ �������... </h2>
 
 
-<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
+<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype=multipart/form-data>
     <fieldset>
         <input type=hidden name="<?php echo FORM_HASH; ?>" value="4">
-        <input type=hidden name="MAX_FILE_SIZE" value="10000000">
+        <input type=hidden name=MAX_FILE_SIZE value=10000000>
         <input type=hidden name="post" value="<?php echo @$_GET['gallery'] ?>">
 
         <br>

@@ -93,12 +93,12 @@
 <h2> Правим пост / Галерею... </h2>
 
 
-<form method=post action="user.php"  accept-charset="<?php echo $CHRST ?>"  enctype="multipart/form-data" onsubmit="return verify_form()">
+<form method=post action="user.php"  accept-charset="<?php echo $CHRST ?>"  enctype=multipart/form-data onsubmit="return verify_form()">
 <fieldset>
 	<input type="hidden" name="id" value="<?php echo @$_GET['id']; ?>" />
 	<input type="hidden" name="blog" value="<?php echo @$POOO['blog']; ?>" />
 	<input type="hidden" name="<?php echo FORM_HASH; ?>" value="1" />
-	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+	<input type="hidden" name=MAX_FILE_SIZE value=10000000 />
 
 
 

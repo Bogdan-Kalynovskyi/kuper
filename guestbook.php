@@ -207,7 +207,7 @@ EOF;
     ?>
 
 
-    <form method=post action="<?php echo $base ?>" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data" onsubmit="return verify_form()">
+    <form method=post action="<?php echo $base ?>" accept-charset="<?php echo $CHRST ?>" enctype=multipart/form-data onsubmit="return verify_form()">
         <fieldset style="background:#f6f6f6;padding:22px 0 16px 0;border:2px solid white;	-moz-border-radius:2px;border-radius:2px;margin-top:-2px;margin-left:-2px">
 
             <input type=hidden name="<?php echo USER_HASH; ?>" value="1">

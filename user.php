@@ -18,99 +18,90 @@ include_once A_HOME . 'fun_admin.php';
 if (@$_POST[FORM_HASH] == 1 && @$_POST['blog'] == 1) {
     $_POST['icon'] = myurlencode(up_pic('icon', '', '', 'kartiny/', $bmc_vars['blog_x'], $bmc_vars['blog_y']));
     if ($_POST['icon']) {
-        $db->query('REPLACE INTO {$PRF}vars (name, val) VALUES (\'zastavka\', ' . a(@$_POST['icon']) . ')');
+        $db->query("REPLACE INTO {$PRF}vars (name, val) VALUES ('zastavka', " . a(@$_POST['icon']) . ')');
     }
 }
-else ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    if (@$_POST[FORM_HASH] == 1) { //pin();
+elseif (@$_POST[FORM_HASH] == 1 && isnumeric($_POST['id']) && isnumeric($_POST['blog'])) { //pin();
 
 
-        include_once A_HOME . 'upload_pic.php';
+    include_once A_HOME . 'upload_pic.php';
 
-        /***********************/
-        if ($_POST['blog'] > 3) {
-            $bmc_vars['blog_x'] = $bmc_vars['x'];
-            $bmc_vars['blog_y'] = $bmc_vars['y'];
-        }
-
-        $_POST['icon'] = myurlencode(up_pic('icon', '', '', 'kartiny/', $bmc_vars['blog_x'], $bmc_vars['blog_y']), 1);
-        $_POST['fon'] = myurlencode(up_pic('fon', '', '', 'kartiny/', $bmc_vars['x'], $bmc_vars['y']));
-        $_POST['title'] = simplewrap(htmlspecialchars(htmlspecialchars_decode(@$_POST['title']))); //no html
-        $_POST['summary'] = simplewrap(htmlspecialchars_decode(@$_POST['summary']));
-        $_POST['data'] = simplewrap(htmlspecialchars_decode(@$_POST['data']));
-
-
-        ////////////V//EXCEPTION 1
-
-        if (@$_POST['nesegalavodu']) {
-            $_GET['gallery'] = $_POST['id'];
-        }
-
-/////////////////////////
-
-
-        if (@$_POST['preview']) {
-            $db->query('INSERT INTO {$PRF}posts SET
-
-                blog = ' . a($_POST['blog']) . ',
-
-                title = ' . a($_POST['title']) . ',
-                icon = ' . a($_POST['icon']) . ',
-                fon = ' . a($_POST['fon']) . ',
-                summary = ' . a($_POST['summary']) . ',
-                data = ' . a($_POST['data']) . ',
-                date = ' . a(@$_POST['date']) . ',
-                por = ' . a(@$_POST['por']) . ',
-                draft = ' . a(@$_POST['draft']) . ',
-                gallery = ' . a(@$_POST['gallery']) . ',
-                switch = ' . a(@$_POST['switch']) . ',
-                ok = 0
-			');
-
-            $_GET['id'] = $db->evaluate('SELECT LAST_INSERT_ID()');
-            $_GET['blog'] = $_POST['blog'];
-            $_GET['preview'] = true;
-            include A_ROOT . 'index.php';
-            exit; //bmc_go($MY_URL.'?preview=true&id='.$id);
-        }
-
-        else {
-            $db->query('REPLACE ' . PRF . 'posts SET
-
-                blog = ' . a($_POST['blog']) . ',
-
-                title = ' . a($_POST['title']) . ',
-                icon = ' . a($_POST['icon']) . ',
-                fon = ' . a($_POST['fon']) . ',
-                summary = ' . a($_POST['summary']) . ',
-                data = ' . a($_POST['data']) . ',
-                date=' . a(@$_POST['date']) . ',
-                por=' . a(@$_POST['por']) . ',
-                draft=' . a(@$_POST['draft']) . ',
-                gallery=' . a(@$_POST['gallery']) . ',
-                switch=' . a(@$_POST['switch']) . ',
-                ok=1,
-
-                id=' . a($_POST['id'])
-            );
-        }
-
-
-/////////////////////////
-
-
+    /***********************/
+    if ($_POST['blog'] > 3) {
+        $bmc_vars['blog_x'] = $bmc_vars['x'];
+        $bmc_vars['blog_y'] = $bmc_vars['y'];
     }
 
+    $_POST['icon'] = myurlencode(up_pic('icon', '', '', 'kartiny/', $bmc_vars['blog_x'], $bmc_vars['blog_y']), 1);
+    $_POST['fon'] = myurlencode(up_pic('fon', '', '', 'kartiny/', $bmc_vars['x'], $bmc_vars['y']));
+    $_POST['title'] = simplewrap(htmlspecialchars(htmlspecialchars_decode(@$_POST['title']))); //no html
+    $_POST['summary'] = simplewrap(htmlspecialchars_decode(@$_POST['summary']));
+    $_POST['data'] = simplewrap(htmlspecialchars_decode(@$_POST['data']));
 
-/****** THESE LINESE SHOULD BE BETWEEN ***********/
-/****** THESE LINESE SHOULD BE BETWEEN ***********/
-$db->query('DELETE LOW_PRIORITY FROM ' . PRF . 'posts WHERE ok <> TRUE AND id <> ' . a(@$_GET['gallery']) . ' AND id <> ' . a(@$_POST['id'])); //if preview then exit
-/****** THESE LINESE SHOULD BE BETWEEN ***********/
-/****** THESE LINESE SHOULD BE BETWEEN ***********/
+
+    ////////////V//EXCEPTION 1
+
+    if (@$_POST['nesegalavodu']) {
+        $_GET['gallery'] = $_POST['id'];
+    }
+
+/////////////////////////
+
+
+    if (@$_POST['preview']) {
+        $db->query("INSERT INTO {$PRF}posts SET
+
+            blog = " . a($_POST['blog']) . ',
+
+            title = ' . a($_POST['title']) . ',
+            icon = ' . a($_POST['icon']) . ',
+            fon = ' . a($_POST['fon']) . ',
+            summary = ' . a($_POST['summary']) . ',
+            data = ' . a($_POST['data']) . ',
+            date = ' . a(@$_POST['date']) . ',
+            por = ' . a(@$_POST['por']) . ',
+            draft = ' . a(@$_POST['draft']) . ',
+            gallery = ' . a(@$_POST['gallery']) . ',
+            switch = ' . a(@$_POST['switch']) . ',
+        ');
+
+        $_GET['id'] = $db->evaluate('SELECT LAST_INSERT_ID()');
+        $_GET['blog'] = $_POST['blog'];
+        $_GET['preview'] = true;
+
+        include A_ROOT . 'index.php';
+
+        $db->query('DELETE LOW_PRIORITY FROM ' . PRF . 'posts WHERE id == ' . a(@$_POST['id']));
+
+        exit;
+    }
+
+    else {
+        $db->query('REPLACE ' . PRF . 'posts SET
+
+            blog = ' . a($_POST['blog']) . ',
+
+            title = ' . a($_POST['title']) . ',
+            icon = ' . a($_POST['icon']) . ',
+            fon = ' . a($_POST['fon']) . ',
+            summary = ' . a($_POST['summary']) . ',
+            data = ' . a($_POST['data']) . ',
+            date=' . a(@$_POST['date']) . ',
+            por=' . a(@$_POST['por']) . ',
+            draft=' . a(@$_POST['draft']) . ',
+            gallery=' . a(@$_POST['gallery']) . ',
+            switch=' . a(@$_POST['switch']) . ',
+
+            id=' . a($_POST['id'])
+        );
+    }
+}
 
 
 /***********************************************************************************************************/
@@ -118,68 +109,8 @@ $db->query('DELETE LOW_PRIORITY FROM ' . PRF . 'posts WHERE ok <> TRUE AND id <>
 /***********************************************************************************************************/
 
 
-function bulk ($c) {
-    $my = array();
 
-    if (is_array($_POST[$c])) {
-        foreach ($_POST[$c] as $key => $p) {
-            if (isnumeric($key) /*range?*/) {
-                $my[$key] = simplewrap(htmlspecialchars(htmlspecialchars_decode($p)));
-            }
-        }
-    }
-    return $my;
-}
-
-
-function photobulk ($c, $do_thumbs = false) {
-    global $bmc_vars, $bodya_x, $bodya_y;
-
-    $my = $bodya_x = $bodya_y = array();
-
-    include_once A_HOME . 'upload_pic.php';
-
-    if (is_array($_POST[$c])) {
-        foreach ($_POST[$c] as $key => $p) {
-            if (isnumeric($key)) {
-
-                $xxx = $bmc_vars['x'];
-                $yyy = $bmc_vars['y'];
-
-                $_POST[$c . $key] = $p;
-
-                if ($do_thumbs) {
-                    $my[$key] = myurlencode(up_pic($c . $key, '', '', 'fullsize/', 1200, 800, true)); //uuidv4()
-
-                }
-                else {
-                    $my[$key] = myurlencode(up_pic($c . $key, '', '', 'photos/', $xxx, $yyy)); //uuidv4()
-                    $bodya_x[$key] = $xxx;
-                    $bodya_y[$key] = $yyy;
-                }
-            }
-            /*
-            $my[$key] = myurlencode(up_pic($c.$key, '', '', 'photos/', $bmc_vars['x'], $bmc_vars['y']));//uuidv4()
-
-            if($do_thumbs && $my[$key]){
-                unset($_FILES[$c.$key]);
-                $_POST[$c.$key] = rawurldecode($my[$key]);
-                $newname = basename($_POST[$c.$key]);
-
-                if(!is_file(A_ROOT.'thumb/'.$newname)){
-                    $newname = substr($newname, 0, strrpos($newname, '.'));
-                    up_pic($c.$key, '', $newname, 'thumb/', $bmc_vars['thumb_x'], $bmc_vars['thumb_y']);
-                }
-            }*/
-
-
-        }
-    }
-    return $my;
-}
-
-
-if (@$_POST[FORM_HASH] == 3) { //pin();
+elseif (@$_POST[FORM_HASH] == 3 && isnumeric($_POST['id']) && isnumeric($_POST['blog'])) { //pin();
 
     foreach ($_POST['d'] as $k => $v) {
         if (isnumeric($k) && $v) {

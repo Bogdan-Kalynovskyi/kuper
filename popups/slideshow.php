@@ -351,7 +351,7 @@ header("Content-type: text/html; charset=windows-1251");
 
 
 <body onload="loader()">
-<form method=post name="myform" action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" enctype="multipart/form-data">
+<form method=post name="myform" action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" enctype=multipart/form-data>
     <input type=hidden name="task" value="go">
     <input type=hidden name="slideshow" value="<?php echo $_POST['slideshow']; ?>">
     <input type=hidden name="pic_num" value="">
