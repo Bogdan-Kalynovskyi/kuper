@@ -157,25 +157,25 @@ else {
 
 <body>
 <div>
-    <form name="files" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" ENCTYPE="multipart/form-data">
-        <input type="hidden" name="action" value="upload_files"/>
-        <input type="hidden" name="form_id" value="<?php echo $form; ?>"/>
-        <strong><?php echo $lang['file_title']; ?></strong><br/><br/>
-        <?php echo $lang['file_fl']; ?>#1 : <input type="file" name="file1"/><br/>
-        <?php echo $lang['file_fl']; ?>#2 : <input type="file" name="file2"/><br/>
-        <?php echo $lang['file_fl']; ?>#3 : <input type="file" name="file3"/><br/>
-        <?php echo $lang['file_fl']; ?>#4 : <input type="file" name="file4"/><br/>
-        <?php echo $lang['file_fl']; ?>#5 : <input type="file" name="file5"/><br/>
-        <br/><br/><input type="submit" value="<?php echo $lang['file_but']; ?>"/>
+    <form name="files" method=post action="<?php echo $_SERVER['PHP_SELF']; ?>" ENCTYPE="multipart/form-data">
+        <input type=hidden name="action" value="upload_files">
+        <input type=hidden name="form_id" value="<?php echo $form; ?>">
+        <strong><?php echo $lang['file_title']; ?></strong><br><br>
+        <?php echo $lang['file_fl']; ?>#1 : <input type=file name="file1"><br>
+        <?php echo $lang['file_fl']; ?>#2 : <input type=file name="file2"><br>
+        <?php echo $lang['file_fl']; ?>#3 : <input type=file name="file3"><br>
+        <?php echo $lang['file_fl']; ?>#4 : <input type=file name="file4"><br>
+        <?php echo $lang['file_fl']; ?>#5 : <input type=file name="file5"><br>
+        <br><br><input type=submit value="<?php echo $lang['file_but']; ?>">
     </form>
-    <br/><br/>
+    <br><br>
 
 
-    <strong><?php echo $lang['post_attach']; ?></strong><br/><br/>
+    <strong><?php echo $lang['post_attach']; ?></strong><br><br>
 
-    <form name="attach" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" ENCTYPE="multipart/form-data">
-        <input type="hidden" name="action" value="attach_files"/>
-        <input type="hidden" name="form_id" value="<?php echo $form; ?>"/>
+    <form name="attach" method=post action="<?php echo $_SERVER['PHP_SELF']; ?>" ENCTYPE="multipart/form-data">
+        <input type=hidden name="action" value="attach_files">
+        <input type=hidden name="form_id" value="<?php echo $form; ?>">
         <select name="files[]" size="10" multiple="true" onChange="goChkImg(this);">
             <?php
 
@@ -196,22 +196,22 @@ else {
             closedir($handle);
 
             ?>
-        </select><br/><br/>
+        </select><br><br>
 
         <div id="img_attach">
-            <?php echo $lang['file_img_insert_target']; ?><br/>
-            <?php echo $lang['post_smr']; ?><input type="radio" name="target_box" value="smr" checked/>
-            <?php echo $lang['file_img_insert_body']; ?><input type="radio" name="target_box" value="msg"/><br/>
-            <input type="checkbox" name="img_resize" value="1" checked/> <?php echo $lang['file_img_resize']; ?><br/>
-            <input type="button" onclick="goImgAttach();" value="<?php echo $lang['file_img_insert']; ?>"/>
+            <?php echo $lang['file_img_insert_target']; ?><br>
+            <?php echo $lang['post_smr']; ?><input type="radio" name="target_box" value="smr" checked>
+            <?php echo $lang['file_img_insert_body']; ?><input type="radio" name="target_box" value="msg"><br>
+            <input type=checkbox name="img_resize" value="1" checked> <?php echo $lang['file_img_resize']; ?><br>
+            <input type=button onclick="goImgAttach();" value="<?php echo $lang['file_img_insert']; ?>">
         </div>
 
-        <br/><br/>
-        <input type="button" onclick="goAttach();" value="<?php echo $lang['file_add_but']; ?>"/>
-        <input type="button" onclick="goDel();" value="<?php echo $lang['file_but_del']; ?>"/></form>
+        <br><br>
+        <input type=button onclick="goAttach();" value="<?php echo $lang['file_add_but']; ?>">
+        <input type=button onclick="goDel();" value="<?php echo $lang['file_but_del']; ?>"></form>
 
-    <br/><br/>
-    <a href="#" onclick="window.close()"><?php echo $lang['close']; ?></a>
+    <br><br>
+    <a href=# onclick="window.close()"><?php echo $lang['close']; ?></a>
 
     <script>
         // Delete files

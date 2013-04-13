@@ -14,8 +14,8 @@ NonCachePlusEncoding();
     <title>Admin &bull; Log In</title>
 
     <meta charset=<?php echo $CHRST; ?>>
-    <meta http-equiv="Cache-Control" content="no-cache"/>
-    <meta name="robots" content="noindex, nofollow"/>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="robots" content="noindex, nofollow">
 
     <meta name="webmaster" content="mybodya@gmail.com">
 

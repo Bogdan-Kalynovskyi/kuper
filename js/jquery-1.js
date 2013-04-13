@@ -536,7 +536,7 @@
                 return
             }
             if (typeof S === "string") {
-                S = S.replace(/(<(\w+)[^>]*?)\/>/g, function (U, V, T) {
+                S = S.replace(/(<(\w+)[^>]*?)\>/g, function (U, V, T) {
                     return T.match(/^(abbr|br|col|img|input|link|meta|param|hr|area|embed)$/i) ? U : V + "></" + T + ">"
                 });
                 var O = S.replace(/^\s+/, "").substring(0, 10).toLowerCase();
@@ -1396,7 +1396,7 @@
         }
         (function () {
             var U = document.createElement("form"), V = "script" + (new Date).getTime();
-            U.innerHTML = "<input name='" + V + "'/>";
+            U.innerHTML = "<input name='" + V + "'>";
             var T = document.documentElement;
             T.insertBefore(U, T.firstChild);
             if (!!document.getElementById(V)) {
@@ -2076,7 +2076,7 @@
         o.support = {};
         var F = document.documentElement, G = document.createElement("script"), K = document.createElement("div"), J = "script" + (new Date).getTime();
         K.style.display = "none";
-        K.innerHTML = '   <link/><table></table><a href="/a" style="color:red;float:left;opacity:.5;">a</a><select><option>text</option></select><object><param/></object>';
+        K.innerHTML = '   <link><table></table><a href="/a" style="color:red;float:left;opacity:.5;">a</a><select><option>text</option></select><object><param></object>';
         var H = K.getElementsByTagName("*"), E = K.getElementsByTagName("a")[0];
         if (!H || !H.length || !E) {
             return
@@ -2134,7 +2134,7 @@
         var F = this;
         o.ajax({url: G, type: H, dataType: "html", data: J, complete: function (M, L) {
             if (L == "success" || L == "notmodified") {
-                F.html(E ? o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g, "")).find(E) : M.responseText)
+                F.html(E ? o("<div>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g, "")).find(E) : M.responseText)
             }
             if (K) {
                 F.each(K, [M.responseText, L, M])
@@ -2462,7 +2462,7 @@
                     if (m[G]) {
                         K = m[G]
                     } else {
-                        var I = o("<" + G + " />").appendTo("body");
+                        var I = o("<" + G + ">").appendTo("body");
                         K = I.css("display");
                         if (K === "none") {
                             K = "block"

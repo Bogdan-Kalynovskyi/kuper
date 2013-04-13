@@ -31,7 +31,7 @@ function sql_from_post ($query, $fields_ary, $table) {
 
 
             /*case 'textarea':
-                $res[$key] = @str_replace("\n", '<br/>', htmlspecialchars($_POST[$key]));
+                $res[$key] = @str_replace("\n", '<br>', htmlspecialchars($_POST[$key]));
                 break;*/
 
 

@@ -69,7 +69,7 @@ else {
 
 $key = htmlspecialchars($key);
 if ($posts) {
-    $srch_msg .= str_replace("%key%", $key, $lang['search_reslut_msg']) . '<br/>' . count($posts);
+    $srch_msg .= str_replace("%key%", $key, $lang['search_reslut_msg']) . '<br>' . count($posts);
 }
 else {
     $srch_msg .= "<div class=\"bold_red\">{$lang['search_resut_no']}  $key</div>";

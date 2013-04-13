@@ -80,14 +80,14 @@
                 <tr>
                     <td style="padding: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Назва сторінки:</td>
                     <td style="padding: 2px;" colspan="3">
-                        <input type="text" name="title" id="title" value="" style="font-size: 10px; width: 100%;">
+                        <input type=text name="title" id="title" value="" style="font-size: 10px; width: 100%;">
                     </td>
                 </tr>
             </table>
 
 
-            <div align="right" style="padding-top: 5px;"><input type="submit" value="      ОК      " onclick="insertHyperLink();" style="font-size: 12px;">&nbsp;<input
-                    type="button" value="  Cancel  " onclick="window.close();" style="font-size: 12px;"></div>
+            <div align="right" style="padding-top: 5px;"><input type=submit value="      ОК      " onclick="insertHyperLink();" style="font-size: 12px;">&nbsp;<input
+                    type=button value="  Cancel  " onclick="window.close();" style="font-size: 12px;"></div>
 
 </table>
 

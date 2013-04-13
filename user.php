@@ -56,19 +56,19 @@ else ///////////////////////////////////////////////////////////////////////////
         if (@$_POST['preview']) {
             $db->query('INSERT INTO {$PRF}posts SET
 
-			blog = ' . a($_POST['blog']) . ',
+                blog = ' . a($_POST['blog']) . ',
 
-			title = ' . a($_POST['title']) . ',
-			icon = ' . a($_POST['icon']) . ',
-			fon = ' . a($_POST['fon']) . ',
-			summary = ' . a($_POST['summary']) . ',
-			data = ' . a($_POST['data']) . ',
-			date=' . a(@$_POST['date']) . ',
-			por=' . a(@$_POST['por']) . ',
-			draft=' . a(@$_POST['draft']) . ',
-			gallery=' . a(@$_POST['gallery']) . ',
-			switch=' . a(@$_POST['switch']) . ',
-			ok=0
+                title = ' . a($_POST['title']) . ',
+                icon = ' . a($_POST['icon']) . ',
+                fon = ' . a($_POST['fon']) . ',
+                summary = ' . a($_POST['summary']) . ',
+                data = ' . a($_POST['data']) . ',
+                date = ' . a(@$_POST['date']) . ',
+                por = ' . a(@$_POST['por']) . ',
+                draft = ' . a(@$_POST['draft']) . ',
+                gallery = ' . a(@$_POST['gallery']) . ',
+                switch = ' . a(@$_POST['switch']) . ',
+                ok = 0
 			');
 
             $_GET['id'] = $db->evaluate('SELECT LAST_INSERT_ID()');
@@ -95,7 +95,8 @@ else ///////////////////////////////////////////////////////////////////////////
                 switch=' . a(@$_POST['switch']) . ',
                 ok=1,
 
-                id=' . a($_POST['id']));
+                id=' . a($_POST['id'])
+            );
         }
 
 
@@ -197,9 +198,9 @@ if (@$_POST[FORM_HASH] == 3) { //pin();
     $f = photobulk('f', false);
 
 
-    $db->query('UPDATE {$PRF}vars SET val = ' . a(implode('\n', $v)) . ' WHERE name=\'blogs\'');
-    $db->query('UPDATE {$PRF}vars SET val=' . a(implode('\n', array_keys($v))) . ' WHERE name=\'blog_ids\'');
-    $db->query('UPDATE {$PRF}vars SET val=' . a(implode('\n', $f)) . ' WHERE name=\'blog_fons\'');
+    $db->query("UPDATE {$PRF}vars SET val=" . a(implode("\n", $v)) . " WHERE name='blogs'");
+    $db->query("UPDATE {$PRF}vars SET val=" . a(implode("\n", array_keys($v))) . " WHERE name='blog_ids'");
+    $db->query("UPDATE {$PRF}vars SET val=" . a(implode("\n", $f)) . " WHERE name='blog_fons'");
 
     bmc_getSets();
 }
@@ -218,7 +219,7 @@ if (@$_POST[FORM_HASH] == 4) { //pin();
             unset($_POST['i'][$k]);
             unset($_POST['f'][$k]);
             unset($_POST['t'][$k]);
-            $db->query('DELETE FROM {$PRF}photo WHERE id=$k');
+            $db->query("DELETE FROM {$PRF}photo WHERE id=$k");
         }
     }
 
@@ -234,7 +235,7 @@ if (@$_POST[FORM_HASH] == 4) { //pin();
         $iii++;
     }
 
-    $db->query('REPLACE INTO{$PRF}photo ' . $db->sql_from_array('MULTI_REPLACE', $new, array('id', 'title', 'icon', 'fon', 'summary', 'post', 'por')));
+    $db->query("REPLACE INTO{$PRF}photo " . $db->sql_from_array('MULTI_REPLACE', $new, array('id', 'title', 'icon', 'fon', 'summary', 'post', 'por')));
 }
 
 
@@ -293,22 +294,17 @@ elseif (isnumeric($_GET['up']) || isnumeric($_GET['down'])) { //pin();
         $blog = $row_id1['blog'];
         $por1 = $row_id1['por'];
 
-        $row2change = $db->query("SELECT id, por FROM {
-        $PRF}posts WHERE(por $sign $por1 AND blog = $blog) ORDER BY por $order LIMIT 1", false);
+        $row2change = $db->query("SELECT id, por FROM {$PRF}posts WHERE(por $sign $por1 AND blog = $blog) ORDER BY por $order LIMIT 1", false);
         if (!$row2change) {
-            $row2change = $db->query("SELECT id, por FROM {
-        $PRF}posts WHERE(por = (SELECT $fallback FROM {
-        $PRF}posts WHERE blog = $blog) AND blog = $blog) LIMIT 1", false);
+            $row2change = $db->query("SELECT id, por FROM {$PRF}posts WHERE(por = (SELECT $fallback FROM {$PRF}posts WHERE blog = $blog) AND blog = $blog) LIMIT 1", false);
         }
 
         if ($row2change) {
             $id2 = $row2change['id'];
             $por2 = $row2change['por'];
 
-            $db->query("UPDATE {
-        $PRF}posts SET por = $por2 WHERE id = $id1");
-            $db->query("UPDATE {
-        $PRF}posts SET por = $por1 WHERE id = $id2");
+            $db->query("UPDATE {$PRF}posts SET por = $por2 WHERE id = $id1");
+            $db->query("UPDATE {$PRF}posts SET por = $por1 WHERE id = $id2");
 
         }
     }
@@ -322,25 +318,21 @@ elseif (isnumeric($_GET['del'])) { //pin();
         die('Ёта страница €вл€етс€ стартовой. ¬ы не можете удалить ее');
     }
 
-    $db->query('DELETE FROM {
-        $PRF}posts WHERE id = ' . a($_GET['del']));
+    $db->query("DELETE FROM {$PRF}posts WHERE id = " . a($_GET['del']));
 
-    $db->query('DELETE FROM {
-        $PRF}photo WHERE post = ' . a($_GET['del']));
+    $db->query("DELETE FROM {$PRF}photo WHERE post = " . a($_GET['del']));
 
 }
 
 
 elseif (isnumeric($_GET['id']) && $_GET['id'] == 0 && isnumeric($_GET['blog'])) { //pin(); id = -1 ????
 
-    $por = (int) $db->evaluate("SELECT MAX(por) FROM {
-        $PRF}posts WHERE blog = '.a($_GET['blog']) ) + 1;//blog?//0?
+    $por = (int) $db->evaluate("SELECT MAX(por) FROM {$PRF}posts WHERE blog = ".a($_GET['blog']) ) + 1;//blog?//0?
 
 			$gal = in_array($_GET['blog'], array(1, 4, 5));
 
 
-			$db->query("INSERT INTO {
-        $PRF}posts SET
+			$db->query("INSERT INTO {$PRF}posts SET
 				blog = ".a($_GET['blog']).",
 				por = '$por',
 				date = '$time',
@@ -348,7 +340,7 @@ elseif (isnumeric($_GET['id']) && $_GET['id'] == 0 && isnumeric($_GET['blog'])) 
 				ok = false
 			");
 
-			$_GET['id'] = $db->evaluate("SELECT LAST_INSERT_ID()');
+			$_GET['id'] = $db->evaluate('SELECT LAST_INSERT_ID()');
 
 }
 
@@ -360,41 +352,30 @@ elseif (isnumeric($_GET['id']) && $_GET['id'] == 0 && isnumeric($_GET['blog'])) 
 /////////////////////////////////////////////////////////////////////////////////
 
 
-function pin() {
-}
-
-; //todo class redirector	1стор11 версый редагуванн€, зручны ы дружны редыренти, показуванн€ останньо1 зробленор1 вкрс11 !!. хочу редиректитись туда!
-/*		if(isset($_SERVER['HTTP_REFERER']) && !isset($_COOKIE['BMC_redirect']) && ! isset($_REQUEST['nest'])
-		 && basename($_SERVER['HTTP_REFERER']) !== basename($_SERVER['SCRIPT_NAME']))
-			bmc_Go(-1);/*хто таку хуйню написав?*/
 
 
-/////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
 
-
-include A_ROOT . 'editor / header . php';
+include A_ROOT . 'editor/header.php';
 
 //-------------------------
 if (isnumeric($_GET['gallery'])) {
-    include A_ROOT . 'editor / four . php';
+    include A_ROOT . 'editor/four.php';
 }
 elseif (isnumeric($_GET['id'])) {
-    include A_ROOT . 'editor / one . php';
+    include A_ROOT . 'editor/one.php';
 }
 elseif (isset($_GET['subject']) && ($_GET['subject'] == 'other')) {
-    include A_ROOT . 'editor / two . php';
+    include A_ROOT . 'editor/two.php';
 }
 elseif (isset($_GET['subject']) && ($_GET['subject'] == 'menu')) {
-    include A_ROOT . 'editor / three . php';
+    include A_ROOT . 'editor/three.php';
 }
 else {
-    include A_ROOT . 'editor / zero . php';
+    include A_ROOT . 'editor/zero.php';
 }
 //-------------------------
 
-include A_ROOT . 'editor / footer . php';
+include A_ROOT . 'editor/footer.php';
 
 
 

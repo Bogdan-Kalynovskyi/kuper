@@ -11,6 +11,6 @@
     </style>
 </head>
 <body>
-<img src="click_img.php?post=<?php echo $_GET['post']; ?>" alt="Loading..." width="910" height="320"/>
+<img src="click_img.php?post=<?php echo $_GET['post']; ?>" alt="Loading..." width="910" height="320">
 </body>
 </html>

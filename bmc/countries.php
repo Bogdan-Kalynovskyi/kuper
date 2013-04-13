@@ -12,5 +12,5 @@ echo "<select name=\"country\" id=\"country\" size=\"1\" onchange=\"changed=true
 foreach ($countries as $temp) {
     echo '<option value="' . $temp . '">' . $temp . '</option>';
 }
-echo "</select><br/>\n";
+echo "</select><br>\n";
 

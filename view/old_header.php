@@ -40,7 +40,7 @@ elseif (LEVEL == 3) {
     <div style="height:30px;*height:20px">&nbsp;</div>
 
     <?php if (!empty($USER)) { ?>
-        <h2>Logged In</h2><br/><br/>
+        <h2>Logged In</h2><br><br>
     <?php } ?>
 
 

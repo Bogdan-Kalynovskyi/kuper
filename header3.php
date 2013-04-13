@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset=<?php echo $CHRST; ?>" /><title><?php echo $bmc_vars['site_title']; ?></title><meta http-equiv=" X-UA-Compatible
-    " content="IE=EmulateIE7" />
-    <meta name="Keywords" content="<? echo $bmc_vars['site_keywords']; ?>"/>
-    <meta name="Description" content="<? echo $bmc_vars['site_desc']; ?>"/>
-    <link rel=stylesheet href="styles.css"/><?php echo '<style>
+    <meta charset=<?php echo $CHRST; ?>"><title><?php echo $bmc_vars['site_title']; ?></title><meta http-equiv=" X-UA-Compatible
+    " content="IE=EmulateIE7">
+    <meta name="Keywords" content="<? echo $bmc_vars['site_keywords']; ?>">
+    <meta name="Description" content="<? echo $bmc_vars['site_desc']; ?>">
+    <link rel=stylesheet href="styles.css"><?php echo '<style>
 #nav h1{width:' . (100 / count($BLOGS)) . '%}
 </style>';
     ?>
@@ -57,5 +57,5 @@
 <div id="container">
     <div id="sux">&nbsp;</div>
 
-    <img id="fon"/>
-    <a href="./" id="logo" title="�� �������"><img src="images/logotip.png" alt="��� �������" id="zyx"/></a>
+    <img id="fon">
+    <a href="./" id="logo" title="�� �������"><img src="images/logotip.png" alt="��� �������" id="zyx"></a>

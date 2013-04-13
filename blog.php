@@ -60,7 +60,7 @@ function post_echo ($post) {
     echo '<div style="clear:both">&nbsp;</div>';
 
     if ($post['data']) {
-        echo '<a href="#" class="clickable" onclick="sh(\'z' . $id . '\');return false">������ ������...</a>
+        echo '<a href=# class="clickable" onclick="sh(\'z' . $id . '\');return false">������ ������...</a>
                     <div id="z' . $id . '" class = "fullsize">' . $post['data'] . '</div>';
     }
 

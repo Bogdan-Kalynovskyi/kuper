@@ -21,13 +21,13 @@ if (!defined('IN_BMC')) {
 <h2> ������ ����������� <a href="./?id=<?php echo htmlspecialchars($_GET['gallery']) ?>"><b>"<?php echo $nme ?>
             "</b></a>. <?php echo count($PHOTO) ?> ����</h2>
 
-<form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
+<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
     <fieldset>
-        <input type="hidden" name="<?php echo FORM_HASH; ?>" value="4">
-        <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-        <input type="hidden" name="post" value="<?php echo @$_GET['gallery'] ?>">
+        <input type=hidden name="<?php echo FORM_HASH; ?>" value="4">
+        <input type=hidden name="MAX_FILE_SIZE" value="10000000">
+        <input type=hidden name="post" value="<?php echo @$_GET['gallery'] ?>">
 
-        <br/>
+        <br>
 
         <div id="__key">
             <?php
@@ -55,9 +55,9 @@ if (!defined('IN_BMC')) {
 
 			<b>
 
-				 <a href="#" title="�����" onclick="up($k); return false"><img src="img/up.png" alt="�����"></a>
-				 <a href="#" title="����" onclick="down($k); return false"><img src="img/down.png" alt="����"></a>
-				 <a href="#" title="�������" onclick="del($k); return false"><img src="img/del.png" alt="�������"></a>
+				 <a href=# title="�����" onclick="up($k); return false"><img src="img/up.png" alt="�����"></a>
+				 <a href=# title="����" onclick="down($k); return false"><img src="img/down.png" alt="����"></a>
+				 <a href=# title="�������" onclick="del($k); return false"><img src="img/del.png" alt="�������"></a>
 
 			</b>
 
@@ -66,7 +66,7 @@ if (!defined('IN_BMC')) {
 			<label><span>�������</span>
 
 			<img src="{$ph['icon']}" alt="���" id="_i$k">
-			URL<input name="i[$key]" id="i$k" value="$image">  ��� ����<input type="file" id="__i$k" name="i$key">
+			URL<input name="i[$key]" id="i$k" value="$image">  ��� ����<input type=file id="__i$k" name="i$key">
 		   &nbsp;<a onclick="clrnpt('i$k');return false">������</a>
 
 			</label>
@@ -78,7 +78,7 @@ if (!defined('IN_BMC')) {
 			</label>
 
 		</div>
-		<hr/><input type="hidden" name="f[$key]" value="">
+		<hr><input type=hidden name="f[$key]" value="">
 
 EOF;
                 $k++;
@@ -89,11 +89,11 @@ EOF;
         <img src="images/plus.gif" title="��������" alt="��������" onclick="add()" style="margin-left:30px; cursor:pointer"> &nbsp; �
         ����� � ������� ��������� ������������� ������� ���������
         ��������, � ����� ���������� �� �����-����
-        <br/>
-        <br/>
+        <br>
+        <br>
 
-        <input type="submit" value="      ���������      " style="margin-left:40px"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <input type="button" value="      ������      " onclick="document.location='user.php'">
+        <input type=submit value="      ���������      " style="margin-left:40px"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <input type=button value="      ������      " onclick="location.href='user.php';return false">
 
     </fieldset>
 </form>
@@ -150,7 +150,7 @@ EOF;
 
         link.innerHTML =
 
-            '	<div class="baba" id="_' + n + '">			<label><span><a class="_eye_" title="���� ������ ��������..."><img src="img/eye_small.gif" alt="View"></a>���������</span> 		<input name="v[' + nn + ']" id="v' + n + '" class="title">	<b>				 <a href="#" title="�����" onclick="up(' + n + '); return false"><img src="img/up.png" alt="�����"></a> 	 <a href="#" title="����" onclick="down(' + n + '); return false"><img src="img/down.png" alt="����"></a>				 <a href="#" title="�������" onclick="del(' + n + '); return false"><img src="img/del.png" alt="�������"></a>			</b>			</label>			<label><span>�������</span>			<img src="blank.gif" alt="���" id="_i' + n + '"> 	URL<input name="i[' + nn + ']" id="i' + n + '"> ��� ����<input type="file" id="__i' + n + '" name="i' + nn + '"> &nbsp;<a onclick="clrnpt(\'i' + n + '\');return false">������</a>		</label>						<label> 			<span style="float:left">��������</span>	 		<textarea name="t[' + nn + ']" id="t' + n + '"></textarea></label>		</div><hr/><input type="hidden" name="f[' + nn + ']" value="">';
+            '	<div class="baba" id="_' + n + '">			<label><span><a class="_eye_" title="���� ������ ��������..."><img src="img/eye_small.gif" alt="View"></a>���������</span> 		<input name="v[' + nn + ']" id="v' + n + '" class="title">	<b>				 <a href=# title="�����" onclick="up(' + n + '); return false"><img src="img/up.png" alt="�����"></a> 	 <a href=# title="����" onclick="down(' + n + '); return false"><img src="img/down.png" alt="����"></a>				 <a href=# title="�������" onclick="del(' + n + '); return false"><img src="img/del.png" alt="�������"></a>			</b>			</label>			<label><span>�������</span>			<img src="blank.gif" alt="���" id="_i' + n + '"> 	URL<input name="i[' + nn + ']" id="i' + n + '"> ��� ����<input type=file id="__i' + n + '" name="i' + nn + '"> &nbsp;<a onclick="clrnpt(\'i' + n + '\');return false">������</a>		</label>						<label> 			<span style="float:left">��������</span>	 		<textarea name="t[' + nn + ']" id="t' + n + '"></textarea></label>		</div><hr><input type=hidden name="f[' + nn + ']" value="">';
 
         $('__key').appendChild(link);
 

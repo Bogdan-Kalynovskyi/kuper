@@ -94,17 +94,17 @@ if (!isnumeric($_REQUEST['selector']) && $raw) {
 
 <h1 style="text-transform: capitalize"><?php echo $table ?></h1>
 
-<form accept-charset="<?php echo $CHRST ?>" method="post" id="frm"
+<form accept-charset="<?php echo $CHRST ?>" method=post id="frm"
       action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" enctype="multipart/form-data" onsubmit="return verify_form()">
 
     <fieldset class="form_fields" style="width:760px">
 
-        <br/>
+        <br>
 
 
-        <input type="hidden" name="<?php echo FORM_HASH; ?>" id="to_do"/>
-        <input type="hidden" name="id" id="id"/>
-        <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+        <input type=hidden name="<?php echo FORM_HASH; ?>" id="to_do">
+        <input type=hidden name="id" id="id">
+        <input type=hidden name="MAX_FILE_SIZE" value="10000000">
 
 
         <table style="border:0;  margin: 0 auto; width:720px" cellpadding="0" cellspacing="10">
@@ -114,7 +114,7 @@ if (!isnumeric($_REQUEST['selector']) && $raw) {
                 <td style="vertical-align:top;text-align:center;border-right:1px solid #999;padding-right:30px;">
 
                     <input id="qs" value="Search..." onfocus="s1();" onblur="s2();" onkeyup="s3();"
-                           style="opacity:0.4;width:184px; height:16px; position:relative;top:-21px; padding-right:22px;background:url(img/search_submit.gif) no-repeat top right"/>
+                           style="opacity:0.4;width:184px; height:16px; position:relative;top:-21px; padding-right:22px;background:url(img/search_submit.gif) no-repeat top right">
 
                     <select style="width:210px;font-size:15px;position:relative;top:-16px;" name="selector" id="selector" size="<?php echo ($count < 16) ? ($count + 1) : 17; ?>"
                             onchange="select_changer()">
@@ -131,9 +131,9 @@ if (!isnumeric($_REQUEST['selector']) && $raw) {
                             echo "<option value=\"{$val['id']}\"  title=\"{$val['name']}\">{$val['name']}</option>";
                         }
                         ?>
-                    </select><br/>
+                    </select><br>
                     <small><?php echo "$table count = $count" ?></small>
-                    <br/><br/><br/>
+                    <br><br><br>
                     <span id="a_add" onclick="new1();return false" style="color:#119;cursor:poiner;text-decoration:underline;font-weight:bold"> Add New </span>
 
                 </td>

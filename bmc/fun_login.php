@@ -15,7 +15,7 @@ function recursive_hidden ($err) {
             recursive_hidden($p);
         }
         elseif (substr($key, 0, 3) != 'wp_') {
-            echo '<input type="hidden" name="' . quotes($key) . '" value="' . quotes($p) . '" />';
+            echo '<input type=hidden name="' . quotes($key) . '" value="' . quotes($p) . '">';
         }
         //expires
 
@@ -174,13 +174,13 @@ function show_cap ($force_captcha = false) {
         echo '
 <p>
 	<div style="text-align:center">
-		<img id="kcaptcha" src="kcaptcha/?' . session_name() . '=' . session_id() . '" width="150" height="70" border="0" alt="ERROR, image not loaded! Turn on images or try to reload the page!" title="Leters and numbers" />
+		<img id="kcaptcha" src="kcaptcha/?' . session_name() . '=' . session_id() . '" width="150" height="70" border="0" alt="ERROR, image not loaded! Turn on images or try to reload the page!" title="Leters and numbers">
 		<div style="cursor:pointer;color:#55f;width:100%;position:relative;top:1px;margin-bottom:2px"
 		title="reload the code if you can\'t read it" onclick="captcha_reload()">Reload</div>
 	</div>
 
-	<label>Verification code<br/>
-	<input name="wp_keystring" id="keystring" class="input" value="" size="20" tabindex="50" />
+	<label>Verification code<br>
+	<input name="wp_keystring" id="keystring" class="input" value="" size="20" tabindex="50">
 	</label>
 </p>';
     }
@@ -200,11 +200,11 @@ function show_cap1 ($force_captcha = false) {
         echo '
 
 	<div style="text-align:center;width:400px;margin-left:212px">
-		<img id="kcaptcha" src="kcaptcha/?' . session_name() . '=' . session_id() . '" width="300" height="70" border="0" alt="Секретный код не загрузился" title="Цифры и буквы" /><img style="cursor:pointer;position:relative;left:-24px;float:right;top:30px" src="img/reload.png" alt="перегрузить код" title="сменить код, если он трудно читаем" onclick="captcha_reload()" />
+		<img id="kcaptcha" src="kcaptcha/?' . session_name() . '=' . session_id() . '" width="300" height="70" border="0" alt="Секретный код не загрузился" title="Цифры и буквы"><img style="cursor:pointer;position:relative;left:-24px;float:right;top:30px" src="img/reload.png" alt="перегрузить код" title="сменить код, если он трудно читаем" onclick="captcha_reload()">
 	</div>
 
-	<label>Код на рисунке<br/>
-	<input name="wp_keystring" id="keystring" class="input" value="" size="20" tabindex="50" />
+	<label>Код на рисунке<br>
+	<input name="wp_keystring" id="keystring" class="input" value="" size="20" tabindex="50">
 	</label>
 ';
     }
@@ -260,7 +260,7 @@ function show_ms () {
     global $user_message;
 
     if (isset($user_message) && is_array($user_message)) {
-        echo '<p id="login_error" class="bold_red">' . implode('<br/>', $user_message) . '</p>';
+        echo '<p id="login_error" class="bold_red">' . implode('<br>', $user_message) . '</p>';
     }
 
 }

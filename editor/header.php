@@ -42,7 +42,7 @@ if (!defined('IN_BMC')) {
                 <!-- <span style="color:#5a5a5a; font-size:26px;padding:20px 0  0 70px;position:relative;top:10px">Адміністрування</span> -->
                 <!--
                 <div id="favorite-actions">
-                    <div id="favorite-first"><a href="?id=0&blog=4" style="padding-left:20px;padding-right:10px;font-size:12px">Новая запись</a></div><div id="favorite-toggle"><br /></div> </div>
+                    <div id="favorite-first"><a href="?id=0&blog=4" style="padding-left:20px;padding-right:10px;font-size:12px">Новая запись</a></div><div id="favorite-toggle"><br></div> </div>
                 </div>-->
             </div>
             <!-- wphead -->
@@ -53,40 +53,40 @@ if (!defined('IN_BMC')) {
 
 
                     <li class="wp-first-item current menu-top menu-top-first menu-top-last" id="menu-dashboard" style="margin:2px 0">
-                        <div class="wp-menu-image"><a href="http://www.google.com/analytics/"><br/></a></div>
-                        <div class="wp-menu-toggle"><br/></div>
+                        <div class="wp-menu-image"><a href="http://www.google.com/analytics/"><br></a></div>
+                        <div class="wp-menu-toggle"><br></div>
                         <a href="http://www.google.com/analytics/" class="wp-first-item current menu-top menu-top-first menu-top-last" style="font-size:13px"
                            tabindex="1">Аналитика</a></li>
 
                     <li style="height:19px"></li>
 
                     <li class="wp-has-submenu menu-top" id="menu-posts-1">
-                        <div class="wp-menu-image"><a href="?subject=menu"><br/></a></div>
-                        <div class="wp-menu-toggle"><br/></div>
+                        <div class="wp-menu-image"><a href="?subject=menu"><br></a></div>
+                        <div class="wp-menu-toggle"><br></div>
                         <a href="?subject=menu" class="open-if-no-js menu-top" tabindex="2">Главное меню</a></li>
 
-                    <br/>
+                    <br>
 
                     <li class="wp-has-submenu menu-top" id="menu-posts0">
-                        <div class="wp-menu-image"><a href="user.php"><br/></a></div>
-                        <div class="wp-menu-toggle"><br/></div>
+                        <div class="wp-menu-image"><a href="user.php"><br></a></div>
+                        <div class="wp-menu-toggle"><br></div>
                         <a href="user.php" class="open-if-no-js menu-top" tabindex="3">Наполнение</a>
 
                         <div style="display:none"></div>
                     </li>
 
-                    <!--	<br/>
+                    <!--	<br>
 
                         <li class="wp-has-submenu menu-top" id="menu-posts-4">
-                        <div class="wp-menu-image"><a href="?subject=galery"><br /></a></div><div class="wp-menu-toggle"><br /></div><a href="?subject=galery" class="open-if-no-js menu-top" tabindex="4">Albums</a></li>-->
+                        <div class="wp-menu-image"><a href="?subject=galery"><br></a></div><div class="wp-menu-toggle"><br></div><a href="?subject=galery" class="open-if-no-js menu-top" tabindex="4">Albums</a></li>-->
 
                     <!--<DIV STYLE="POSITION:ABSOLUTE;TOP:56PX;LEFT:12PX;FONT-WEIGHT:BOLD;FONT-SIZE:16PX">&bull;</DIV>-->
 
-                    <br/>
+                    <br>
 
                     <li class="wp-has-submenu menu-top" id="menu-posts1">
-                        <div class="wp-menu-image"><a href="?subject=other"><br/></a></div>
-                        <div class="wp-menu-toggle"><br/></div>
+                        <div class="wp-menu-image"><a href="?subject=other"><br></a></div>
+                        <div class="wp-menu-toggle"><br></div>
                         <a href="?subject=other" class="open-if-no-js menu-top" tabindex="5">Другое</a></li>
 
                 </ul>

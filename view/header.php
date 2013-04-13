@@ -11,8 +11,8 @@ NonCachePlusEncoding();
 <html>
 <head>
     <meta charset=<?php echo $CHRST; ?>>
-    <meta http-equiv="Cache-Control" content="no-cache"/>
-    <meta name="robots" content="noindex, nofollow"/>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="webmaster" content="mybodya@gmail.com">
 
     <?php
@@ -143,14 +143,14 @@ EOF;
     }
 
     if (LEVEL == 3 && in_array($FILE, array('user', 'project', 'survey', 'bid', 'payment'))) {
-        echo '<br/><a class="noter1" href="#" onclick="js_note(); return false;">Make a note</a>';
-        echo '<a class="noter1" href="#" onclick="js_find(); return false;">Find a note</a>';
+        echo '<br><a class="noter1" href=# onclick="js_note(); return false;">Make a note</a>';
+        echo '<a class="noter1" href=# onclick="js_find(); return false;">Find a note</a>';
     }
 
     echo '</div>';
 ///* 6 *///STICKER
 
-    //echo '<br/><br/>';
+    //echo '<br><br>';
 
 }//////
 

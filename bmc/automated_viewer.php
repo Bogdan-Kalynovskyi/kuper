@@ -25,7 +25,7 @@ if (!$aaa) {
     <form onsubmit="return seekfound()">
         <div class="quick_search">
             Instant search:
-            <input id="go2" onkeyup="quick_search(this.value)"/> <input type="submit" value="Go"/>
+            <input id="go2" onkeyup="quick_search(this.value)"> <input type=submit value="Go">
         </div>
     </form>
 
@@ -101,7 +101,7 @@ EOF;
         }
         echo "</div>
 
-				 				<var><b><big><a href=\"" . short_name($table) . ".php?id={$id}\" id=\"__{$id}\" title=\"More details\">$ite</a>$dot</big></b></var><br/>
+				 				<var><b><big><a href=\"" . short_name($table) . ".php?id={$id}\" id=\"__{$id}\" title=\"More details\">$ite</a>$dot</big></b></var><br>
 
 				 	   <div style=\"margin-left:{$bmc_vars['th_x']}px;margin-top:1px\">";
 
@@ -129,10 +129,10 @@ EOF;
                         echo '<var>' . str_replace('_', ' ', $key) . '</var> ';
 
                         if (strpos($key, 'money') !== false) {
-                            echo '<dfn class="money">' . (int) $val . '$</dfn><br/>';
+                            echo '<dfn class="money">' . (int) $val . '$</dfn><br>';
                         }
                         else {
-                            echo "<dfn>$val</dfn><br/>";
+                            echo "<dfn>$val</dfn><br>";
                         }
                 }
             }
@@ -147,7 +147,7 @@ EOF;
     ?>
 
 
-</div><br/>
+</div><br>
 
 
 

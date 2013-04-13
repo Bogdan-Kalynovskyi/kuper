@@ -269,7 +269,7 @@ if (!isempty($_POST['task'])) {
 
                 $alt = $rd_file[$i * 2] + 1; //bodya addslashes slideshow
                 $str .= <<<EOF
-					<a href="{$f2}" rel="lytebox[{$_POST['slideshow']}]" title="$alt"><img src="{$slideurl}{$f3}" style="width:{$img->max_x}px;height:{$img->max_y}px;" alt="$alt" /></a>
+					<a href="{$f2}" rel="lytebox[{$_POST['slideshow']}]" title="$alt"><img src="{$slideurl}{$f3}" style="width:{$img->max_x}px;height:{$img->max_y}px;" alt="$alt"></a>
 EOF;
             }
         //	die($str);
@@ -351,10 +351,10 @@ header("Content-type: text/html; charset=windows-1251");
 
 
 <body onload="loader()">
-<form method="post" name="myform" action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" enctype="multipart/form-data">
-    <input type="hidden" name="task" value="go">
-    <input type="hidden" name="slideshow" value="<?php echo $_POST['slideshow']; ?>">
-    <input type="hidden" name="pic_num" value="">
+<form method=post name="myform" action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" enctype="multipart/form-data">
+    <input type=hidden name="task" value="go">
+    <input type=hidden name="slideshow" value="<?php echo $_POST['slideshow']; ?>">
+    <input type=hidden name="pic_num" value="">
 
     <?php //if(isset($errormsg))echo '<br><b>'.$errormsg.'</b>'; // PRINT_R($_REQUEST); ?>
     <br>
@@ -368,12 +368,12 @@ header("Content-type: text/html; charset=windows-1251");
 
             echo <<<EOF
 <tr>
-<td><a onclick="do_('del_pic', $i)" title="Del" href="#"><img src="{$MY_URL}images/cross-red.png"  alt="��������"></a></td>
+<td><a onclick="do_('del_pic', $i)" title="Del" href=#><img src="{$MY_URL}images/cross-red.png"  alt="��������"></a></td>
 <td><a onclick="do_('move_up',$i)" title="�����"><img src="{$MY_URL}images/arrow-up.png" alt="�����"></a><br><a onclick="do_('move_down',$i)" title="����"><img src="{$MY_URL}images/arrow-down.png" alt="����"></a></td>
-<td><a href="#" onclick="popwin('{$f2}'); return false;"><img src="{$MY_URL}{$f3}"></a></td>
-<td><span id="aaa$i">URL:&nbsp; <input type="text" name="the_url[$i]" size = 34 value="$f2"/></span></td>
-<td><nobr>����:&nbsp;<input type="text" name="new_desc[$i]" value="$desc"></nobr></td>
-<td><input type="button" value=" ��������������� " onclick="clear_f1(this, $i)"></td>
+<td><a href=# onclick="popwin('{$f2}'); return false;"><img src="{$MY_URL}{$f3}"></a></td>
+<td><span id="aaa$i">URL:&nbsp; <input type=text name="the_url[$i]" size = 34 value="$f2"></span></td>
+<td><nobr>����:&nbsp;<input type=text name="new_desc[$i]" value="$desc"></nobr></td>
+<td><input type=button value=" ��������������� " onclick="clear_f1(this, $i)"></td>
 </tr>
 
 EOF;
@@ -387,15 +387,15 @@ EOF;
 
 
         <td colspan="3">
-            <nobr>� URL: <input type="text" name="new_url"></nobr>
+            <nobr>� URL: <input type=text name="new_url"></nobr>
         </td>
         <td>
-            <nobr>� �����: <input type="file" name="file"></nobr>
+            <nobr>� �����: <input type=file name="file"></nobr>
         </td>
         <td>
-            <nobr>����:&nbsp;<input type="text" name="desc"></nobr>
+            <nobr>����:&nbsp;<input type=text name="desc"></nobr>
         </td>
-        <td><br><input type="button" value="    *    ������    *   " onclick="myform.task.value='add_pic'; myform.submit();"><br><br></td>
+        <td><br><input type=button value="    *    ������    *   " onclick="myform.task.value='add_pic'; myform.submit();"><br><br></td>
 
         </tr>
     </table>
@@ -403,18 +403,18 @@ EOF;
 
     <div class="block" style="float:left">
         <span class="text">��������� ��������</span>
-        <input type="text" name="new_name" style="width:128px" value="<?php echo $_POST['slideshow']; ?>">
+        <input type=text name="new_name" style="width:128px" value="<?php echo $_POST['slideshow']; ?>">
 
         <div style="height:5px"></div>
         <span class="text">����� �������</span>
-        X: <input type="text" size="2" name="max_x" value="<?php echo $_POST['max_x']; ?>">
-        &nbsp; &nbsp;Y: <input type="text" size="2" name="max_y" value="<?php echo $_POST['max_y']; ?>">
+        X: <input type=text size="2" name="max_x" value="<?php echo $_POST['max_x']; ?>">
+        &nbsp; &nbsp;Y: <input type=text size="2" name="max_y" value="<?php echo $_POST['max_y']; ?>">
     </div>
 
     <div class="block" style="float:right">
         <div style="height:12px"></div>
-        <input type="submit" value="    �������� ��������    "> &nbsp; &nbsp; &nbsp;
-        <input type="button" value="    ³����    " onclick="window.close();">&nbsp;
+        <input type=submit value="    �������� ��������    "> &nbsp; &nbsp; &nbsp;
+        <input type=button value="    ³����    " onclick="window.close();">&nbsp;
         <div style="height:13px"></div>
     </div>
 

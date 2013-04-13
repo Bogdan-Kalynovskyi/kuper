@@ -141,7 +141,7 @@ $files = @array_values($files);
             $class = 'b';
             if ($dirok) {
                 ?>
-                <a href="<?php echo $_SERVER['SCRIPT_NAME'] . '?dir=' . myurlencode($dotdotdir); ?>"><img src="images/dirup.png" alt="Folder" border="0"/> <strong>..</strong></a>
+                <a href="<?php echo $_SERVER['SCRIPT_NAME'] . '?dir=' . myurlencode($dotdotdir); ?>"><img src="images/dirup.png" alt="Folder" border="0"> <strong>..</strong></a>
                 <br>
                 <?php
                 if ($class == 'b') {
@@ -155,7 +155,7 @@ $files = @array_values($files);
             for ($i = 0; $i < $arsize; $i++) {
                 $dir = substr($dirs[$i], 0, strlen($dirs[$i]) - 1);
                 ?>
-                <a href="<?php echo $_SERVER['SCRIPT_NAME'] . '?dir=' . myurlencode($leadon . $dirs[$i]); ?>"><img src="images/folder.png" alt="<?php echo $dir; ?>" border="0"/>
+                <a href="<?php echo $_SERVER['SCRIPT_NAME'] . '?dir=' . myurlencode($leadon . $dirs[$i]); ?>"><img src="images/folder.png" alt="<?php echo $dir; ?>" border="0">
                     <strong><?php echo $dir; ?></strong></a><br>
                 <?php
                 if ($class == 'b') {
@@ -184,8 +184,8 @@ $files = @array_values($files);
                     $fileurl = $leadon . $files[$i];
                     $filedir = str_replace($imagebasedir, "", $leadon);
                     ?>
-                    <a href="#" onclick="selectImage('<?php echo $filedir . $filename; ?>');return false"><img src="images/<?php echo $icon; ?>" alt="<?php echo $files[$i]; ?>"
-                                                                                                               border="0"/>
+                    <a href=# onclick="selectImage('<?php echo $filedir . $filename; ?>');return false"><img src="images/<?php echo $icon; ?>" alt="<?php echo $files[$i]; ?>"
+                                                                                                               border="0">
                         <strong><?php echo $filename; ?></strong></a><br>
                     <?php
                     if ($class == 'b') {

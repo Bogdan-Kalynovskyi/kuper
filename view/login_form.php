@@ -9,10 +9,10 @@ include_once A_VIEW . "header.php"; //no include_once!!!;//RESTORE POST DATA//no
 ///////////////////////////////   special messages   /////////////////////////////////////////
 if (isset($_GET['action']) && $_GET['action'] == 'restore_pass') {
     if ($_GET['restore_success']) {
-        echo '<h1><br/>Password regenerated and sent on your email</h1>';
+        echo '<h1><br>Password regenerated and sent on your email</h1>';
     }
     else {
-        echo '<h3><br/>Email not sent due to an error</h3>';
+        echo '<h3><br>Email not sent due to an error</h3>';
     }
 }
 ///////////////////////////////                   ////////////////////////////////////////////
@@ -45,26 +45,26 @@ if (isset($_GET['action']) && $_GET['action'] == 'restore_pass') {
         padding: 0
     }
 </style>
-<br/><br/><br/><br/><br/><br/><br/>
+<br><br><br><br><br><br><br>
 
 
 <div class="form_fields">
-    <form accept-charset="<?php echo $CHRST ?>" method="post" name="my_form" action="<?php echo $MY_URL . '/login.php'; /*login*/ ?>" onsubmit="return validate();">
+    <form accept-charset="<?php echo $CHRST ?>" method=post name="my_form" action="<?php echo $MY_URL . '/login.php'; /*login*/ ?>" onsubmit="return validate();">
         <?php if (isset($user_message)) {
             echo '<span class="bold_red">' . $user_message . '</span>';
-        } ?><br/><br/>
-        <input type="hidden" name="hash" value=""/>
-        <input type="hidden" name="sid" value="<?php echo session_id(); ?>"/>
-        Login :<input type="text" name="user_login"/><br/>
-        Password :<input type="password" name="password"/><br/>
-        <span style="vertical-align:middle">Remember me :</span><input type="checkbox" name="remember" value="1"/><br/>
+        } ?><br><br>
+        <input type=hidden name="hash" value="">
+        <input type=hidden name="sid" value="<?php echo session_id(); ?>">
+        Login :<input type=text name="user_login"><br>
+        Password :<input type=password name="password"><br>
+        <span style="vertical-align:middle">Remember me :</span><input type=checkbox name="remember" value="1"><br>
 
         <?php
         show_cap();
         restore_post_data();
         ?>
 
-        <input type="submit" style="width:164px" class="btn" value="Login"/><br/><br/><br/>
+        <input type=submit style="width:164px" class="btn" value="Login"><br><br><br>
         <small><a href="./?account=email_request">Forgot your password?</a></small>
     </form>
 </div> <!-- End form_fields //-->

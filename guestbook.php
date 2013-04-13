@@ -95,11 +95,11 @@ $G = $db->query("SELECT * FROM " . PRF . "guestbook ORDER BY date DESC");
 
     </h2>
 
-    <input id="write" type="submit" value="      �������� �����       " tabindex="4"
-           onclick="document.location='#new_post';document.getElementsByName('name')[0].focus();"/>
+    <input id="write" type=submit value="      �������� �����       " tabindex="4"
+           onclick="document.location='#new_post';document.getElementsByName('name')[0].focus();">
 
-    <br/>
-    <br/>
+    <br>
+    <br>
 
 
     <?php
@@ -163,7 +163,7 @@ $G = $db->query("SELECT * FROM " . PRF . "guestbook ORDER BY date DESC");
             }
 
             if (IS_ADMIN) {
-                $adm = '<br/><a href="' . $base . '&del=' . $a['id'] . '">�������</a>
+                $adm = '<br><a href="' . $base . '&del=' . $a['id'] . '">�������</a>
 						&nbsp; 	<a href="' . $base . '&edit=' . $a['id'] . '">�������������</a>';
             }
             else {
@@ -193,13 +193,13 @@ EOF;
     </div>
 
 
-    <br/><br/><br/><br/><br/><br/>
+    <br><br><br><br><br><br>
 
-    <h3>�������� �����</h3><br/>
+    <h3>�������� �����</h3><br>
 
 
     <a name="new_post"></a>
-    <br/>
+    <br>
     <?php
     if ($message) {
         echo '<label><span class="bar ' . ($ok ? 'green' : 'red') . '">' . $message . '</span></label><label></label>';
@@ -207,38 +207,38 @@ EOF;
     ?>
 
 
-    <form method="post" action="<?php echo $base ?>" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data" onsubmit="return verify_form()">
+    <form method=post action="<?php echo $base ?>" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data" onsubmit="return verify_form()">
         <fieldset style="background:#f6f6f6;padding:22px 0 16px 0;border:2px solid white;	-moz-border-radius:2px;border-radius:2px;margin-top:-2px;margin-left:-2px">
 
-            <input type="hidden" name="<?php echo USER_HASH; ?>" value="1"/>
-            <input type="hidden" name="date" value="<?php echo @$_POST['date'] ?>"/>
-            <input type="hidden" name="MAX_FILE_SIZE" value="100000"/>
+            <input type=hidden name="<?php echo USER_HASH; ?>" value="1">
+            <input type=hidden name="date" value="<?php echo @$_POST['date'] ?>">
+            <input type=hidden name="MAX_FILE_SIZE" value="100000">
             <?php
             if (IS_ADMIN && isnumeric($_GET['edit'])) {
                 echo <<<EOF
-	<input type="hidden" name="edit" value="{$_GET['edit']}" />
+	<input type=hidden name="edit" value="{$_GET['edit']}">
 EOF;
             }
             ?>
 
 
             <label style="letter-spacing:1px">���
-                <input type="text" name="name" value="<?php echo htmlspecialchars(@$_POST['name']) ?>" tabindex="10"/>
+                <input type=text name="name" value="<?php echo htmlspecialchars(@$_POST['name']) ?>" tabindex="10">
             </label>
 
             <label>Email &nbsp;<span>���</span>&nbsp; c��������
-                <input type="text" name="site" value="<?php echo htmlspecialchars(@$_POST['site'] ? $_POST['site'] : 'http://') ?>" tabindex="20"/>
+                <input type=text name="site" value="<?php echo htmlspecialchars(@$_POST['site'] ? $_POST['site'] : 'http://') ?>" tabindex="20">
             </label>
 
-            <label>���� &nbsp;<span>(URL ��� ����)</span> <a href="#" id="aaa" title="������ �����"
+            <label>���� &nbsp;<span>(URL ��� ����)</span> <a href=# id="aaa" title="������ �����"
                                                                                    onclick="clrnpt1('icon');return false">������</a>
-                <input type="file" name="icon" id="__icon" onkeydown="omch()" onchange="omch()" tabindex="22"/>
+                <input type=file name="icon" id="__icon" onkeydown="omch()" onchange="omch()" tabindex="22">
             </label>
 
             <label>���������� ��������
-                <input type="checkbox" name="public" value="1" <?php if (@$POOO['site']) {
-                    echo ' checked="checked"';
-                } ?> tabindex="30"/>
+                <input type=checkbox name="public" value="1" <?php if (@$POOO['site']) {
+                    echo ' checked';
+                } ?> tabindex="30">
             </label>
 
 
@@ -251,12 +251,12 @@ EOF;
                 show_cap1(true);
             } ?>
 
-            <br/>
+            <br>
             <label>
-                <input type="submit" style="letter-spacing:1px;padding-left:1px"
-                       value="      <?php echo(!isset($_GET['edit']) ? '��������' : '��������'); ?> �����      " tabindex="100"/>
+                <input type=submit style="letter-spacing:1px;padding-left:1px"
+                       value="      <?php echo(!isset($_GET['edit']) ? '��������' : '��������'); ?> �����      " tabindex="100">
             </label>
-            <br/>
+            <br>
 
         </fieldset>
     </form>

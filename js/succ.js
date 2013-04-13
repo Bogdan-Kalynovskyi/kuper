@@ -4,14 +4,14 @@ var lazer
 innerHTML =
 
     '<div id="ZoomSpin" style="position:absolute;visibility:hidden;display:none;z-index:555;cursor:pointer">\
-         <img id="SpinImage" src="ajax-loader.gif" alt="loading..." onclick="preloadingStop" />\
+         <img id="SpinImage" src="ajax-loader.gif" alt="loading..." onclick="preloadingStop">\
     </div> < div
 id = "dim2"
 style = "background:#000; cursor:-webkit-zoom-out;cursor:-moz-zoom-out;cursor:zoom-out; opacity:0;filter:alpha(opacity=0); position:fixed;width:100%;height:100%; z-index:32; display:none" > </div>\
     <div id="ZoomBox">
-        <img src="'+zoomImagesURI+'spacer.gif" id="ZoomImage" onclick="zoomOut()" />
+        <img src="'+zoomImagesURI+'spacer.gif" id="ZoomImage" onclick="zoomOut()">
         <div id="ZoomClose">
-            <img src="'+zoomImagesURI+'closebox.png" onclick="zoomOut()"/>
+            <img src="'+zoomImagesURI+'closebox.png" onclick="zoomOut()">
         </div>
     </div>
 

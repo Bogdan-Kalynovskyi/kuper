@@ -218,7 +218,7 @@ if (isset($_POST['ow']) && $_POST['ow']) {
     foreach ($table as $key => $body) {
         @mysql_query("DROP TABLE IF EXISTS {$my_prefix}{$key}") or footer(mysql_error());
     }
-    echo "Done <br />";
+    echo "Done <br>";
 }
 
 
@@ -230,7 +230,7 @@ foreach ($table as $key => $body) {
 			$body
 		)ENGINE=MyISAM DEFAULT CHARSET=$dbchrst;") or  footer(mysql_error());
 
-    echo "Done <br />";
+    echo "Done <br>";
 }
 
 
@@ -287,7 +287,7 @@ if (isset($_POST['ow']) && $_POST['ow']) { // АНАЛОГ�?ЧНО , ТАБЛ�?�
 		
 
 	") or footer(mysql_error());
-    echo "Done <br />";
+    echo "Done <br>";
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -308,7 +308,7 @@ if (isset($_POST['ow']) && $_POST['ow']) { // АНАЛОГ�?ЧНО , ТАБЛ�?�
 		'" . time() . "')"
 
     ) or footer(mysql_error());
-    echo "Done <br />";
+    echo "Done <br>";
 
 
 }

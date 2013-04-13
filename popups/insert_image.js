@@ -156,7 +156,7 @@ function selectItemByValue(element, value) {
 function clear_f1() {
     document.getElementById('width').value = '';
     document.getElementById('height').value = '';
-    document.getElementById("test").innerHTML = '<input type="file" name="file" size="30" style="font-size: 12px; width: 100%;" accept="image/gif, image/jpeg, image/png, image/bmp" onchange="clear_f2();" onkeydown="clear_f2();" >';
+    document.getElementById("test").innerHTML = '<input type=file name="file" size="30" style="font-size: 12px; width: 100%;" accept="image/gif, image/jpeg, image/png, image/bmp" onchange="clear_f2();" onkeydown="clear_f2();" >';
 }
 
 function clear_f2() {

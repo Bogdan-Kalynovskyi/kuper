@@ -7,7 +7,7 @@ if (!defined('IN_BMC')) {
 function restore_post_data () {
     foreach ($_POST as $key => $p) {
         if (substr($key, 0, 3) != 'wp_') {
-            echo '<input type="hidden" name="' . addslashes($key) . '" value="' . addslashes($p) . '" />';
+            echo '<input type=hidden name="' . addslashes($key) . '" value="' . addslashes($p) . '">';
         }
     }
 }
@@ -87,11 +87,11 @@ function show_cap () {
         echo '
 <p>
 	<div style="text-align:center">
-		<img id="kcaptcha" src="kcaptcha/?' . session_name() . '=' . session_id() . '" width="150" height="55" alt="ERROR, image not loaded" title="Leters and numbers" /> <div style="cursor:pointer;color:#55f;vertical-align:middle;line-height:55px;float:right;margin:0 10px 0 10px" onclick="captcha_reload()">Reload</div>
+		<img id="kcaptcha" src="kcaptcha/?' . session_name() . '=' . session_id() . '" width="150" height="55" alt="ERROR, image not loaded" title="Leters and numbers"> <div style="cursor:pointer;color:#55f;vertical-align:middle;line-height:55px;float:right;margin:0 10px 0 10px" onclick="captcha_reload()">Reload</div>
 	</div>
 	<label>
-		Verification code<br/>
-		<input name="wp_keystring" id="keystring" class="input" value="" size="20" tabindex="50" />
+		Verification code<br>
+		<input name="wp_keystring" id="keystring" class="input" value="" size="20" tabindex="50">
 	</label>
 </p>';
     }

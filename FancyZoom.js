@@ -658,11 +658,11 @@ function insertZoomHTML() {
 
     var box = document.createElement("div");
 
-    var sssuka = (includeCaption) ? '<table id="ZoomCapDiv" cellspacing="0"><tr><td><img src="img/caption-l.png' + '"/></td><td id="ZoomCaption" valign="middle"></td><td><img src="img/caption-r.png' + '"/></td></tr></table>' : '';
+    var sssuka = (includeCaption) ? '<table id="ZoomCapDiv" cellspacing="0"><tr><td><img src="img/caption-l.png' + '"></td><td id="ZoomCaption" valign="middle"></td><td><img src="img/caption-r.png' + '"></td></tr></table>' : '';
 
-    box.innerHTML = '<div id="ZoomSpin"><img id="SpinImage" title="click to stop" src="img/ajax-loader.gif" alt="loading..." /></div>\
+    box.innerHTML = '<div id="ZoomSpin"><img id="SpinImage" title="click to stop" src="img/ajax-loader.gif" alt="loading..."></div>\
 	<div id="dim2"></div>\
-	<div id="ZoomBox"><img id="ZoomImage" onclick="zoomOut(event)"/><div id="ZoomClose" onclick="zoomOut(event)"></div>' + sssuka + '</div>'
+	<div id="ZoomBox"><img id="ZoomImage" onclick="zoomOut(event)"><div id="ZoomClose" onclick="zoomOut(event)"></div>' + sssuka + '</div>'
     inBody.appendChild(box);
 
 //vbar _ = document

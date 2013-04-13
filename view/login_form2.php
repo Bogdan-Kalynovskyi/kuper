@@ -30,7 +30,7 @@ include A_VIEW . "header_1.php";
 ///////////////////////////////   special messages   /////////////////////////////////////////
 
 if (isset($_GET['_account_']) && $_GET['_account_'] == 'logout') {
-    echo '<p class="message">	You are now logged out.<br /></p>';
+    echo '<p class="message">	You are now logged out.<br></p>';
 }
 
 ///////////////////////////////                   ////////////////////////////////////////////
@@ -47,21 +47,21 @@ $focused_field = 'user_login';
           action="<?php echo $cc ?>"
           onsubmit="return validate();">
         <?php show_ms(); ?>
-        <br/>
+        <br>
 
         <p>
-            <label>Username<br/>
-                <input type="text" name="wp_user_login" id="user_login" class="input" value="<?php
+            <label>Username<br>
+                <input type=text name="wp_user_login" id="user_login" class="input" value="<?php
                 if (!empty($USER) && !is_array($USER)) {
                     echo htmlspecialchars($USER);
                     $focused_field = 'user_pass';
                 }
-                ?>" size="20" tabindex="10"/></label>
+                ?>" size="20" tabindex="10"></label>
         </p>
 
         <p>
-            <label>Password<br/>
-                <input type="password" name="wp_user_pass" id="user_pass" class="input" value="" size="20" tabindex="20"/></label>
+            <label>Password<br>
+                <input type=password name="wp_user_pass" id="user_pass" class="input" value="" size="20" tabindex="20"></label>
         </p>
         <?php
         show_cap();
@@ -69,12 +69,12 @@ $focused_field = 'user_login';
         ?>
         <p style="height:14px"></p>
 
-        <p class="forgetmenot"><label title="forever"><input name="wp_remember" type="checkbox" id="rememberme" value="1" tabindex="90"/><big> Remember Me</big></label></p>
+        <p class="forgetmenot"><label title="forever"><input name="wp_remember" type=checkbox id="rememberme" value="1" tabindex="90"><big> Remember Me</big></label></p>
 
         <p class="submit">
-            <input type="submit" name="wp_submit" id="wp-submit" class="button-primary" value="Log In" tabindex="100"/>
-            <input type="hidden" name="wp_hash" value=""/>
-            <input type="hidden" name="wp_<?php echo LOGIN_HASH ?>" value="<?php echo sha1(session_id()); ?>"/>
+            <input type=submit name="wp_submit" id="wp-submit" class="button-primary" value="Log In" tabindex="100">
+            <input type=hidden name="wp_hash" value="">
+            <input type=hidden name="wp_<?php echo LOGIN_HASH ?>" value="<?php echo sha1(session_id()); ?>">
         </p>
 
         <p style="height:6px"></p>

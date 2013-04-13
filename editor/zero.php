@@ -61,16 +61,16 @@ if (!defined('IS_ADMIN')) {
 foreach ($BLOGS as $key => $b) {
 
     if ($key == 6) {
-        echo "<br/><a href=\"./?page=$key\"><big><b>$b</b></big></a><br/><br/>";
+        echo "<br><a href=\"./?page=$key\"><big><b>$b</b></big></a><br><br>";
         continue;
     }
 
     if ($key == 7) {
-        echo "<br/><a href=\"?subject=other\"><big><b>$b</b></big></a><br/><br/>";
+        echo "<br><a href=\"?subject=other\"><big><b>$b</b></big></a><br><br>";
         continue;
     }
 
-    echo "<big style=\"display:inline-block;padding:6px 0;line-height:1.7em\"><a style=\"color:black;text-decoration:none;font-weight:bold\" href=\"./?blog=$key\" title=\"К странице\">$b</a></big><br/>\n";
+    echo "<big style=\"display:inline-block;padding:6px 0;line-height:1.7em\"><a style=\"color:black;text-decoration:none;font-weight:bold\" href=\"./?blog=$key\" title=\"К странице\">$b</a></big><br>\n";
 
     $r = $db->query("SELECT * FROM " . PRF . "posts WHERE blog=$key ORDER BY por ASC");
 
@@ -106,7 +106,7 @@ foreach ($BLOGS as $key => $b) {
     if ($key != 1) {
         admin_new('+1', $key);
     }
-    echo "<br/>\n";
+    echo "<br>\n";
 }
 
 

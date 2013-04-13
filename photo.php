@@ -54,7 +54,7 @@ $ABS = false;
 </style>
 
 
-<br/>
+<br>
 <h1>
     <?php
     /*

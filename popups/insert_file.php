@@ -56,8 +56,8 @@ header("Content-Type: text/html; charset=utf-8");
 </head>
 <body bgcolor="#EEEEEE" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" onLoad="loadForm();">
 <table border="0" cellpadding="0" cellspacing="0" style="padding: 11px;">
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" name="myform" enctype="multipart/form-data" onsubmit="return mySubmit();">
-        <input type="hidden" id="dir" name="dir" value="">
+    <form method=post action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" name="myform" enctype="multipart/form-data" onsubmit="return mySubmit();">
+        <input type=hidden id="dir" name="dir" value="">
         <tr>
             <td style="vertical-align:top;">
                 <span style="font-family: arial, verdana, helvetica; font-size: 12px; font-weight: bold;"
@@ -68,7 +68,7 @@ header("Content-Type: text/html; charset=utf-8");
                         ?>
                         <tr>
                             <td style="padding-top: 0px;padding-bottom: 0px; font-family: arial, verdana, helvetica; font-size: 12px;width:80px;">З Файлу:</td>
-                            <td style="padding-top: 0px;padding-bottom: 0px;width:300px;"><span id="test"><input type="file" name="file" size="30"
+                            <td style="padding-top: 0px;padding-bottom: 0px;width:300px;"><span id="test"><input type=file name="file" size="30"
                                                                                                                  style="font-size: 12px; width: 100%;"
                                                                                                                  accept="image/gif, image/jpeg, image/png, image/bmp"
                                                                                                                  onchange="clear_f2();" onkeydown="clear_f2();"></span></td>
@@ -91,7 +91,7 @@ header("Content-Type: text/html; charset=utf-8");
                     ?>
                     <tr>
                         <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;" width="80">Або з URL:</td>
-                        <td style="padding-bottom: 2px; padding-top: 0px;" width="300"><input type="text" name="src" id="src" value="<?php echo $_POST['src']; ?>"
+                        <td style="padding-bottom: 2px; padding-top: 0px;" width="300"><input type=text name="src" id="src" value="<?php echo $_POST['src']; ?>"
                                                                                               onchange="clear_f1();" onkeydown="clear_f1();" style="font-size: 12px; width: 100%;">
                         </td>
                     </tr>
@@ -104,7 +104,7 @@ header("Content-Type: text/html; charset=utf-8");
                     <tr>
                         <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;">Підказка:</td>
                         <td>
-                            <input type="text" name="title" id="title" value="<?php echo $_POST['title']; ?>"
+                            <input type=text name="title" id="title" value="<?php echo $_POST['title']; ?>"
                                    style="font-size: 11px; width: 100%;  color:#777777; background-color: #eeeeee;">
                         </td>
                     </tr>
@@ -112,7 +112,7 @@ header("Content-Type: text/html; charset=utf-8");
                     <tr>
                         <td style=" width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Target:</td>
                         <td colspan="3">
-                            <input type="text" name="linkTarget" id="linkTarget" value="" style="font-size: 10px; width: 60%;  color:#777777; background-color: #eeeeee;">
+                            <input type=text name="linkTarget" id="linkTarget" value="" style="font-size: 10px; width: 60%;  color:#777777; background-color: #eeeeee;">
                             &nbsp;
                             <select name="linkTargetChooser" id="linkTargetChooser" style="font-size: 10px; width: 30%; color:#777777; background-color: #eeeeee;"
                                     onchange="updateTarget(this.value);">
@@ -136,8 +136,8 @@ header("Content-Type: text/html; charset=utf-8");
                     <tr>
                         <td></td>
                         <td style="text-align: right;">
-                            <input type="submit" value="  Зберегти  " style="font-size: 13px;">
-                            <input type="button" value="  Відмінити  " onclick="window.close();" style="font-size: 13px;">
+                            <input type=submit value="  Зберегти  " style="font-size: 13px;">
+                            <input type=button value="  Відмінити  " onclick="window.close();" style="font-size: 13px;">
 
 
                         </td>
@@ -145,9 +145,9 @@ header("Content-Type: text/html; charset=utf-8");
 
 
                 </table>
-                <input type="hidden" name="linkStyle" id="linkStyle">
-                <input type="hidden" name="linkClass" id="linkClass">
-                <input type="hidden" name="linkName" id="linkName">
+                <input type=hidden name="linkStyle" id="linkStyle">
+                <input type=hidden name="linkClass" id="linkClass">
+                <input type=hidden name="linkName" id="linkName">
 
             </td>
             <td style="vertical-align: top;width: 200px; padding-left: 5px;">

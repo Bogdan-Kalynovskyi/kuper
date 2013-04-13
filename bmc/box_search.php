@@ -32,7 +32,7 @@ else {
 </script>
 
 
-<form accept-charset="<?php echo $CHRST ?>" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>"
+<form accept-charset="<?php echo $CHRST ?>" method=post action="<?php echo $_SERVER['REQUEST_URI']; ?>"
       onsubmit="return __check_submit()">
     <fieldset class="search_box" id="__s2">
 
@@ -41,18 +41,18 @@ else {
 }document.getElementById('__s2').style.opacity=1;document.getElementById('__s3').style.display='block'"
                onblur="if(this.value==''){this.value='Site search...';
 }//document.getElementById('__s2').style.opacity=0.5"
-            /><!--<img src="img/down.gif" alt="\\/"
+           ><!--<img src="img/down.gif" alt="\\/"
 		onclick="more_search()" onkeydown="alert();more_search()"
-	/>--><input type="image" src="img/s.png" alt="&gt;"/>
+	>--><input type="image" src="img/s.png" alt="&gt;">
 
         <div id="__s3"><!-- easing -->
-            <input type="checkbox" name="deep" value="1"/> Deep&nbsp;&nbsp;
+            <input type=checkbox name="deep" value="1"> Deep&nbsp;&nbsp;
 
             <select name="where[]" size="1">
                 <?php foreach ($STA as $s) {
 
                     if ($tbl == $s) {
-                        $temp = ' selected="selected"';
+                        $temp = ' selected';
                     }
                     else {
                         $temp = '';
@@ -65,7 +65,7 @@ else {
 
                 } ?>
             </select> Pages
-            <input type="submit" value=" Go "/>
+            <input type=submit value=" Go ">
         </div>
 
     </fieldset>

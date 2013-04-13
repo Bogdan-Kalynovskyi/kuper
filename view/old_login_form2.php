@@ -14,9 +14,9 @@ NonCachePlusEncoding();
     <title>Sitename login page</title>
 
     <meta charset=<?php echo $CHRST; ?>>
-    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache">
 
-    <meta name="robots" content="noindex, nofollow"/>
+    <meta name="robots" content="noindex, nofollow">
     <meta name="webmaster" content="mybodya@gmail.com">
     <!-- rss -->
 
@@ -32,19 +32,19 @@ NonCachePlusEncoding();
 
 <div id="login"><h1><a href="http://wordpress.org/" title="Powered by WordPress">121234</a></h1>
 
-    <form accept-charset="<?php echo $CHRST ?>" name="my_form" id="loginform" method="post" action="<?php echo $MY_URL . '/login.php'; /*login*/ ?>" onsubmit="return validate();">
+    <form accept-charset="<?php echo $CHRST ?>" name="my_form" id="loginform" method=post action="<?php echo $MY_URL . '/login.php'; /*login*/ ?>" onsubmit="return validate();">
         <?php if (isset($user_message)) {
             echo '<p class="bold_red">' . $user_message . '</p>';
-        } ?><br/>
+        } ?><br>
 
         <p>
-            <label>Username<br/>
-                <input type="text" name="wp_user_login" id="user_login" class="input" value="" size="20" tabindex="10"/></label>
+            <label>Username<br>
+                <input type=text name="wp_user_login" id="user_login" class="input" value="" size="20" tabindex="10"></label>
         </p>
 
         <p>
-            <label>Password<br/>
-                <input type="password" name="wp_user_pass" id="user_pass" class="input" value="" size="20" tabindex="20"/></label>
+            <label>Password<br>
+                <input type=password name="wp_user_pass" id="user_pass" class="input" value="" size="20" tabindex="20"></label>
         </p>
         <?php
         show_cap();
@@ -52,13 +52,13 @@ NonCachePlusEncoding();
         ?>
         <p style="height:3px"></p>
 
-        <p class="forgetmenot"><label id="remember_label"><input name="wp_remember" type="checkbox" id="rememberme" value="1" title="For a month" tabindex="90"/><big> Remember
+        <p class="forgetmenot"><label id="remember_label"><input name="wp_remember" type=checkbox id="rememberme" value="1" title="For a month" tabindex="90"><big> Remember
                     Me</big></label></p>
 
         <p class="submit">
-            <input type="submit" style="position:relative;top:3px" name="wp-submit" id="wp-submit" class="button-primary" value="Log In" tabindex="100"/>
-            <input type="hidden" name="hash" value=""/>
-            <input type="hidden" name="sid" value="<?php echo session_id(); ?>"/>
+            <input type=submit style="position:relative;top:3px" name="wp-submit" id="wp-submit" class="button-primary" value="Log In" tabindex="100">
+            <input type=hidden name="hash" value="">
+            <input type=hidden name="sid" value="<?php echo session_id(); ?>">
         </p>
 
         <p style="height:2px"></p>

@@ -1,28 +1,28 @@
 <?php
 	include 'bmc/main.php';
-//	if(!defined('IN_BMC')) 
+//	if(!defined('IN_BMC'))
 //		die("Access Denied!");
 
 	include A_HOME."fun_login.php";
-	include A_ROOT."header3.php";  
+	include A_ROOT."header3.php";
 //todo preview
 //todo ipban
 //	@session_start();
 	$message = '';
-	
+
 	if(isset($_POST[USER_HASH]) && $_POST[USER_HASH]=='1'){
 		if(!IS_ADMIN && bad_cap(true)){
 			$message = "Введите правильно код на картинке";
 			$ok = false;
-			
+
 		}elseif(!trim(@$_POST['text'])){
 			$message = "Вы, вероятно, забыли ввести сообщение";
 			$ok = false;
-						
+
 		}else{
 
 				include_once A_HOME."upload_pic.php";
-			
+
 				if(IS_ADMIN && isnumeric($_POST['edit'])){
 					$message = "Комментарий успешно изменен";
 					$id = a($_POST['edit']);
@@ -31,7 +31,7 @@
 					$_POST['date'] = time();
 					$id = '0';
 				}
-				
+
 
 			$icon = myurlencode( up_pic('icon', '', md5(mt_rand(0,99999999).time()), 'userpics/', $bmc_vars['ava_x'], $bmc_vars['ava_y']) );
 			if($_POST['site'] == 'http://')$_POST['site']='';
@@ -46,14 +46,14 @@
 			$rez['icon'] = $icon;
 
 			$db->query("REPLACE INTO `".PRF."guestbook` ".$db->sql_from_array("REPLACE", $rez));
-			
+
 			$ok = true;
-			
+
 			unset($_POST);
-		
+
 		}
 	}
-	
+
 
 
 	if(IS_ADMIN && isnumeric($_GET['del'])){
@@ -99,7 +99,7 @@
 
 	.gb{
 		padding:15px 18px;
-		border:1px solid #fafafa;		
+		border:1px solid #fafafa;
 		max-height:600px;
 		overflow:hidden;
 
@@ -108,7 +108,7 @@
 	}
 	.gb1{
 		color:#444;
-		-moz-border-radius:3px;	
+		-moz-border-radius:3px;
 		-ktml-border-radius:3px;
 		background:#eaf3d0;
 		border:1px solid #dfe3cf
@@ -131,9 +131,9 @@
 		background:#ddd;
 		color:brown;
 		font-size:17px;
-		padding:4px;		
+		padding:4px;
 	}
-	
+
 	.gb u{
 		padding:2px 5px;
 		text-decoration:none;
@@ -154,7 +154,7 @@
 		float:right;
 		font-size:8px;
 	}
-	
+
 	.gb img{
 		padding:2px;
 		width:<?php echo $bmc_vars['ava_x']; ?>px;
@@ -162,7 +162,7 @@
 		float:left;
 		clear:left;
 		margin:0 5px 0 0;
-		
+
 		border-top:0;
 		border-bottom:1px solid #D7D7D7;
 		border-left:1px solid #F2F2F2;
@@ -173,7 +173,7 @@
 		font-size:13px;
 		margin:6px 12px;
 		margin-left:124px;
-		white-space:pre-wrap;		
+		white-space:pre-wrap;
 	}
 
 
@@ -183,7 +183,7 @@
 		display:block;
 		padding-top:25px;
 		padding-left:20px;
-		
+
 		color:#777;
 		font-weight:bold;
 		font-size:1.3em;
@@ -199,10 +199,10 @@
 		position:absolute;
 		left:190px;
 		top:0;
-		
+
 		color:#333;
 		margin:5px 0 0;
-		padding:7px 8px;	
+		padding:7px 8px;
 		border:1px solid #ddd;
 	}
 	#_icon{
@@ -227,7 +227,7 @@
 		color:#fff;
 		font-weight:bold;
 		width:auto !important;
-		-moz-border-radius:6px;	
+		-moz-border-radius:6px;
 		-ktml-border-radius:6px;
 	}
 	input[type=submit]:hover{
@@ -240,7 +240,7 @@
 		font-size:11px;
 		font-weight:normal;
 	}
-	
+
 	h1{font-size:34px;letter-spacing:1px;font-weight:normal}
 	h2{font-size:29px;color:#bbb;line-height:24px}
 	h3{font-size:26px;}
@@ -253,9 +253,9 @@
 	color:white;
 	font-size:21px;
 	padding:21px;
-	-moz-border-radius:10px;	
+	-moz-border-radius:10px;
 	-ktml-border-radius:10px;
-	text-align:center;	
+	text-align:center;
 }
 .green{
 	background:#0b0;
@@ -263,7 +263,7 @@
 }
 .red{
 	background:#ff5050;
-	border-color:#f00;	
+	border-color:#f00;
 }
 
 
@@ -292,7 +292,7 @@
 
 
 
-	
+
 	<h1>Гостевая книга</h1>
 	<h2><b style="font-family:georgia"><?php echo count($G) ?></b>
 		<small><?php echo number_ending(count($G), 'отзывов', 'отзыв', 'отзыва') ?></small>
@@ -300,7 +300,7 @@
 	</h2>
 
 	<input id="write" type="submit"  value="      Оставить новый       " onclick="document.location='#write'" />
-	
+
 	<br/>
 	<br/>
 
@@ -322,9 +322,9 @@
 {
 				if(!$a['name'])
 					$a['name']='Аноним';
-				else	
+				else
 					$a['name'] = ucfirst($a['name']);
-					
+
 
 				$a['date'] = bmc_Date($a['date']);
 
@@ -333,13 +333,13 @@
 				if(file_exists(A_ROOT.$a['icon']))
 					$a['icon']='img/default_userpic.gif';
 
-	
+
 				$contacts = $contacts1 = '';
 			if(IS_ADMIN || $a['public']){
 			/*	if($a['email'])
-				 	$contacts = '<a href="mailto: "'.$a['email'].'" title="электроная почта">@</a>&nbsp;'; 
+				 	$contacts = '<a href="mailto: "'.$a['email'].'" title="электроная почта">@</a>&nbsp;';
 				if($a['site']){
-				 	$contacts .= '<a rel="nofollow" href="'.$a['site'].'" title="персональная страничка">'; 
+				 	$contacts .= '<a rel="nofollow" href="'.$a['site'].'" title="персональная страничка">';
 				 	$contacts1='</a>';
 				}*/
 				if($a['site']){
@@ -348,16 +348,16 @@
 					 	$comment = "электроная почта";
 				 	}else
 					 	$comment = "персональная страничка";
-				 	
-					$contacts = '<a rel="nofollow" href="'.$a['site'].'" title="'.$comment.'">'; 
+
+					$contacts = '<a rel="nofollow" href="'.$a['site'].'" title="'.$comment.'">';
 					$contacts1= '</a>';
 				}
 			}
-			
+
 				if(IS_ADMIN)
 					$adm = '<br/><a href="'.$_SERVER['SCRIPT_NAME'].'?del='.$a['id'].'">Удалить</a>
 						&nbsp; 	<a href="'.$_SERVER['SCRIPT_NAME'].'?edit='.$a['id'].'">Редактировать</a>';
-				else 
+				else
 					$adm ='';
 
 				$j = $i+1;
@@ -365,7 +365,7 @@
 					$stl = '';
 				else
 					$stl = ' gb1';
-					//&nbsp; <i>( $j. )</i> 
+					//&nbsp; <i>( $j. )</i>
 echo<<<EOF
 		<div class="gb$stl">
 			<img src="{$a['icon']}">
@@ -374,9 +374,9 @@ echo<<<EOF
 			$adm
 		</div>
 EOF;
-					
 
-			
+
+
 	}
 ?>
 </div>
@@ -397,7 +397,7 @@ EOF;
 ?>
 
 
-<form method="post" action="<?php echo $_SERVER['SCRIPT_NAME'] ?>"  accept-charset="<?php echo $CHRST ?>"  enctype="multipart/form-data" onsubmit="return verify_form()">
+<form method=post action="<?php echo $_SERVER['SCRIPT_NAME'] ?>"  accept-charset="<?php echo $CHRST ?>"  enctype="multipart/form-data" onsubmit="return verify_form()">
 <fieldset>
 	<input type="hidden" name="<?php echo USER_HASH; ?>" value="1" />
 	<input type="hidden" name="date" value="<?php echo @$_POST['date'] ?>" />
@@ -409,8 +409,8 @@ EOF;
 EOF;
 ?>
 
-	
-	<label>Имя
+
+	<label>�?мя
 		<input type="text" name="name" value="<?php echo htmlspecialchars(@$_POST['name']) ?>" />
 	</label>
 
@@ -423,7 +423,7 @@ EOF;
 		<input type="text" id="icon" name="icon" value="<?php echo @$icon ?>" onkeydown="omch()" onchange="omch()" />
 		<input type="file" name="icon" id="__icon" onkeydown="omch()" onchange="omch()" />
 	</label>-->
-	
+
 	<label>Показывать контакты
 		<input type="checkbox" name="public" value="1" <?php if(@$POOO['site']) echo ' checked="checked"'; ?> />
 	</label>
@@ -432,16 +432,16 @@ EOF;
 	<label style="height:120px">Текст сообщения <span style="color:red">*</span>
 		<textarea name="text" cols="80" rows="4"><?php echo @$_POST['text'] ?></textarea>
 	</label>
-	
-	
+
+
 	<?php if(!IS_ADMIN) show_cap1(true); ?>
 
 	<br/>
 	<label>
-		<input type="submit" value="          <?php echo (!isset($_GET['edit'])?'Оставить':'Изменить'); ?> отзыв          " />
+		<input type="submit" value="          <?php echo (!isset($_GET['edit'])?'Оставить':'�?зменить'); ?> отзыв          " />
 	</label>
 	<br/>
-		
+
 </fieldset>
 </form>
 </div>
@@ -451,7 +451,7 @@ EOF;
 
 <script src="js/jslib.js"></script>
 <script>
-	
+
 	function clrnpt1(id){
 		$('aaa').style.visibility = 'hidden';
 		clrnpt(id);
@@ -464,11 +464,11 @@ EOF;
    		}
    		return true;
    	}
-   	
+
    	function omch(){
    		$('aaa').style.visibility='visible';
    	}
-   	
+
   <?php show_cap_js1(true) ?>
 
 </script>

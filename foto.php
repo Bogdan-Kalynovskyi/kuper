@@ -35,7 +35,7 @@ elseif (isnumeric($_GET['id'])) {
     $one = $db->query("SELECT * FROM " . PRF . "posts WHERE id=" . a($_GET['id']), false);
     $data = $db->query("SELECT * FROM " . PRF . "photo WHERE post=" . a($_GET['id']) . " ORDER BY por ASC", true, true);
     if (!$data)
-        {die('<h1><br/><br/><br/>������� �����</h1>' . backbutton());
+        {die('<h1><br><br><br>������� �����</h1>' . backbutton());
 }
     if ($one['blog'] == 5)
         $sex = true;
@@ -284,7 +284,7 @@ else die('oops');
 <?php
 
 if ($om) {
-    echo '<small><br/></small><h1>������ �������</h1>';
+    echo '<small><br></small><h1>������ �������</h1>';
 }
 elseif (isset($one['title']) && $one['title']) {
     echo '<h1 onclick="window.location.href=\'<?php back_link_func() ?>\'"><small>������� </small><strong><big> &nbsp; "' . $one['title'] . '"</big></strong></h1>';
@@ -296,7 +296,7 @@ if (isset($one['summary']) && $one['summary'])
 else
     echo '<div id="razv"></div>';
 
-?><br/>
+?><br>
 
 
 
@@ -330,7 +330,7 @@ else
             if ($om)
                 $zek_img = '<div class="outer"><div class="inner"><img src="' . imgsrc($d['icon']) . '"></div></div>';
             else
-                $zek_img = '<div class="zek"><img src="' . imgsrc($d['icon']) . '" rel="reflect" /></div>';
+                $zek_img = '<div class="zek"><img src="' . imgsrc($d['icon']) . '" rel="reflect"></div>';
 
             echo <<<EOF
 		<li>
@@ -352,7 +352,7 @@ EOF;
 
         ?>
     </ul>
-    <div style="clear:both"></div><br/><br/>
+    <div style="clear:both"></div><br><br>
 
 
     <!--<div id="dim"></div>-->
@@ -360,9 +360,9 @@ EOF;
 
 <?php if (!$om) { ?>
     <?php if (count($data) > 7) { ?>
-        <a href="#nav" class="to_bottom" onclick="window.scroll(0,0);return false">� ������</a><br/><br/><br/>
+        <a href="#nav" class="to_bottom" onclick="window.scroll(0,0);return false">� ������</a><br><br><br>
     <?php } ?>
-    <a href="<?php back_link_func() ?>" class="to_bottom">� ������ �������</a><br/><br/><br/>
+    <a href="<?php back_link_func() ?>" class="to_bottom">� ������ �������</a><br><br><br>
 
     <script src="reflection.js"></script>
 

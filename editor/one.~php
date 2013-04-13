@@ -1,8 +1,8 @@
 <?php
-	if(!defined('IN_BMC')) 
+	if(!defined('IN_BMC'))
 		die("Access Denied!");
-	
-		
+
+
 		$POOO = $db->query("SELECT * FROM `".PRF."posts` WHERE id=".a(@$_GET['id']), false);
 		if(!$POOO)	echo 'этой записи уже не существует';
 
@@ -72,8 +72,8 @@
 		width:auto;
 	}
 
-	
-	
+
+
 	#clickable{
 		cursor:pointer;
 		text-decoration:underline;
@@ -84,7 +84,7 @@
 	#gallery_button{
 		left:570px;top:-17px;display:block;position:absolute;z-index:10
 	}
-	
+
 </style>
 
 
@@ -93,7 +93,7 @@
 <h2> Правим пост / Галерею... </h2>
 
 
-<form method="post" action="user.php"  accept-charset="<?php echo $CHRST ?>"  enctype="multipart/form-data" onsubmit="return verify_form()">
+<form method=post action="user.php"  accept-charset="<?php echo $CHRST ?>"  enctype="multipart/form-data" onsubmit="return verify_form()">
 <fieldset>
 	<input type="hidden" name="id" value="<?php echo @$_GET['id']; ?>" />
 	<input type="hidden" name="blog" value="<?php echo @$POOO['blog']; ?>" />
@@ -107,7 +107,7 @@
 		<input type="submit" name="nesegalavodu" value="К галерее"  id="gallery_button" />
 	</label>
 
-		
+
 
 	<label>Заголовок
 		<input type="text" name="title" value="<?php echo @$POOO['title']; ?>" />
@@ -115,15 +115,15 @@
 
 
 	<label>Иконка
-		<img src="<?php echo @$POOO['icon']; ?>" alt="нет" id="_icon" onmouseover="prev_over()" onmouseout="prev_out()" /> &nbsp;&nbsp;&nbsp; 
+		<img src="<?php echo @$POOO['icon']; ?>" alt="нет" id="_icon" onmouseover="prev_over()" onmouseout="prev_out()" /> &nbsp;&nbsp;&nbsp;
 
 		<span id="_1_icon">URL</span><input type="text" id="icon" name="icon" value="<?php echo htmlspecialchars(rawurldecode(@$POOO['icon'])); ?>" /> &nbsp; &nbsp; &nbsp;
 
 		<span id="_2_icon">или файл</span><input type="file" name="icon" id="__icon" /> &nbsp;
-		
+
 		<a href="#" title="убрать изображение из поста" id="_3_icon" onclick="clrnpt('icon');return false">Убрать</a>
 	</label>
-	
+
 
 	<label style="height:85px">Текст (HTML)<span id="clickable" onclick="editoronoff()">Включить редактор</span><br/>
 		<textarea name="summary" cols="80" rows="3" id="msg"><?php echo htmlspecialchars(@$POOO['summary']); ?></textarea>
@@ -136,9 +136,9 @@
 
 	<br/><br/>
 	<input type="submit" value="      Сохранить      " /> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="button" value="      Отмена      " onclick="document.history(-1)'" />
+	<input type=button value="      Отмена      " onclick="document.history(-1)'" />
 
-		
+
 </fieldset>
 </form>
 
@@ -149,7 +149,7 @@
 <script>
 
 	changer();
-	
+
 	function editoronoff(){
 		WYSIWYG.onoff('msg', full1);
 		$('clickable').style.visibility = 'hidden';
@@ -164,7 +164,7 @@
 		$('one_prev').style.display = "none";
 	}
 
-		
+
 	function changer(){
 		if(document.getElementsByName('gallery')[0].checked){
 			$('gallery_button').style.visibility = 'visible';

@@ -10,8 +10,8 @@ error_reporting(0);
 	<form action="./" method="post">
 	<p>Enter text shown below:</p>
 	<p><img src="PATH-TO-THIS-SCRIPT?<?php echo session_name()?>=<?php echo session_id()?>"></p>
-	<p><input type="text" name="keystring"></p>
-	<p><input type="submit" value="Check"></p>
+	<p><input type=text name="keystring"></p>
+	<p><input type=submit value="Check"></p>
 	</form>
 	<?php
 	if(count($_POST)>0){

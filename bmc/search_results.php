@@ -60,7 +60,7 @@ if (noempty($_POST[SEARCH_HASH])) {
         //TODO PAGEVIEW
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        echo '<br/><div  style="text-transform: capitalize" class="line">' . $table . '</div>';
+        echo '<br><div  style="text-transform: capitalize" class="line">' . $table . '</div>';
 
         if ($res || $res1) {
             if ($res && $res1) {
@@ -72,7 +72,7 @@ if (noempty($_POST[SEARCH_HASH])) {
 
             foreach ($res as $r) {
                 echo '<a href="' . short_name($table) . '.php?id=' . $r['id'] . '">' . $r['name'] . '</a>';
-                echo '<pre>' . substr($r['desc'], 0, 100) . '</pre><br/>';
+                echo '<pre>' . substr($r['desc'], 0, 100) . '</pre><br>';
             }
         }
         else {

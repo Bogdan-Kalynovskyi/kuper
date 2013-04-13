@@ -27,7 +27,7 @@ if (isset($users_online)) { //?????????????????????
         //if(IS_ADMIN)
         echo echoip(long2ip($user['ip']));
 
-        echo " <a href= \"profile.php?user={$user['id']}\">" . simplewrap(bmc_dispuser1($user)) . "</a> <br />";
+        echo " <a href= \"profile.php?user={$user['id']}\">" . simplewrap(bmc_dispuser1($user)) . "</a> <br>";
 
     }
 

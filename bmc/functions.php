@@ -43,7 +43,7 @@ function set_form () {
     global $USER, $db;
     $x = uuidv4();
     $res = $db->q('INSERT INTO', 'formlog', array_merge(array('user' => $USER['id'], 'hash' => $x), net_location_ary()), 0, 0);
-    return '<input type="hidden" name="' . SEARCH_HASH . '" value="' . $x . '" />';
+    return '<input type=hidden name="' . SEARCH_HASH . '" value="' . $x . '">';
 }
 
 function get_form () {
@@ -238,8 +238,8 @@ function bmc_Go ($goto = null) { //(FEATURE -1)//зберыгати даны п�
         echo <<<EOF
 <HTML><HEAD><meta name=”robots” content=”noindex,nofollow”><script>
 document.location="$goto";
-</script><meta charset=$CHRST"/><meta http-equiv="Refresh" content="0; $goto"></HEAD>
-<BODY><noscript>Redirection<br/><a href="$goto">Follow this link to get proceed</a></noscript> <a href="$goto"> &rarr; </a></BODY></HTML>
+</script><meta charset=$CHRST"><meta http-equiv="Refresh" content="0; $goto"></HEAD>
+<BODY><noscript>Redirection<br><a href="$goto">Follow this link to get proceed</a></noscript> <a href="$goto"> &rarr; </a></BODY></HTML>
 EOF;
 
     }

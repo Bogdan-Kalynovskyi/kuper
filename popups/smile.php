@@ -32,9 +32,9 @@ bmc_getSmiles('a', 'a', 2);
 		$name=$name[0]; $name=":".strtolower($name).":";
 
 echo <<<EOF
-<img alt="$name" src="{$MY_URL}/images/smilies/$ar[$n]" />&nbsp;&nbsp;&nbsp;$name
+<img alt="$name" src="{$MY_URL}/images/smilies/$ar[$n]">&nbsp;&nbsp;&nbsp;$name
 EOF;
-if($n%2)echo" <br />";
+if($n%2)echo" <br>";
 
 	}*/
 /*
@@ -54,7 +54,7 @@ $sm=explode("\n",$sm);
 		list($file, $smil) = explode("=", $sm[$i]);
 
 echo <<<EOF
-<img alt="$name" src="{$MY_URL}/smilies/$file" />&nbsp;&nbsp;&nbsp;$smil <br />
+<img alt="$name" src="{$MY_URL}/smilies/$file">&nbsp;&nbsp;&nbsp;$smil <br>
 EOF;
 
 		}

@@ -133,13 +133,13 @@
                 <tr>
                     <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 11px;">URL:</td>
                     <td style="padding-bottom: 2px; padding-top: 0px;" colspan="3">
-                        <input type="text" name="linkUrl" id="linkUrl" value="http://" style="font-size: 10px; width: 100%;">
+                        <input type=text name="linkUrl" id="linkUrl" value="http://" style="font-size: 10px; width: 100%;">
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Target:</td>
                     <td style="padding-bottom: 2px;" colspan="3">
-                        <input type="text" name="linkTarget" id="linkTarget" value="" style="font-size: 10px; width: 65%;">
+                        <input type=text name="linkTarget" id="linkTarget" value="" style="font-size: 10px; width: 65%;">
                         &nbsp;
                         <select name="linkTargetChooser" id="linkTargetChooser" style="font-size: 10px; width: 30%;" onchange="updateTarget(this.value);">
                             <option value="" selected>no target</option>
@@ -154,23 +154,23 @@
                 <tr>
                     <td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Style:</td>
                     <td style="padding-bottom: 2px;" colspan="3">
-                        <input type="text" name="linkStyle" id="linkStyle" value="" style="font-size: 10px; width: 100%;">
+                        <input type=text name="linkStyle" id="linkStyle" value="" style="font-size: 10px; width: 100%;">
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-bottom: 2px; width: 50px; font-family: arial, verdana, helvetica; font-size: 11px;">Class:</td>
                     <td style="padding-bottom: 2px;">
-                        <input type="text" name="linkClass" id="linkClass" value="" style="font-size: 10px; width: 90%;">
+                        <input type=text name="linkClass" id="linkClass" value="" style="font-size: 10px; width: 90%;">
                     </td>
                     <td style="padding-bottom: 2px; width: 30px; font-family: arial, verdana, helvetica; font-size: 11px;">Name:</td>
                     <td style="padding-bottom: 2px; width: 120px;">
-                        <input type="text" name="linkName" id="linkName" value="" style="font-size: 10px; width: 100%;">
+                        <input type=text name="linkName" id="linkName" value="" style="font-size: 10px; width: 100%;">
                     </td>
                 </tr>
 
             </table>
 
-            <div align="right" style="padding-top: 5px;"><input type="submit" value="  Submit  " onclick="insertHyperLink();" style="font-size: 12px;">&nbsp;<input type="submit"
+            <div align="right" style="padding-top: 5px;"><input type=submit value="  Submit  " onclick="insertHyperLink();" style="font-size: 12px;">&nbsp;<input type=submit
                                                                                                                                                                     value="  Cancel  "
                                                                                                                                                                     onclick="window.close();"
                                                                                                                                                                     style="font-size: 12px;">

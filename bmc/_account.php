@@ -132,7 +132,7 @@ if (isset($_GET['_account_'])) {
                 str = str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
                 return (/^([a-z0-9_\-]+\.)*[a-z0-9_\-]+@([a-z0-9][a-z0-9_\-]*\.)+[a-z]{2,4}$/i).test(str);
             }
-            function check_form() {
+            function check_form () {
                 if (!isEmail(document.getElementById('email').value)) {
                     document.getElementById('email').focus();
                     alert(document.getElementById('email').value + ' is not a valid email');
@@ -145,7 +145,7 @@ if (isset($_GET['_account_'])) {
 
 
         <h1><a href="./" title="Powered by Bodya">Login</a></h1>
-        <form accept-charset="<?php echo $CHRST ?>" method="post" action="?_account_=restore_pass" onsubmit="return check_form()" id="loginform">
+        <form accept-charset="<?php echo $CHRST ?>" method=post action="?_account_=restore_pass" onsubmit="return check_form()" id="loginform">
             <br>
 
             <h1 style="font-family:arial;font-size:21px;margin:0 0 6px 0"> New password will be sent to your email</h1><br>
@@ -155,14 +155,14 @@ if (isset($_GET['_account_'])) {
             <p>
                 <label>
                     Your email<br>
-                    <input type="email" name="email" id="email" class="input" size="20" tabindex="10">
+                    <input type=email name="email" id="email" class="input" size="20" tabindex="10">
                 </label>
             </p>
 
             <?php show_cap(); ?>    <p style="height:11px"></p>
 
             <p class="submit">
-                <input type="submit" id="wp-submit" class="button-primary" value="    G o    " tabindex="100">
+                <input type=submit id="wp-submit" class="button-primary" value="    G o    " tabindex="100">
             </p>
 
             <br>
@@ -237,7 +237,7 @@ function yobtvoyumat ($inside, $usr) {
         }
     </script>
 
-    <form accept-charset="<?php echo $CHRST ?>" method="post" action="<?php if ($inside) { ?>?_account_=change_pass<?php
+    <form accept-charset="<?php echo $CHRST ?>" method=post action="<?php if ($inside) { ?>?_account_=change_pass<?php
     }
     else {
         echo str_replace('&whattodo=get&', '&whattodo=set&', $_SERVER['REQUEST_URI']);
@@ -246,18 +246,20 @@ function yobtvoyumat ($inside, $usr) {
 
             <strong>Ñìåíèòü ïàðîëü</strong><br><br>
 
-            <u>Ëîãèí</u> <?php echo $usr['login']; ?><br/><br/>
+            <u>Ëîãèí</u> <?php echo $usr['login']; ?><br><br>
             <?php if ($inside) { ?>
-                <u>Ñòàðûé ïàðîëü</u> <input type="password" name="old_pass" id="autofoc" value=""><br/>
+                <u>Ñòàðûé ïàðîëü</u> <input type=password name="old_pass" id="autofoc" value=""><br>
             <?php } ?>
-            <u>Íîâûé ïàðîëü</u> <input type="password" name="new_pass"><br/>
-            <u>Íîâûé ïàðîëü åùå ðàç</u> <input type="password" name="new_pass1"><br/><br/><br/>
+            <u>Íîâûé ïàðîëü</u> <input type=password name="new_pass"><br>
+            <u>Íîâûé ïàðîëü åùå ðàç</u> <input type=password name="new_pass1"><br><br><br>
 
-            <u><input type="submit" value="     Ñìåíèòü     "/></u> <input type="button" onclick="history.go(-1)" value="  Îòìåíà  "><br/>
+            <u><input type=submit value="     Ñìåíèòü     "></u> <input type=button onclick="history.go(-1)" value="  Îòìåíà  "><br>
 
             <?php if ($inside) { ?>
-                <script>$('autofoc').value = '';
-                    $('autofoc').focus()</script>
+                <script>
+                    $('autofoc').value = '';
+                    $('autofoc').focus();
+                </script>
             <?php } ?>
 
 

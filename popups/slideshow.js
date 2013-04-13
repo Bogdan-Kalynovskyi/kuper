@@ -68,7 +68,7 @@ function do_(act, n) {
 }
 
 function clear_f1(the, n) {
-    document.getElementById("aaa" + n).innerHTML = '&nbsp;&nbsp;Файл :&nbsp;<input type="file" name="file1">';
+    document.getElementById("aaa" + n).innerHTML = '&nbsp;&nbsp;Файл :&nbsp;<input type=file name="file1">';
     the.onclick = 'do_("ren_pic", ' + n + ')';
     the.value = "     Завантажити    ";
 }

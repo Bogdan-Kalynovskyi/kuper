@@ -168,24 +168,22 @@ if (!isset($BLOGS[$POOO['blog']])) {
 <h2> ������ ������ � ������� <a href="./?page=<?php echo $POOO['blog'] ?>"><b>"<?php echo @$BLOGS[$POOO['blog']] ?>"</b></a></h2>
 
 
-<form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
+<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
     <fieldset>
-        <input type="hidden" name="id" value="<?php echo @$_GET['id']; ?>">
-        <input type="hidden" name="por" value="<?php echo $POOO['por'] ?>">
-        <input type="hidden" name="<?php echo FORM_HASH; ?>" value="1">
-        <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-        <input type="hidden" name="blog" value="<?php echo $POOO['blog'] ?>">
+        <input type=hidden name="id" value="<?php echo @$_GET['id']; ?>">
+        <input type=hidden name="por" value="<?php echo $POOO['por'] ?>">
+        <input type=hidden name="<?php echo FORM_HASH; ?>" value="1">
+        <input type=hidden name="MAX_FILE_SIZE" value="10000000">
+        <input type=hidden name="blog" value="<?php echo $POOO['blog'] ?>">
 
 
 
         <?php if ($POOO['blog'] == 1 || $POOO['blog'] == 4 || $POOO['blog'] == 5) { ?>
 
             <label><!-- ��� �������<span class="tooltip" title="� ������� ����� � ��� �� ����� ������������� ��� ����, ��� � �������. � ������ � �������� ���� ������� �� �������� � ��������">(?)</span>
-		<input type="checkbox" name="gallery"<?php if(@$POOO['gallery']) {echo ' checked="checked"';
-} ?> style="margin-top:5px" onchange="changer()" value="1">--><input type="hidden"
-                                                                                                                                                                       name="gallery"
-                                                                                                                                                                       value="1">
-                <input type="submit" name="nesegalavodu" value="������" id="gallery_button"> &nbsp; &nbsp; <span class="tooltip"
+		<input type=checkbox name="gallery"<?php if(@$POOO['gallery']) {echo ' checked';
+} ?> style="margin-top:5px" onchange="changer()" value="1">--><input type=hidden name="gallery" value="1">
+                <input type=submit name="nesegalavodu" value="������" id="gallery_button"> &nbsp; &nbsp; <span class="tooltip"
                                                                                                                  title="������ ������, ���������� � �������� � ��� ��������� �� ���� �������">(?)</span>
 
                 &nbsp;
@@ -196,20 +194,20 @@ if (!isset($BLOGS[$POOO['blog']])) {
                         echo ". ������ ����"
 } ?></small>
 
-            </label><br/>
+            </label><br>
         <?php } ?>
 
 
         <?php if ($POOO['blog'] == 1) { ?>
-            <br/>
+            <br>
             <label>��������<span class="tooltip" title="��� �������� ����������, ���� ���������� ���� �� ��� ����������, ���� �� ���������� ��������">(?)</span>
                 <img src="<?php echo @$bmc_vars['zastavka'] ? $bmc_vars['zastavka'] : 'blank.gif'; ?>" alt="���" id="_icon"> &nbsp;&nbsp;&nbsp;
 
                 <span id="_1_icon">url</span><input id="icon" name="icon" value="<?php echo htmlspecialchars(rawurldecode($bmc_vars['zastavka'])) ?>"> &nbsp; &nbsp; &nbsp;
 
-                <span id="_2_icon">����</span><input type="file" name="icon" id="__icon"> &nbsp;
+                <span id="_2_icon">����</span><input type=file name="icon" id="__icon"> &nbsp;
 
-                <a href="#" title="������ ��� ��������" id="_3_icon" onclick="clrnpt('icon');return false">������</a>
+                <a href=# title="������ ��� ��������" id="_3_icon" onclick="clrnpt('icon');return false">������</a>
             </label>
         <?php }
         else { ?>
@@ -218,10 +216,10 @@ if (!isset($BLOGS[$POOO['blog']])) {
             <?php if ($POOO['blog'] == 5) { ?>
                 <div class="jobaniradio">������:<span class="tooltip" title="���������� � ��� ������� �� ��� ���������� �������">(?)</span>
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<label><input type="radio" name="switch" value="0" <?php if (!$POOO['switch']) {
-                            echo 'checked="checked"'
+                            echo ' checked'
 } ?>> ���������� � ��������</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label><input type="radio" name="switch"
                                                                                                                                         value="1" <?php if (@$POOO['switch']) {
-                            echo 'checked="checked"'
+                            echo ' checked'
 } ?>> ������</label>
                 </div>
                 <?php
@@ -238,9 +236,9 @@ if (!isset($BLOGS[$POOO['blog']])) {
 
                 <span id="_1_icon">url</span><input id="icon" name="icon" value="<?php echo htmlspecialchars(rawurldecode(@$POOO['icon'])); ?>"> &nbsp; &nbsp; &nbsp;
 
-                <span id="_2_icon">����</span><input type="file" name="icon" id="__icon"> &nbsp;
+                <span id="_2_icon">����</span><input type=file name="icon" id="__icon"> &nbsp;
 
-                <a href="#" title="������ ����������� �� �����" id="_3_icon" onclick="clrnpt('icon');return false">������</a>
+                <a href=# title="������ ����������� �� �����" id="_3_icon" onclick="clrnpt('icon');return false">������</a>
             </label>
 
             <label id="second" style="display:none">���<span class="tooltip"
@@ -249,34 +247,34 @@ if (!isset($BLOGS[$POOO['blog']])) {
 
                 <span id="_1_fon">url</span><input id="fon" name="fon" value="<?php echo htmlspecialchars(rawurldecode(@$POOO['fon'])); ?>"> &nbsp; &nbsp; &nbsp;
 
-                <span id="_2_fon">����</span><input type="file" name="fon" id="__fon"> &nbsp;
+                <span id="_2_fon">����</span><input type=file name="fon" id="__fon"> &nbsp;
 
-                <a href="#" title="������ ����������� �� �����" id="_3_fon" onclick="clrnpt('fon');return false">������</a>
+                <a href=# title="������ ����������� �� �����" id="_3_fon" onclick="clrnpt('fon');return false">������</a>
             </label>
 
 
-            <label style="height:101px">����� (HTML)<span class="tooltip" title="��� ������� � �������(�������������), ���� ���� �����">(?)</span><a href="#" id="clickable"
+            <label style="height:101px">����� (HTML)<span class="tooltip" title="��� ������� � �������(�������������), ���� ���� �����">(?)</span><a href=# id="clickable"
                                                                                                                                                      onclick="editoronoff();return false">��������
-                    ��������</a><br/>
+                    ��������</a><br>
                 <textarea name="summary" cols="80" rows="3" id="msg"><?php echo htmlspecialchars(@$POOO['summary']); ?></textarea>
             </label>
 
 
             <label style="height:17px;overflow:hidden;cursor:pointer" id="dabo">��� �����<span class="tooltip"
-                                                                                               title="� ������� '��������' � '� ����' ����� �������� ����� ������ ��� �����. ����� �������� ������� ������ ������, ��� ������� �� ������� ����� ��������� ����������� ����� ������">(?)</span><br/>
+                                                                                               title="� ������� '��������' � '� ����' ����� �������� ����� ������ ��� �����. ����� �������� ������� ������ ������, ��� ������� �� ������� ����� ��������� ����������� ����� ������">(?)</span><br>
                 <textarea name="data" id="msg1" cols="80" rows="3"><?php echo htmlspecialchars(@$POOO['data']); ?></textarea>
             </label>
 
         <?php } ?>
-        <!--	<label style="opacity:0.7">�������� � ��������<br/>
-		<input type="checkbox" name="draft"<?php if(@$POOO['draft']) {echo ' checked="checked"';
+        <!--	<label style="opacity:0.7">�������� � ��������<br>
+		<input type=checkbox name="draft"<?php if(@$POOO['draft']) {echo ' checked';
 } ?> value="1">
 	</label>-->
 
-        <br/><br/>
-        <input type="submit" value="    ���������    ">
-        <input type="submit" name="preview" value="��������������� ��������" style="width:auto;margin-left:93px;background:#e0e0e0">
-        <input type="button" value="      ������      " onclick="location.href='user.php'">
+        <br><br>
+        <input type=submit value="    ���������    ">
+        <input type=submit name="preview" value="��������������� ��������" style="width:auto;margin-left:93px;background:#e0e0e0">
+        <input type=button value="      ������      " onclick="location.href='user.php'">
 
 
     </fieldset>

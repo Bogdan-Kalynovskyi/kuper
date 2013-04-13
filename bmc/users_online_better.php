@@ -21,7 +21,7 @@ if (isset($users_online)) {
         echo echoip(long2ip($user['ip']));
 
 
-        echo " <a href= \"profile.php?user={$user['user']}\">{$user['name']}</a> <br />";
+        echo " <a href= \"profile.php?user={$user['user']}\">{$user['name']}</a> <br>";
     }
 
 

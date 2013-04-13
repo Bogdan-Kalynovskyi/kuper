@@ -19,7 +19,7 @@ if (empty($f2)) {
 
 
 
-/*if($_POST['thumb'])*/ //print_r($_POST); 
+/*if($_POST['thumb'])*/ //print_r($_POST);
 
 
 
@@ -277,7 +277,7 @@ header("Content-Type: text/html; charset=utf-8");
 
         function showpass() {
             if (document.myform.thumb.checked) {
-                document.getElementById("aaa").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Max X: <input type="text" name="max_x" id="max_x" maxlength="4" value="<?php echo $_POST['max_x'];?>"  style="font-size: 12px; width: 30px;" align="left">px&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Max Y: <input type="text" name="max_y" id="max_y" maxlength="4" value="<?php echo $_POST['max_y'];?>" style="font-size: 12px; width: 30px;" align="left">px&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="" value="Тест">';
+                document.getElementById("aaa").innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Max X: <input type=text name="max_x" id="max_x" maxlength="4" value="<?php echo $_POST['max_x'];?>"  style="font-size: 12px; width: 30px;" align="left">px&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Max Y: <input type=text name="max_y" id="max_y" maxlength="4" value="<?php echo $_POST['max_y'];?>" style="font-size: 12px; width: 30px;" align="left">px&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=button onclick="" value="Тест">';
             } else {//TODO PREVIEW RESIZED IMAGE
                 document.getElementById("aaa").innerHTML = '&nbsp';
             }
@@ -287,7 +287,7 @@ header("Content-Type: text/html; charset=utf-8");
         function clear_f1() {
             document.getElementById('width').value = '';
             document.getElementById('height').value = '';
-            document.getElementById("test").innerHTML = '<input type="file" name="file" size="37" style="font-size: 12px; width: 100%;" onchange="clear_f2();" onkeydown="clear_f2();" >';
+            document.getElementById("test").innerHTML = '<input type=file name="file" size="37" style="font-size: 12px; width: 100%;" onchange="clear_f2();" onkeydown="clear_f2();" >';
         }
 
         function clear_f2() {
@@ -312,8 +312,8 @@ header("Content-Type: text/html; charset=utf-8");
     </script>
 </head>
 <body bgcolor="#EEEEEE" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" onload="loadForm();">
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" name="myform" enctype="multipart/form-data" onsubmit="return mySubmit();">
-    <input type="hidden" id="dir" name="dir" value="">
+<form method=post action="<?php echo $_SERVER['PHP_SELF']; ?>?wysiwyg=<?php echo $wysiwyg; ?>" name="myform" enctype="multipart/form-data" onsubmit="return mySubmit();">
+    <input type=hidden id="dir" name="dir" value="">
     <table border="0" cellpadding="0" cellspacing="0" style="padding: 10px;">
         <tr>
             <td style="vertical-align:top;">
@@ -324,7 +324,7 @@ header("Content-Type: text/html; charset=utf-8");
                         ?>
                         <tr>
                             <td style="padding-top: 7px;padding-bottom: 0px; font-family: arial, verdana, helvetica; font-size: 12px;width:100px;">Завантажити:</td>
-                            <td style="padding-top: 7px;padding-bottom: 0px;width:300px;"><span id="test"><input type="file" name="file" size="37"
+                            <td style="padding-top: 7px;padding-bottom: 0px;width:300px;"><span id="test"><input type=file name="file" size="37"
                                                                                                                  style="font-size: 12px; width: 100%;" onchange="clear_f2()"
                                                                                                                  onkeydown="clear_f2();"></span></td>
                         </tr>
@@ -346,13 +346,13 @@ header("Content-Type: text/html; charset=utf-8");
                     ?>
                     <tr>
                         <td style="padding-bottom: 6px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;" width="80">URL адреса:</td>
-                        <td style="padding-bottom: 6px; padding-top: 0px;" width="300"><input type="text" name="src" id="src" value="<?php echo @$_POST['src']; ?>"
+                        <td style="padding-bottom: 6px; padding-top: 0px;" width="300"><input type=text name="src" id="src" value="<?php echo @$_POST['src']; ?>"
                                                                                               onchange="clear_f1();" onkeyup="clear_f1();x1()"
                                                                                               style="font-size: 12px; width: 100%;"></td>
                     </tr>
                     <tr>
                         <td style="padding-bottom: 4px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;">Коментар:</td>
-                        <td style="padding-bottom: 4px; padding-top: 0px;"><input type="text" name="alt" id="alt" value="<?php echo @$_POST['alt']; ?>"
+                        <td style="padding-bottom: 4px; padding-top: 0px;"><input type=text name="alt" id="alt" value="<?php echo @$_POST['alt']; ?>"
                                                                                   style="font-size: 12px; width: 100%;"></td>
                     </tr>
                     <tr>
@@ -362,7 +362,7 @@ header("Content-Type: text/html; charset=utf-8");
                         </td>
                         <td style="padding-bottom: 4px; padding-top: 0px;font-family: arial, verdana, helvetica; font-size: 12px;">
 
-                            <input type="checkbox" name="thumb" id="thumb" value="1" onclick="showpass()" style="margin-left:0; height:21px;">
+                            <input type=checkbox name="thumb" id="thumb" value="1" onclick="showpass()" style="margin-left:0; height:21px;">
                             <span id="aaa"></span>
 
                         </td>
@@ -376,19 +376,19 @@ header("Content-Type: text/html; charset=utf-8");
                             <table width="180" border="0" cellpadding="0" cellspacing="0" style="background-color: #F7F7F7; border: 2px solid #FFFFFF; padding: 5px;">
                                 <tr>
                                     <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;">Width:</td>
-                                    <td style="width:60px;padding-bottom: 2px; padding-top: 0px;"><input type="text" name="width" id="width" value="<?php echo $orig_x; ?>"
+                                    <td style="width:60px;padding-bottom: 2px; padding-top: 0px;"><input type=text name="width" id="width" value="<?php echo $orig_x; ?>"
                                                                                                          style="font-size: 11px; width: 100%;color:#777777; background-color: #eeeeee;"
                                                                                                          maxlength="4"></td>
                                 </tr>
                                 <tr>
                                     <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;">Height:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td style="padding-bottom: 2px; padding-top: 0px;"><input type="text" name="height" id="height" value="<?php echo $orig_y; ?>"
+                                    <td style="padding-bottom: 2px; padding-top: 0px;"><input type=text name="height" id="height" value="<?php echo $orig_y; ?>"
                                                                                               style="font-size: 11px; width: 100%;color:#777777; background-color: #eeeeee;"
                                                                                               maxlength="4"></td>
                                 </tr>
                                 <tr>
                                     <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;">Border:</td>
-                                    <td style="padding-bottom: 2px; padding-top: 0px;"><input type="text" name="border" id="border" value="<?php echo $_POST['border']; ?>"
+                                    <td style="padding-bottom: 2px; padding-top: 0px;"><input type=text name="border" id="border" value="<?php echo $_POST['border']; ?>"
                                                                                               style="font-size: 11px; width: 100%;color:#777777; background-color: #eeeeee;"
                                                                                               maxlength="4"></td>
                                 </tr>
@@ -423,12 +423,12 @@ header("Content-Type: text/html; charset=utf-8");
                                 </tr>
                                 <tr>
                                     <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;">Horizontal Space:</td>
-                                    <td style="padding-bottom: 2px; padding-top: 0px;"><input type="text" name="hspace" id="hspace" value="<?php echo $_POST['hspace']; ?>"
+                                    <td style="padding-bottom: 2px; padding-top: 0px;"><input type=text name="hspace" id="hspace" value="<?php echo $_POST['hspace']; ?>"
                                                                                               style="font-size: 11px; width: 100%;color:#777777; background-color: #eeeeee;"></td>
                                 </tr>
                                 <tr>
                                     <td style="padding-bottom: 2px; padding-top: 0px; font-family: arial, verdana, helvetica; font-size: 12px;">Vertical Space:</td>
-                                    <td style="padding-bottom: 2px; padding-top: 0px;"><input type="text" name="vspace" id="vspace" value="<?php echo $_POST['vspace']; ?>"
+                                    <td style="padding-bottom: 2px; padding-top: 0px;"><input type=text name="vspace" id="vspace" value="<?php echo $_POST['vspace']; ?>"
                                                                                               style="font-size: 11px; width: 100%;color:#777777; background-color: #eeeeee;"></td>
                                 </tr>
                             </table>
@@ -447,8 +447,8 @@ header("Content-Type: text/html; charset=utf-8");
         </tr>
         <tr>
             <td colspan="2" align="right" style="padding-top: 5px;">
-                <input type="submit" value="  Зберегти  " style="font-size: 14px;">&nbsp;
-                <input type="button" value="  Відмінити  " onclick="window.close();" style="font-size: 14px;">
+                <input type=submit value="  Зберегти  " style="font-size: 14px;">&nbsp;
+                <input type=button value="  Відмінити  " onclick="window.close();" style="font-size: 14px;">
             </td>
         </tr>
     </table>

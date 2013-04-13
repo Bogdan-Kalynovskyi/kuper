@@ -147,22 +147,22 @@ if (empty($_POST['data_sent'])) {
     <h1 style="font-size:8pt;padding-bottom:22px">Oldo's Global Admin Tool Wise Installation</h1>
 
 
-    <form accept-charset="<?php echo $CHRST ?>" method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" name="install" onsubmit="return check_form()">
-        <input type="hidden" name="data_sent" value="true">
-        <input type="hidden" name="c_url">
-        MySQL server : <input type="text" name="db_host" class="low" value="<?php if (isset($my_host)) {
+    <form accept-charset="<?php echo $CHRST ?>" method=post action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" name="install" onsubmit="return check_form()">
+        <input type=hidden name="data_sent" value="true">
+        <input type=hidden name="c_url">
+        MySQL server : <input type=text name="db_host" class="low" value="<?php if (isset($my_host)) {
             echo $my_host;
         }
         else {
             echo 'localhost';
         } ?>"><br>
-        MySQL database : <input type="text" name="db_name" class="low" value="<?php if (isset($my_db)) {
+        MySQL database : <input type=text name="db_name" class="low" value="<?php if (isset($my_db)) {
             echo $my_db;
         }
         else {
             echo 'demo';
         } ?>"><br>
-        MySQL tables prefix : <input type="text" class="low" name="db_prefix" value="<?php if (isset($my_prefix)) {
+        MySQL tables prefix : <input type=text class="low" name="db_prefix" value="<?php if (isset($my_prefix)) {
             echo $my_prefix;
         }
         else {
@@ -172,26 +172,26 @@ if (empty($_POST['data_sent'])) {
 }"><br><br>
 
 
-        MySQL user : <input type="text" name="db_user" value="<?php if (isset($my_user)) {
+        MySQL user : <input type=text name="db_user" value="<?php if (isset($my_user)) {
             echo $my_user;
         } ?>"><br>
-        MySQL password : <input type="password" name="db_pass" value="<?php if (isset($my_pass)) {
+        MySQL password : <input type=password name="db_pass" value="<?php if (isset($my_pass)) {
             echo $my_pass;
         } ?>"><br>
-        <input type="button" onclick="db_checker()" value=" Check MySQL settings " id="bt1"><br><br>
+        <input type=button onclick="db_checker()" value=" Check MySQL settings " id="bt1"><br><br>
 
 
-        Create a new database? &nbsp; <input type="checkbox" name="new_db" <?php if (!$db) {
-            echo 'checked="checked"';
+        Create a new database? &nbsp; <input type=checkbox name="new_db" <?php if (!$db) {
+            echo ' checked';
         } ?>><br>
-        Overwrite tables if exist? &nbsp; <input type="checkbox" name="ow" <?php if (isset($my_db)) {
-            echo 'checked="checked"';
+        Overwrite tables if exist? &nbsp; <input type=checkbox name="ow" <?php if (isset($my_db)) {
+            echo ' checked';
         } ?>><br><br>
 
 
-        Admin Username : <input type="text" name="admin_id"><br>
-        Create password : <input type="password" name="admin_pass"><br>
-        Retype password : <input type="password" name="admin_pass2"><br><br>
+        Admin Username : <input type=text name="admin_id"><br>
+        Create password : <input type=password name="admin_pass"><br>
+        Retype password : <input type=password name="admin_pass2"><br><br>
 
 
         <?php
@@ -211,7 +211,7 @@ if (empty($_POST['data_sent'])) {
         // MICROSOFT IIS FUCKS AWAY
         ?>
         <br><br>
-        <input type="submit" value="  <<<  Continue  >>>  " id="bt2">
+        <input type=submit value="  <<<  Continue  >>>  " id="bt2">
     </form>
 
     <br><a href="mailto:mybodya@gmail.com">&copy; Oldo Production, 2009</a>
@@ -386,7 +386,7 @@ if (!is_writable("upload/") || !is_writable("thumbs/") || !is_writable("pics/"))
     echo "Fixed!<br>";
 
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 if (!is_writable("vars/config.php") /* || !is_writable("vars/session.php")*/) {
@@ -466,9 +466,9 @@ echo "Writing data to config file...  ";
 $conf_dat = <<<EOF
 <?php
 
-if(!defined('IN_BMC')) 
+if(!defined('IN_BMC'))
 	die();
- 
+
 error_reporting(E_ALL);
 //error_reporting(0);
 
@@ -518,11 +518,11 @@ echo "Done <br><br><hr><br>";
 	<big style="color:#090">
 U s e r n a m e : &nbsp;&nbsp; <strong><?php echo $_POST['admin_id']; ?></strong><br>
 P a s s w o r d : &nbsp;&nbsp; <strong><?php echo $_POST['admin_pass']; ?> todo show password !!!! </strong>
-	
+
 	your usrname and password can now be sent on your email
-	
+
 	<INPUT ADMIN EMAIL>
-	
+
 </big>*/
 
 $fname = md5(uniqid('', true) . md5(mt_rand()));
@@ -539,7 +539,7 @@ $fname = md5(uniqid('', true) . md5(mt_rand()));
     upload it to the site's root directory
 </div>
 <br><br>
-<input type="button" id="bt3" value="    <<<  Log In  >>>     " onclick="document.location = '<?php echo $pageURL; ?>'"><br>
+<input type=button id="bt3" value="    <<<  Log In  >>>     " onclick="document.location = '<?php echo $pageURL; ?>'"><br>
 <script>
     try {
         document.getElementById('bt3').focus();
@@ -555,7 +555,7 @@ function footer($fail = null) {
 if ($fail) {
     echo "<strong style=\"color:#d00;\">Failed!</strong> <br><br><strong style=\"color:#a00;\">Error message :</strong> $fail";
     ?>
-    <br><br><input style="border-color:#333" type="button" onclick="history.go(-1)" value="  <-- Back  ">
+    <br><br><input style="border-color:#333" type=button onclick="history.go(-1)" value="  <-- Back  ">
 <?php } ?>
 </div>
 </div>

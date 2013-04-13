@@ -36,30 +36,30 @@ if (noempty($_POST[FORM_HASH])) {
             $str .= '<pre> <small class="date">empty...</small> </pre> ';
         }
 
-        $str .= '<br/>';
+        $str .= '<br>';
 
     }
 
 
     $str .= '</div><small class="date">' . date($bmc_vars['date_format'], time()) . '</small>
-				<br/><br/><br/>';
+				<br><br><br>';
 
     $str2 = "
 				<h2>Survey <b><a href=\"$MY_URL/survey.php?id={$sss['id']}\">
 					{$sss['name']}
-				</a></b></h2><br/>
+				</a></b></h2><br>
 				<h2>User <b><a href=\"$MY_URL/user.php?id={$USER['id']}\">
 					{$USER['name']}
-				</a></b></h2><br/>";
+				</a></b></h2><br>";
 
 
     /*$count = count($qqq);
     $percent = round($i/$count*100);
 
     echo<<<EOF
-        <h2><br/>Survey {$sss['name']}<br/><br/></h2>
-        <h1>You have given $i correct answers to $count questions<br/></h1>
-        <h3><b>Your level is $percent%</b></h3> <br/><br/><br/>
+        <h2><br>Survey {$sss['name']}<br><br></h2>
+        <h1>You have given $i correct answers to $count questions<br></h1>
+        <h3><b>Your level is $percent%</b></h3> <br><br><br>
 EOF;*/
 
 

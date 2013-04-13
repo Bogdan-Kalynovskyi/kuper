@@ -24,7 +24,7 @@ function echonone () { //todo more and more sexy
 
 function backButton () { /*id = back_button??? title="back"*/
     echo <<<EOF
-		<input type="button" id="error_button" value="        O K        " onclick="document.location='./'" title="Íàçàä" style="
+		<input type=button id="error_button" value="        O K        " onclick="document.location='./'" title="Íàçàä" style="
 		display:block;
 		margin:0 auto;
 		font-size:15px;
@@ -39,8 +39,8 @@ function backButton () { /*id = back_button??? title="back"*/
 		-moz-box-shadow:3px 4px 4px #ddf;
 		-webkit-box-shadow:4px 3px 4px #ddf;
 		box-shadow:4px 3px 4px #ddf;
-		" />
-		
+		">
+
 		<script>
 			//document.getElementById('error_button').focus();
 		</script>
@@ -66,40 +66,40 @@ function echoicon ($src) {
 function addUserToProjectLink ($u, $p) {
     $x = completeGetRequest();
     echo <<<EOF
-			 <a name="_$u" 
-			 href="?action=add_user_to_project&user=$u&proj=$p{$x}#_$u" 
-			 class="kitten" 
-			 onclick="return confirm('Add user to project?')" />Add user to project</a>
+			 <a name="_$u"
+			 href="?action=add_user_to_project&user=$u&proj=$p{$x}#_$u"
+			 class="kitten"
+			 onclick="return confirm('Add user to project?')">Add user to project</a>
 EOF;
 }
 
 function addProjectToUserLink ($p, $u) {
     $x = completeGetRequest();
     echo <<<EOF
-			 <a name="_$p" 
-			 href="?action=add_project_to_user&user=$u&proj=$p{$x}#_$p" 
-			 class="kitten" 
-			 onclick="return confirm('Add project to user?')" />Add project to user</a>
+			 <a name="_$p"
+			 href="?action=add_project_to_user&user=$u&proj=$p{$x}#_$p"
+			 class="kitten"
+			 onclick="return confirm('Add project to user?')">Add project to user</a>
 EOF;
 }
 
 function removeUserFromProjectLink ($u, $p) {
     $x = completeGetRequest();
     echo <<<EOF
-			 <a name="_$u" 
-			 href="?action=remove_project_from_user&user=$u&proj=$p{$x}#_$u" 
-			 class="kitten" 
-			 onclick="return confirm('Remove user from project?')" />Remove user from project</a>
+			 <a name="_$u"
+			 href="?action=remove_project_from_user&user=$u&proj=$p{$x}#_$u"
+			 class="kitten"
+			 onclick="return confirm('Remove user from project?')">Remove user from project</a>
 EOF;
 }
 
 function removeProjectFromUserLink ($p, $u) {
     $x = completeGetRequest();
     echo <<<EOF
-			 <a name="_$p" 
-			 href="?action=remove_project_from_user&user=$u&proj=$p{$x}#_$p" 
-			 class="kitten" 
-			 onclick="return confirm('Remove project from user?')" />Remove project from user</a>
+			 <a name="_$p"
+			 href="?action=remove_project_from_user&user=$u&proj=$p{$x}#_$p"
+			 class="kitten"
+			 onclick="return confirm('Remove project from user?')">Remove project from user</a>
 EOF;
 }
 
@@ -122,7 +122,7 @@ function completePostRequest () { /*for autometic login/delogin redirection*/ /*
 //-----------------------------------------------------------------------------------------------------//
 function bulk_message ($msg, $color) {
     if (is_array($msg)) {
-        $msg = implode('<br/>', $msg);
+        $msg = implode('<br>', $msg);
     }
 
     echo <<<EOF
@@ -198,7 +198,7 @@ function plus_minus ($plus) {
 EOF;
     }
 
-    $str .= '<input type="button" class="btn" value=" ' . ($plus ? '+' : '-') . ' " onclick="plus_minus(' . $plus . ', \'\')" />';
+    $str .= '<input type=button class="btn" value=" ' . ($plus ? '+' : '-') . ' " onclick="plus_minus(' . $plus . ', \'\')">';
 
     return $str;
 }
@@ -207,7 +207,7 @@ function inline_plus ($u, $p, $n) {
     return <<<EOF
 			var z = prompt('Place amount, $: ');
 			if(!/*isNumeric*/(z) ) return;
-			
+
 			document.location.href = '?action=add_money&ammount=' + z
 			+ '&user=$u&proj=$p#___$n';
 EOF;

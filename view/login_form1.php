@@ -20,9 +20,9 @@ header('Pragma: no-cache');
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <title>Login Page</title>
-        <meta <?php echo $CHRST; ?>" />
-        <link rel=stylesheet href="img/global00.css"/>
-        <link rel=stylesheet href="img/master00.css"/>
+        <meta <?php echo $CHRST; ?>">
+        <link rel=stylesheet href="img/global00.css">
+        <link rel=stylesheet href="img/master00.css">
 
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
@@ -35,28 +35,28 @@ header('Pragma: no-cache');
     <!--[if lt IE 7]>
     <link rel=stylesheet href="css/ie6.css">
     <![endif]-->
-    <form id="Form1" name="Form1" accept-charset="<?php echo $CHRST ?>" method="post" action="<?php echo $MY_URL . '/login.php'; ?>" onsubmit="return validate();">
+    <form id="Form1" name="Form1" accept-charset="<?php echo $CHRST ?>" method=post action="<?php echo $MY_URL . '/login.php'; ?>" onsubmit="return validate();">
 
         <div id="panelErrorMsg">
             <?php
             if (isset($_GET['action']) && $_GET['action'] == 'restore_pass') {
 
                 if ($_GET['restore_success']) {
-                    echo '<h1><br/>Password regenerated and sent on your email</h1>';
+                    echo '<h1><br>Password regenerated and sent on your email</h1>';
                 }
                 else {
-                    echo '<h3><br/>Email not sent due to an error</h3>';
+                    echo '<h3><br>Email not sent due to an error</h3>';
                 }
 
             }
             ?>
         </div>
-        <br/><br/><br/>
+        <br><br><br>
 
         <div id="login">
             <div id="cap-top"></div>
             <div id="cap-body">
-                <div id="branding"><h1 style="margin:-9px 0 21px 40px;color:#dfdfdf;font-size:32px;">Oldo Admin Tool</h1><br/><?php if (isset($user_message)) {
+                <div id="branding"><h1 style="margin:-9px 0 21px 40px;color:#dfdfdf;font-size:32px;">Oldo Admin Tool</h1><br><?php if (isset($user_message)) {
                         echo '<div style="margin:-24px 0 4px 44px; color:#F55; font-weight:bold">' . $user_message . '</div>';
                     } ?></div>
                 <div id="panelLogin">
@@ -64,22 +64,22 @@ header('Pragma: no-cache');
                     <div>
                         <label>
                             Your login</label>
-                        <input type="text" class="textbox340" name="user_login" id="txtLogin" value=""/>
+                        <input type=text class="textbox340" name="user_login" id="txtLogin" value="">
                     </div>
                     <div>
                         <label>
                             Password</label>
-                        <input type="password" class="textbox340" name="password" id="txtPassword" value=""/>
+                        <input type=password class="textbox340" name="password" id="txtPassword" value="">
                     </div>
                     <div>
                         <label>
                             Remember me</label>
-                        <input type="checkbox" name="remember" style="padding:2px;*margin-left:-3px" value="1"/>
+                        <input type=checkbox name="remember" style="padding:2px;*margin-left:-3px" value="1">
                     </div>
 
 
                     <div class="submit clearfix">
-                        <input type="image" src="img/button-l.png" alt="Login" name="btnLogin" id="btnLogin"/>
+                        <input type="image" src="img/button-l.png" alt="Login" name="btnLogin" id="btnLogin">
                     </div>
                     <p class="lostpassword">
                         <a href="account.php?action=restore_pass">Forgot your password?</a>

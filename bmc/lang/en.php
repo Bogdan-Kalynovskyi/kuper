@@ -156,7 +156,7 @@ $lang['snd_inv_email'] = "Invalid EMAIL address!";
 $lang['snd_inv_email_msg'] = "You have entered an invalid email in the 'email' field!";
 $lang['snd_inv_email_to_msg'] = "You have entered an invalid email in the 'to' field!";
 
-$lang['snd_success'] = "<br /><br /><br /><br />The post \"%article%\" was sent successfully to the following recipients";
+$lang['snd_success'] = "<br><br><br><br>The post \"%article%\" was sent successfully to the following recipients";
 
 
 // =======================
@@ -243,7 +243,7 @@ $lang['user_exists_msg'] = "The login or email you chose is already registered! 
 $lang['user_blog_no_sel'] = "Please select a page!";
 
 $lang['user_reg_success_title'] = "Registration successful!";
-$lang['user_reg_success_msg'] = "Thank you for registering!<br/> Your account has been successfully setup and your account info has been mailed to your email";
+$lang['user_reg_success_msg'] = "Thank you for registering!<br> Your account has been successfully setup and your account info has been mailed to your email";
 
 $lang['user_welcome_subject'] = "Thank you for joining!"; // New user welcome email subject
 $lang['user_notify_subject'] = "Notification: New user registration";
@@ -463,7 +463,7 @@ $lang['admin_blog_redirect'] = "Redirect address";
 $lang['admin_blog_frozen'] = "View only for card owners";
 $lang['admin_blog_new!'] = "New page created!";
 $lang['admin_blog_mod'] = "Сторінка змінена!";
-$lang['index.php'] = "<br/><br/>Caution! File index.php is a default loader. It should always be present in the site!";
+$lang['index.php'] = "<br><br>Caution! File index.php is a default loader. It should always be present in the site!";
 $lang['admin_blog_new_file_name1'] = "Page file has been set to %file%. \\n Page link has been set to http://klutch.com.ua/%file%";
 $lang['admin_blog_users'] = "Allow card ownwers to post";
 $lang['admin_blog_new_err'] = "A page with the same name exists!";
@@ -583,7 +583,7 @@ $lang['mail_new2'] = "New user mail text!";
 
 // IP blocking
 $lang['admin_block_title'] = "Block/Unblock IPs";
-$lang['admin_block_ip'] = "Enter IPs to be blocked one per line.<br />Enter a full IP or a partial one. <br />eg: 202.155.26.33 or 202.144.";
+$lang['admin_block_ip'] = "Enter IPs to be blocked one per line.<br>Enter a full IP or a partial one. <br>eg: 202.155.26.33 or 202.144.";
 
 
 // Backup and restore
@@ -754,7 +754,7 @@ $lang['no_data_avail'] = "No posts currently available";
 $lang['no_cat'] = "No visibility was found with the id %id%";
 $lang['no_cat_posts'] = "No posts were found with the visibility %cat% !";
 $lang['no_logs'] = "No logs";
-$lang['admin_clr_log_msg'] = "Unable to write to the log.txt file!<br />Please check whether the file exists and its permission is 777";
+$lang['admin_clr_log_msg'] = "Unable to write to the log.txt file!<br>Please check whether the file exists and its permission is 777";
 $lang['admin_log_write_msg'] = "Cannot write to the LOG file!";
 $lang['banned'] = "You're banned!";
 $lang['no_user'] = "No user with that ID was found";

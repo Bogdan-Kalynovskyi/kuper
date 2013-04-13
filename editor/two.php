@@ -24,9 +24,9 @@ $type = array(0, 0, 0, 0, 0, 0, 0, 1, 2, 3);
 
 <h2> Дополнительная информация... </h2>
 
-<form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
+<form method=post action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
     <fieldset>
-        <input type="hidden" name="<?php echo FORM_HASH; ?>" value="2">
+        <input type=hidden name="<?php echo FORM_HASH; ?>" value="2">
 
         <?php
 
@@ -38,25 +38,25 @@ $type = array(0, 0, 0, 0, 0, 0, 0, 1, 2, 3);
                 case 0:
                     echo <<<EOF
 			<label>{$title[$i]}<br>
-				<input type="text" name="$n" value="$x" size="94">
-			</label><br/><br/>
+				<input type=text name="$n" value="$x" size=94>
+			</label><br><br>
 EOF;
                     break;
 
                 case 3:
-                    $ch = ($x) ? 'checked="checked" ' : '';
+                    $ch = ($x) ? ' checked ' : '';
                     echo <<<EOF
 			<label>{$title[$i]}<br>
-				<input type="checkbox" name="$n" value="1" $ch/>
-			</label><br/><br/>
+				<input type=checkbox name="$n" value="1" $ch>
+			</label><br><br>
 EOF;
                     break;
 
                 case 1:
                     echo <<<EOF
 			<label>{$title[$i]}<br>
-				<textarea name="$n"  cols="78" rows="4">$x</textarea>
-			</label><br/><br/>
+				<textarea name="$n" cols="78" rows="4">$x</textarea>
+			</label><br><br>
 EOF;
                     break;
 
@@ -65,11 +65,11 @@ EOF;
                         $x = 'blank.gif';
                     }
                     echo <<<EOF
-			<label>{$title[$i]}<br> 
+			<label>{$title[$i]}<br>
 				<img src="$x" width="50" height="50" id="_$n">&nbsp; &nbsp;
-				URL <input type="text" id="$n" name="$n" value="$x"> &nbsp;&nbsp;
-				или файл <input type="file" name="$n" id="__$n"> &nbsp; <a href="#" onclick="clrnpt('$n');return false"><small>Убрать</small></a>
-			</label><br/><br/>
+				URL <input type=text id="$n" name="$n" value="$x"> &nbsp;&nbsp;
+				или файл <input type=file name="$n" id="__$n"> &nbsp; <a href=# onclick="clrnpt('$n');return false"><small>Убрать</small></a>
+			</label><br><br>
 EOF;
                     break;
             }
@@ -77,9 +77,9 @@ EOF;
         }
 
         ?>
-        <br/>
-        <input type="submit" value="      Сохранить      " style="color:#222">&nbsp; &nbsp; &nbsp;
-        <input type="button" value="       Отмена       " onclick="document.location='user.php'">
+        <br>
+        <input type=submit value="      Сохранить      " style="color:#222">&nbsp; &nbsp; &nbsp;
+        <input type=button value="       Отмена       " onclick="location.href='user.php';return false">
 
 
     </fieldset>

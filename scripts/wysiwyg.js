@@ -32,19 +32,19 @@ var WYSIWYG = {
         this.RemoveFormatConfMessage = "Clear HTML embedded from MS Word?";
 
         // Anchor path to strip, leave it blank to ignore
-        // or define auto to strip the path where the editor is placed 
+        // or define auto to strip the path where the editor is placed
         // (only IE)
         this.AnchorPathToStrip = "auto";
 
         // Image path to strip, leave it blank to ignore
-        // or define auto to strip the path where the editor is placed 
+        // or define auto to strip the path where the editor is placed
         // (only IE)
         this.ImagePathToStrip = "auto";
 
         // Enable / Disable the custom context menu
         this.ContextMenu = true;
 
-        // Enabled the status bar update. Within the status bar 
+        // Enabled the status bar update. Within the status bar
         // node tree of the actually selected element will build
         this.StatusBarEnabled = true;
 
@@ -65,7 +65,7 @@ var WYSIWYG = {
         this.ImagePopupWidth = 0;
         this.ImagePopupHeight = 0;
 
-        // Holds the available buttons displayed 
+        // Holds the available buttons displayed
         // on the toolbar of the editor
         this.Toolbar = new Array();
         this.Toolbar[0] = new Array("font", "fontsize", "headings", "bold", "italic", "underline", "strikethrough", "seperator", "forecolor", "backcolor", "seperator", "justifyfull", "justifyleft", "justifycenter", "justifyright", "seperator", "unorderedlist", "orderedlist", "outdent", "indent");
@@ -635,10 +635,10 @@ var WYSIWYG = {
             this.config[n] = settings;
         }
 
-        // Hide the textarea 
+        // Hide the textarea
         textarea.style.display = "none";
 
-        // Override the width and height of the editor with the 
+        // Override the width and height of the editor with the
         // size given by the style attributes width and height
         if (textarea.style.width) {
             this.config[n].Width = textarea.style.width;
@@ -651,7 +651,7 @@ var WYSIWYG = {
         var currentWidth = this.config[n].Width;
         var currentHeight = this.config[n].Height;
 
-        // Calculate the width + height of the editor 
+        // Calculate the width + height of the editor
         var ifrmWidth = "100%";
         var ifrmHeight = "100%";
         if (currentWidth.search(/%/) == -1) {
@@ -669,9 +669,9 @@ var WYSIWYG = {
         var content = textarea.value;
         var doc = this.getEditorWindow(n).document;
 
-        // Replace all \n with <br> 
+        // Replace all \n with <br>
         if (this.config[n].ReplaceLineBreaks) {
-            content = content.replace(/(\r\n)|(\n)/ig, "<br/>");
+            content = content.replace(/(\r\n)|(\n)/ig, "<br>");
         }
 
         // Write the textarea's content into the iframe
@@ -700,10 +700,10 @@ var WYSIWYG = {
             return;
         }
 
-        // Hide the textarea 
+        // Hide the textarea
         textarea.style.display = 'none';
 
-        // Override the width and height of the editor with the 
+        // Override the width and height of the editor with the
         // size given by the style attributes width and height
         if (textarea.style.width) {
             this.config[n].Width = textarea.style.width;
@@ -716,7 +716,7 @@ var WYSIWYG = {
         var currentWidth = this.config[n].Width;
         var currentHeight = this.config[n].Height;
 
-        // Calculate the width + height of the editor 
+        // Calculate the width + height of the editor
         var toolbarWidth = currentWidth;
         var ifrmWidth = "100%";
         var ifrmHeight = "100%";
@@ -741,7 +741,7 @@ var WYSIWYG = {
 
                 // Generate WYSIWYG toolbar one
                 editor += '<table border="0" cellpadding="0" cellspacing="0" class="toolbar1" style="width:100%;" id="toolbar' + j + '_' + n + '">';
-                editor += '<tr><td style="width:6px;"><img src="' + this.config[n].ImagesDir + 'seperator2.gif" hspace="3"/></td>';
+                editor += '<tr><td style="width:6px;"><img src="' + this.config[n].ImagesDir + 'seperator2.gif" hspace="3"></td>';
 
                 // Interate over the toolbar element
                 for (var i = 0; i < toolbar.length; i++) {
@@ -765,18 +765,18 @@ var WYSIWYG = {
 
                                 if (toolbar[i] == "seperator") {
                                     editor += '<td style="width: 12px;" align="center">';
-                                    editor += '<img src="' + buttonImage + '" border=0 unselectable="on" width="2" height="18/" hspace="2" unselectable="on"/>';
+                                    editor += '<img src="' + buttonImage + '" border=0 unselectable="on" width="2" height="18/" hspace="2" unselectable="on">';
                                     editor += '</td>';
                                 }
                                 // View Source button
                                 else if (toolbar[i] == "viewSource") {
                                     editor += '<td style="width: 22px;">';
-                                    editor += '<span id="HTMLMode' + n + '"><img src="' + buttonImage + '" border="0" unselectable="on" title="' + buttonTitle + '" id="' + buttonID + '" class="buttonEditor" onmouseover="this.className=\'buttonEditorOver\'; this.src=\'' + buttonImageRollover + '\';" onmouseout="this.className=\'buttonEditor\'; this.src=\'' + buttonImage + '\';" onclick="WYSIWYG.execCommand(\'' + n + '\', \'' + buttonID + '\');" unselectable="on" width="20" height="20"/></span>';
-                                    editor += '<span id="textMode' + n + '"><img src="' + this.config[n].ImagesDir + 'view_text.gif" border="0" unselectable="on" title="viewText" id="ViewText" class="buttonEditor" onmouseover="this.className=\'buttonEditorOver\'; this.src=\'' + this.config[n].ImagesDir + 'view_text_on.gif\';" onmouseout="this.className=\'buttonEditor\'; this.src=\'' + this.config[n].ImagesDir + 'view_text.gif\';" onclick="WYSIWYG.execCommand(\'' + n + '\',\'ViewText\');" unselectable="on"  width="20" height="20"/></span>';
+                                    editor += '<span id="HTMLMode' + n + '"><img src="' + buttonImage + '" border="0" unselectable="on" title="' + buttonTitle + '" id="' + buttonID + '" class="buttonEditor" onmouseover="this.className=\'buttonEditorOver\'; this.src=\'' + buttonImageRollover + '\';" onmouseout="this.className=\'buttonEditor\'; this.src=\'' + buttonImage + '\';" onclick="WYSIWYG.execCommand(\'' + n + '\', \'' + buttonID + '\');" unselectable="on" width="20" height="20"></span>';
+                                    editor += '<span id="textMode' + n + '"><img src="' + this.config[n].ImagesDir + 'view_text.gif" border="0" unselectable="on" title="viewText" id="ViewText" class="buttonEditor" onmouseover="this.className=\'buttonEditorOver\'; this.src=\'' + this.config[n].ImagesDir + 'view_text_on.gif\';" onmouseout="this.className=\'buttonEditor\'; this.src=\'' + this.config[n].ImagesDir + 'view_text.gif\';" onclick="WYSIWYG.execCommand(\'' + n + '\',\'ViewText\');" unselectable="on"  width="20" height="20"></span>';
                                     editor += '</td>';
                                 } else {
                                     editor += '<td style="width: 22px;">';
-                                    editor += '<img src="' + buttonImage + '" border=0 unselectable="on" title="' + buttonTitle + '" id="' + buttonID + '" class="buttonEditor" onmouseover="this.className=\'buttonEditorOver\'; this.src=\'' + buttonImageRollover + '\';" onmouseout="this.className=\'buttonEditor\'; this.src=\'' + buttonImage + '\';" onclick="WYSIWYG.execCommand(\'' + n + '\', \'' + buttonID + '\');" unselectable="on" width="20" height="20"/>';
+                                    editor += '<img src="' + buttonImage + '" border=0 unselectable="on" title="' + buttonTitle + '" id="' + buttonID + '" class="buttonEditor" onmouseover="this.className=\'buttonEditorOver\'; this.src=\'' + buttonImageRollover + '\';" onmouseout="this.className=\'buttonEditor\'; this.src=\'' + buttonImage + '\';" onclick="WYSIWYG.execCommand(\'' + n + '\', \'' + buttonID + '\');" unselectable="on" width="20" height="20">';
                                     editor += '</td>';
                                 }
                             }
@@ -797,7 +797,7 @@ var WYSIWYG = {
         editor += '</table>';
         editor += '</div>';
 
-        // Insert the editor after the textarea	    
+        // Insert the editor after the textarea
         textarea.insertAdjacentHTML("afterEnd", editor);
 
         // Hide the "Text Mode" button
@@ -811,9 +811,9 @@ var WYSIWYG = {
         var doc = this.getEditorWindow(n).document;
 
 
-        // Replace all \n with <br> 
+        // Replace all \n with <br>
         if (this.config[n].ReplaceLineBreaks) {
-            content = content.replace(/\n\r|\n/ig, "<br/>");
+            content = content.replace(/\n\r|\n/ig, "<br>");
         }
 
         // Write the textarea's content into the iframe
@@ -1002,7 +1002,7 @@ var WYSIWYG = {
 
         // remove node
         parent.removeChild(tag);
-        // validate if parent is a link and the node is only 
+        // validate if parent is a link and the node is only
         // surrounded by the link, then remove the link too
         if (parent.nodeName == "a" && !parent.hasChildNodes()) {
             if (parent.parentNode) {
@@ -1053,7 +1053,7 @@ var WYSIWYG = {
         var max = nodeTree.length - 1;
         for (var i = max; i >= 0; i--) {
             if (nodeTree[i].nodeName != "HTML" && nodeTree[i].nodeName != "BODY") {
-                outputTree += '<a class="wysiwyg-statusbar" href="#" onclick="WYSIWYG.selectNode(\'' + n + '\',' + i + ');return false">' + nodeTree[i].nodeName + '</a>';
+                outputTree += '<a class="wysiwyg-statusbar" href=# onclick="WYSIWYG.selectNode(\'' + n + '\',' + i + ');return false">' + nodeTree[i].nodeName + '</a>';
             } else {
                 outputTree += nodeTree[i].nodeName;
             }
@@ -1062,7 +1062,7 @@ var WYSIWYG = {
             }
         }
 
-        // update the status bar 	
+        // update the status bar
         var statusbar = $("wysiwyg_statusbar_" + n);
         if (statusbar) {
             statusbar.innerHTML = outputTree;
@@ -1129,7 +1129,7 @@ var WYSIWYG = {
             case "FormatBlock":
                 WYSIWYG_Core.execCommand(n, cmd, "<" + value + ">");
                 break;
-            // ForeColor and 
+            // ForeColor and
             case "ForeColor":
                 var rgb = this.getEditorWindow(n).document.queryCommandValue(cmd);
                 var currentColor = rgb != '' ? toHexColor(this.getEditorWindow(n).document.queryCommandValue(cmd)) : "000000";
@@ -1386,17 +1386,17 @@ var WYSIWYG = {
         var output = "";
         output += '<table border="0" cellpadding="0" cellspacing="0"><tr>';
         output += '<td onMouseOver="$(\'img_' + dropdown.id + '_' + n + '\').src=\'' + imageOn + '\';" onMouseOut="$(\'img_' + dropdown.id + '_' + n + '\').src=\'' + image + '\';">';
-        output += '<img src="' + image + '" id="img_' + dropdown.id + '_' + n + '" height="20" onClick="WYSIWYG.openDropDown(\'' + n + '\',\'' + dropdown.id + '\');" unselectable="on" border="0"/><br/>';
+        output += '<img src="' + image + '" id="img_' + dropdown.id + '_' + n + '" height="20" onClick="WYSIWYG.openDropDown(\'' + n + '\',\'' + dropdown.id + '\');" unselectable="on" border="0"><br>';
         output += '<span id="elm_' + dropdown.id + '_' + n + '" class="dropdown" style="width: 145px;display:none;">';
         for (var i = 0; i < dropdown.elements.length; i++) {
             if (dropdown.elements[i]) {
                 var value = dropdown.elements[i];
                 var label = dropdown.label.replace(/{value}/gi, value);
                 // output
-                output += '<button type="button" onClick="WYSIWYG.execCommand(\'' + n + '\',\'' + dropdown.command + '\',\'' + value + '\')\;" onMouseOver="this.className=\'mouseOver\'" onMouseOut="this.className=\'mouseOut\'" class="mouseOut" style="width: 120px;">';
+                output += '<button type=button onClick="WYSIWYG.execCommand(\'' + n + '\',\'' + dropdown.command + '\',\'' + value + '\')\;" onMouseOver="this.className=\'mouseOver\'" onMouseOut="this.className=\'mouseOut\'" class="mouseOut" style="width: 120px;">';
                 output += '<table cellpadding="0" cellspacing="0" border="0"><tr>';
                 output += '<td align="left">' + label + '</td>';
-                output += '</tr></table></button><br/>';
+                output += '</tr></table></button><br>';
             }
         }
         output += '</span></td></tr></table>';
@@ -1456,7 +1456,7 @@ var WYSIWYG = {
         // Enable table highlighting
         WYSIWYG_Table.disableHighlighting(n);
 
-        // View Source for IE 	 
+        // View Source for IE
         if (WYSIWYG_Core.isMSIE) {
             var iHTML = doc.body.innerHTML;
             // strip off the absolute urls
@@ -1500,7 +1500,7 @@ var WYSIWYG = {
         // get document
         var doc = this.getEditorWindow(n).document;
 
-        // View Text for IE 	  	 
+        // View Text for IE
         if (WYSIWYG_Core.isMSIE) {
             var iText = doc.body.innerText;
             // strip off the absolute urls
@@ -1573,7 +1573,7 @@ var WYSIWYG = {
         var result;
         // strip url of image path
         if (stripImgageUrl) {
-            // escape reserved characters to be a valid regex	
+            // escape reserved characters to be a valid regex
             url = WYSIWYG_Core.stringToRegex(WYSIWYG_Core.getDocumentPathOfUrl(stripImgageUrl));
 
             // exact replacing of url. regex: src="<url>"
@@ -1587,7 +1587,7 @@ var WYSIWYG = {
                 content = content.replace(regex, "$2");
             }
 
-            // strip absolute urls without a heading slash ("images/print.gif")	
+            // strip absolute urls without a heading slash ("images/print.gif")
             result = WYSIWYG_Core.getDocumentPathOfUrl(stripImgageUrl).match(/.+[\/]{2,3}[^\/]*/, "");
             if (result) {
                 url = WYSIWYG_Core.stringToRegex(result[0]);
@@ -1607,7 +1607,7 @@ var WYSIWYG = {
 
         // strip url of image path
         if (stripAnchorUrl) {
-            // escape reserved characters to be a valid regex		
+            // escape reserved characters to be a valid regex
             url = WYSIWYG_Core.stringToRegex(WYSIWYG_Core.getDocumentPathOfUrl(stripAnchorUrl));
 
             // strip absolute urls with a heading slash ("/product/index.html")
@@ -1622,7 +1622,7 @@ var WYSIWYG = {
                 content = content.replace(regex, "$2");
             }
 
-            // strip absolute urls without a heading slash ("product/index.html")	
+            // strip absolute urls without a heading slash ("product/index.html")
             result = WYSIWYG_Core.getDocumentPathOfUrl(stripAnchorUrl).match(/.+[\/]{2,3}[^\/]*/, "");
             if (result) {
                 url = WYSIWYG_Core.stringToRegex(result[0]);
@@ -1639,7 +1639,7 @@ var WYSIWYG = {
 
             }
 
-            // stip off anchor links with #name			
+            // stip off anchor links with #name
             url = WYSIWYG_Core.stringToRegex(stripAnchorUrl);
             // exact replacing of url. regex: src="<url>"
             if (exact) {
@@ -1849,7 +1849,7 @@ var WYSIWYG = {
         if (editor.event.keyCode == 13) {
             if (editor.event.shiftKey) {
                 sel = this.getRange(this.getSelection(n));
-                sel.pasteHTML("<br/>");
+                sel.pasteHTML("<br>");
                 editor.event.cancelBubble = true;
                 editor.event.returnValue = false;
                 sel.select();
@@ -1930,8 +1930,8 @@ var WYSIWYG = {
                 sel.addRange(range);
             }
         } else {
-            // MSIE may not select everything when BODY is selected - 
-            // start may be set to first text node instead of first non-text node - 
+            // MSIE may not select everything when BODY is selected -
+            // start may be set to first text node instead of first non-text node -
             // no known workaround
             if ((node.nodeName == "table") || (node.nodeName == "img") || (node.nodeName == "input") || (node.nodeName == "select") || (node.nodeName == "textarea")) {
                 try {
@@ -2516,7 +2516,7 @@ var WYSIWYG_ContextMenu = {
         var sel = WYSIWYG.getSelection(n);
         var range = WYSIWYG.getRange(sel);
 
-        // get current selected node					
+        // get current selected node
         var tag = WYSIWYG.getTag(range);
         if (tag == null) {
             return;
@@ -2592,12 +2592,12 @@ var WYSIWYG_ContextMenu = {
 
         if (disabled) {
             item += '<tr>';
-            item += '<td class="icon"><a href="#" onclick="WYSIWYG.execCommand(\'' + n + '\',\'' + cmd + '\', null);return false"><img src="' + icon.enabled + '" border="0"/></a></td>';
-            item += '<td onmouseover="this.className=\'mouseover\'" onmouseout="this.className=\'\'" onclick="WYSIWYG.execCommand(\'' + n + '\', \'' + cmd + '\', null);WYSIWYG_ContextMenu.close();"><a href="#" onclick="return false">' + title + '</a></td>';
+            item += '<td class="icon"><a href=# onclick="WYSIWYG.execCommand(\'' + n + '\',\'' + cmd + '\', null);return false"><img src="' + icon.enabled + '" border="0"></a></td>';
+            item += '<td onmouseover="this.className=\'mouseover\'" onmouseout="this.className=\'\'" onclick="WYSIWYG.execCommand(\'' + n + '\', \'' + cmd + '\', null);WYSIWYG_ContextMenu.close();"><a href=# onclick="return false">' + title + '</a></td>';
             item += '</tr>';
         } else {
             item += '<tr>';
-            item += '<td class="icon"><img src="' + icon.disabled + '" border="0"/></td>';
+            item += '<td class="icon"><img src="' + icon.disabled + '" border="0"></td>';
             item += '<td onmouseover="this.className=\'mouseover\'" onmouseout="this.className=\'\'"><span class="disabled">' + title + '</span></td>';
             item += '</tr>';
         }
@@ -2813,7 +2813,7 @@ full.PopupsDir = "popups/";
 full.CSSFile = "scripts/wysiwyg.css";
 full.Width = "100%";
 full.Height = "450px";
-//full.addToolbarElement("font", 3, 1); 
+//full.addToolbarElement("font", 3, 1);
 //full.addToolbarElement("fontsize", 3, 2);
 //full.addToolbarElement("headings", 3, 3);
 full.ImagePopupFile = "popups/insert_image.php";
@@ -2828,7 +2828,7 @@ full1.PopupsDir = "popups/";
 full.CSSFile = "scripts/wysiwyg.css";
 full1.Width = "99.9%";
 full1.Height = "190px";
-//full1.addToolbarElement("font", 3, 1); 
+//full1.addToolbarElement("font", 3, 1);
 //full1.addToolbarElement("fontsize", 3, 2);
 //full1.addToolbarElement("headings", 3, 3);
 full1.ImagePopupFile = "popups/insert_image.php";
