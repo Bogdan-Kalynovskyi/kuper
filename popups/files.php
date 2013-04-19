@@ -111,7 +111,7 @@ if(!$bmc_vars['user_files']) {
 
 // Upload the files
 if(isset($_POST['action']) && ($_POST['action'] == "upload_files" || $_POST['action'] == "attach_files" || $_POST['action'] == "attach_images")) {
-	include A_HOME."/users/files.inc.php";
+	include A_HOME."users/files.inc.php";
 	exit;
 }
 

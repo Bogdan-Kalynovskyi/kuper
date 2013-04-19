@@ -63,7 +63,7 @@ foreach($BLOGS as $key => $b){
 		continue;		
  	}
  	
-	echo "<big style=\"display:inline-block;padding:6px 0;line-height:1.7em\"><a style=\"color:black;text-decoration:none;font-weight:bold\" href=\"./?blog=$key\" title=\"� ��������\">$b</a></big><br/>\n";
+	echo "<big style=\"display:inline-block;padding:6px 0;line-height:1.7em\"><a style=\"color:black;text-decoration:none;font-weight:bold\" href=\"./?blog=$key\" title=\"Ê ñòðàíèöå\">$b</a></big><br/>\n";
 
 	$r = $db->query("SELECT * FROM `".PRF."posts` WHERE blog=$key ORDER BY por ASC");
 
@@ -76,24 +76,24 @@ foreach($BLOGS as $key => $b){
 			$i['title']=substr($i['title'],0,50).'&#133;';
 
 		$gala = ($i['gallery'])?
-			"<a href=\"?gallery={$i['id']}\" class=\"_eye_\" title=\"� �������\"><img src=\"img/gallery.gif\" alt=\"&rarr;\" /></a>&nbsp;"	
+			"<a href=\"?gallery={$i['id']}\" class=\"_eye_\" title=\"ê ãàëåðåå\"><img src=\"img/gallery.gif\" alt=\"&rarr;\"></a>&nbsp;"	
 			:'<span style="display:inline-block;width:30px"></span>';
 
 		echo "
 		<div class=\"baba\"$floyd>
 		
-			 &nbsp; &nbsp; <a href=\"./?id={$i['id']}\" class=\"_eye_\" title=\"�����������\"><img src=\"img/eye_small.gif\" alt=\"&bull;\" /></a>
+			 &nbsp; &nbsp; <a href=\"./?id={$i['id']}\" class=\"_eye_\" title=\"ïðîñìîòðåòü\"><img src=\"img/eye_small.gif\" alt=\"View\"></a>
 		
 			 $gala
 			 
 			<a href=\"?id={$i['id']}\" class=\"list_a\" ".
-				(($i['draft'])?'style="opacity:0.3" title="��� ��������!"':'title="�������������"').">".
+				(($i['draft'])?'style="opacity:0.3" title="ýòî ÷åðíîâèê!"':'title="ðåäàêòèðîâàòü"').">".
 		
-			(($i['title'])?$i['title']:'( ��� ��������� )')."</a>
+			(($i['title'])?$i['title']:'( áåç çàãîëîâêà )')."</a>
 
-				 <a href=\"?up={$i['id']}\" title=\"�����\"><img src=\"img/up.png\" alt=\"�����\" /></a> 
-				 <a href=\"?down={$i['id']}\" title=\"����\"><img src=\"img/down.png\" alt=\"����\" /></a>
-				 <a href=\"?del={$i['id']}\" title=\"�������\" onclick=\"if( confirm('  !!! �������� !!! \\n\\n ���������� ��� ������?\\n\\n  &ldquo;".(($i['title'])?tojs($i['title']):'(������)')."&rdquo;')) document.location='?del={$i['id']}'; return false\"><img src=\"img/del.png\" alt=\"�������\" /></a>
+				 <a href=\"?up={$i['id']}\" title=\"ââåðõ\"><img src=\"img/up.png\" alt=\"ââåðõ\"></a> 
+				 <a href=\"?down={$i['id']}\" title=\"âíèç\"><img src=\"img/down.png\" alt=\"âíèç\"></a>
+				 <a href=\"?del={$i['id']}\" title=\"ñòåðåòü\" onclick=\"if( confirm('  !!! Âíèìàíèå !!! \\n\\n Óíè÷òîæèòü ýòó ñòàòòþ?\\n\\n  &ldquo;".(($i['title'])?tojs($i['title']):'(ïóñòàÿ)')."&rdquo;')) document.location='?del={$i['id']}'; return false\"><img src=\"img/del.png\" alt=\"ñòåðåòü\"></a>
 		</div>
 	";
 	}
@@ -107,5 +107,5 @@ foreach($BLOGS as $key => $b){
 ?>
 
 <script>
-try{$('pink_floyd').focus()}catch(e){}//todo ���������//scroll to
+try{$('pink_floyd').focus()}catch(e){}//todo âèïàäàéêà//scroll to
 </script>

@@ -1,10 +1,10 @@
 <?php
-	require HOME_DIR."/main.php";
+	require A_HOME."main.php";
 // for unlogged user or user having nothing special to do
 
 
-	include_once A_HOME."/fun_viewer.php";
-	if(mt_rand(0,120)==10) include A_HOME."/core/reset_drafts.php";
+	include_once A_HOME."fun_viewer.php";
+	if(mt_rand(0,1200) == 10) include A_HOME."core/reset_drafts.php";
 	// ================== Full view mode (permalink)************************************************
 
 
@@ -26,7 +26,7 @@
 	else
 	{
 //3
-		include A_HOME."/core/multi_view.inc.php";
+		include A_HOME."core/multi_view.inc.php";
 	
 	}
 ?>

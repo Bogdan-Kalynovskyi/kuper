@@ -11,7 +11,7 @@
 <br><br>
 <br>
 
-<h1>��������</h1>
+<h1>Êîíòàêòû</h1>
 <br>
 <br>
 <br>
@@ -20,8 +20,8 @@
 					
 		
 				echo "
-				<big>������� <a href=\"callto:{$bmc_vars['phone']}\">{$bmc_vars['phone']}</a><br/><br/>
-				<big>Email <a href=\"email:{$bmc_vars['email']}\">{$bmc_vars['email']}</a><br/><br/>
+				<big>Òåëåôîí <a href=\"callto:{$bmc_vars['phone']}\">{$bmc_vars['phone']}</a><br><br>
+				<big>Email <a href=\"email:{$bmc_vars['email']}\">{$bmc_vars['email']}</a><br><br>
 				{$bmc_vars['contacts']}</big>";
 				
 				</big>;

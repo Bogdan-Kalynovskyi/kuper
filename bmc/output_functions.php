@@ -4,7 +4,7 @@
 	function NonCachePlusEncoding(){
 		global $CHRST;
 		
-		header("Content-Type: text/html; charset=$CHRST");	//�1���� ����� 1 �1���� ����1�1�?
+		header("Content-Type: text/html; charset=$CHRST");	//í1ÿêèõ ëàïîê 1 í1ÿêèõ ïðîá1ë1â?
 
 		header('Expires: -1');//header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); 
@@ -22,7 +22,7 @@
 		echo '<div style="padding:3px;text-align:center">none</div>';
 	}
 	function backButton(){/*id = back_button??? title="back"*/echo<<<EOF
-		<input type="button" id="error_button" value="        O K        " onclick="document.location='./'" title="�����" style="
+		<input type="button" id="error_button" value="        O K        " onclick="document.location='./'" title="Íàçàä" style="
 		display:block;
 		margin:0 auto;
 		font-size:15px;
@@ -58,7 +58,7 @@ EOF;
 
 
 //------------------------------------------------//
-/////////////////////////////// ���������� ���� � �������������
+/////////////////////////////// çàáîðîíåíû íåéì ç ïûäêðåñëåííÿì
 function addUserToProjectLink($u, $p){
 		$x=completeGetRequest();
 		echo<<<EOF
@@ -132,7 +132,7 @@ EOF;
 	backButton();
 }
 
-//error logging �� �����
+//error logging öå êðóòî
 
 function error_page($msg){
  	include A_VIEW."header_1.php";

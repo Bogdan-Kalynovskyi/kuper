@@ -1,13 +1,10 @@
 <?php
-  define('HOME_DIR', dirname(__FILE__));
+  define('A_ROOT', dirname(__FILE__).'/');
 
-	require_once HOME_DIR."/bmc/main.php";
+	require_once A_ROOT.'bmc/main.php';
 
-{
-	
-	include_once A_HOME."fun_login.php";
-	@session_start();
-	ini_set("session.use_only_cookies", "on");//todo!!!!!!!!
+
+	include_once A_HOME.'fun_login.php';
 
 
 	if(isset($_GET['loop']) && $_GET['loop'] > 3)
@@ -21,32 +18,15 @@
 
 
 
-if(isempty($_COOKIE['BMC_redirect'])){
-
-////////////
-	if(isempty($_GET['_account_'])){
-	//redirect1
-//а что если диффр=0???????
-			if(strpos(trim(my_strip('http://', $_SERVER['REQUEST_URI'])), $DIFFR) === 0){
-			    $c = $MY_URL.'/'.substr($_SERVER['REQUEST_URI'], strlen($DIFFR));
-
-				if(basename($c)!= __FILE__ 
-				&& strpos($c, '?_account_=')=== false
-				&& strpos($c, '&_account_=')=== false
-				&& strpos($c, '&amp;_account_=')=== false){
-					
-					setcookie("BMC_redirect", $c, time()+9992000);
-					$_COOKIE['BMC_redirect'] = $c;
-					
+    if(isempty($_GET['_account_'])){
+        $c = $_SERVER['REQUEST_URI'];
+				if(basename($c) != __FILE__){
+				  	setcookie("BMC_redirect", $c, time()+9992000);
+					  $_COOKIE['BMC_redirect'] = $c;
 				}
-			}
-
-	//redirect1
-
-	}
+  	}
 
 
-	if(isempty($_COOKIE['BMC_redirect'])){
 
 	//redirect2
 
@@ -63,9 +43,9 @@ if(isempty($_COOKIE['BMC_redirect'])){
 
 	//redirect2
 
-  	}
 
-}
+
+
 
 
 
@@ -86,7 +66,7 @@ if(isempty($_COOKIE['BMC_redirect'])){
 		isempty($_POST['wp_user_login']) || 
 		isempty($_POST['wp_user_pass']) || 
 		isempty($_POST['wp_'.LOGIN_HASH]) || 
-		(sha1(session_id()) != $_POST['wp_'.LOGIN_HASH]) ||
+//		(sha1(session_id()) != $_POST['wp_'.LOGIN_HASH]) ||
 		bad_cap(false, true)
 	)
 	{
@@ -156,8 +136,10 @@ if(isempty($_COOKIE['BMC_redirect'])){
 					$db->query("DELETE FROM `".PRF."login`  WHERE `time` < ".($time - LOGIN_TIME_LIMIT));
 
 
-				 	if(noempty($_POST['wp_remember'])) 	 		$time += LOGIN_TIME_LIMIT;
-				 	else				 						$time  = 0;
+				 	if(noempty($_POST['wp_remember']))
+				 	    $time += LOGIN_TIME_LIMIT;
+				 	else
+              $time  = 0;
 
 
 
@@ -167,7 +149,7 @@ if(isempty($_COOKIE['BMC_redirect'])){
 	$_COOKIE["BMC_remember"] = noempty($_POST['wp_remember']);
 
 
-}
+
 
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-	include HOME_DIR.'/bmc/main.php';
+	include 'bmc/main.php';
 //	if(!defined('IN_BMC')) 
 //		die("Access Denied!");
 
@@ -7,7 +7,7 @@
 	include A_ROOT."header3.php";  
 //todo preview
 //todo ipban
-	@session_start();
+//	@session_start();
 	$message = '';
 	
 	if(isset($_POST[USER_HASH]) && $_POST[USER_HASH]=='1'){

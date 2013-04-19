@@ -5,18 +5,18 @@
 		width:770px;/*800*/
 		border:1px solid #f0f0ff;
 		background:#fff;
-		position:relative;z-index:31;
-		-moz-border-radius:6px;	
+		position:relative;
+        z-index:31;
 		border-radius:6px;
 	}
 
-	#xyz{
-		position:relative;z-index:31;
+	#_head{
+		position:relative;
+        z-index:31;
 		margin:30px auto;		
 		padding:21px 50px;
  		width:770px;border:1px solid #f6fBa5;/*#f0f2fa;*/
  		background:#ffffe3;/*#fffcfb;*/
-		-moz-border-radius:6px;	
 		border-radius:6px;
 	}
 
@@ -32,16 +32,17 @@
 	}
 	.gb1{
 		color:#444;
-		-moz-border-radius:3px;	
 		border-radius:3px;
 		background:#e5ffd0;
 		border:1px solid #dfe3cf
 	}
 	.gb pre:first-letter{
-		color:#400;font-size:1.2em;
+		color:#400;
+        font-size:1.2em;
 	}
 	.gb1 pre:first-letter{
-		color:#000;font-size:1.2em;
+		color:#000;
+        font-size:1.2em;
 	}
 
 
@@ -61,7 +62,7 @@
 		padding:2px 5px;
 		text-decoration:none;
 		color:#afafaf;
-			float:right;
+        float:right;
 		font-size:14px;
 		font-style:italic;
 	}
@@ -92,9 +93,8 @@
 	.gb pre{
 		display:block;
 		font-size:13px;
-		margin:7px 12px 5px 12px;
-		margin-left:124px;
-		white-space:pre-wrap;		
+        margin: 7px 12px 5px 124px;
+        white-space:pre-wrap;
 	}
 
 
@@ -103,7 +103,8 @@
 		height:23px;
 		display:block;
 		padding-top:25px;
-		padding-left:20px;margin-top:-1px;
+		padding-left:20px;
+        margin-top:-1px;
 		
 		color:#555;
 		font-weight:bold;
@@ -126,7 +127,6 @@
 		margin:5px 0 0;
 		padding:7px 8px;	
 		border:1px solid #ddd;
-		-moz-border-radius:2px;
 		border-radius:2px;
 	}
 	input:focus, textarea:focus{
@@ -150,11 +150,11 @@
 		margin-top:8px;
 		padding:8px;
 		cursor:pointer;
-		background:#00a500;border-color:#0a0;
+		background:#00a500;
+        border-color:#0a0;
 		color:#fff;
 		font-weight:normal;
 		width:auto !important;
-		-moz-border-radius:6px;	
 		border-radius:6px;
 	}
 	input[type=submit]:hover{
@@ -167,7 +167,8 @@
 		top:2px;
 	}
 	input[type=submit]:focus{
-		outline:1px dotted #777 !important;color:#eee;
+		outline:1px dotted #777 !important;
+        color:#eee;
 	}
 	#aaa{
 		position:absolute;
@@ -183,13 +184,13 @@
 
 
 
-.bar{/**/margin-left:-12px;
+.bar{/**/
+    margin-left:-12px;
 	display:block;
 	border :3px solid black;
 	color:white;
 	font-size:22px;
 	padding:21px;
-	-moz-border-radius:10px;	
 	border-radius:10px;
 	text-align:center;	
 }
@@ -231,5 +232,9 @@
 }
 
 #macd{
-	margin-top:1px;padding:21px 23px;border: 1px solid:#dae3cc;background:#f2f4f1;-moz-border-radius:3px;border-radius:3px
+	margin-top:1px;
+    padding:21px 23px;
+    border: 1px solid #dae3cc;
+    background:#f2f4f1;
+    border-radius:3px
 }

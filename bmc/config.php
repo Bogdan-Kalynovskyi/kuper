@@ -1,7 +1,7 @@
 <?php
 
 if(!defined('IN_BMC')) 
-	die();
+	die('!');
  
 error_reporting(E_ALL);
 
@@ -14,16 +14,14 @@ $my_pass='chortiki';
 	// Your MySQL password
 $my_db='kuperfil_1';
 	// Your MySQL database name
-$my_prefix='1';
+$PRF='1';
 	// MySQL tables prefix
 $my_charset='cp1251';
-
+// Encoding for DB and tables
 
 //correct url to the root;
 $MY_URL='http://kuperfild.ru';
 
-$DIFFR='';
-
-//set when installing the database
+//webpage charset
 $CHRST='windows-1251';
 ?>

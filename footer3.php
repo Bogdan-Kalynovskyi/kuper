@@ -1,6 +1,6 @@
 </div>
 
-<noscript><h1>�������, ��������, ���������. ����������� �������� ������ ���������. �������� �������� �� JavaScript</h1></noscript>	
+<noscript><h1>Ïåéçàæè, ïîðòðåòû, èñêóññòâî. Îôèöèàëüíàÿ ñòðàíèöà Äàâèäà Ëåâàøåíêî. Ìîëüáåðò ðàáîòàåò íà JavaScript</h1></noscript>	
 
 <script src=footer.js></script>
 	
@@ -16,7 +16,7 @@
 	$fn=trim(tojs($fn));
 	
 	if($fn)
-		echo"<script type=\"text/javascript\">
+		echo"<script>
 			p1.src = '$fn';
 			setTimeout('if(!p1.complete)my_onload()', 6000);
 		</script>";

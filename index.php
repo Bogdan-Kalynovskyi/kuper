@@ -2,11 +2,11 @@
 
   header("Content-Type: text/html; charset=Windows-1251");
 
-  define('HOME_DIR', dirname(__FILE__));
+  define('A_ROOT', dirname(__FILE__).'/');
 
 
 
-	require_once   HOME_DIR.'/bmc/main.php';
+	require_once A_ROOT.'bmc/main.php';
 
 	if(IS_ADMIN) include_once A_HOME."fun_admin.php";
 	
@@ -93,7 +93,7 @@
 					$POOO = $db->query("SELECT * FROM `".PRF."posts` WHERE id=".a(@$_GET['id']), false);
 				}		
 				if(!$POOO){/*error*/}
-				echo '<img src="'.imgsrc($bmc_vars['zastavka']).'" id="loading" alt="������� ���������" />';
+				echo '<img src="'.imgsrc($bmc_vars['zastavka']).'" id="loading" alt="������� ���������">';
 				include A_ROOT."gallery.php";
 			break;
 				

@@ -246,12 +246,12 @@ function yobtvoyumat($inside, $usr){
             }
             <?php } ?>
 			if(document.install.new_pass1.value.length < 6 ){
-				alert("������ ������� ��������. ������� 6 ��������!");
+				alert("Ïàðîëü ñëèøêîì êîðîòêèé. Ìèíèìóì 6 ñèìâîëîâ!");
                 document.install.new_pass1.focus();
    				return false;
             }
 			if(document.install.new_pass.value != document.install.new_pass1.value ){
-				alert("������ �� ���������!");
+				alert("Ïàðîëè íå ñîâïàäàþò!");
                 document.install.new_pass1.focus();
    				return false;
             }
@@ -263,16 +263,16 @@ function yobtvoyumat($inside, $usr){
 <form accept-charset="<?php echo $CHRST ?>"  method="post" action="<?php if($inside){ ?>?_account_=change_pass<?php }else{ echo str_replace('&whattodo=get&', '&whattodo=set&', $_SERVER['REQUEST_URI']); } ?>" name="install" onsubmit="return check_form()">	
 <fieldset id="__key">
 	
-	<strong>������� ������</strong><br/><br/>
+	<strong>Ñìåíèòü ïàðîëü</strong><br/><br/>
 	
-	<u>�����</u> <?php echo $usr['login']; ?><br/><br/>
+	<u>Ëîãèí</u> <?php echo $usr['login']; ?><br/><br/>
 			<?php if($inside){ ?>
- 	<u>������ ������</u> <input type="password" name="old_pass" id="autofoc" value="" /><br/>
+ 	<u>Ñòàðûé ïàðîëü</u> <input type="password" name="old_pass" id="autofoc" value="" /><br/>
              <?php } ?>
-	<u>����� ������</u> <input type="password" name="new_pass" /><br/>
- 	<u>����� ������ ��� ���</u> <input type="password" name="new_pass1" /><br/><br/><br/>
+	<u>Íîâûé ïàðîëü</u> <input type="password" name="new_pass" /><br/>
+ 	<u>Íîâûé ïàðîëü åùå ðàç</u> <input type="password" name="new_pass1" /><br/><br/><br/>
 
- 	<u><input type="submit"  value="     �������     "/></u> <input type="button" name="back" onclick="history.go(-1)" value="  ������  " /><br/>
+ 	<u><input type="submit"  value="     Ñìåíèòü     "/></u> <input type="button" onclick="history.go(-1)" value="  Îòìåíà  " /><br/>
 
 			<?php if($inside){ ?>
 <script>$('autofoc').value='';$('autofoc').focus()</script>
@@ -297,16 +297,16 @@ function yopernujteatr($inside, $usr){
 global $db;
 	
 	
-	if($inside && ($usr['pass'] != bmc_hash($_POST['old_pass'])))error_page('������� ������ ������ ������');
-	if(strlen($_POST['new_pass']) <6)error_page('������� �������� ����� ������. ������� - 6 ��������');
-	if($_POST['new_pass'] != $_POST['new_pass1'])error_page('����� ������ �� ���������');
+	if($inside && ($usr['pass'] != bmc_hash($_POST['old_pass'])))error_page('Íåâåðíî óêàçàí ñòàðûé ïàðîëü');
+	if(strlen($_POST['new_pass']) <6)error_page('Ñëèøêîì êîðîòêèé íîâûé ïàðîëü. Ìèíèìóì - 6 ñèìâîëîâ');
+	if($_POST['new_pass'] != $_POST['new_pass1'])error_page('Íîâûå ïàðîëè íå ñîâïàäàþò');
 	{
 
 		$succ=$db->query("UPDATE `".PRF."users` SET pass=".a(bmc_hash($_POST['new_pass'], $usr['algo'], $usr['salt'])).", additional_security_feature=0 WHERE id=".a($usr['id']));
 		if($succ)$db->query("DELETE FROM `".PRF."login` WHERE user=".a($usr['id']));
 
 		if($succ)
-			good_page("������ ������� �������!");
+			good_page("Ïàðîëü óñïåøíî èçìåíåí!");
 		else
 			error_page("Pasword change failed!");
 		

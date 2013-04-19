@@ -6,8 +6,6 @@
   define('HOME_DIR', dirname(__FILE__));
 	$CHRST='windows-1251';$dbchrst=$_POST['db_chrst']='cp1251';
 	
-	session_start();
-
 
 		header("Cache-Control: no-cache");
 		header("Expires: -1");
@@ -17,8 +15,8 @@
 		header('Content-Type: text/html; charset=windows-1251');
 
 
-if(file_exists(HOME_DIR."/config.php"))
-	include HOME_DIR."/config.php"; 	// EXISTS AND EMPTY IN INSTALL !!
+if(file_exists("config.php"))
+	include "config.php"; 	// EXISTS AND EMPTY IN INSTALL !!
 
 
 //bulletproof header
@@ -359,18 +357,6 @@ echo "Verifying if project uploaded correctly...";
 echo "Done <br>";
 
 
-
-/**************************************************************************************************/
-echo "Scan server settings...  ";
-
-	$differ = dirname($_SERVER['SCRIPT_NAME']).'/';
-	if( !$differ )
-		footer( "<h1>Error!</h1>Pizdets");
-
-echo "Done <br>";
-
-
-
 /**************************************************************************************************/
 echo "Getting site URL...  ";
 
@@ -422,7 +408,7 @@ echo "Done <br>";
 
 
 
-	include HOME_DIR.'/install_database.php';
+	include 'install_database.php';
 
 
 
@@ -497,19 +483,17 @@ error_reporting(E_ALL);
 //correct url to the root;
 \$MY_URL='$pageURL';
 
-\$DIFFR='$differ';
-
 //set when installing the database
 \$CHRST='$CHRST';
 ?>
 EOF;
 
 
-	if( !($w=fopen(HOME_DIR."/config.php", "w")) || (! fputs($w,$conf_dat)))
-		  	footer("<big style=\"color:#900\">Can't write config file <b>".HOME_DIR."/config.php</b>!</big> permission not 666?");
+	if( !($w=fopen("config.php", "w")) || (! fputs($w,$conf_dat)))
+		  	footer("<big style=\"color:#900\">Can't write config file <b>"."config.php</b>!</big> permission not 666?");
 	fclose($w);
 	
-	@chmod(HOME_DIR."/vars/config.php", 0400);
+	@chmod("vars/config.php", 0400);
 
 
 echo "Done <br><br><hr><br>";

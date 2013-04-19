@@ -1,18 +1,19 @@
 input, textarea{
 	margin-left:68px;
 	width:434px;
-	background:#fdfdfd;-moz-border-radius:3px;border-radius:3px;
+	background:#fdfdfd;
+    border-radius:3px;
 }
-#sex{
+#_body{
 	margin-top:31px;
 	width:960px;
 }
 
-#sex a img{
+#_body a img{
 	padding-bottom:5px;
 	display:block;
 }
-#sex a{
+#_body a{
 	display:inline-block;
 	float:left;
 	width:25%;
@@ -20,10 +21,10 @@ input, textarea{
 	color:#00b;
 	font-size:12px
 }
-#sex a:hover{
+#_body a:hover{
 	color:#900
 }
-#sex a:hover img{
+#_body a:hover img{
 	opacity:0.94
 }
 
@@ -43,5 +44,6 @@ label{
 	width:200px;float:right;position:relative;right:-49px;top:-18px
 }
 fieldset{
-	position:relative;left:-20px;border:1px solid #fff;width:800px;-moz-border-radius:2px;border-radius:2px;
+	position:relative;left:-20px;border:1px solid #fff;width:800px;
+    border-radius:2px;
 }

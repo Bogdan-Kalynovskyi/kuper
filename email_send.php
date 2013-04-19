@@ -4,16 +4,16 @@
 
 	include_once A_HOME."fun_login.php";
 //todo preview
-//todo ipban(����� �����)
+//todo ipban(î÷åíü ïîòîì)
 	$message = '';
 	
 	if(isset($_POST[USER_HASH]) && $_POST[USER_HASH]=='2'){
 		if(bad_cap(true)){
-			$message = "������� ��������� ��� �� ��������";
+			$message = "Ââåäèòå ïðàâèëüíî êîä íà êàðòèíêå";
 			$ok = false;
 			
 		}elseif(!trim(@$_POST['text'])){
-			$message = "�� �������� ������ ������ ���������";
+			$message = "Âû âåðîÿòíî çàáûëè ââåñòè ñîîáùåíèå";
 			$ok = false;
 						
 		}else{
@@ -30,27 +30,27 @@ try{
 			$mail->IsHTML(true); 
 			$Reply = isemail($_POST['email'])?"<a href=\"mailto:{$_POST['email']}\">{$_POST['email']}</a>":$_POST['email'];
 			
-			//..$mail->SetFrom($Reply, '������ � kuperfild.ru');
+			//..$mail->SetFrom($Reply, 'Ïèñüìî ñ kuperfild.ru');
 			$mail->AddAddress($bmc_vars['email']);
-			$mail->Subject    = "������ � kuperfild.ru! �����  {$_POST['name']}";
+			$mail->Subject    = "Ïèñüìî ñ kuperfild.ru! Ïèøåò  {$_POST['name']}";
 			$mail->FromName = 'kuperfild.ru';
 			$mail->From = 'noreply@kuperfild.ru';
 						
 			$msg = "
-			������� ������������ ��� <big><b style=\"margin-left:8px;color:#755\">{$_POST['name']}</b></big>.
-			<br/>������� ���� ����������: <big style=\"margin-left:8px\">$Reply</big> 
+			×åëîâåê ïðåäñòàâèëñÿ êàê <big><b style=\"margin-left:8px;color:#755\">{$_POST['name']}</b></big>.
+			<br/>Îñòàâèë ñâîè êîîðäèíàòû: <big style=\"margin-left:8px\">$Reply</big> 
 			<br/>
-			<br/>---------------------- �������: ----------------------- <br/> <pre style=\"white-space:pre-wrap;	font-size:14px\">"; // optional, comment out and test
+			<br/>---------------------- Íàïèñàë: ----------------------- <br/> <pre style=\"white-space:pre-wrap;	font-size:14px\">"; // optional, comment out and test
 			
 			$mail->AltBody    = strip_tags($msg).$_POST['text'];
 			$mail->MsgHTML($msg.$_POST['text']);
 			
 			if($mail->Send()) {
-					$message = "������ ������� ����������!";
+					$message = "Ïèñüìî óñïåøíî îòïðàâëåíî!";
 					$ok = true;
 					unset($_POST);
 			} else {
-					$message = "�����-�� ���� =(. ���������� ��� ���!";
+					$message = "Êàêàÿ-òî áàãà =(. Ïîïðîáóéòå åùå ðàç!";
 					$ok = false;
 			}
 } catch (phpmailerException $e) {
@@ -72,11 +72,11 @@ try{
 <link rel=stylesheet href="email_send.css">
 
 
-<div id="xyz">
+<div id="_head">
 	
-<h1>��������</h1>
+<h1>Êîíòàêòû</h1>
 
-<div id="sex">
+<div id="_body">
 	<?php
 	
 	function email_pr($s){
@@ -86,10 +86,10 @@ try{
 		return $s;
 	}
 	
-        echo '<a target=_blank href="'.$bmc_vars['vk'].'"><img src="images/vk.png" alt="���������" />'.email_pr($bmc_vars['vk']).'</a>';
-		echo '<a target=_blank href="'.$bmc_vars['lj'].'"><img src="images/lj.png" alt="������ ��" />'.email_pr($bmc_vars['lj']).'</a>';
-		echo '<a target=_blank href="mailto:'.$bmc_vars['email'].'"><img src="images/email.png" alt="�-����" />'.email_pr($bmc_vars['email']).'</a>';
-		echo '<a target=_blank href="callto:'.$bmc_vars['phone'].'"><img src="images/phone.png" alt="�������" />'.email_pr($bmc_vars['phone']).'</a>';
+        echo '<a target="_blank" href="'.$bmc_vars['vk'].'"><img src="images/vk.png" alt="ÂÊîíòàêòå" />'.email_pr($bmc_vars['vk']).'</a>';
+		echo '<a target="_blank" href="'.$bmc_vars['lj'].'"><img src="images/lj.png" alt="Óþòíàÿ ÆÆ" />'.email_pr($bmc_vars['lj']).'</a>';
+		echo '<a target="_blank" href="mailto:'.$bmc_vars['email'].'"><img src="images/email.png" alt="Å-ìåéë" />'.email_pr($bmc_vars['email']).'</a>';
+		echo '<a target="_blank" href="callto:'.$bmc_vars['phone'].'"><img src="images/phone.png" alt="Òåëåôîí" />'.email_pr($bmc_vars['phone']).'</a>';
     ?>
 </div>
 
@@ -117,7 +117,7 @@ try{
 
 
 <h3 style="padding:17px 0 6px 0;color:#222">
-	�������� ��� ������</h3><br/>
+	Íàïèñàòü ìíå ïèñüìî</h3><br/>
 
 
 <br/>
@@ -133,15 +133,15 @@ try{
 	<input type="hidden" name="<?php echo USER_HASH; ?>" value="2" />
 
 	
-	<label>������������ ���������
+	<label>Ïðåäñòàâòåñü ïîæàëóñòà
 		<input type="text" name="name" value="<?php echo htmlspecialchars(@$_POST['name']) ?>" tabindex="10" />
 	</label>
 
-	<label>��� ��� �����?&nbsp; <span>(email, ����&#133;)</span>
+	<label>Êàê Âàñ íàéòè?&nbsp; <span>(email, áëîã&#133;)</span>
 		<input type="text" name="email" value="<?php echo htmlspecialchars(@$_POST['email']) ?>" tabindex="20" />
 	</label>
 
-	<label style="height:120px">����� ��������� <span style="color:red">*</span>
+	<label style="height:120px">Òåêñò ñîîáùåíèÿ <span style="color:red">*</span>
 		<textarea name="text" cols="80" rows="4" tabindex="30"><?php echo htmlspecialchars(@$_POST['text']) ?></textarea>
 	</label>
 	
@@ -150,7 +150,7 @@ try{
 
 	<br/>
 	<label>
-		<input type="submit"  style="letter-spacing:1px" value="         ���������         " tabindex="100" />
+		<input type="submit"  style="letter-spacing:1px" value="         Îòïðàâèòü         " tabindex="100" />
 	</label><br/><br/>
 		
 </fieldset>
@@ -165,7 +165,7 @@ try{
 
    function verify_form(){
    		if(! document.getElementsByName('text')[0].value ){
-   			alert('�������� ���� ��� ������ � ������ ���������');
+   			alert('Íàïèøèòå õîòü ÷òî íèáóäü â òåêñòå ñîîáùåèíÿ');
    			return false;
    		}
    		return true;

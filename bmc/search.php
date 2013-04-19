@@ -51,7 +51,7 @@ if(strlen($_REQUEST['key']) > 3) {
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-	include_once A_HOME."/query.php"; 
+	include_once A_HOME."query.php";
 	$limit = '';
 	$query_str = '';
 

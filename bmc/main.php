@@ -1,49 +1,35 @@
 <?php
-define('IN_BMC', true); 	// = HOLY PLACE =-)
+  define('IN_BMC', true); 	// = HOLY PLACE =-)
 
-require  HOME_DIR."/config.php";
-
-//==============================================================================
-if(empty($my_db)) die('Site is not properly installed! <a href="install.php">Click here to install</a>');
-/*if( file_exists("HOME_DIR/install.php")) {OK � ����� ����1 1��1 ����� ��������1 �����1���.
-	����� ������������ ������ �1� ������������ ������
-	die("Please delete the file <strong>install.php</strong> from your root directory after installation. <br />
-	If you haven't installed the site yet, please proceed to the <a href=\"install.php\">installation process</a>.");
-
-//���� magic quotes register globals
-}*/
-//==============================================================================
+  require A_ROOT.'bmc/config.php';
 
 	$TIME_START = microtime(TRUE);
 	
-	session_start();
+	define('A_VIEW', A_ROOT.'view/');
+	define('A_ADMIN', A_ROOT.'backend/');
+	define('A_HOME', A_ROOT.'bmc/');
+	define('PRF', 	 $PRF);
 
-
-	define("A_VIEW", HOME_DIR.'/view/');
-	define("A_HOME", HOME_DIR."/bmc/");
-	define("PRF", 	 $my_prefix);
-
-	include_once A_HOME."db_mysql.php";
-	include_once A_HOME."functions.php";
-	include_once A_HOME."output_functions.php";
+	include_once A_HOME.'db_mysql.php';
+	include_once A_HOME.'functions.php';
+	include_once A_HOME.'output_functions.php';
 
 	$db = new bDb;
 
 //globals	
-	$FILE = str_replace('.php', '', basename($_SERVER['SCRIPT_NAME']));
+	$FILE = str_replace('.php', '', basename($_SERVER['SCRIPT_NAME'])); //todo: right
 
 //forms
-	define("LOGIN_HASH", 'Aewf2s20dGfs3d7'); 	define("LOGIN_HASH_VALUE", mt_rand(0,100000));
-	define("SEARCH_HASH", 'Aewf2s2dGfs3d7');  	define("SEARCH_HASH_VALUE", mt_rand(0,100000));
-	define("FORM_HASH",   'B323fd3fFs3471'); 	define("ADMIN_HASH", mt_rand(0,100000));
-	define("USER_HASH",   'B323fd3fFs3471'); 	define("BOT_HASH", 'sfdsfvsd|#$$#^#%^#%4634');
-//logout-hash!? actions!?
+	define('LOGIN_HASH',  'Aewf2s0dG!s3d7');
+	define('SEARCH_HASH', 'Aewf2s2dGfs3d7');
+	define('FORM_HASH',   'B323fd3fFs3471');
 
 //security	
 	define('LOGIN_TIME_LIMIT', 60*60*24*7);
 	
 
 //////////////////////////      secific part       ///////////////////////////////
+//	ini_set('session.use_only_cookies', 'on');//todo!!!!!!!!
 
 
 	bmc_getSets();//use file config.php and caching
@@ -52,11 +38,11 @@ if(empty($my_db)) die('Site is not properly installed! <a href="install.php">Cli
 ///////////////////////////		 fixes	all 	///////////////////////////////////
 
 
-if(get_magic_quotes_gpc()){//����� ��� ��1 ���������//tut mae butu we wos
+if(get_magic_quotes_gpc()){//äóìàºì ïðî âñ1 çàáàãàíêò//tut mae butu we wos
 	$_GET = stripslashes_deep($_GET);
 	$_POST = stripslashes_deep($_POST);
 	$_COOKIE = stripslashes_deep($_COOKIE);
-}//� �� ����� ���� �� �������� ��� ���� ������ ����������
+}//ÿ íå ïàöàå ÿêùî íå çàâèïèøó òóò âåñü ñïèñîê åêñåïøåíûâ
 
 
 
@@ -107,7 +93,7 @@ if(get_magic_quotes_gpc()){//����� ��� ��1 ������
 
 
 
-	include A_HOME."_account.php";
+	include A_HOME.'_account.php';
 
 
 
@@ -122,7 +108,7 @@ if(get_magic_quotes_gpc()){//����� ��� ��1 ������
 	$USER  = bmc_getLogged();	MOVED TO ACCOUNT! */
 
 
-	if($USER && is_array($USER) && isset($USER['level']))
+	if($USER && is_array($USER) && is_numeric($USER['level']))
 		define('LEVEL', $USER['level']);
 	else
 		define('LEVEL', 0);
@@ -134,23 +120,23 @@ if(get_magic_quotes_gpc()){//����� ��� ��1 ������
 	if(defined('REQUIRED') && REQUIRED > LEVEL){
 
 
-		if($USER && !is_array($USER))//cant login//������ ���������
-				$user_message[] = 'Session expired or IP cahanged. Please retype password';
+		if($USER && !is_array($USER))//cant login//ðàçðûâ ñåêüþðèòè
+				$user_message[] = 'Session expired or IP changed. Please retype password';
 
 
 		if(is_array($USER))//can't access
-				$user_message[] = "You don't have enough permissions to view this page";
+				$user_message[] = 'You don\'t have enough permissions to view this page';
 
-		//ghj��������� ��������� ���� ��� ����� cookies
+		//ghjïðîèçîøåë àïàðàòíûé ñáîé èëè èáðûâ cookies
 
-		include A_ROOT."login.php";
+		include A_ROOT.'login.php';
 		
 					
 	}
 	
 
 	
-	define("IS_ADMIN", LEVEL==3);
+	define('IS_ADMIN', LEVEL==3);
 	
 
 
@@ -167,7 +153,7 @@ if(get_magic_quotes_gpc()){//����� ��� ��1 ������
 	
 
 
-//	include_once A_HOME."/reflog.php";
-//	include_once A_HOME."/users_online.php";
+//	include_once A_HOME.'reflog.php';
+//	include_once A_HOME.'users_online.php';
 
 ?>

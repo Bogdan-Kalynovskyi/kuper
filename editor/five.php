@@ -17,13 +17,13 @@
 ?>
 
 
-<h2> ������ ����������� <a href="./?id=<?php echo htmlspecialchars($_GET['gallery']) ?>"><b>"<?php echo $nme ?>"</b></a>. <?php echo count($PHOTO) ?> ����</h2>
+<h2> Ïðàâèì ÔÎÒÎãàëåðåþ <a href="./?id=<?php echo htmlspecialchars($_GET['gallery']) ?>"><b>"<?php echo $nme ?>"</b></a>. <?php echo count($PHOTO) ?> ôîòî</h2>
 
 <form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
 <fieldset>
-	<input type="hidden" name="<?php echo FORM_HASH; ?>" value="4" />
-	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-	<input type="hidden" name="post" value="<?php echo @$_GET['gallery'] ?>" />
+	<input type="hidden" name="<?php echo FORM_HASH; ?>" value="4">
+	<input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+	<input type="hidden" name="post" value="<?php echo @$_GET['gallery'] ?>">
 
 <br/>
 <div id="__key">
@@ -45,35 +45,35 @@ foreach($PHOTO as $ph){
 		
 			<label><span>
 			
-				<a href="./?id=$s" target=_blank class="_eye_" title="�����������"><img src="img/eye_small.gif" alt="&bull;"/></a>���������</span>
-				<input type="text" name="v[$key]" value="$val" id="v$k" class="title" />
+				<a href="./?id=$s" target=_blank class=_eye_ title="ïðîñìîòðåòü"><img src="img/eye_small.gif" alt="view"></a>Çàãîëîâîê</span> 
+				<input type="text" name="v[$key]" value="$val" id="v$k" class="title">
 	
 			<b>
 			
-				 <a href="#" title="�����" onclick="up($k); return false"><img src="img/up.png" alt="�����" /></a> 
-				 <a href="#" title="����" onclick="down($k); return false"><img src="img/down.png" alt="����" /></a>
-				 <a href="#" title="�������" onclick="del($k); return false"><img src="img/del.png" alt="�������" /></a>
+				 <a href="#" title="ââåðõ" onclick="up($k); return false"><img src="img/up.png" alt="ââåðõ"></a> 
+				 <a href="#" title="âíèç" onclick="down($k); return false"><img src="img/down.png" alt="âíèç"></a>
+				 <a href="#" title="ñòåðåòü" onclick="del($k); return false"><img src="img/del.png" alt="ñòåðåòü"></a>
 				
 			</b>
 
 			</label> 
 			
-			<label><span>�������</span>
+			<label><span>Êàðòèíà</span>
 		
-			<img src="{$ph['icon']}" alt="���" id="_i$k" /> 
-			URL<input type="text" name="i[$key]" id="i$k" value="$image" />  ��� ����<input type="file" id="__i$k" name="i$key" />
-		   &nbsp;<a onclick="clrnpt('i$k');return false">������</a>
+			<img src="{$ph['icon']}" alt="íåò" id="_i$k"> 
+			URL<input type="text" name="i[$key]" id="i$k" value="$image">  èëè ôàéë<input type="file" id="__i$k" name="i$key">
+		   &nbsp;<a onclick="clrnpt('i$k');return false">Óáðàòü</a>
 		    
 			</label>
 
 
 			<label>
- 			<span style="float:left">��������</span>
+ 			<span style="float:left">Îïèñàíèå</span>
 	 		<textarea name="t[$key]" id="t$k">$text</textarea>
 			</label>
 
 		</div>
-		<hr/><input type="hidden" name="f[$key]" value="" />
+		<hr/><input type="hidden" name="f[$key]" value="">
 
 EOF;
 $k++;
@@ -81,12 +81,12 @@ $k++;
 
 ?>
 </div>
-	<img src="images/plus.gif" title="��������" alt="��������" onclick="add()" style="margin-left:30px; cursor:pointer" /> &nbsp; � ����� � ������� ��������� ������������� ������� ��������� ��������, � ����� ���������� �� �����-����
+	<img src="images/plus.gif" title="äîáàâèòü" alt="äîáàâèòü" onclick="add()" style="margin-left:30px; cursor:pointer"> &nbsp; Â ñâÿçè ñ ãëþêàìè áðàóçåðîâ ðåêîìåíäóåòñÿ ñíà÷àëà ÇÀÃÐÓÇÈÒÜ êàðòèíêè, à çàòåì ÏÅÐÅÌÅÙÀÒÜ èõ ââåðõ-âíèç
 	<br/>
 	<br/>
 	
-	<input type="submit" value="      ���������      " style="margin-left:40px" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-	<input type="button" value="      ������      " onclick="document.location='user.php'" />
+	<input type="submit" value="      Ñîõðàíèòü      " style="margin-left:40px"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	<input type="button" value="      Îòìåíà      " onclick="document.location='user.php'">
 
 </fieldset>
 </form>
@@ -129,7 +129,7 @@ $k++;
 		
 		function del(i){
 		//todo test ie	
-			if(confirm(' ������� ����������?\n\n' + $('v'+i).value)){
+			if(confirm(' Óäàëèòü ôîòîãðàôèþ?\n\n' + $('v'+i).value)){
 				var element = $('_'+i);
   				element.parentNode.removeChild(element);
 				___changer();	
@@ -143,7 +143,7 @@ $k++;
 
 			link.innerHTML = 
 				
-'	<div class="baba" id="_'+n+'">			<label><span><a class="_eye_" title="���� ������ ��������..."><img src="img/eye_small.gif" alt="&bull;"/></a>���������</span> 		<input type="text" name="v['+nn+']" id="v'+n+'" class="title" />	<b>				 <a href="#" title="�����" onclick="up('+n+'); return false"><img src="img/up.png" alt="�����" /></a> 	 <a href="#" title="����" onclick="down('+n+'); return false"><img src="img/down.png" alt="����" /></a>				 <a href="#" title="�������" onclick="del('+n+'); return false"><img src="img/del.png" alt="�������" /></a>			</b>			</label>			<label><span>�������</span>			<img src="blank.gif" alt="���" id="_i'+n+'" /> 	URL<input type="text" name="i['+nn+']" id="i'+n+'" /> ��� ����<input type="file" id="__i'+n+'" name="i'+nn+'" /> &nbsp;<a onclick="clrnpt(\'i'+n+'\');return false">������</a>		</label>						<label> 			<span style="float:left">��������</span>	 		<textarea name="t['+nn+']" id="t'+n+'"></textarea></label>		</div><hr/><input type="hidden" name="f['+nn+']" value="" />';
+'	<div class="baba" id="_'+n+'">			<label><span><a class="_eye_" title="ïîêà íå÷åãî ñìîòðåòü..."><img src="img/eye_small.gif" alt="View"></a>Çàãîëîâîê</span> 		<input type="text" name="v['+nn+']" id="v'+n+'" class="title">	<b>				 <a href="#" title="ââåðõ" onclick="up('+n+'); return false"><img src="img/up.png" alt="ââåðõ"></a> 	 <a href="#" title="âíèç" onclick="down('+n+'); return false"><img src="img/down.png" alt="âíèç"></a>				 <a href="#" title="ñòåðåòü" onclick="del('+n+'); return false"><img src="img/del.png" alt="ñòåðåòü"></a>			</b>			</label>			<label><span>Êàðòèíà</span>			<img src="blank.gif" alt="íåò" id="_i'+n+'"> 	URL<input type="text" name="i['+nn+']" id="i'+n+'"> èëè ôàéë<input type="file" id="__i'+n+'" name="i'+nn+'"> &nbsp;<a onclick="clrnpt(\'i'+n+'\');return false">Óáðàòü</a>		</label>						<label> 			<span style="float:left">Îïèñàíèå</span>	 		<textarea name="t['+nn+']" id="t'+n+'"></textarea></label>		</div><hr/><input type="hidden" name="f['+nn+']" value="">';
 
 		$('__key').appendChild(link);
 

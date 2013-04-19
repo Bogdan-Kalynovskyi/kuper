@@ -5,13 +5,13 @@
 ?>
 
 
-<h2> ������ ����... </h2>
+<h2> Ïðàâèì ìåíþ... </h2>
 
 
 <form method="post" action="user.php" accept-charset="<?php echo $CHRST ?>" enctype="multipart/form-data">
 <fieldset>
-	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-	<input type="hidden" name="<?php echo FORM_HASH; ?>" value="3" />
+	<input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+	<input type="hidden" name="<?php echo FORM_HASH; ?>" value="3">
 <br/>
 <div id="__key">
 <?php
@@ -26,18 +26,18 @@ foreach($BLOGS as $key=>$val){
 		echo <<<EOF
 		<div class="baba" id="_$k">
 		
-			<a href="index.php?page=$key" target=_blank class="_eye_" title="�����������"><img src="img/eye_small.gif" alt="&bull;"/></a> &nbsp;
+			<a href="index.php?page=$key" target=_blank class=_eye_ title="ïðîñìîòðåòü"><img src="img/eye_small.gif" alt="View"></a> &nbsp;
 			
-			<input type="text" name="v[$key]" value="$val" id="v$k" style="width:301px" /> &nbsp;&nbsp;
+			<input type="text" name="v[$key]" value="$val" id="v$k" style="width:301px"> &nbsp;&nbsp;
 			
-				 <a href="#" title="�����" onclick="up($k); return false"><img src="img/up.png" alt="�����" /></a> 
-				 <a href="#" title="����" onclick="down($k); return false"><img src="img/down.png" alt="����" /></a>
-				 <a href="#" title="�������" onclick="del($k); return false"><img src="img/del.png" alt="�������" /></a>
+				 <a href="#" title="ââåðõ" onclick="up($k); return false"><img src="img/up.png" alt="ââåðõ"></a> 
+				 <a href="#" title="âíèç" onclick="down($k); return false"><img src="img/down.png" alt="âíèç"></a>
+				 <a href="#" title="ñòåðåòü" onclick="del($k); return false"><img src="img/del.png" alt="ñòåðåòü"></a>
 			
-				<p><img src="{$FONS[$key]}" alt="���" id="_f$k" /> &nbsp;
+				<p><img src="{$FONS[$key]}" alt="ôîí" id="_f$k"> &nbsp;
 					<a href="#" onclick="cl($k);return false">...</a>
 					<b id="x$k">
-					URL<input type="text" name="f[$key]" id="f$k" value="{$f}" /> ��� ����<input type="file" id="__f$k" name="f$key" />&nbsp; <a onclick="clrnpt('f$k');return false">������</a>
+					URL<input type="text" name="f[$key]" id="f$k" value="{$f}"> èëè ôàéë<input type="file" id="__f$k" name="f$key">&nbsp; <a onclick="clrnpt('f$k');return false">Óáðàòü</a>
 					</b>
 				</p>			
 				
@@ -50,12 +50,12 @@ $k++;
 ?>
 </div>
 <br/>
-	<img src="images/plus.gif" title="��������" alt="��������" onclick="add()" style="margin-top:-10px;margin-left:40px; cursor:pointer" /> &nbsp; � ����� � ������� ��������� ������������� ������� ��������� ��������, � ����� ���������� �� �����-����
+	<img src="images/plus.gif" title="äîáàâèòü" alt="äîáàâèòü" onclick="add()" style="margin-top:-10px;margin-left:40px; cursor:pointer"> &nbsp; Â ñâÿçè ñ ãëþêàìè áðàóçåðîâ ðåêîìåíäóåòñÿ ñíà÷àëà ÇÀÃÐÓÇÈÒÜ êàðòèíêè, à çàòåì ÏÅÐÅÌÅÙÀÒÜ èõ ââåðõ-âíèç
 	<br/>
 	<br/>
 	
-	<input type="submit" value="      ���������      " style="margin-left:30px" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-	<input type="button" value="      ������      " onclick="document.location='user.php'" />
+	<input type="submit" value="      Ñîõðàíèòü      " style="margin-left:30px"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	<input type="button" value="      Îòìåíà      " onclick="document.location='user.php'">
 
 </fieldset>
 </form>
@@ -94,7 +94,7 @@ $k++;
 		
 		function del(i){
 		//todo test ie	
-			if(confirm('       !!! �������� !!! \n\n ���������� ��� ����?\n\n')){
+			if(confirm('       !!! Âíèìàíèå !!! \n\n Óíè÷òîæèòü ýòî ìåíþ?\n\n')){
 				var element = $('_'+i);
   				element.parentNode.removeChild(element);
  				___changer();	
@@ -108,7 +108,7 @@ $k++;
 			
 			link.innerHTML = 
 				
-		'<div class="baba"  id="_'+n+'"><a class="_eye_" title="���� ������ ��������"><img src="img/eye_small.gif" alt="&bull;"/></a> &nbsp; <input type="text" name="v['+nn+']" id="v'+n+'" style="width:301px" /> &nbsp;		 <a href="#" title="�����" onclick="up('+n+'); return false"><img src="img/up.png" alt="�����" /></a> 			 <a href="#" title="����" onclick="down('+n+'); return false"><img src="img/down.png" alt="����" /></a>	 <a href="#" title="�������" onclick="del('+n+'); return false"><img src="img/del.png" alt="�������" /></a>				<p><img src=""blank.gif alt="���" id="_f'+n+'" /> &nbsp;			<a href="#" onclick="cl('+n+');return false">...</a>	<b id="x'+n+'">URL<input type="text" name="f['+nn+']" id="f'+n+'" /> ��� ����<input type="file" id="__f'+n+'" name="f'+nn+'" />&nbsp; <a onclick="clrnpt(\'f'+n+'\');return false">������</a>		</b>	</p></div>';
+		'<div class="baba"  id="_'+n+'"><a class="_eye_" title="ïîêà íå÷åãî ñìîòðåòü"><img src="img/eye_small.gif" alt="View"></a> &nbsp; <input type="text" name="v['+nn+']" id="v'+n+'" style="width:301px"> &nbsp;		 <a href="#" title="ââåðõ" onclick="up('+n+'); return false"><img src="img/up.png" alt="ââåðõ"></a> 			 <a href="#" title="âíèç" onclick="down('+n+'); return false"><img src="img/down.png" alt="âíèç"></a>	 <a href="#" title="ñòåðåòü" onclick="del('+n+'); return false"><img src="img/del.png" alt="ñòåðåòü"></a>				<p><img src=""blank.gif alt="ôîí" id="_f'+n+'"> &nbsp;			<a href="#" onclick="cl('+n+');return false">...</a>	<b id="x'+n+'">URL<input type="text" name="f['+nn+']" id="f'+n+'"> èëè ôàéë<input type="file" id="__f'+n+'" name="f'+nn+'">&nbsp; <a onclick="clrnpt(\'f'+n+'\');return false">Óáðàòü</a>		</b>	</p></div>';
  		
 		$('__key').appendChild(link);
 

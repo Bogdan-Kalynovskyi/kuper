@@ -219,6 +219,7 @@ if(!$goto)$goto = 'index.php';//history unfinished
 @header('HTTP/1.1 301 Moved Permanently');
 if(!@header($str)) {
 //encoding
+//todo: is $got0 escaped properly??
 $goto=htmlspecialchars($goto);//addslashes?
 echo <<<EOF
 <HTML><HEAD><meta name=”robots” content=”noindex,nofollow”><script>

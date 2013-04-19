@@ -1,8 +1,9 @@
 <?php
 	define('REQUIRED', 3);
-	include dirname(__FILE__).'/bmc/main.php';
 
+  define('A_ROOT', dirname(__FILE__).'/');
 
+	require_once A_ROOT.'bmc/main.php';
 
 /*
 $x = fopen('1.log','a');
@@ -209,7 +210,7 @@ if(@$_POST[FORM_HASH]==3){//pin();
 
 	foreach($_POST['d'] as $k=>$v){
 		if(isnumeric($k) && $v){
-			if($k == 1){echo('<h1>Стартовую страницу нельзя удалить</h1>');continue;}
+			if($k == 1){echo('<h1>Г‘ГІГ Г°ГІГ®ГўГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі Г­ГҐГ«ГјГ§Гї ГіГ¤Г Г«ГЁГІГј</h1>');continue;}
 			unset($_POST['d'][$k]);
 			unset($_POST['v'][$k]);
 			unset($_POST['f'][$k]);
@@ -364,7 +365,7 @@ elseif(isnumeric($_GET['up']) || isnumeric($_GET['down'])){//pin();
  
 elseif(isnumeric($_GET['del'])){//pin();
 	
-			if($_GET['del']==205)die('Эта страница является стартовой. Вы не можете удалить ее');
+			if($_GET['del']==205)die('пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ');
 	
 			$db->query("DELETE FROM `".PRF."posts` WHERE id = ".a($_GET['del']));
 
@@ -417,10 +418,10 @@ elseif(isnumeric($_GET['id']) && $_GET['id'] == 0 && isnumeric($_GET['blog'])){/
 /////////////////////////////////////////////////////////////////////////////////
 
 
-function pin(){};//todo class redirector	1стор11 версый редагування, зручны ы дружны редыренти, показування останньо1 зробленор1 вкрс11 !!. хочу редиректитись туда!
+function pin(){};//todo class redirector	1Г±ГІГ®Г°11 ГўГҐГ°Г±Г»Г© Г°ГҐГ¤Г ГЈГіГўГ Г­Г­Гї, Г§Г°ГіГ·Г­Г» Г» Г¤Г°ГіГ¦Г­Г» Г°ГҐГ¤Г»Г°ГҐГ­ГІГЁ, ГЇГ®ГЄГ Г§ГіГўГ Г­Г­Гї Г®Г±ГІГ Г­Г­ГјГ®1 Г§Г°Г®ГЎГ«ГҐГ­Г®Г°1 ГўГЄГ°Г±11 !!. ГµГ®Г·Гі Г°ГҐГ¤ГЁГ°ГҐГЄГІГЁГІГЁГ±Гј ГІГіГ¤Г !
 /*		if(isset($_SERVER['HTTP_REFERER']) && !isset($_COOKIE['BMC_redirect']) && ! isset($_REQUEST['nest']) 
 		 && basename($_SERVER['HTTP_REFERER']) !== basename($_SERVER['SCRIPT_NAME']))
-			bmc_Go(-1);/*хто таку хуйню написав?*/
+			bmc_Go(-1);/*ГµГІГ® ГІГ ГЄГі ГµГіГ©Г­Гѕ Г­Г ГЇГЁГ±Г Гў?*/
 
 				
 /////////////////////////////////////////////////////////////////////////////////

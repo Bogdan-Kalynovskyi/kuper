@@ -122,7 +122,7 @@ function up_pic($name, $radio, $new_name='', $upload_dir, $orig_x=null, $orig_y=
 
 
 if(noempty($new_name)){
-	if(!ereg('^[^./][^/]*$', $new_name) || strpos($new_name, '..')!== false) return false;
+	if(!preg_match('/^[^./][^/]*$/', $new_name) || strpos($new_name, '..')!== false) return false;
 	$new_name = str_replace("\0", '', $new_name);
 	$new_name = valid_filename($new_name);//зразу коцаєм выдповыдно до ОС/ // а шо там з розширенням? 
 }
